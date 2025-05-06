@@ -17,6 +17,7 @@ namespace Presentaciòn
         {
             InitializeComponent();
         }
+
         C_seguridad c_seguridad = new C_seguridad();
         // Propiedad interna estática para almacenar el nombre de usuario logueado
         internal static string UsuarioLogueado { get; private set; }
@@ -40,12 +41,27 @@ namespace Presentaciòn
             {
                 MessageBox.Show("Usuario o Contraseña Incorrecta");
             }
-            #endregion
         }
+        #endregion
 
+        #region = "Bonton salir";
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
+        #endregion
+
+        private void frm_login_Load(object sender, EventArgs e)
+        {
+
+            style();
+        }
+        #region = "Metodo bordes y estilo";
+        public void style()
+        {
+            this.ControlBox = false; // Oculta los botones de la barra de título
+            this.FormBorderStyle = FormBorderStyle.None; // Quita los bordes
+        }
+        #endregion
     }
 }
