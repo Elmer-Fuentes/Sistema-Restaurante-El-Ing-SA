@@ -74,11 +74,12 @@
             // 
             this.tabControl_Usuarios.Controls.Add(this.tabPage1);
             this.tabControl_Usuarios.Controls.Add(this.tabPage2);
+            this.tabControl_Usuarios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl_Usuarios.Location = new System.Drawing.Point(3, 2);
             this.tabControl_Usuarios.Name = "tabControl_Usuarios";
             this.tabControl_Usuarios.SelectedIndex = 0;
             this.tabControl_Usuarios.Size = new System.Drawing.Size(1046, 614);
-            this.tabControl_Usuarios.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
+            this.tabControl_Usuarios.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabControl_Usuarios.TabIndex = 0;
             // 
             // tabPage1
@@ -92,10 +93,10 @@
             this.tabPage1.Controls.Add(this.lblFecha);
             this.tabPage1.Controls.Add(this.label9);
             this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1038, 588);
+            this.tabPage1.Size = new System.Drawing.Size(1038, 585);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Crear Usuarios";
             // 
@@ -105,12 +106,12 @@
             this.tabPage2.Controls.Add(this.dvg_empleados_sin_Usuarios);
             this.tabPage2.Controls.Add(this.txt_buscar_empleado);
             this.tabPage2.Controls.Add(this.label10);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1038, 588);
+            this.tabPage2.Size = new System.Drawing.Size(1038, 585);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Buscador";
+            this.tabPage2.Text = "Buscar";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // btnEliminar_usuario
@@ -134,39 +135,39 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(138, 82);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 13);
+            this.label1.Size = new System.Drawing.Size(0, 16);
             this.label1.TabIndex = 59;
             // 
             // cbx_estado
             // 
             this.cbx_estado.FormattingEnabled = true;
-            this.cbx_estado.ItemHeight = 13;
+            this.cbx_estado.ItemHeight = 16;
             this.cbx_estado.Location = new System.Drawing.Point(612, 90);
             this.cbx_estado.Name = "cbx_estado";
-            this.cbx_estado.Size = new System.Drawing.Size(165, 21);
+            this.cbx_estado.Size = new System.Drawing.Size(165, 24);
             this.cbx_estado.TabIndex = 19;
             // 
             // cbx_rol
             // 
             this.cbx_rol.FormattingEnabled = true;
-            this.cbx_rol.ItemHeight = 13;
+            this.cbx_rol.ItemHeight = 16;
             this.cbx_rol.Location = new System.Drawing.Point(612, 59);
             this.cbx_rol.Name = "cbx_rol";
-            this.cbx_rol.Size = new System.Drawing.Size(165, 21);
+            this.cbx_rol.Size = new System.Drawing.Size(165, 24);
             this.cbx_rol.TabIndex = 18;
             // 
             // txt_contrasena
             // 
             this.txt_contrasena.Location = new System.Drawing.Point(612, 23);
             this.txt_contrasena.Name = "txt_contrasena";
-            this.txt_contrasena.Size = new System.Drawing.Size(165, 20);
+            this.txt_contrasena.Size = new System.Drawing.Size(165, 22);
             this.txt_contrasena.TabIndex = 4;
             // 
             // txt_asignar_nombre_usuario
             // 
             this.txt_asignar_nombre_usuario.Location = new System.Drawing.Point(258, 95);
             this.txt_asignar_nombre_usuario.Name = "txt_asignar_nombre_usuario";
-            this.txt_asignar_nombre_usuario.Size = new System.Drawing.Size(165, 20);
+            this.txt_asignar_nombre_usuario.Size = new System.Drawing.Size(165, 22);
             this.txt_asignar_nombre_usuario.TabIndex = 3;
             // 
             // txt_nombre_empleado
@@ -182,7 +183,7 @@
             // 
             this.txt_codigo_empleado.Location = new System.Drawing.Point(258, 25);
             this.txt_codigo_empleado.Name = "txt_codigo_empleado";
-            this.txt_codigo_empleado.Size = new System.Drawing.Size(165, 20);
+            this.txt_codigo_empleado.Size = new System.Drawing.Size(165, 22);
             this.txt_codigo_empleado.TabIndex = 1;
             // 
             // dgvUsuarios
@@ -381,7 +382,7 @@
             // 
             this.txt_buscar_empleado.Location = new System.Drawing.Point(265, 110);
             this.txt_buscar_empleado.Name = "txt_buscar_empleado";
-            this.txt_buscar_empleado.Size = new System.Drawing.Size(522, 20);
+            this.txt_buscar_empleado.Size = new System.Drawing.Size(522, 22);
             this.txt_buscar_empleado.TabIndex = 2;
             // 
             // label10

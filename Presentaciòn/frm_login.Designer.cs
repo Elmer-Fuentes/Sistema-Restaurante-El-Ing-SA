@@ -117,9 +117,9 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(39, 230);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 15);
+            this.label4.Size = new System.Drawing.Size(128, 15);
             this.label4.TabIndex = 22;
-            this.label4.Text = "Sistema Hoteles";
+            this.label4.Text = "Sistema Restaurantes";
             // 
             // btnSalir
             // 
