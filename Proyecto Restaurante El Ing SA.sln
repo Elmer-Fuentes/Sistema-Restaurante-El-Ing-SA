@@ -5,7 +5,7 @@ VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Presentaciòn", "Presentaciòn\Presentaciòn.csproj", "{15F09996-54B5-41AF-9568-55829B779E75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Datos", "Datos\Datos.csproj", "{83902075-9D55-4D78-89CC-4B997C402824}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "capa_datos", "Datos\capa_datos.csproj", "{83902075-9D55-4D78-89CC-4B997C402824}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seguridad", "Seguridad\Seguridad.csproj", "{9F458B09-4E34-4335-86E6-16B5F0498BC4}"
 EndProject
