@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using capa_datos;
-using capa_logica;
+using Logica;
 namespace Presentaciòn
 {
     public partial class frm_usuarios : Form
