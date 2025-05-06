@@ -1,0 +1,1 @@
+insert into tbl_mesas(codigo_mesa, numero_mesa, cantidad_sillas, ubicacion, tipo_mesa, estado, usuario_sistema, FechaSistema ) values (@codigo_mesa, @numero_mesa, @cantidad_sillas, @ubicacion, @tipo_mesa, @estado, @usuario_sistema, @FechaSistema)

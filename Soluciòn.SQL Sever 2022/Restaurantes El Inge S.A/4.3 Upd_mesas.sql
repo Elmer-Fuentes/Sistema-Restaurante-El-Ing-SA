@@ -1,0 +1,2 @@
+--query para editar frms_mesas
+update  tbl_mesas set  numero_mesa = @numero_mesa, cantidad_sillas = @cantidad_sillas, ubicacion = @ubicacion, tipo_mesa = @tipo_mesa, estado = @estado, usuario_sistema = @usuario_sistema, FechaSistema = @FechaSistema where codigo_mesa = @codigo_mesa

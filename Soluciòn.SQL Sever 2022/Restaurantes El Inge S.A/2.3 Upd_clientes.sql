@@ -1,0 +1,1 @@
+update tbl_clientes set nombre = @nombre, nit = @nit, telefono = @telefono, categoria = @categoria, estado = @estado, usuario_sistema = @usuario_sistema, fecha_sistema = @fecha_sistema where codigo_cliente = @codigo_cliente

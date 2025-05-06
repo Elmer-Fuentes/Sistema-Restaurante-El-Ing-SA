@@ -1,0 +1,1 @@
+Create database Proyecto_Restaurante;
