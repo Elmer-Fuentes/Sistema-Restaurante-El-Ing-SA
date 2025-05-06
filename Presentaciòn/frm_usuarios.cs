@@ -52,6 +52,8 @@ namespace Presentaciòn
 
         #endregion
 
+        #region = "Boton agregar";
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
 
@@ -73,6 +75,34 @@ namespace Presentaciòn
             {
                 MessageBox.Show("Error" + ex, "A ocurrido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        #endregion
+
+        #region = "Boton Editar form Usuarios";
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+
+            int codigo_uid = int.Parse(dgvUsuarios.SelectedCells[0].Value.ToString());
+            int codigo_empleado = int.Parse(txt_codigo_empleado.Text);
+            string nombre_empleado = txt_nombre_empleado.Text;
+            // string nombre_usuario = txt_asignar_nombre_usuario.Text;
+            string contrasena = txt_contrasena.Text;
+            string rol = cbx_rol.Text;
+            string estado = cbx_estado.Text;
+            string usuario_sistema = "Dr.David GPT editado";
+            DateTime fecha_sistemanombre = cl_fecha.MtdFecha();
+            try
+            {
+                cd_usuarios.MtdUpdateUsuarios(codigo_uid, codigo_empleado, nombre_empleado, contrasena, rol, estado, usuario_sistema, fecha_sistemanombre);
+                MessageBox.Show("Usuario Actualizado correctamente", "Estado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Mtdmostrardatos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex, "A ocurrido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            #endregion
         }
     }
 }
