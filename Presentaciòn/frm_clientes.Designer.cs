@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnCancelar = new FontAwesome.Sharp.IconButton();
+            this.btnEditar = new FontAwesome.Sharp.IconButton();
+            this.btnGuardar = new FontAwesome.Sharp.IconButton();
             this.txt_estado = new System.Windows.Forms.ComboBox();
             this.txt_categoria = new System.Windows.Forms.TextBox();
             this.txt_telefono = new System.Windows.Forms.TextBox();
@@ -46,9 +49,6 @@
             this.dgvDatosPlanilla = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.btnCancelar = new FontAwesome.Sharp.IconButton();
-            this.btnEditar = new FontAwesome.Sharp.IconButton();
-            this.btnGuardar = new FontAwesome.Sharp.IconButton();
             this.btnSalir = new FontAwesome.Sharp.IconButton();
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.groupBox1.SuspendLayout();
@@ -77,6 +77,49 @@
             this.groupBox1.Size = new System.Drawing.Size(1506, 208);
             this.groupBox1.TabIndex = 46;
             this.groupBox1.TabStop = false;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.Remove;
+            this.btnCancelar.IconColor = System.Drawing.Color.Black;
+            this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCancelar.IconSize = 25;
+            this.btnCancelar.Location = new System.Drawing.Point(1262, 136);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(194, 48);
+            this.btnCancelar.TabIndex = 26;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.IconChar = FontAwesome.Sharp.IconChar.SquarePen;
+            this.btnEditar.IconColor = System.Drawing.Color.Black;
+            this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEditar.IconSize = 25;
+            this.btnEditar.Location = new System.Drawing.Point(1262, 79);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(194, 48);
+            this.btnEditar.TabIndex = 25;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEditar.UseVisualStyleBackColor = true;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
+            this.btnGuardar.IconColor = System.Drawing.Color.Black;
+            this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnGuardar.IconSize = 25;
+            this.btnGuardar.Location = new System.Drawing.Point(1262, 25);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(194, 48);
+            this.btnGuardar.TabIndex = 24;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // txt_estado
             // 
@@ -234,48 +277,6 @@
             this.label8.Size = new System.Drawing.Size(142, 25);
             this.label8.TabIndex = 44;
             this.label8.Text = "Fecha actual:";
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.Remove;
-            this.btnCancelar.IconColor = System.Drawing.Color.Black;
-            this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnCancelar.IconSize = 25;
-            this.btnCancelar.Location = new System.Drawing.Point(1262, 136);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(194, 48);
-            this.btnCancelar.TabIndex = 26;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.IconChar = FontAwesome.Sharp.IconChar.SquarePen;
-            this.btnEditar.IconColor = System.Drawing.Color.Black;
-            this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEditar.IconSize = 25;
-            this.btnEditar.Location = new System.Drawing.Point(1262, 79);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(194, 48);
-            this.btnEditar.TabIndex = 25;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEditar.UseVisualStyleBackColor = true;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
-            this.btnGuardar.IconColor = System.Drawing.Color.Black;
-            this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnGuardar.IconSize = 25;
-            this.btnGuardar.Location = new System.Drawing.Point(1262, 25);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(194, 48);
-            this.btnGuardar.TabIndex = 24;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnGuardar.UseVisualStyleBackColor = true;
             // 
             // btnSalir
             // 

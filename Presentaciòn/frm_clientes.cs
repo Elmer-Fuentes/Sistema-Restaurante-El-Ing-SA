@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Datos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,11 +8,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using capa_logica;
 
 namespace Presentaciòn
 {
     public partial class frm_clientes : Form
     {
+        private cd_clientes cd_clin = new cd_clientes();
+        private cl_clientes cl_clin = new cl_clientes();
+
         public frm_clientes()
         {
             InitializeComponent();
@@ -48,9 +53,39 @@ namespace Presentaciòn
             txt_estado.Text = dgvDatosPlanilla.SelectedCells[5].Value.ToString();
         }
 
+        private void Mtdmostrardatos()
+        {
+            cd_clientes cd_clin = new cd_clientes();
+            DataTable dt = cd_clin.MtdDevolverdatos();
+            dgvDatosPlanilla.DataSource = dt;
+        }
+
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            string fecha = cl_clin.MtdFecha().ToString("d");
+            string nombre = txt_nombre.Text;
+            string nit = txt_nit.Text;
+            string telefono = txt_telefono.Text;
+            string categoria = txt_categoria.Text;
+            string estado = txt_estado.Text;
+            string usuario_sistema = "dcruzg11";
+            DateTime fecha_sistemanombre = DateTime.Parse(fecha);
+            try
+            {
+                cd_clin.MtdAgregardatos(nombre, nit, telefono, categoria, estado, usuario_sistema, fecha_sistemanombre);
+                MessageBox.Show("Datods agregados correctamente a la base de datos", "Proceso realizado correctamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Mtdmostrardatos();
+                MtdBorrardatos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex, "A ocurrido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
