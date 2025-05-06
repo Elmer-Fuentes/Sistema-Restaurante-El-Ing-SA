@@ -124,5 +124,25 @@ namespace Presentaciòn
             }
         }
         #endregion
+
+
+        #region ="Metodo Limpiar - Cancelar";
+        public void Limpiardatos() 
+        {
+            txt_codigo_empleado.Text = "";
+           txt_nombre_empleado.Text = "";
+            txt_asignar_nombre_usuario.Text = "";
+            txt_contrasena.Text = "";
+            cbx_rol.Text = "";
+            cbx_estado.Text = "";
+        }
+        #endregion
+
+        #region = "Boton Cancelar";
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Limpiardatos();
+        }
+        #endregion
     }
 }
