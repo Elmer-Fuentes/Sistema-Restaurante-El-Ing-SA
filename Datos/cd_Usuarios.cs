@@ -69,6 +69,15 @@ namespace capa_datos
         }
         #endregion
 
-
+        #region = "Metodo Eliminar usuario";
+        public void MtdDeleteUsuarios(int codigo_UID)
+        {
+            string query = "DELETE FROM tbl_usuarios WHERE codigo_usuario = @codigo_usuario";
+            SqlCommand ins_Usuario = new SqlCommand(query, connex.MtdAbrirconexion());
+            ins_Usuario.Parameters.AddWithValue("@codigo_usuario", codigo_UID);
+            ins_Usuario.ExecuteNonQuery();
+            connex.MtdCerrarconexion();
+        }
+        #endregion
     }
 }

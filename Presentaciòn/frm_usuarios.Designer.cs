@@ -326,6 +326,7 @@
             this.btnEliminar_usuario.Text = "Eliminar";
             this.btnEliminar_usuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEliminar_usuario.UseVisualStyleBackColor = true;
+            this.btnEliminar_usuario.Click += new System.EventHandler(this.btnEliminar_usuario_Click);
             // 
             // frm_usuarios
             // 

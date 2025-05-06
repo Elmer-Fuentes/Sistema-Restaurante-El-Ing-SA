@@ -102,7 +102,27 @@ namespace Presentaciòn
             {
                 MessageBox.Show("Error" + ex, "A ocurrido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            #endregion
+       
         }
+        #endregion
+
+        #region = "MtdEliminar usuarios";
+        private void btnEliminar_usuario_Click(object sender, EventArgs e)
+        {
+
+            int codigo_uid = int.Parse(dgvUsuarios.SelectedCells[0].Value.ToString());
+
+            try
+            {
+                cd_usuarios.MtdDeleteUsuarios(codigo_uid);
+                MessageBox.Show("Usuario Eliminado correctamente", "Estado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Mtdmostrardatos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex, "A ocurrido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        #endregion
     }
 }
