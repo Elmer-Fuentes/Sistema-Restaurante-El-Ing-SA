@@ -35,5 +35,21 @@ namespace Presentaciòn
         {
             Mtdmostrardatos();
         }
+
+
+        #region = "Seleccion de celdas en data dgv retornar a txt,cbc, label,etc";
+        private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txt_codigo_empleado.Text = dgvUsuarios.SelectedCells[1].Value.ToString();
+            txt_nombre_empleado.Text = dgvUsuarios.SelectedCells[2].Value.ToString();
+            txt_asignar_nombre_usuario.Text = dgvUsuarios.SelectedCells[3].Value.ToString();
+            txt_contrasena.Text = dgvUsuarios.SelectedCells[4].Value.ToString();
+            cbx_rol.Text = dgvUsuarios.SelectedCells[5].Value.ToString();
+            cbx_estado.Text = dgvUsuarios.SelectedCells[6].Value.ToString();
+
+        }
+        #endregion
+
+
     }
 }
