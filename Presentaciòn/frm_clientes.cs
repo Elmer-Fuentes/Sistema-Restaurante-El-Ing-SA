@@ -47,5 +47,10 @@ namespace Presentaciòn
             txt_categoria.Text = dgvDatosPlanilla.SelectedCells[4].Value.ToString();
             txt_estado.Text = dgvDatosPlanilla.SelectedCells[5].Value.ToString();
         }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

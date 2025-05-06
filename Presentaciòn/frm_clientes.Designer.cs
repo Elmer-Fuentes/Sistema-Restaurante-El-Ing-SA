@@ -46,12 +46,20 @@
             this.dgvDatosPlanilla = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.btnCancelar = new FontAwesome.Sharp.IconButton();
+            this.btnEditar = new FontAwesome.Sharp.IconButton();
+            this.btnGuardar = new FontAwesome.Sharp.IconButton();
+            this.btnSalir = new FontAwesome.Sharp.IconButton();
+            this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosPlanilla)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnCancelar);
+            this.groupBox1.Controls.Add(this.btnEditar);
+            this.groupBox1.Controls.Add(this.btnGuardar);
             this.groupBox1.Controls.Add(this.txt_estado);
             this.groupBox1.Controls.Add(this.txt_categoria);
             this.groupBox1.Controls.Add(this.txt_telefono);
@@ -207,7 +215,7 @@
             // 
             this.dgvDatosPlanilla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvDatosPlanilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDatosPlanilla.Location = new System.Drawing.Point(22, 414);
+            this.dgvDatosPlanilla.Location = new System.Drawing.Point(22, 399);
             this.dgvDatosPlanilla.Name = "dgvDatosPlanilla";
             this.dgvDatosPlanilla.ReadOnly = true;
             this.dgvDatosPlanilla.RowHeadersWidth = 51;
@@ -227,11 +235,84 @@
             this.label8.TabIndex = 44;
             this.label8.Text = "Fecha actual:";
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.Remove;
+            this.btnCancelar.IconColor = System.Drawing.Color.Black;
+            this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCancelar.IconSize = 25;
+            this.btnCancelar.Location = new System.Drawing.Point(1262, 136);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(194, 48);
+            this.btnCancelar.TabIndex = 26;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.IconChar = FontAwesome.Sharp.IconChar.SquarePen;
+            this.btnEditar.IconColor = System.Drawing.Color.Black;
+            this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEditar.IconSize = 25;
+            this.btnEditar.Location = new System.Drawing.Point(1262, 79);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(194, 48);
+            this.btnEditar.TabIndex = 25;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEditar.UseVisualStyleBackColor = true;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
+            this.btnGuardar.IconColor = System.Drawing.Color.Black;
+            this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnGuardar.IconSize = 25;
+            this.btnGuardar.Location = new System.Drawing.Point(1262, 25);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(194, 48);
+            this.btnGuardar.TabIndex = 24;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.IconChar = FontAwesome.Sharp.IconChar.PowerOff;
+            this.btnSalir.IconColor = System.Drawing.Color.Black;
+            this.btnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnSalir.IconSize = 25;
+            this.btnSalir.Location = new System.Drawing.Point(1265, 771);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(194, 48);
+            this.btnSalir.TabIndex = 46;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.Trash;
+            this.btnEliminar.IconColor = System.Drawing.Color.Black;
+            this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEliminar.IconSize = 25;
+            this.btnEliminar.Location = new System.Drawing.Point(1030, 771);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(194, 48);
+            this.btnEliminar.TabIndex = 45;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            // 
             // frm_clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1551, 845);
+            this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblFecha);
@@ -268,5 +349,10 @@
         private System.Windows.Forms.DataGridView dgvDatosPlanilla;
         private System.Windows.Forms.Label label8;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private FontAwesome.Sharp.IconButton btnCancelar;
+        private FontAwesome.Sharp.IconButton btnEditar;
+        private FontAwesome.Sharp.IconButton btnGuardar;
+        private FontAwesome.Sharp.IconButton btnSalir;
+        private FontAwesome.Sharp.IconButton btnEliminar;
     }
 }
