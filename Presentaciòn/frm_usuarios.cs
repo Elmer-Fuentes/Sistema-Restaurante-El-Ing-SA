@@ -70,6 +70,7 @@ namespace Presentaciòn
                 cd_usuarios.MtdInsUsuarios(codigo_empleado, nombre_empleado, nombre_usuario, contrasena, rol, estado, usuario_sistema, fecha_sistemanombre);
                 MessageBox.Show("Usuario creado correctamente", "Estado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Mtdmostrardatos();
+                Limpiardatos();
             }
             catch (Exception ex)
             {
@@ -97,6 +98,7 @@ namespace Presentaciòn
                 cd_usuarios.MtdUpdateUsuarios(codigo_uid, codigo_empleado, nombre_empleado, contrasena, rol, estado, usuario_sistema, fecha_sistemanombre);
                 MessageBox.Show("Usuario Actualizado correctamente", "Estado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Mtdmostrardatos();
+                Limpiardatos();
             }
             catch (Exception ex)
             {
@@ -117,6 +119,7 @@ namespace Presentaciòn
                 cd_usuarios.MtdDeleteUsuarios(codigo_uid);
                 MessageBox.Show("Usuario Eliminado correctamente", "Estado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Mtdmostrardatos();
+                Limpiardatos();
             }
             catch (Exception ex)
             {
