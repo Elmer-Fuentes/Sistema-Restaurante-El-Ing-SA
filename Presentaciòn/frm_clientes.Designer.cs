@@ -45,6 +45,7 @@
             this.lblFecha = new System.Windows.Forms.Label();
             this.dgvDatosPlanilla = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosPlanilla)).BeginInit();
             this.SuspendLayout();
@@ -266,5 +267,6 @@
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.DataGridView dgvDatosPlanilla;
         private System.Windows.Forms.Label label8;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

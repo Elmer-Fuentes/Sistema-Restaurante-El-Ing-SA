@@ -28,6 +28,16 @@ namespace Presentaciòn
             this.FormBorderStyle = FormBorderStyle.None; // Quita los bordes
         }
 
+        public void MtdBorrardatos()
+        {
+            txt_codigoCliente.Text = "";
+            txt_nombre.Text = "";
+            txt_nit.Text = "";
+            txt_telefono.Text = "";
+            txt_categoria.Text = "";
+            txt_estado.Text = "";
+        }
+
         private void dgvDatosPlanilla_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txt_codigoCliente.Text = dgvDatosPlanilla.SelectedCells[0].Value.ToString();
