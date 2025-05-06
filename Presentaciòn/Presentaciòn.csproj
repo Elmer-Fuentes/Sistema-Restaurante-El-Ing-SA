@@ -110,6 +110,10 @@
     <None Include="Resources\restaurantes.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\capa_logica\capa_logica.csproj">
+      <Project>{15b5f9f8-af40-4646-829f-7cadf49184ea}</Project>
+      <Name>capa_logica</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Datos\capa_datos.csproj">
       <Project>{83902075-9d55-4d78-89cc-4b997c402824}</Project>
       <Name>capa_datos</Name>

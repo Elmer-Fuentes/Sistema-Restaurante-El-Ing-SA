@@ -33,6 +33,24 @@ namespace capa_datos
         }
         #endregion
 
+        #region = "Metodo para agregar un nuevo usuario";
+        public void MtdInsUsuarios(int codigo_empleado, string nombre_empleado, string nombre_usuario, string contrasena, string rol, string estado, string usuario_sistema, DateTime fecha_sistema)
+        {
+            string query = "insert into tbl_usuarios (codigo_empleado,nombre_usuario,contrasena,rol,estado,usuario_sistema,FechaSistema) Values(@codigo_empleado,@nombre_usuario,@contrasena,@rol,@estado,@usuario_sistema,@FechaSistema)";
+            SqlCommand ins_Usuario = new SqlCommand(query, connex.MtdAbrirconexion());
+            ins_Usuario.Parameters.AddWithValue("@codigo_empleado", codigo_empleado);
+            ins_Usuario.Parameters.AddWithValue("@nombre_empleado", nombre_empleado);
+            ins_Usuario.Parameters.AddWithValue("@nombre_usuario", nombre_usuario);
+            ins_Usuario.Parameters.AddWithValue("@contrasena", contrasena);
+            ins_Usuario.Parameters.AddWithValue("@rol", rol);
+            ins_Usuario.Parameters.AddWithValue("@estado", estado);
+            ins_Usuario.Parameters.AddWithValue("@usuario_sistema", usuario_sistema);
+            ins_Usuario.Parameters.AddWithValue("@FechaSistema", fecha_sistema);
+            ins_Usuario.ExecuteNonQuery();
+            connex.MtdCerrarconexion();
+        }
+        #endregion
+
 
     }
 }
