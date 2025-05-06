@@ -59,10 +59,19 @@
     <Compile Include="frm_login.Designer.cs">
       <DependentUpon>frm_login.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_usuarios.Designer.cs">
+      <DependentUpon>frm_usuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frm_login.resx">
       <DependentUpon>frm_login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_usuarios.resx">
+      <DependentUpon>frm_usuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -90,6 +99,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\restaurantes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Datos\capa_datos.csproj">
+      <Project>{83902075-9d55-4d78-89cc-4b997c402824}</Project>
+      <Name>capa_datos</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

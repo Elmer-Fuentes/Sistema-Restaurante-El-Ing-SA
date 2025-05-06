@@ -30,7 +30,6 @@ namespace capa_datos
             {
                 connex.MtdCerrarconexion();
             }
-
         }
         #endregion
 
