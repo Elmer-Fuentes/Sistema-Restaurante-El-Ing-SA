@@ -47,7 +47,7 @@ namespace Presentaciòn
         #endregion
 
         #region = "Seleccion de celdas en data dgv retornar a txt,cbc, label,etc";
-        private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvUsuarios_Click(object sender, EventArgs e)
         {
             txt_codigo_empleado.Text = dgvUsuarios.SelectedCells[1].Value.ToString();
             txt_nombre_empleado.Text = dgvUsuarios.SelectedCells[2].Value.ToString();
@@ -55,32 +55,49 @@ namespace Presentaciòn
             txt_contrasena.Text = dgvUsuarios.SelectedCells[4].Value.ToString();
             cbx_rol.Text = dgvUsuarios.SelectedCells[5].Value.ToString();
             cbx_estado.Text = dgvUsuarios.SelectedCells[6].Value.ToString();
-
         }
 
         #endregion
+
+
+
+
+
+
+        #region ="Metodo Limpiar - Cancelar";
+        public void Limpiardatos()
+        {
+            txt_codigo_empleado.Text = "";
+            txt_nombre_empleado.Text = "";
+            txt_asignar_nombre_usuario.Text = "";
+            txt_contrasena.Text = "";
+            cbx_rol.Text = "";
+            cbx_estado.Text = "";
+        }
+        #endregion
+
+
         #region = "Boton agregar";
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-
-            int codigo_empleado = int.Parse(txt_codigo_empleado.Text);
-            string nombre_empleado = txt_nombre_empleado.Text;
-            string nombre_usuario = txt_asignar_nombre_usuario.Text;
-            string contrasena = txt_contrasena.Text;
-            string rol = cbx_rol.Text;
-            string estado = cbx_estado.Text;
-            string usuario_sistema = frm_login.UsuarioLogueado;
-            DateTime fecha_sistemanombre = cl_fecha.MtdFecha();
-            try
-            {
-                cd_usuarios.MtdInsUsuarios(codigo_empleado, nombre_empleado, nombre_usuario, contrasena, rol, estado, usuario_sistema, fecha_sistemanombre);
-                MessageBox.Show("Usuario creado correctamente", "Estado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Mtdmostrardatos();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error" + ex, "A ocurrido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+                int codigo_empleado = int.Parse(txt_codigo_empleado.Text);
+                string nombre_empleado = txt_nombre_empleado.Text;
+                string nombre_usuario = txt_asignar_nombre_usuario.Text;
+                string contrasena = txt_contrasena.Text;
+                string rol = cbx_rol.Text;
+                string estado = cbx_estado.Text;
+                string usuario_sistema = frm_login.UsuarioLogueado;
+                DateTime fecha_sistemanombre = cl_fecha.MtdFecha();
+                try
+                {
+                    cd_usuarios.MtdInsUsuarios(codigo_empleado, nombre_empleado, nombre_usuario, contrasena, rol, estado, usuario_sistema, fecha_sistemanombre);
+                    MessageBox.Show("Usuario creado correctamente", "Estado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Mtdmostrardatos();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error" + ex, "A ocurrido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
         }
         #endregion
 
@@ -88,7 +105,6 @@ namespace Presentaciòn
         private void btnEditar_Click(object sender, EventArgs e)
         {
             
-
                 int codigo_uid = int.Parse(dgvUsuarios.SelectedCells[0].Value.ToString());
                 int codigo_empleado = int.Parse(txt_codigo_empleado.Text);
                 string nombre_empleado = txt_nombre_empleado.Text;
@@ -97,7 +113,7 @@ namespace Presentaciòn
                 string rol = cbx_rol.Text;
                 string estado = cbx_estado.Text;
                 string usuario_sistema = frm_login.UsuarioLogueado;
-                  DateTime fecha_sistemanombre = cl_fecha.MtdFecha();
+                DateTime fecha_sistemanombre = cl_fecha.MtdFecha();
                 try
                 {
                     cd_usuarios.MtdUpdateUsuarios(codigo_uid, codigo_empleado, nombre_empleado, contrasena, rol, estado, usuario_sistema, fecha_sistemanombre);
@@ -115,9 +131,7 @@ namespace Presentaciòn
         #region = "MtdEliminar usuarios";
         private void btnEliminar_usuario_Click(object sender, EventArgs e)
         {
-           
-
-                int codigo_uid = int.Parse(dgvUsuarios.SelectedCells[0].Value.ToString());
+            int codigo_uid = int.Parse(dgvUsuarios.SelectedCells[0].Value.ToString());
 
                 try
                 {
@@ -133,31 +147,20 @@ namespace Presentaciòn
         }
         #endregion
 
-        #region ="Metodo Limpiar - Cancelar";
-        public void Limpiardatos()
+        #region = "Boton Salir";
+        private void btnSalir_frm_usuarios_Click(object sender, EventArgs e)
         {
-            txt_codigo_empleado.Text = "";
-            txt_nombre_empleado.Text = "";
-            txt_asignar_nombre_usuario.Text = "";
-            txt_contrasena.Text = "";
-            cbx_rol.Text = "";
-            cbx_estado.Text = "";
+                Close();
         }
         #endregion
 
         #region = "Boton Cancelar";
-        private void btnCancelar_Click_1(object sender, EventArgs e)
+        private void btnCancelar_Click(object sender, EventArgs e)
         {
-            Limpiardatos();
-        }
-
-        #endregion
-
-        #region = "Boton Salir";
-        private void btnSalir_frm_usuarios_Click(object sender, EventArgs e)
-        {
-            Close();
+                Limpiardatos();
         }
         #endregion
+
+      
     }
 }
