@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "capa_datos", "Datos\capa_da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Seguridad", "Seguridad\Seguridad.csproj", "{9F458B09-4E34-4335-86E6-16B5F0498BC4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "C_Logica", "C_Logica\C_Logica.csproj", "{9B4173F4-61C1-4A7D-AAE3-7B6E19233E0F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{9F458B09-4E34-4335-86E6-16B5F0498BC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F458B09-4E34-4335-86E6-16B5F0498BC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F458B09-4E34-4335-86E6-16B5F0498BC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B4173F4-61C1-4A7D-AAE3-7B6E19233E0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B4173F4-61C1-4A7D-AAE3-7B6E19233E0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B4173F4-61C1-4A7D-AAE3-7B6E19233E0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B4173F4-61C1-4A7D-AAE3-7B6E19233E0F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

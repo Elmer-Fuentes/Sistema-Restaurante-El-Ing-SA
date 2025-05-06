@@ -8,14 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using logica;
+using C_Logica;
 
 namespace Presentaciòn
 {
     public partial class frm_clientes : Form
     {
         private cd_clientes cd_clin = new cd_clientes();
-        private cl_clientes cl_clin = new cl_clientes();
+        private cl_MtdFechas cl_clin = new cl_MtdFechas();
 
         public frm_clientes()
         {

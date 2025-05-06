@@ -51,6 +51,33 @@ namespace capa_datos
         }
         #endregion
 
+        #region = "Metodo para editar un usuario";
+        public void MtdUpdateUsuarios(int codigo_UID, int codigo_empleado, string nombre_usuario, string contrasena, string rol, string estado, string usuario_sistema, DateTime fechasistema)
+        {
+            string query = "update tbl_usuarios set codigo_empleado=@codigo_empleado,nombre_usuario=@nombre_usuario,contrasena=@contrasena,rol=@rol,estado=@estado,usuario_sistema=@usuario_sistema, fechasistema=@fechasistema	where codigo_usuario = @codigo_usuario";
+            SqlCommand ins_Usuario = new SqlCommand(query, connex.MtdAbrirconexion());
+            ins_Usuario.Parameters.AddWithValue("@codigo_usuario", codigo_UID);
+            ins_Usuario.Parameters.AddWithValue("@codigo_empleado", codigo_empleado);
+            ins_Usuario.Parameters.AddWithValue("@nombre_usuario", nombre_usuario);
+            ins_Usuario.Parameters.AddWithValue("@contrasena", contrasena);
+            ins_Usuario.Parameters.AddWithValue("@rol", rol);
+            ins_Usuario.Parameters.AddWithValue("@estado", estado);
+            ins_Usuario.Parameters.AddWithValue("@usuario_sistema", usuario_sistema);
+            ins_Usuario.Parameters.AddWithValue("@FechaSistema", fechasistema);
+            ins_Usuario.ExecuteNonQuery();
+            connex.MtdCerrarconexion();
+        }
+        #endregion
 
+        #region = "Metodo Eliminar usuario";
+        public void MtdDeleteUsuarios(int codigo_UID)
+        {
+            string query = "DELETE FROM tbl_usuarios WHERE codigo_usuario = @codigo_usuario";
+            SqlCommand ins_Usuario = new SqlCommand(query, connex.MtdAbrirconexion());
+            ins_Usuario.Parameters.AddWithValue("@codigo_usuario", codigo_UID);
+            ins_Usuario.ExecuteNonQuery();
+            connex.MtdCerrarconexion();
+        }
+        #endregion
     }
 }

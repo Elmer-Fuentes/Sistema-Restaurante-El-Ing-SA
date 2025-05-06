@@ -34,11 +34,11 @@
             this.txt_contrasena = new System.Windows.Forms.TextBox();
             this.txt_usuario = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnSalir = new FontAwesome.Sharp.IconButton();
             this.btnIngresar = new FontAwesome.Sharp.IconButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -101,16 +101,6 @@
             this.label1.TabIndex = 17;
             this.label1.Text = "Usuario";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Presentaciòn.Properties.Resources.restaurantes;
-            this.pictureBox1.Location = new System.Drawing.Point(29, 67);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(135, 143);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 24;
-            this.pictureBox1.TabStop = false;
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -137,7 +127,7 @@
             this.btnSalir.IconColor = System.Drawing.Color.Black;
             this.btnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSalir.IconSize = 25;
-            this.btnSalir.Location = new System.Drawing.Point(461, 230);
+            this.btnSalir.Location = new System.Drawing.Point(459, 223);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(89, 31);
@@ -152,7 +142,7 @@
             this.btnIngresar.IconColor = System.Drawing.Color.Black;
             this.btnIngresar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnIngresar.IconSize = 25;
-            this.btnIngresar.Location = new System.Drawing.Point(360, 230);
+            this.btnIngresar.Location = new System.Drawing.Point(358, 223);
             this.btnIngresar.Margin = new System.Windows.Forms.Padding(2);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(86, 31);
@@ -160,6 +150,17 @@
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnIngresar.UseVisualStyleBackColor = true;
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Presentaciòn.Properties.Resources.restaurantes;
+            this.pictureBox1.Location = new System.Drawing.Point(29, 67);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(135, 143);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 24;
+            this.pictureBox1.TabStop = false;
             // 
             // frm_login
             // 
@@ -177,7 +178,9 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Name = "frm_login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.frm_login_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -199,6 +202,8 @@
         private System.Windows.Forms.Label label4;
         private FontAwesome.Sharp.IconButton btnSalir;
         private FontAwesome.Sharp.IconButton btnIngresar;
+        // private FontAwesome.Sharp.IconButton btnSalir;
+        //  private FontAwesome.Sharp.IconButton btnIngresar;
     }
 }
 
