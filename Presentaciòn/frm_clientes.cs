@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using capa_logica;
+using logica;
 
 namespace Presentaciòn
 {
@@ -85,6 +85,56 @@ namespace Presentaciòn
             catch (Exception ex)
             {
                 MessageBox.Show("Error" + ex, "A ocurrido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            string fecha = cl_clin.MtdFecha().ToString("d");
+            int codigo = int.Parse(txt_codigoCliente.Text);
+            string nombre = txt_nombre.Text;
+            string nit = txt_nit.Text;
+            string telefono = txt_telefono.Text;
+            string categoria = txt_categoria.Text;
+            string estado = txt_estado.Text;
+            string usuario_sistema = "dcruzg11";
+            DateTime fecha_sistemanombre = DateTime.Parse(fecha);
+            try
+            {
+                cd_clin.MtdEditardatos(codigo, nombre, nit, telefono, categoria, estado, usuario_sistema, fecha_sistemanombre);
+                MessageBox.Show("Datos modificados satisfactoriamente de la base de datos", "Proceso realizado correctamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Mtdmostrardatos();
+                MtdBorrardatos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex, "A ocurrido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            MtdBorrardatos();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int codigo = int.Parse(txt_codigoCliente.Text);
+            try
+            {
+                DialogResult r = MessageBox.Show("Esta seguro que decea eliminar el registro de la base de datos?", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                if (r == DialogResult.OK)
+                {
+                    cd_clin.MtdEliminar(codigo);
+                    MessageBox.Show("Datos eliminado satisfactoriamente de la base de datos", "Proceso realizado correctamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Mtdmostrardatos();
+                    MtdBorrardatos();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex, "A ocurrido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
