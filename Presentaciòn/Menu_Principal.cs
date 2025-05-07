@@ -62,12 +62,20 @@ namespace Presentaciòn
         }
         #endregion
 
-        #region = "Boton Salir del sistema"
-        private void reporteriaToolStripMenuItem_Click(object sender, EventArgs e)
+
+        #region = #"Boton Salir del sistema";
+        private void salirDelSistemaToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Saliendo del sistema...");
             Application.Exit();
         }
         #endregion
+
+
+
+        #region = "Boton Analisis de datos";
+        #endregion
+
+
     }
 }

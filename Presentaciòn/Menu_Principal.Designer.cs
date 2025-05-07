@@ -31,8 +31,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_usuario_logo = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.lbl_rol_usuario = new System.Windows.Forms.Label();
-            this.reporteriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.DataAnalitycsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.formulariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Usuarios_FormToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,14 +52,11 @@
             this.detallesDeÓrdenesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pagoDeÓrdenesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirDelSistemaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.salirDelSistemaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
-            this.menuStrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.menuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -91,6 +92,53 @@
             this.panel1.Size = new System.Drawing.Size(173, 525);
             this.panel1.TabIndex = 4;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.groupBox1.Controls.Add(this.pictureBox1);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.groupBox1.ForeColor = System.Drawing.Color.Black;
+            this.groupBox1.Location = new System.Drawing.Point(0, 304);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(173, 221);
+            this.groupBox1.TabIndex = 30;
+            this.groupBox1.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Presentaciòn.Properties.Resources.restaurantes;
+            this.pictureBox1.Location = new System.Drawing.Point(19, 19);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(135, 143);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 27;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.label4.Location = new System.Drawing.Point(22, 172);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(139, 16);
+            this.label4.TabIndex = 25;
+            this.label4.Text = "Sistema Restaurantes";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.label5.Location = new System.Drawing.Point(22, 194);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(68, 15);
+            this.label5.TabIndex = 26;
+            this.label5.Text = "Version 1,0";
+            // 
             // lbl_rol_usuario
             // 
             this.lbl_rol_usuario.AutoSize = true;
@@ -101,12 +149,11 @@
             this.lbl_rol_usuario.TabIndex = 1;
             this.lbl_rol_usuario.Text = "lbl_Rol_usuaio";
             // 
-            // reporteriaToolStripMenuItem
+            // DataAnalitycsToolStripMenuItem
             // 
-            this.reporteriaToolStripMenuItem.Name = "reporteriaToolStripMenuItem";
-            this.reporteriaToolStripMenuItem.Size = new System.Drawing.Size(104, 22);
-            this.reporteriaToolStripMenuItem.Text = "Salir del Sistema";
-            this.reporteriaToolStripMenuItem.Click += new System.EventHandler(this.reporteriaToolStripMenuItem_Click);
+            this.DataAnalitycsToolStripMenuItem.Name = "DataAnalitycsToolStripMenuItem";
+            this.DataAnalitycsToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
+            this.DataAnalitycsToolStripMenuItem.Text = "Data Analitycs";
             // 
             // menuStrip
             // 
@@ -116,7 +163,8 @@
             this.salirDelSistemaToolStripMenuItem,
             this.operacionesToolStripMenuItem,
             this.salirDelSistemaToolStripMenuItem1,
-            this.reporteriaToolStripMenuItem});
+            this.DataAnalitycsToolStripMenuItem,
+            this.salirDelSistemaToolStripMenuItem2});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
@@ -223,52 +271,12 @@
             this.salirDelSistemaToolStripMenuItem1.Size = new System.Drawing.Size(65, 22);
             this.salirDelSistemaToolStripMenuItem1.Text = "Reportes";
             // 
-            // groupBox1
+            // salirDelSistemaToolStripMenuItem2
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.groupBox1.Controls.Add(this.pictureBox1);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(0, 304);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(173, 221);
-            this.groupBox1.TabIndex = 30;
-            this.groupBox1.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Presentaciòn.Properties.Resources.restaurantes;
-            this.pictureBox1.Location = new System.Drawing.Point(19, 19);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(135, 143);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 27;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.label4.Location = new System.Drawing.Point(22, 172);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(139, 16);
-            this.label4.TabIndex = 25;
-            this.label4.Text = "Sistema Restaurantes";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.label5.Location = new System.Drawing.Point(22, 194);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(68, 15);
-            this.label5.TabIndex = 26;
-            this.label5.Text = "Version 1,0";
+            this.salirDelSistemaToolStripMenuItem2.Name = "salirDelSistemaToolStripMenuItem2";
+            this.salirDelSistemaToolStripMenuItem2.Size = new System.Drawing.Size(105, 22);
+            this.salirDelSistemaToolStripMenuItem2.Text = "Salir Del Sistema";
+            this.salirDelSistemaToolStripMenuItem2.Click += new System.EventHandler(this.salirDelSistemaToolStripMenuItem2_Click);
             // 
             // Menu_Principal
             // 
@@ -286,11 +294,11 @@
             this.Load += new System.EventHandler(this.Menu_Principal_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.menuStrip.ResumeLayout(false);
-            this.menuStrip.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.menuStrip.ResumeLayout(false);
+            this.menuStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -302,7 +310,7 @@
         private System.Windows.Forms.Label lbl_usuario_logo;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbl_rol_usuario;
-        private System.Windows.Forms.ToolStripMenuItem reporteriaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem DataAnalitycsToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip;
         private System.Windows.Forms.ToolStripMenuItem formulariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem Usuarios_FormToolStripMenuItem;
@@ -322,5 +330,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ToolStripMenuItem salirDelSistemaToolStripMenuItem2;
     }
 }
