@@ -20,10 +20,11 @@ namespace Presentaciòn
         private frm_usuarios frm_Usuario = null; //instancia del formulario hijo
         private frm_clientes frm_Clientes = null; //instancia del formulario hijo
         private frm_menu frm_Menu = null; //instancia del formulario hijo
-        #endregion
+		private frm_pago_planillas frm_Pago_Planillas = null; //instancia del formulario hijo
+		#endregion
 
-        #region = "Load";
-        private void Menu_Principal_Load(object sender, EventArgs e)
+		#region = "Load";
+		private void Menu_Principal_Load(object sender, EventArgs e)
         {
             lbl_usuario_logo.Text = frm_login.UsuarioLogueado; //muestra el nombre del usuario en el label
             lbl_rol_usuario.Text = frm_login.rolusuario; //muestra el rol del usuario en el label
@@ -100,5 +101,22 @@ namespace Presentaciòn
             }
 
         }
-    }
-}
+
+		private void mesasToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			if (frm_Pago_Planillas == null || frm_Pago_Planillas.IsDisposed)   //form cerrado o nUll
+			{
+				frm_Pago_Planillas = new frm_pago_planillas(); // Crea una nueva instancia solo cuando es necesario
+				frm_Pago_Planillas.MdiParent = this; //asigna el formulario hijo al padre
+				frm_Pago_Planillas.Show();
+			}
+			else
+			{
+				frm_Pago_Planillas.Focus(); // frm abierto, lo pone al frente
+			}
+
+		}
+
+	}
+	}
+

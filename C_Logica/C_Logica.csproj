@@ -44,7 +44,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="cl_MtdFechas.cs" />
+    <Compile Include="cl_pago_planillas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Datos\capa_datos.csproj">
+      <Project>{83902075-9d55-4d78-89cc-4b997c402824}</Project>
+      <Name>capa_datos</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

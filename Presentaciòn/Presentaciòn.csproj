@@ -82,6 +82,12 @@
     <Compile Include="frm_menu.Designer.cs">
       <DependentUpon>frm_menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_pago_planillas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_pago_planillas.Designer.cs">
+      <DependentUpon>frm_pago_planillas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_menu.resx">
       <DependentUpon>frm_menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_pago_planillas.resx">
+      <DependentUpon>frm_pago_planillas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_usuarios.resx">
       <DependentUpon>frm_usuarios.cs</DependentUpon>

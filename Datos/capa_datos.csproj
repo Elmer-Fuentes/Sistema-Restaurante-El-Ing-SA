@@ -54,6 +54,7 @@
     <Compile Include="cd_clientes.cs" />
     <Compile Include="cd_Login.cs" />
     <Compile Include="cd_Menus.cs" />
+    <Compile Include="cd_pago_planillas.cs" />
     <Compile Include="cd_Usuarios.cs" />
     <Compile Include="conexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
