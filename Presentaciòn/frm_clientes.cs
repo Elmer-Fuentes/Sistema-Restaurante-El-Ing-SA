@@ -276,12 +276,21 @@ namespace Presentaciòn
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            if (lst_historial.Text != "")
+        }
+
+        private void btn_buscar_Click(object sender, EventArgs e)
+        {
+            if (txt_buscarclientes.Text != "" && txt_buscarclientes.Text != " ")
             {
                 lst_historial.Items.Add(txt_buscarclientes.Text);
                 txt_buscarclientes.Clear();
-                txt_buscarclientes.Focus();
+                lst_historial.Focus();
             }
+        }
+
+        private void lst_historial_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txt_buscarclientes.Text = lst_historial.SelectedItem.ToString();
         }
     }
 }
