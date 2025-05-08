@@ -53,11 +53,20 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label11 = new System.Windows.Forms.Label();
+            this.btn_buscar = new FontAwesome.Sharp.IconButton();
+            this.txt_buscarclientes = new System.Windows.Forms.TextBox();
+            this.lst_historial = new System.Windows.Forms.ListBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dgv_buscarclientes = new System.Windows.Forms.DataGridView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosPlanilla)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_buscarclientes)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -350,6 +359,13 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label11);
+            this.tabPage2.Controls.Add(this.btn_buscar);
+            this.tabPage2.Controls.Add(this.txt_buscarclientes);
+            this.tabPage2.Controls.Add(this.lst_historial);
+            this.tabPage2.Controls.Add(this.label10);
+            this.tabPage2.Controls.Add(this.label9);
+            this.tabPage2.Controls.Add(this.dgv_buscarclientes);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -357,6 +373,81 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(579, 205);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(163, 20);
+            this.label11.TabIndex = 63;
+            this.label11.Text = "Historial de busqueda";
+            // 
+            // btn_buscar
+            // 
+            this.btn_buscar.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
+            this.btn_buscar.IconColor = System.Drawing.Color.Black;
+            this.btn_buscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_buscar.IconSize = 25;
+            this.btn_buscar.Location = new System.Drawing.Point(910, 177);
+            this.btn_buscar.Name = "btn_buscar";
+            this.btn_buscar.Size = new System.Drawing.Size(82, 48);
+            this.btn_buscar.TabIndex = 62;
+            this.btn_buscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_buscar.UseVisualStyleBackColor = true;
+            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
+            // 
+            // txt_buscarclientes
+            // 
+            this.txt_buscarclientes.Location = new System.Drawing.Point(524, 157);
+            this.txt_buscarclientes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_buscarclientes.Name = "txt_buscarclientes";
+            this.txt_buscarclientes.Size = new System.Drawing.Size(300, 26);
+            this.txt_buscarclientes.TabIndex = 61;
+            // 
+            // lst_historial
+            // 
+            this.lst_historial.FormattingEnabled = true;
+            this.lst_historial.ItemHeight = 20;
+            this.lst_historial.Location = new System.Drawing.Point(524, 247);
+            this.lst_historial.Name = "lst_historial";
+            this.lst_historial.Size = new System.Drawing.Size(300, 84);
+            this.lst_historial.TabIndex = 59;
+            this.lst_historial.SelectedIndexChanged += new System.EventHandler(this.lst_historial_SelectedIndexChanged);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(197, 158);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(215, 25);
+            this.label10.TabIndex = 58;
+            this.label10.Text = "Nombre de el cliente:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(541, 43);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(262, 38);
+            this.label9.TabIndex = 57;
+            this.label9.Text = "Buscar Clientes";
+            // 
+            // dgv_buscarclientes
+            // 
+            this.dgv_buscarclientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgv_buscarclientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_buscarclientes.Location = new System.Drawing.Point(6, 363);
+            this.dgv_buscarclientes.Name = "dgv_buscarclientes";
+            this.dgv_buscarclientes.ReadOnly = true;
+            this.dgv_buscarclientes.RowHeadersWidth = 51;
+            this.dgv_buscarclientes.RowTemplate.Height = 24;
+            this.dgv_buscarclientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv_buscarclientes.Size = new System.Drawing.Size(1456, 351);
+            this.dgv_buscarclientes.TabIndex = 55;
             // 
             // frm_clientes
             // 
@@ -367,7 +458,6 @@
             this.Name = "frm_clientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_clientes";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frm_clientes_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -375,6 +465,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosPlanilla)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_buscarclientes)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -387,7 +480,6 @@
         private FontAwesome.Sharp.IconButton btnEliminar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblFecha;
-        private System.Windows.Forms.DataGridView dgvDatosPlanilla;
         private System.Windows.Forms.Label label8;
         private FontAwesome.Sharp.IconButton btnSalir;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -407,5 +499,13 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.DataGridView dgvDatosPlanilla;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataGridView dgv_buscarclientes;
+        private System.Windows.Forms.ListBox lst_historial;
+        private System.Windows.Forms.TextBox txt_buscarclientes;
+        private FontAwesome.Sharp.IconButton btn_buscar;
+        private System.Windows.Forms.Label label11;
     }
 }

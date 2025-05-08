@@ -30,6 +30,9 @@ namespace Presentaciòn
             ToolTip mensaje = new ToolTip();
             mensaje.SetToolTip(btnSalir, "Salir");
             mensaje.SetToolTip(btnEliminar, "Eliminar");
+
+            tabPage1.Text = "Agregar Cliente";
+            tabPage2.Text = "Buscar Cliente";
         }
 
         public void style()
@@ -73,7 +76,7 @@ namespace Presentaciòn
             string telefono = txt_telefono.Text;
             string categoria = txt_categoria.Text;
             string estado = txt_estado.Text;
-            string usuario_sistema = "dcruzg11";
+            string usuario_sistema = frm_login.UsuarioLogueado;
             DateTime fecha_sistemanombre = DateTime.Parse(fecha);
             if (txt_categoria.Text == "" || txt_nombre.Text == "" || txt_nit.Text == "" || txt_telefono.Text == "" || txt_estado.Text == "")
 
@@ -107,14 +110,14 @@ namespace Presentaciòn
             string telefono = txt_telefono.Text;
             string categoria = txt_categoria.Text;
             string estado = txt_estado.Text;
-            string usuario_sistema = "dcruzg11";
+            string usuario_sistema = frm_login.UsuarioLogueado;
             DateTime fecha_sistemanombre = DateTime.Parse(fecha);
 
             if (txt_categoria.Text == "" || txt_nombre.Text == "" || txt_nit.Text == "" || txt_telefono.Text == "" || txt_estado.Text == "")
 
             {
-                MessageBox.Show("Debes de ingresar datos en todos los campos", "Sistema Hotel", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 Mtdvalidarentrada();
+                MessageBox.Show("Faltan datos en los campos marcados en rojo", "Sistema Hotel", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
             else
             {
@@ -269,6 +272,33 @@ namespace Presentaciòn
 
         private void txt_codigoCliente_TextChanged(object sender, EventArgs e)
         {
+        }
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btn_buscar_Click(object sender, EventArgs e)
+        {
+            if (txt_buscarclientes.Text != "" && txt_buscarclientes.Text != " ")
+            {
+                lst_historial.Items.Add(txt_buscarclientes.Text);
+                txt_buscarclientes.Clear();
+                lst_historial.Focus();
+            }
+            Mtdmostrarbusquedaclientes();
+        }
+
+        private void lst_historial_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txt_buscarclientes.Text = lst_historial.SelectedItem.ToString();
+        }
+
+        public void Mtdmostrarbusquedaclientes()
+        {
+            string nombre = txt_buscarclientes.Text;
+            DataTable dt = cd_clin.MtdBuscarclientes(nombre);
+            dgv_buscarclientes.DataSource = dt;
         }
     }
 }
