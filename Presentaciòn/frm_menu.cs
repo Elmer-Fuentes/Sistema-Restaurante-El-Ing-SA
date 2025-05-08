@@ -27,9 +27,17 @@ namespace Presentaciòn
         private void frm_menu_Load(object sender, EventArgs e)
         {
             Mtdmostrardatos();
-            
-
+            style();
         }
+
+        #region = "style";
+        public void style()
+        {
+            this.ControlBox = false; // Oculta los botones de la barra de título
+            this.FormBorderStyle = FormBorderStyle.None; // Quita los bordes
+        }
+        #endregion
+
         #region = "Metodo para vista del select o mostra en el dgv";
         private void Mtdmostrardatos()
         {
