@@ -45,5 +45,10 @@ namespace Presentaciòn
             dgvMenus.DataSource = dtUsuarios;
         }
         #endregion
+
+        private void btnSalir_frm_usuarios_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

@@ -222,6 +222,7 @@
             this.btnSalir_frm_usuarios.Text = "Salir";
             this.btnSalir_frm_usuarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSalir_frm_usuarios.UseVisualStyleBackColor = true;
+            this.btnSalir_frm_usuarios.Click += new System.EventHandler(this.btnSalir_frm_usuarios_Click);
             // 
             // lblFecha
             // 
