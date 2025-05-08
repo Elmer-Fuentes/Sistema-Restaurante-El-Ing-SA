@@ -19,6 +19,7 @@ namespace Presentaciòn
         #region = "instancias de todos los formularios";
         private frm_usuarios frm_Usuario = null; //instancia del formulario hijo
         private frm_clientes frm_Clientes = null; //instancia del formulario hijo
+        private frm_menu frm_Menu = null; //instancia del formulario hijo
         #endregion
 
         #region = "Load";
@@ -82,6 +83,22 @@ namespace Presentaciòn
         {
             lbl_fecha_so.Text = DateTime.Now.ToLongDateString(); //muestra la fecha en el label
             lbl_hora_so.Text = DateTime.Now.ToLongTimeString(); //muestra la hora en el label
+        }
+
+        private void detalleDeOrdenesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            if (frm_Menu == null || frm_Menu.IsDisposed)   //form cerrado o nUll
+            {
+                frm_Menu = new frm_menu(); // Crea una nueva instancia solo cuando es necesario
+                frm_Menu.MdiParent = this; //asigna el formulario hijo al padre
+                frm_Menu.Show();
+            }
+            else
+            {
+                frm_Menu.Focus(); // frm abierto, lo pone al frente
+            }
+
         }
     }
 }

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using C_Logica;
+using capa_datos;
+using Datos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,5 +19,23 @@ namespace Presentaciòn
         {
             InitializeComponent();
         }
+
+        #region = "instancias de la clase Cd_Menu de la capa datos";
+        cd_Menus cd_menu = new cd_Menus();
+        cl_MtdFechas cl_fecha = new cl_MtdFechas();
+        #endregion
+        private void frm_menu_Load(object sender, EventArgs e)
+        {
+            Mtdmostrardatos();
+            
+
+        }
+        #region = "Metodo para vista del select o mostra en el dgv";
+        private void Mtdmostrardatos()
+        {
+            DataTable dtUsuarios = cd_menu.MtdViewMenu();
+            dgvMenus.DataSource = dtUsuarios;
+        }
+        #endregion
     }
 }
