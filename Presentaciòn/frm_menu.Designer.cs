@@ -286,6 +286,7 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnEditar
             // 
@@ -343,6 +344,7 @@
             // 
             // txt_codigo_menu
             // 
+            this.txt_codigo_menu.Enabled = false;
             this.txt_codigo_menu.Location = new System.Drawing.Point(258, 25);
             this.txt_codigo_menu.Name = "txt_codigo_menu";
             this.txt_codigo_menu.Size = new System.Drawing.Size(165, 22);

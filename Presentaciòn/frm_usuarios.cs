@@ -34,6 +34,7 @@ namespace Presentaciòn
 
         private void frm_usuarios_Load(object sender, EventArgs e)
         {
+            lblFecha.Text = cl_fecha.MtdFecha().ToString("dd/MM/yyyy");
             Mtdmostrardatos();
             style();
         }

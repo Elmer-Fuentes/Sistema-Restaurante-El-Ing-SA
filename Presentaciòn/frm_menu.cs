@@ -26,6 +26,7 @@ namespace Presentaciòn
         #endregion
         private void frm_menu_Load(object sender, EventArgs e)
         {
+            lblFecha.Text = cl_fecha.MtdFecha().ToString("dd/MM/yyyy");
             Mtdmostrardatos();
             style();
         }
@@ -51,6 +52,18 @@ namespace Presentaciòn
             Close();
         }
 
+        #region = "Limpiar form menu"
+        public void Limpiardatos()
+        {
+            txt_codigo_menu.Clear();
+            txt_nombre_menu.Clear();
+            txt_ingredientes.Clear();
+            cbx_categoria.Text = "";
+            txt_precio.Clear();
+            cbx_estado.Text = "";
+        }
+        #endregion
+
         #region = "Botono agregar menu"
         private void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -67,7 +80,7 @@ namespace Presentaciòn
                 cd_menu.MtdInsMenu(/*codigo_menu, */nombre, ingredientes, categoria, precio, estado, usuario_sistema, fecha_sistemanombre);
                 MessageBox.Show("Usuario creado correctamente", "Estado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Mtdmostrardatos();
-                //Limpiardatos();
+                Limpiardatos();
             }
             catch (Exception ex)
             {
@@ -93,7 +106,7 @@ namespace Presentaciòn
                 cd_menu.MtdUpdMenu(codigo_menu,nombre, ingredientes, categoria, precio, estado, usuario_sistema, fecha_sistemanombre);
                 MessageBox.Show("Usuario actualizado correctamente", "Estado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Mtdmostrardatos();
-                //Limpiardatos();
+                Limpiardatos();
             }
             catch (Exception ex)
             {
@@ -113,5 +126,10 @@ namespace Presentaciòn
             cbx_estado.Text = dgvMenus.SelectedCells[5].Value.ToString();
         }
         #endregion
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Limpiardatos();
+        }
     }
 }
