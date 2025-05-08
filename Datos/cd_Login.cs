@@ -28,7 +28,13 @@ namespace capa_datos
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(resultado);
             }
+            try { 
             return resultado;
+            }
+            finally
+            {
+                connex.MtdCerrarconexion();
+            }
         }
         #endregion
 

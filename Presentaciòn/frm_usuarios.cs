@@ -93,7 +93,8 @@ namespace Presentaciòn
                     cd_usuarios.MtdInsUsuarios(codigo_empleado, nombre_empleado, nombre_usuario, contrasena, rol, estado, usuario_sistema, fecha_sistemanombre);
                     MessageBox.Show("Usuario creado correctamente", "Estado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Mtdmostrardatos();
-                }
+                    Limpiardatos();
+            }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error" + ex, "A ocurrido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -107,8 +108,8 @@ namespace Presentaciòn
             
                 int codigo_uid = int.Parse(dgvUsuarios.SelectedCells[0].Value.ToString());
                 int codigo_empleado = int.Parse(txt_codigo_empleado.Text);
-                string nombre_empleado = txt_nombre_empleado.Text;
-                // string nombre_usuario = txt_asignar_nombre_usuario.Text;
+                //string nombre_empleado = txt_nombre_empleado.Text;
+                string nombre_usuario = txt_asignar_nombre_usuario.Text;
                 string contrasena = txt_contrasena.Text;
                 string rol = cbx_rol.Text;
                 string estado = cbx_estado.Text;
@@ -116,7 +117,7 @@ namespace Presentaciòn
                 DateTime fecha_sistemanombre = cl_fecha.MtdFecha();
                 try
                 {
-                    cd_usuarios.MtdUpdateUsuarios(codigo_uid, codigo_empleado, nombre_empleado, contrasena, rol, estado, usuario_sistema, fecha_sistemanombre);
+                    cd_usuarios.MtdUpdateUsuarios(codigo_uid, codigo_empleado, nombre_usuario, contrasena, rol, estado, usuario_sistema, fecha_sistemanombre);
                     MessageBox.Show("Usuario Actualizado correctamente", "Estado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Mtdmostrardatos();
                     Limpiardatos();
