@@ -35,13 +35,20 @@ namespace Presentaciòn
                Menu_Principal menu = new Menu_Principal();
                 this.Hide();
                menu.Show();
+                Limpiardatos();
             }
             else
             {
                 MessageBox.Show("Usuario o Contraseña Incorrecta");
+                Limpiardatos();
             }
         }
-
+        public void Limpiardatos() 
+        {
+            txt_usuario.Text = "";
+            txt_contrasena.Text = "";
+        }
+        
         private void frm_login_Load(object sender, EventArgs e)
         {
             style();
@@ -51,6 +58,11 @@ namespace Presentaciòn
         {
             this.ControlBox = false; // Oculta los botones de la barra de título
             this.FormBorderStyle = FormBorderStyle.None; // Quita los bordes
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
