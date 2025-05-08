@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_usuario_logo = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -53,6 +54,12 @@
             this.pagoDeÓrdenesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirDelSistemaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.salirDelSistemaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label3 = new System.Windows.Forms.Label();
+            this.lbl_hora_so = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lbl_fecha_so = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -95,24 +102,29 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.lbl_hora_so);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.lbl_fecha_so);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.pictureBox1);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(0, 304);
+            this.groupBox1.Location = new System.Drawing.Point(0, 253);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(173, 221);
+            this.groupBox1.Size = new System.Drawing.Size(173, 272);
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Presentaciòn.Properties.Resources.restaurantes;
-            this.pictureBox1.Location = new System.Drawing.Point(19, 19);
+            this.pictureBox1.Location = new System.Drawing.Point(16, 118);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(135, 143);
+            this.pictureBox1.Size = new System.Drawing.Size(135, 89);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 27;
             this.pictureBox1.TabStop = false;
@@ -122,7 +134,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.label4.Location = new System.Drawing.Point(22, 172);
+            this.label4.Location = new System.Drawing.Point(13, 233);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(139, 16);
             this.label4.TabIndex = 25;
@@ -133,7 +145,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.label5.Location = new System.Drawing.Point(22, 194);
+            this.label5.Location = new System.Drawing.Point(13, 252);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(68, 15);
             this.label5.TabIndex = 26;
@@ -278,6 +290,61 @@
             this.salirDelSistemaToolStripMenuItem2.Text = "Salir Del Sistema";
             this.salirDelSistemaToolStripMenuItem2.Click += new System.EventHandler(this.salirDelSistemaToolStripMenuItem2_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(11, 66);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(42, 15);
+            this.label3.TabIndex = 41;
+            this.label3.Text = "Hora:";
+            // 
+            // lbl_hora_so
+            // 
+            this.lbl_hora_so.AutoSize = true;
+            this.lbl_hora_so.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_hora_so.Location = new System.Drawing.Point(12, 83);
+            this.lbl_hora_so.Name = "lbl_hora_so";
+            this.lbl_hora_so.Size = new System.Drawing.Size(59, 25);
+            this.lbl_hora_so.TabIndex = 38;
+            this.lbl_hora_so.Text = "hora";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(10, 27);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(50, 15);
+            this.label6.TabIndex = 40;
+            this.label6.Text = "Fecha:";
+            // 
+            // lbl_fecha_so
+            // 
+            this.lbl_fecha_so.AutoSize = true;
+            this.lbl_fecha_so.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_fecha_so.Location = new System.Drawing.Point(12, 46);
+            this.lbl_fecha_so.Name = "lbl_fecha_so";
+            this.lbl_fecha_so.Size = new System.Drawing.Size(33, 12);
+            this.lbl_fecha_so.TabIndex = 37;
+            this.lbl_fecha_so.Text = "fecha";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(1, 1);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(171, 15);
+            this.label7.TabIndex = 39;
+            this.label7.Text = "Fecha y Hora del Sistema";
+            // 
             // Menu_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -331,5 +398,11 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ToolStripMenuItem salirDelSistemaToolStripMenuItem2;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbl_hora_so;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbl_fecha_so;
+        private System.Windows.Forms.Label label7;
     }
 }
