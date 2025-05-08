@@ -286,11 +286,19 @@ namespace Presentaciòn
                 txt_buscarclientes.Clear();
                 lst_historial.Focus();
             }
+            Mtdmostrarbusquedaclientes();
         }
 
         private void lst_historial_SelectedIndexChanged(object sender, EventArgs e)
         {
             txt_buscarclientes.Text = lst_historial.SelectedItem.ToString();
+        }
+
+        public void Mtdmostrarbusquedaclientes()
+        {
+            string nombre = txt_buscarclientes.Text;
+            DataTable dt = cd_clin.MtdBuscarclientes(nombre);
+            dgv_buscarclientes.DataSource = dt;
         }
     }
 }

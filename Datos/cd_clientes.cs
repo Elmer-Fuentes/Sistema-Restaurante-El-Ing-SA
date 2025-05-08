@@ -62,5 +62,16 @@ namespace Datos
             eliminar.ExecuteNonQuery();
             connex.MtdCerrarconexion();
         }
+
+        public DataTable MtdBuscarclientes(string nombre)
+        {
+            string query = "select * from tbl_clientes where nombre = @nombre";
+            SqlDataAdapter buscar = new SqlDataAdapter(query, connex.MtdAbrirconexion());
+            DataTable busqueda = new DataTable();
+            buscar.SelectCommand.Parameters.AddWithValue("@nombre", nombre);
+            buscar.Fill(busqueda);
+            return busqueda;
+            connex.MtdCerrarconexion();
+        }
     }
 }
