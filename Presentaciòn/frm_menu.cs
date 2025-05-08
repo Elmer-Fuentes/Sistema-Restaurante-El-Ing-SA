@@ -47,10 +47,12 @@ namespace Presentaciòn
         }
         #endregion
 
+        #region = "Boton salir form menu";
         private void btnSalir_frm_usuarios_Click(object sender, EventArgs e)
         {
             Close();
         }
+        #endregion
 
         #region = "Limpiar form menu"
         public void Limpiardatos()
@@ -127,9 +129,30 @@ namespace Presentaciòn
         }
         #endregion
 
+        #region= "Limpiar-Cancelar form menu"
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Limpiardatos();
         }
+        #endregion
+
+        #region = "Boton eliminar menu";
+        private void btnEliminar_usuario_Click(object sender, EventArgs e)
+        {
+            int codigo_uid = int.Parse(dgvMenus.SelectedCells[0].Value.ToString());
+
+            try
+            {
+                cd_menu.MtdDeleteUsuarios(codigo_uid);
+                MessageBox.Show("Usuario Eliminado correctamente", "Estado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Mtdmostrardatos();
+                Limpiardatos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex, "A ocurrido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        #endregion
     }
 }

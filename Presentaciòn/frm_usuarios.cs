@@ -60,11 +60,6 @@ namespace Presentaciòn
 
         #endregion
 
-
-
-
-
-
         #region ="Metodo Limpiar - Cancelar";
         public void Limpiardatos()
         {
@@ -76,7 +71,6 @@ namespace Presentaciòn
             cbx_estado.Text = "";
         }
         #endregion
-
 
         #region = "Boton agregar";
         private void btnGuardar_Click(object sender, EventArgs e)

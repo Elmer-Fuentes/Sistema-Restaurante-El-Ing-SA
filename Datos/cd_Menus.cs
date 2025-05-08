@@ -37,16 +37,16 @@ namespace Datos
         public void MtdInsMenu(string nombre, string ingredientes, string categoria, double precio, string estado, string usuario_sistema, DateTime fecha_sistema)
         {
             string query = "insert into tbl_menus (nombre,ingredientes,categoria,precio,estado,usuario_sistema,fecha_sistema) values (@nombre,@ingredientes,@categoria,@precio,@estado,@usuario_sistema,@fecha_sistema)";
-            SqlCommand ins_Usuario = new SqlCommand(query, connex.MtdAbrirconexion());
+            SqlCommand ins_menu = new SqlCommand(query, connex.MtdAbrirconexion());
              //    ins_Usuario.Parameters.AddWithValue("@codigo_empleado", codigo_empleado);
-            ins_Usuario.Parameters.AddWithValue("@nombre", nombre);
-            ins_Usuario.Parameters.AddWithValue("@ingredientes", ingredientes);
-            ins_Usuario.Parameters.AddWithValue("@categoria", categoria);
-            ins_Usuario.Parameters.AddWithValue("@precio", precio);
-            ins_Usuario.Parameters.AddWithValue("@estado", estado);
-            ins_Usuario.Parameters.AddWithValue("@usuario_sistema", usuario_sistema);
-            ins_Usuario.Parameters.AddWithValue("@fecha_sistema", fecha_sistema);
-            ins_Usuario.ExecuteNonQuery();
+            ins_menu.Parameters.AddWithValue("@nombre", nombre);
+            ins_menu.Parameters.AddWithValue("@ingredientes", ingredientes);
+            ins_menu.Parameters.AddWithValue("@categoria", categoria);
+            ins_menu.Parameters.AddWithValue("@precio", precio);
+            ins_menu.Parameters.AddWithValue("@estado", estado);
+            ins_menu.Parameters.AddWithValue("@usuario_sistema", usuario_sistema);
+            ins_menu.Parameters.AddWithValue("@fecha_sistema", fecha_sistema);
+            ins_menu.ExecuteNonQuery();
             connex.MtdCerrarconexion();
         }
         #endregion
@@ -55,18 +55,31 @@ namespace Datos
         public void MtdUpdMenu(int codigo,string nombre, string ingredientes, string categoria, double precio, string estado, string usuario_sistema, DateTime fecha_sistema)
         {
             string query = "update tbl_menus set nombre=@nombre,ingredientes=@ingredientes,categoria=@categoria,precio=@precio,estado=@estado,usuario_sistema=@usuario_sistema,fecha_sistema=@fecha_sistema where codigo_menu = @codigo_menu";
-            SqlCommand ins_Usuario = new SqlCommand(query, connex.MtdAbrirconexion());
-            ins_Usuario.Parameters.AddWithValue("codigo_menu", codigo);
-            ins_Usuario.Parameters.AddWithValue("@nombre", nombre);
-            ins_Usuario.Parameters.AddWithValue("@ingredientes", ingredientes);
-            ins_Usuario.Parameters.AddWithValue("@categoria", categoria);
-            ins_Usuario.Parameters.AddWithValue("@precio", precio);
-            ins_Usuario.Parameters.AddWithValue("@estado", estado);
-            ins_Usuario.Parameters.AddWithValue("@usuario_sistema", usuario_sistema);
-            ins_Usuario.Parameters.AddWithValue("@fecha_sistema", fecha_sistema);
-            ins_Usuario.ExecuteNonQuery();
+            SqlCommand upd_menu = new SqlCommand(query, connex.MtdAbrirconexion());
+            upd_menu.Parameters.AddWithValue("codigo_menu", codigo);
+            upd_menu.Parameters.AddWithValue("@nombre", nombre);
+            upd_menu.Parameters.AddWithValue("@ingredientes", ingredientes);
+            upd_menu.Parameters.AddWithValue("@categoria", categoria);
+            upd_menu.Parameters.AddWithValue("@precio", precio);
+            upd_menu.Parameters.AddWithValue("@estado", estado);
+            upd_menu.Parameters.AddWithValue("@usuario_sistema", usuario_sistema);
+            upd_menu.Parameters.AddWithValue("@fecha_sistema", fecha_sistema);
+            upd_menu.ExecuteNonQuery();
             connex.MtdCerrarconexion();
         }
         #endregion
+
+        #region = "Metodo Eliminar usuario";
+        public void MtdDeleteUsuarios(int codigo_UID)
+        {
+            string query = "delete from tbl_menus where codigo_menu=@codigo_menu";
+            SqlCommand del_menu= new SqlCommand(query, connex.MtdAbrirconexion());
+            del_menu.Parameters.AddWithValue("@codigo_menu", codigo_UID);
+            del_menu.ExecuteNonQuery();
+            connex.MtdCerrarconexion();
+        }
+        #endregion
+
+
     }
 }
