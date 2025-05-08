@@ -33,5 +33,40 @@ namespace Datos
             }
         }
         #endregion
+        #region = "Metodo para agregar un Menu";
+        public void MtdInsMenu(string nombre, string ingredientes, string categoria, double precio, string estado, string usuario_sistema, DateTime fecha_sistema)
+        {
+            string query = "insert into tbl_menus (nombre,ingredientes,categoria,precio,estado,usuario_sistema,fecha_sistema) values (@nombre,@ingredientes,@categoria,@precio,@estado,@usuario_sistema,@fecha_sistema)";
+            SqlCommand ins_Usuario = new SqlCommand(query, connex.MtdAbrirconexion());
+             //    ins_Usuario.Parameters.AddWithValue("@codigo_empleado", codigo_empleado);
+            ins_Usuario.Parameters.AddWithValue("@nombre", nombre);
+            ins_Usuario.Parameters.AddWithValue("@ingredientes", ingredientes);
+            ins_Usuario.Parameters.AddWithValue("@categoria", categoria);
+            ins_Usuario.Parameters.AddWithValue("@precio", precio);
+            ins_Usuario.Parameters.AddWithValue("@estado", estado);
+            ins_Usuario.Parameters.AddWithValue("@usuario_sistema", usuario_sistema);
+            ins_Usuario.Parameters.AddWithValue("@fecha_sistema", fecha_sistema);
+            ins_Usuario.ExecuteNonQuery();
+            connex.MtdCerrarconexion();
+        }
+        #endregion
+
+        #region = "Metodo para editar un Menu";
+        public void MtdUpdMenu(int codigo,string nombre, string ingredientes, string categoria, double precio, string estado, string usuario_sistema, DateTime fecha_sistema)
+        {
+            string query = "update tbl_menus set nombre=@nombre,ingredientes=@ingredientes,categoria=@categoria,precio=@precio,estado=@estado,usuario_sistema=@usuario_sistema,fecha_sistema=@fecha_sistema where codigo_menu = @codigo_menu";
+            SqlCommand ins_Usuario = new SqlCommand(query, connex.MtdAbrirconexion());
+            ins_Usuario.Parameters.AddWithValue("codigo_menu", codigo);
+            ins_Usuario.Parameters.AddWithValue("@nombre", nombre);
+            ins_Usuario.Parameters.AddWithValue("@ingredientes", ingredientes);
+            ins_Usuario.Parameters.AddWithValue("@categoria", categoria);
+            ins_Usuario.Parameters.AddWithValue("@precio", precio);
+            ins_Usuario.Parameters.AddWithValue("@estado", estado);
+            ins_Usuario.Parameters.AddWithValue("@usuario_sistema", usuario_sistema);
+            ins_Usuario.Parameters.AddWithValue("@fecha_sistema", fecha_sistema);
+            ins_Usuario.ExecuteNonQuery();
+            connex.MtdCerrarconexion();
+        }
+        #endregion
     }
 }

@@ -142,7 +142,7 @@
             this.cbx_estado.Location = new System.Drawing.Point(612, 90);
             this.cbx_estado.Name = "cbx_estado";
             this.cbx_estado.Size = new System.Drawing.Size(165, 24);
-            this.cbx_estado.TabIndex = 19;
+            this.cbx_estado.TabIndex = 6;
             // 
             // cbx_categoria
             // 
@@ -151,7 +151,7 @@
             this.cbx_categoria.Location = new System.Drawing.Point(612, 24);
             this.cbx_categoria.Name = "cbx_categoria";
             this.cbx_categoria.Size = new System.Drawing.Size(165, 24);
-            this.cbx_categoria.TabIndex = 18;
+            this.cbx_categoria.TabIndex = 4;
             // 
             // tabPage1
             // 
@@ -181,7 +181,7 @@
             this.btnEliminar_usuario.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar_usuario.Name = "btnEliminar_usuario";
             this.btnEliminar_usuario.Size = new System.Drawing.Size(129, 31);
-            this.btnEliminar_usuario.TabIndex = 61;
+            this.btnEliminar_usuario.TabIndex = 8;
             this.btnEliminar_usuario.Text = "Eliminar";
             this.btnEliminar_usuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEliminar_usuario.UseVisualStyleBackColor = true;
@@ -206,7 +206,8 @@
             this.dgvMenus.RowTemplate.Height = 24;
             this.dgvMenus.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMenus.Size = new System.Drawing.Size(956, 228);
-            this.dgvMenus.TabIndex = 66;
+            this.dgvMenus.TabIndex = 9;
+            this.dgvMenus.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMenus_CellClick);
             // 
             // btnSalir_frm_usuarios
             // 
@@ -218,7 +219,7 @@
             this.btnSalir_frm_usuarios.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalir_frm_usuarios.Name = "btnSalir_frm_usuarios";
             this.btnSalir_frm_usuarios.Size = new System.Drawing.Size(129, 31);
-            this.btnSalir_frm_usuarios.TabIndex = 60;
+            this.btnSalir_frm_usuarios.TabIndex = 7;
             this.btnSalir_frm_usuarios.Text = "Salir";
             this.btnSalir_frm_usuarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSalir_frm_usuarios.UseVisualStyleBackColor = true;
@@ -300,6 +301,7 @@
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnGuardar
             // 
@@ -315,13 +317,14 @@
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // txt_precio
             // 
             this.txt_precio.Location = new System.Drawing.Point(612, 57);
             this.txt_precio.Name = "txt_precio";
             this.txt_precio.Size = new System.Drawing.Size(165, 22);
-            this.txt_precio.TabIndex = 4;
+            this.txt_precio.TabIndex = 5;
             // 
             // txt_ingredientes
             // 
@@ -332,7 +335,6 @@
             // 
             // txt_nombre_menu
             // 
-            this.txt_nombre_menu.Enabled = false;
             this.txt_nombre_menu.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_nombre_menu.Location = new System.Drawing.Point(258, 62);
             this.txt_nombre_menu.Name = "txt_nombre_menu";

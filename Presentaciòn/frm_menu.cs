@@ -41,8 +41,8 @@ namespace Presentaciòn
         #region = "Metodo para vista del select o mostra en el dgv";
         private void Mtdmostrardatos()
         {
-            DataTable dtUsuarios = cd_menu.MtdViewMenu();
-            dgvMenus.DataSource = dtUsuarios;
+            DataTable dtMENU = cd_menu.MtdViewMenu();
+            dgvMenus.DataSource = dtMENU;
         }
         #endregion
 
@@ -50,5 +50,68 @@ namespace Presentaciòn
         {
             Close();
         }
+
+        #region = "Botono agregar menu"
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            //int codigo_menu = int.Parse(txt_codigo_menu.Text);
+            string nombre = txt_nombre_menu.Text;
+            string ingredientes = txt_ingredientes.Text;
+            string categoria = cbx_categoria.Text;
+            double precio = double.Parse(txt_precio.Text);
+            string estado = cbx_estado.Text;
+            string usuario_sistema = frm_login.UsuarioLogueado;
+            DateTime fecha_sistemanombre = cl_fecha.MtdFecha();
+            try
+            {
+                cd_menu.MtdInsMenu(/*codigo_menu, */nombre, ingredientes, categoria, precio, estado, usuario_sistema, fecha_sistemanombre);
+                MessageBox.Show("Usuario creado correctamente", "Estado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Mtdmostrardatos();
+                //Limpiardatos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex, "A ocurrido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        #endregion
+
+        #region = "Boton editar menu";
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+
+            int codigo_menu = int.Parse(txt_codigo_menu.Text);
+            string nombre = txt_nombre_menu.Text;
+            string ingredientes = txt_ingredientes.Text;
+            string categoria = cbx_categoria.Text;
+            double precio = double.Parse(txt_precio.Text);
+            string estado = cbx_estado.Text;
+            string usuario_sistema = frm_login.UsuarioLogueado;
+            DateTime fecha_sistemanombre = cl_fecha.MtdFecha();
+            try
+            {
+                cd_menu.MtdUpdMenu(codigo_menu,nombre, ingredientes, categoria, precio, estado, usuario_sistema, fecha_sistemanombre);
+                MessageBox.Show("Usuario actualizado correctamente", "Estado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Mtdmostrardatos();
+                //Limpiardatos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex, "A ocurrido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        #endregion
+
+        #region = "Retornar data a txt, label,cbx"
+        private void dgvMenus_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txt_codigo_menu.Text = dgvMenus.SelectedCells[0].Value.ToString();
+            txt_nombre_menu.Text = dgvMenus.SelectedCells[1].Value.ToString();
+            txt_ingredientes.Text = dgvMenus.SelectedCells[2].Value.ToString();
+            cbx_categoria.Text = dgvMenus.SelectedCells[3].Value.ToString();
+            txt_precio.Text = dgvMenus.SelectedCells[4].Value.ToString();
+            cbx_estado.Text = dgvMenus.SelectedCells[5].Value.ToString();
+        }
+        #endregion
     }
 }
