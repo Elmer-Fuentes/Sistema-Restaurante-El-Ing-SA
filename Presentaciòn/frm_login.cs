@@ -7,7 +7,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.Windows.Forms; 
+using Entidades;
 
 namespace Presentaciòn
 {
@@ -18,36 +19,16 @@ namespace Presentaciòn
             InitializeComponent();
         }
         C_seguridad c_seguridad = new C_seguridad();
-        // Propiedad interna estática para almacenar el nombre de usuario logueado
-        internal static string UsuarioLogueado { get; private set; }
-        internal static string rolusuario { get; private set; }
+            
 
-        private void btnIngresar_Click(object sender, EventArgs e)
-        {
+   
 
-            string tipoUsuario = c_seguridad.VerificarLogin(txt_usuario.Text, txt_contrasena.Text);
 
-            if (!string.IsNullOrEmpty(tipoUsuario))
-            {
-                MessageBox.Show($"Bienvenido (a) {txt_usuario.Text}, has iniciado sesión como {tipoUsuario}");
-                UsuarioLogueado = txt_usuario.Text; // Almacena el nombre de usuario logueado
-                rolusuario = tipoUsuario; // Almacena el rol de usuario logueado
-               Menu_Principal menu = new Menu_Principal();
-                this.Hide();
-               menu.Show();
-                Limpiardatos();
-            }
-            else
-            {
-                MessageBox.Show("Usuario o Contraseña Incorrecta");
-                Limpiardatos();
-            }
-        }
-        public void Limpiardatos() 
-        {
-            txt_usuario.Text = "";
-            txt_contrasena.Text = "";
-        }
+        //public void Limpiardatos() 
+        //{
+        //    txt_usuario.Text = "";
+        //    txt_contrasena.Text = "";
+        //}
         
         private void frm_login_Load(object sender, EventArgs e)
         {
@@ -63,6 +44,39 @@ namespace Presentaciòn
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            if (txt_usuario.Text != "Username")
+            {
+                if (txt_contrasena.Text != "Password")
+                {
+
+                    var validlogin = c_seguridad.LoginUser(txt_usuario.Text, txt_contrasena.Text);
+                    if (validlogin == true)
+                    {
+                        Menu_Principal mainMenu = new Menu_Principal();
+                        Mis_Variables.UsuarioLogueado = txt_usuario.Text;
+                        mainMenu.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Incorrect username or password entered. \n Please try again.");
+                        txt_usuario.Text = "Usarios";
+                        txt_contrasena.Focus();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Porfavor Ingresa un Usuario");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Porfavor Ingresa una Contraseña");
+            }
         }
     }
 }

@@ -10,7 +10,7 @@ namespace C_Logica
 {
 	public class cl_pago_planillas
 	{
-		conexion cn = new conexion();
+		Conexion cn = new Conexion();
 		decimal MtdSalarioPlanilla(int codigoEmpleado)
 {
     decimal salario = 0;

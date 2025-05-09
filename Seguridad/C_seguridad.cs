@@ -8,26 +8,18 @@ using System.Threading.Tasks;
 
 namespace Seguridad
 {
-    public class C_seguridad
+    public class C_seguridad : Conexion //herencia clase Conexion
     {
         #region = "instancias de la clase conexion";
-        private conexion connex = new conexion();
         private cd_Login cd_user_login = new cd_Login();
         #endregion
 
-        #region = "Validación login";
-        public string VerificarLogin(string usuario, string contrasena)
+        #region = "Nuevo Login";
+        public bool LoginUser(string usuario, string contrasena)
         {
-            DataTable resultado = cd_user_login.MtdLogin(usuario, contrasena);
-            if (resultado.Rows.Count > 0)
-            {
-                return resultado.Rows[0]["Rol"].ToString();
-            }
-            else
-            {
-                return null;
-            }
+            return cd_user_login.Login(usuario, contrasena);
         }
+
         #endregion
 
     }

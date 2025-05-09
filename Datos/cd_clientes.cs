@@ -11,7 +11,7 @@ namespace Datos
 {
     public class cd_clientes
     {
-        private conexion connex = new conexion();
+        private Conexion connex = new Conexion();
 
         public DataTable MtdDevolverdatos()
         {

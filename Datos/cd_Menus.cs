@@ -12,7 +12,7 @@ namespace Datos
     public class cd_Menus
     {
         #region = "instancias de la clase conexion";
-        private conexion connex = new conexion();
+        private Conexion connex = new Conexion();
         #endregion
 
         #region = "Metodo para vista del select o mostra en el dgv";

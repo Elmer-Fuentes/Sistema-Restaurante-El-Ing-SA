@@ -56,11 +56,17 @@
     <Compile Include="cd_Menus.cs" />
     <Compile Include="cd_pago_planillas.cs" />
     <Compile Include="cd_Usuarios.cs" />
-    <Compile Include="conexion.cs" />
+    <Compile Include="Conexion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{34790c58-4ac7-4fc1-87d0-4357206661d7}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -6,39 +6,42 @@ using System.Linq;
 using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
-
+using Entidades;
 namespace capa_datos
-{
-    public class cd_Login
-    {
-        #region = "instancias de la clase conexion";
-        private conexion connex = new conexion();
-        #endregion
 
-        #region ="MEtodo Login"
-        public DataTable MtdLogin(string usuario, string contrasena)
+{
+    public class cd_Login : Conexion //herencia clase Conexion
+    {
+        #region = "Validación login V2";
+        public bool Login(string usuario, string contrasena)
         {
-            string query = "SELECT nombre_usuario, rol FROM tbl_usuarios WHERE nombre_usuario COLLATE Latin1_General_CS_AS = @usuario AND contrasena COLLATE Latin1_General_CS_AS = @contrasena";
-            DataTable resultado = new DataTable();
-            using (SqlConnection conexion = connex.MtdAbrirconexion())
-            using (SqlCommand cmd = new SqlCommand(query, conexion))
+            using (var connection = GetConnection())
             {
-                cmd.Parameters.AddWithValue("@usuario", usuario);
-                cmd.Parameters.AddWithValue("@contrasena", contrasena);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(resultado);
-            }
-            try { 
-            return resultado;
-            }
-            finally
-            {
-                connex.MtdCerrarconexion();
+                connection.Open();
+                using (var command = new SqlCommand())
+                {
+                    command.Connection = connection;
+                    command.CommandText = "SELECT codigo_usuario,codigo_empleado,nombre_usuario,contrasena,rol,estado,usuario_sistema,FechaSistema FROM tbl_usuarios WHERE nombre_usuario COLLATE Latin1_General_CS_AS = @usuario AND contrasena COLLATE Latin1_General_CS_AS = @contrasena";
+                    command.Parameters.AddWithValue("@usuario", usuario);
+                    command.Parameters.AddWithValue("@contrasena", contrasena);
+                    command.CommandType = CommandType.Text;
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+
+                            Mis_Variables.rolusuario = reader.GetString(4);
+                        }
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
             }
         }
         #endregion
-
-
-
     }
 }
