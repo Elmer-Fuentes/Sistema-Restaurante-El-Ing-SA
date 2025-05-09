@@ -19,17 +19,17 @@ namespace Presentaciòn
             InitializeComponent();
         }
         C_seguridad c_seguridad = new C_seguridad();
-            
-
-   
 
 
-        //public void Limpiardatos() 
-        //{
-        //    txt_usuario.Text = "";
-        //    txt_contrasena.Text = "";
-        //}
-        
+
+
+
+        public void Limpiardatos()
+        {
+            txt_usuario.Text = "";
+            txt_contrasena.Text = "";
+        }
+
         private void frm_login_Load(object sender, EventArgs e)
         {
             style();
@@ -60,22 +60,24 @@ namespace Presentaciòn
                         Mis_Variables.UsuarioLogueado = txt_usuario.Text;
                         mainMenu.Show();
                         this.Hide();
+                        Limpiardatos();
                     }
                     else
                     {
-                        MessageBox.Show("Incorrect username or password entered. \n Please try again.");
+                        MessageBox.Show("Nombre de usuario o contraseña ingresados ​​incorrectos. \n Por favor, inténtelo de nuevo.");
                         txt_usuario.Text = "Usarios";
                         txt_contrasena.Focus();
+                        Limpiardatos();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Porfavor Ingresa un Usuario");
+                    MessageBox.Show("Por favor Ingresa un Usuario");
                 }
             }
             else
             {
-                MessageBox.Show("Porfavor Ingresa una Contraseña");
+                MessageBox.Show("Ingresa una  Contraseña");
             }
         }
     }

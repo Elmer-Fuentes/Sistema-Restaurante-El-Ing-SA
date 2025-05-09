@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using capa_datos;
 using C_Logica;
+using Entidades;
 namespace Presentaciòn
 {
     public partial class frm_usuarios : Form
@@ -81,7 +82,7 @@ namespace Presentaciòn
                 string contrasena = txt_contrasena.Text;
                 string rol = cbx_rol.Text;
                 string estado = cbx_estado.Text;
-                string usuario_sistema = frm_login.UsuarioLogueado;
+                string usuario_sistema = Mis_Variables.UsuarioLogueado;
                 DateTime fecha_sistemanombre = cl_fecha.MtdFecha();
                 try
                 {
@@ -108,7 +109,7 @@ namespace Presentaciòn
                 string contrasena = txt_contrasena.Text;
                 string rol = cbx_rol.Text;
                 string estado = cbx_estado.Text;
-                string usuario_sistema = frm_login.UsuarioLogueado;
+                string usuario_sistema = Mis_Variables.UsuarioLogueado;
                 DateTime fecha_sistemanombre = cl_fecha.MtdFecha();
                 try
                 {
