@@ -378,7 +378,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(579, 205);
+            this.label11.Location = new System.Drawing.Point(553, 205);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(163, 20);
             this.label11.TabIndex = 63;
@@ -410,7 +410,7 @@
             // 
             this.lst_historial.FormattingEnabled = true;
             this.lst_historial.ItemHeight = 20;
-            this.lst_historial.Location = new System.Drawing.Point(524, 247);
+            this.lst_historial.Location = new System.Drawing.Point(524, 254);
             this.lst_historial.Name = "lst_historial";
             this.lst_historial.Size = new System.Drawing.Size(300, 84);
             this.lst_historial.TabIndex = 59;

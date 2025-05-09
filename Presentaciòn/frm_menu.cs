@@ -21,9 +21,10 @@ namespace Presentaciòn
         }
 
         #region = "instancias de la clase Cd_Menu de la capa datos";
-        cd_Menus cd_menu = new cd_Menus();
-        cl_MtdFechas cl_fecha = new cl_MtdFechas();
-        #endregion
+        private cd_Menus cd_menu = new cd_Menus();
+        private cl_MtdFechas cl_fecha = new cl_MtdFechas();
+        #endregion = "instancias de la clase Cd_Menu de la capa datos";
+
         private void frm_menu_Load(object sender, EventArgs e)
         {
             lblFecha.Text = cl_fecha.MtdFecha().ToString("dd/MM/yyyy");
@@ -32,29 +33,36 @@ namespace Presentaciòn
         }
 
         #region = "style";
+
         public void style()
         {
             this.ControlBox = false; // Oculta los botones de la barra de título
             this.FormBorderStyle = FormBorderStyle.None; // Quita los bordes
         }
-        #endregion
+
+        #endregion = "style";
 
         #region = "Metodo para vista del select o mostra en el dgv";
+
         private void Mtdmostrardatos()
         {
             DataTable dtMENU = cd_menu.MtdViewMenu();
             dgvMenus.DataSource = dtMENU;
         }
-        #endregion
+
+        #endregion = "Metodo para vista del select o mostra en el dgv";
 
         #region = "Boton salir form menu";
+
         private void btnSalir_frm_usuarios_Click(object sender, EventArgs e)
         {
             Close();
         }
-        #endregion
+
+        #endregion = "Boton salir form menu";
 
         #region = "Limpiar form menu"
+
         public void Limpiardatos()
         {
             txt_codigo_menu.Clear();
@@ -64,9 +72,11 @@ namespace Presentaciòn
             txt_precio.Clear();
             cbx_estado.Text = "";
         }
-        #endregion
+
+        #endregion = "Limpiar form menu"
 
         #region = "Botono agregar menu"
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             //int codigo_menu = int.Parse(txt_codigo_menu.Text);
@@ -89,12 +99,13 @@ namespace Presentaciòn
                 MessageBox.Show("Error" + ex, "A ocurrido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        #endregion
+
+        #endregion = "Botono agregar menu"
 
         #region = "Boton editar menu";
+
         private void btnEditar_Click(object sender, EventArgs e)
         {
-
             int codigo_menu = int.Parse(txt_codigo_menu.Text);
             string nombre = txt_nombre_menu.Text;
             string ingredientes = txt_ingredientes.Text;
@@ -105,7 +116,7 @@ namespace Presentaciòn
             DateTime fecha_sistemanombre = cl_fecha.MtdFecha();
             try
             {
-                cd_menu.MtdUpdMenu(codigo_menu,nombre, ingredientes, categoria, precio, estado, usuario_sistema, fecha_sistemanombre);
+                cd_menu.MtdUpdMenu(codigo_menu, nombre, ingredientes, categoria, precio, estado, usuario_sistema, fecha_sistemanombre);
                 MessageBox.Show("Usuario actualizado correctamente", "Estado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Mtdmostrardatos();
                 Limpiardatos();
@@ -115,9 +126,11 @@ namespace Presentaciòn
                 MessageBox.Show("Error" + ex, "A ocurrido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        #endregion
+
+        #endregion = "Boton editar menu";
 
         #region = "Retornar data a txt, label,cbx"
+
         private void dgvMenus_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txt_codigo_menu.Text = dgvMenus.SelectedCells[0].Value.ToString();
@@ -127,16 +140,20 @@ namespace Presentaciòn
             txt_precio.Text = dgvMenus.SelectedCells[4].Value.ToString();
             cbx_estado.Text = dgvMenus.SelectedCells[5].Value.ToString();
         }
-        #endregion
+
+        #endregion = "Retornar data a txt, label,cbx"
 
         #region= "Limpiar-Cancelar form menu"
+
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Limpiardatos();
         }
+
         #endregion
 
         #region = "Boton eliminar menu";
+
         private void btnEliminar_usuario_Click(object sender, EventArgs e)
         {
             int codigo_uid = int.Parse(dgvMenus.SelectedCells[0].Value.ToString());
@@ -153,6 +170,11 @@ namespace Presentaciòn
                 MessageBox.Show("Error" + ex, "A ocurrido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
         #endregion
+
+        private void txt_buscar_empleado_TextChanged(object sender, EventArgs e)
+        {
+        }
     }
 }

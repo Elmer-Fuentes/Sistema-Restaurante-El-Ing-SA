@@ -30,7 +30,7 @@ namespace Presentaciòn
             ToolTip mensaje = new ToolTip();
             mensaje.SetToolTip(btnSalir, "Salir");
             mensaje.SetToolTip(btnEliminar, "Eliminar");
-
+            lblFecha.Text = cl_clin.MtdFecha().ToString("d");
             tabPage1.Text = "Agregar Cliente";
             tabPage2.Text = "Buscar Cliente";
         }
@@ -286,7 +286,14 @@ namespace Presentaciòn
                 txt_buscarclientes.Clear();
                 lst_historial.Focus();
             }
-            Mtdmostrarbusquedaclientes();
+            try
+            {
+                Mtdmostrarbusquedaclientes();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex, "A ocurrido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void lst_historial_SelectedIndexChanged(object sender, EventArgs e)
