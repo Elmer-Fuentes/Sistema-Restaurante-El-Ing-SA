@@ -35,8 +35,10 @@ namespace Presentaciòn
 
         private void frm_usuarios_Load(object sender, EventArgs e)
         {
+            Mtdmostrardatos();
             lblFecha.Text = cl_fecha.MtdFecha().ToString("dd/MM/yyyy");
             Mtdmostrardatos();
+
             style();
         }
 
@@ -156,8 +158,52 @@ namespace Presentaciòn
         {
                 Limpiardatos();
         }
+
         #endregion
 
-      
+
+
+
+
+
+        #region = "Cambiar de tabpage cargar todos los registros empleados sin usuarios"
+        private void tabControl_Usuarios_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MostrarEmpleadossinUsuario("%"); //comodin
+        }
+        #endregion
+
+        #region = MtdBuscarEmpleadosSinUsuario Ok  ";
+        private void MostrarEmpleadossinUsuario(string filtro) //recibe y pasa el parametro al proc a c_datos_usuarios  
+        {
+            DataTable obj = cd_usuarios.MtdBuscarUsuariosPorNombre(filtro);
+            dvg_empleados_sin_Usuarios.DataSource = obj;
+
+        }
+        #endregion
+
+        #region ="Boton_Buscar_empleados_sin registro";
+        private void btn_Bus_emple_sin_name_Click(object sender, EventArgs e)
+        {
+            MostrarEmpleadossinUsuario(txt_buscar_empleado.Text);
+        }
+        #endregion
+
+        #region = "Boton cancelar buscar empleados sin usuario";
+        private void btn_cancelarBus_Usuario_Click(object sender, EventArgs e)
+        {
+            MostrarEmpleadossinUsuario("%"); //comodin
+        }
+        #endregion
+
+        private void dvg_empleados_sin_Usuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txt_codigo_empleado.Text = dvg_empleados_sin_Usuarios.SelectedCells[0].Value.ToString();
+            txt_nombre_empleado.Text = dvg_empleados_sin_Usuarios.SelectedCells[1].Value.ToString();
+            tabControl_Usuarios.SelectedIndex = 0; // Cambia a la pestaña de usuarios
+            txt_buscar_empleado.Text = "";
+            txt_asignar_nombre_usuario.Focus();
+        }
+
     }
 }

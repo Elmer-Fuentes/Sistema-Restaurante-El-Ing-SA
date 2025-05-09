@@ -86,5 +86,30 @@ namespace capa_datos
             }
         }
         #endregion
+
+        #region = "storedet procedure"
+        public DataTable MtdBuscarUsuariosPorNombre(string nombre)
+        {
+            string query = "USP_BusEmpleadoSin_Usuario";
+            DataTable datosUsuarios = new DataTable();
+
+            using (SqlConnection connection = GetConnection())
+            {
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure; // Indica que es un procedimiento almacenado
+                    command.Parameters.AddWithValue("@Empleado_nombre", nombre); // Agrega el parámetro al comando
+
+                    connection.Open();
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    {
+                        adapter.Fill(datosUsuarios);
+                    }
+                }
+            }
+            return datosUsuarios;
+        }
+        #endregion
+
     }
 }

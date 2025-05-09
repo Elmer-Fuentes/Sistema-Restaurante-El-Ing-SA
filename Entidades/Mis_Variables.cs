@@ -10,5 +10,6 @@ namespace Entidades
     {
             public static string UsuarioLogueado { get; set; }
             public static string rolusuario { get; set; }
+            //public static string EmpleadossinUsuario { get; set; }
     }
 }
