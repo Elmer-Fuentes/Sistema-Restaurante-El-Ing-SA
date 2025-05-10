@@ -169,6 +169,7 @@ namespace Presentaciòn
         #region = "Cambiar de tabpage cargar todos los registros empleados sin usuarios"
         private void tabControl_Usuarios_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             MostrarEmpleadossinUsuario("%"); //comodin
         }
         #endregion
@@ -198,6 +199,7 @@ namespace Presentaciòn
 
         private void dvg_empleados_sin_Usuarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            Limpiardatos();
             txt_codigo_empleado.Text = dvg_empleados_sin_Usuarios.SelectedCells[0].Value.ToString();
             txt_nombre_empleado.Text = dvg_empleados_sin_Usuarios.SelectedCells[1].Value.ToString();
             tabControl_Usuarios.SelectedIndex = 0; // Cambia a la pestaña de usuarios

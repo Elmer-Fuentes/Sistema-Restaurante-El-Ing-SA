@@ -55,13 +55,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btn_cancelarBus_Usuario = new FontAwesome.Sharp.IconButton();
+            this.btn_Bus_emple_sin_name = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.dvg_empleados_sin_Usuarios = new System.Windows.Forms.DataGridView();
             this.txt_buscar_empleado = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.btn_Bus_emple_sin_name = new FontAwesome.Sharp.IconButton();
-            this.btn_cancelarBus_Usuario = new FontAwesome.Sharp.IconButton();
             this.tabControl_Usuarios.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -316,6 +316,7 @@
             // 
             // txt_codigo_empleado
             // 
+            this.txt_codigo_empleado.Enabled = false;
             this.txt_codigo_empleado.Location = new System.Drawing.Point(258, 25);
             this.txt_codigo_empleado.Name = "txt_codigo_empleado";
             this.txt_codigo_empleado.Size = new System.Drawing.Size(165, 22);
@@ -403,6 +404,38 @@
             this.tabPage2.Text = "Buscar";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // btn_cancelarBus_Usuario
+            // 
+            this.btn_cancelarBus_Usuario.IconChar = FontAwesome.Sharp.IconChar.Remove;
+            this.btn_cancelarBus_Usuario.IconColor = System.Drawing.Color.Black;
+            this.btn_cancelarBus_Usuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_cancelarBus_Usuario.IconSize = 25;
+            this.btn_cancelarBus_Usuario.Location = new System.Drawing.Point(833, 136);
+            this.btn_cancelarBus_Usuario.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_cancelarBus_Usuario.Name = "btn_cancelarBus_Usuario";
+            this.btn_cancelarBus_Usuario.Size = new System.Drawing.Size(129, 31);
+            this.btn_cancelarBus_Usuario.TabIndex = 70;
+            this.btn_cancelarBus_Usuario.Text = "Limpiar";
+            this.btn_cancelarBus_Usuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_cancelarBus_Usuario.UseVisualStyleBackColor = true;
+            this.btn_cancelarBus_Usuario.Click += new System.EventHandler(this.btn_cancelarBus_Usuario_Click);
+            // 
+            // btn_Bus_emple_sin_name
+            // 
+            this.btn_Bus_emple_sin_name.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
+            this.btn_Bus_emple_sin_name.IconColor = System.Drawing.Color.Black;
+            this.btn_Bus_emple_sin_name.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_Bus_emple_sin_name.IconSize = 25;
+            this.btn_Bus_emple_sin_name.Location = new System.Drawing.Point(833, 96);
+            this.btn_Bus_emple_sin_name.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_Bus_emple_sin_name.Name = "btn_Bus_emple_sin_name";
+            this.btn_Bus_emple_sin_name.Size = new System.Drawing.Size(129, 31);
+            this.btn_Bus_emple_sin_name.TabIndex = 69;
+            this.btn_Bus_emple_sin_name.Text = "Buscar";
+            this.btn_Bus_emple_sin_name.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_Bus_emple_sin_name.UseVisualStyleBackColor = true;
+            this.btn_Bus_emple_sin_name.Click += new System.EventHandler(this.btn_Bus_emple_sin_name_Click);
+            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkOrange;
@@ -454,38 +487,6 @@
             this.label10.Size = new System.Drawing.Size(148, 17);
             this.label10.TabIndex = 3;
             this.label10.Text = "Nombre del Empleado";
-            // 
-            // btn_Bus_emple_sin_name
-            // 
-            this.btn_Bus_emple_sin_name.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
-            this.btn_Bus_emple_sin_name.IconColor = System.Drawing.Color.Black;
-            this.btn_Bus_emple_sin_name.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_Bus_emple_sin_name.IconSize = 25;
-            this.btn_Bus_emple_sin_name.Location = new System.Drawing.Point(833, 96);
-            this.btn_Bus_emple_sin_name.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_Bus_emple_sin_name.Name = "btn_Bus_emple_sin_name";
-            this.btn_Bus_emple_sin_name.Size = new System.Drawing.Size(129, 31);
-            this.btn_Bus_emple_sin_name.TabIndex = 69;
-            this.btn_Bus_emple_sin_name.Text = "Buscar";
-            this.btn_Bus_emple_sin_name.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_Bus_emple_sin_name.UseVisualStyleBackColor = true;
-            this.btn_Bus_emple_sin_name.Click += new System.EventHandler(this.btn_Bus_emple_sin_name_Click);
-            // 
-            // btn_cancelarBus_Usuario
-            // 
-            this.btn_cancelarBus_Usuario.IconChar = FontAwesome.Sharp.IconChar.Remove;
-            this.btn_cancelarBus_Usuario.IconColor = System.Drawing.Color.Black;
-            this.btn_cancelarBus_Usuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_cancelarBus_Usuario.IconSize = 25;
-            this.btn_cancelarBus_Usuario.Location = new System.Drawing.Point(833, 136);
-            this.btn_cancelarBus_Usuario.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_cancelarBus_Usuario.Name = "btn_cancelarBus_Usuario";
-            this.btn_cancelarBus_Usuario.Size = new System.Drawing.Size(129, 31);
-            this.btn_cancelarBus_Usuario.TabIndex = 70;
-            this.btn_cancelarBus_Usuario.Text = "Limpiar";
-            this.btn_cancelarBus_Usuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_cancelarBus_Usuario.UseVisualStyleBackColor = true;
-            this.btn_cancelarBus_Usuario.Click += new System.EventHandler(this.btn_cancelarBus_Usuario_Click);
             // 
             // frm_usuarios
             // 
