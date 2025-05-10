@@ -229,6 +229,9 @@
             // 
             this.cbx_estado.FormattingEnabled = true;
             this.cbx_estado.ItemHeight = 16;
+            this.cbx_estado.Items.AddRange(new object[] {
+            "Activo",
+            "Inactivo"});
             this.cbx_estado.Location = new System.Drawing.Point(612, 90);
             this.cbx_estado.Name = "cbx_estado";
             this.cbx_estado.Size = new System.Drawing.Size(165, 24);
@@ -238,6 +241,12 @@
             // 
             this.cbx_rol.FormattingEnabled = true;
             this.cbx_rol.ItemHeight = 16;
+            this.cbx_rol.Items.AddRange(new object[] {
+            "Admin",
+            "Cocina",
+            "Mesa",
+            "Caja",
+            "Bodega"});
             this.cbx_rol.Location = new System.Drawing.Point(612, 59);
             this.cbx_rol.Name = "cbx_rol";
             this.cbx_rol.Size = new System.Drawing.Size(165, 24);

@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cl_Menu.cs" />
     <Compile Include="cl_MtdFechas.cs" />
     <Compile Include="cl_pago_planillas.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

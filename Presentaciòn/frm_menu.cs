@@ -23,6 +23,7 @@ namespace Presentaciòn
 
         #region = "instancias de la clase Cd_Menu de la capa datos";
         private cd_Menus cd_menu = new cd_Menus();
+        private Cl_Menu cl_menu = new Cl_Menu();
         private cl_MtdFechas cl_fecha = new cl_MtdFechas();
         #endregion = "instancias de la clase Cd_Menu de la capa datos";
 
@@ -174,8 +175,22 @@ namespace Presentaciòn
 
         #endregion
 
+        #region = "MtdPrecio";
+        public void MtdPrecio()
+        {
+            int posicion = cbx_categoria.SelectedIndex;
+            double precio_menu = cl_menu.MtdPrecioMenu(posicion);
+            txt_precio.Text = precio_menu.ToString();
+
+        }
+        #endregion
         private void txt_buscar_empleado_TextChanged(object sender, EventArgs e)
         {
+        }
+
+        private void cbx_categoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MtdPrecio();
         }
     }
 }
