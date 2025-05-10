@@ -8,40 +8,41 @@ using capa_datos;
 
 namespace C_Logica
 {
-	public class cl_pago_planillas
+	public class cl_pago_planillas : Conexion
 	{
-		conexion cn = new conexion();
 		decimal MtdSalarioPlanilla(int codigoEmpleado)
-{
-    decimal salario = 0;
+		{
+			decimal salario = 0;
 
-			using (SqlConnection connex = cn.MtdAbrirconexion())
+
+			string query = "SELECT Salario FROM tbl_Empleados WHERE CodigoEmpleado = @CodigoEmpleado";
+			using (SqlConnection connection = GetConnection())
 			{
-        string query = "SELECT Salario FROM tbl_Empleados WHERE CodigoEmpleado = @CodigoEmpleado";
-        SqlCommand cmd = new SqlCommand(query, connex);
-        cmd.Parameters.AddWithValue("@CodigoEmpleado", codigoEmpleado);
+				connection.Open();
+				using (SqlCommand cmd = new SqlCommand(query, connection))
+				{
 
-        connex.Open();
-        SqlDataReader reader = cmd.ExecuteReader();
+					cmd.Parameters.AddWithValue("@CodigoEmpleado", codigoEmpleado);
 
-        if (reader.Read())
-        {
-            salario = reader.GetDecimal(0);
-        }
+					SqlDataReader reader = cmd.ExecuteReader();
 
-        reader.Close();
-    }
+					if (reader.Read())
+					{
+						salario = reader.GetDecimal(0);
+					}
 
-    return salario;
-}
+					reader.Close();
+				}
+			}
+			return salario;
+		}
 
-
-
-		decimal MtdSalarioBono(decimal salario)
+		public decimal MtdSalarioBono(decimal salario)
 		{
 			decimal bono = salario * 0.10m;
 			return bono;
 		}
+
 		decimal MtdMontoTotal(decimal salario, decimal bono, int horasExtras)
 		{
 			decimal montoHoras = horasExtras * 15;

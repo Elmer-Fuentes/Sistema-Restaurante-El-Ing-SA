@@ -1,6 +1,7 @@
 ﻿using C_Logica;
 using capa_datos;
 using Datos;
+using Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -85,7 +86,7 @@ namespace Presentaciòn
             string categoria = cbx_categoria.Text;
             double precio = double.Parse(txt_precio.Text);
             string estado = cbx_estado.Text;
-            string usuario_sistema = frm_login.UsuarioLogueado;
+            string usuario_sistema = Mis_Variables.UsuarioLogueado;
             DateTime fecha_sistemanombre = cl_fecha.MtdFecha();
             try
             {
@@ -112,7 +113,7 @@ namespace Presentaciòn
             string categoria = cbx_categoria.Text;
             double precio = double.Parse(txt_precio.Text);
             string estado = cbx_estado.Text;
-            string usuario_sistema = frm_login.UsuarioLogueado;
+            string usuario_sistema = Mis_Variables.UsuarioLogueado;
             DateTime fecha_sistemanombre = cl_fecha.MtdFecha();
             try
             {

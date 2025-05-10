@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using C_Logica;
 using System.Diagnostics.Eventing.Reader;
+using Entidades;
 
 namespace Presentaciòn
 {
@@ -77,7 +78,7 @@ namespace Presentaciòn
             string telefono = txt_telefono.Text;
             string categoria = txt_categoria.Text;
             string estado = txt_estado.Text;
-            string usuario_sistema = frm_login.UsuarioLogueado;
+            string usuario_sistema = Mis_Variables.UsuarioLogueado;
             DateTime fecha_sistemanombre = DateTime.Parse(fecha);
             if (txt_categoria.Text == "" || txt_nombre.Text == "" || txt_nit.Text == "" || txt_telefono.Text == "" || txt_estado.Text == "")
 
@@ -111,7 +112,7 @@ namespace Presentaciòn
             string telefono = txt_telefono.Text;
             string categoria = txt_categoria.Text;
             string estado = txt_estado.Text;
-            string usuario_sistema = frm_login.UsuarioLogueado;
+            string usuario_sistema = Mis_Variables.UsuarioLogueado;
             DateTime fecha_sistemanombre = DateTime.Parse(fecha);
 
             if (txt_categoria.Text == "" || txt_nombre.Text == "" || txt_nit.Text == "" || txt_telefono.Text == "" || txt_estado.Text == "")

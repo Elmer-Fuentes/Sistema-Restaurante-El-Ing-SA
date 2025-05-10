@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,8 +27,8 @@ namespace Presentaciòn
 		#region = "Load";
 		private void Menu_Principal_Load(object sender, EventArgs e)
         {
-            lbl_usuario_logo.Text = frm_login.UsuarioLogueado; //muestra el nombre del usuario en el label
-            lbl_rol_usuario.Text = frm_login.rolusuario; //muestra el rol del usuario en el label
+            lbl_usuario_logo.Text = Mis_Variables.UsuarioLogueado; //muestra el nombre del usuario en el label
+            lbl_rol_usuario.Text = Mis_Variables.rolusuario; //muestra el rol del usuario en el label
             
         }
         #endregion

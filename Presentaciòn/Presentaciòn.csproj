@@ -156,6 +156,10 @@
       <Project>{83902075-9d55-4d78-89cc-4b997c402824}</Project>
       <Name>capa_datos</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{34790c58-4ac7-4fc1-87d0-4357206661d7}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Seguridad\Seguridad.csproj">
       <Project>{9f458b09-4e34-4335-86e6-16b5f0498bc4}</Project>
       <Name>Seguridad</Name>

@@ -6,24 +6,22 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
 
 namespace Datos
 {
-	public class cd_pago_planillas
+	public class cd_pago_planillas : Conexion
 	{
-		private conexion connex = new conexion();
 		public DataTable MtdConsultarRentas()
-
 		{
 			string QueryConsultarpagoplanillas = "Select * from tbl_pago_planillas;";
-			SqlDataAdapter sqlAdap = new SqlDataAdapter(QueryConsultarpagoplanillas, connex.MtdAbrirconexion());
-			DataTable dtpagoplanillas = new DataTable();
-			sqlAdap.Fill(dtpagoplanillas);
-			return dtpagoplanillas;
-			connex.MtdCerrarconexion();
-
-
-
+			using (SqlConnection connection = GetConnection())
+			{
+                SqlDataAdapter sqlAdap = new SqlDataAdapter(QueryConsultarpagoplanillas, connection);
+                DataTable dtpagoplanillas = new DataTable();
+				sqlAdap.Fill(dtpagoplanillas);
+				return dtpagoplanillas;
+			}
 		}
 	}
 }
