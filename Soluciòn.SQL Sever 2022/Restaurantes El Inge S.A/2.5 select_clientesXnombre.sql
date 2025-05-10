@@ -1,0 +1,1 @@
+select * from  tbl_clientes where nombre = 'David'
