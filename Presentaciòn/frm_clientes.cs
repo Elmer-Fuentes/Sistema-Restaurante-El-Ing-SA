@@ -31,6 +31,7 @@ namespace Presentaciòn
             ToolTip mensaje = new ToolTip();
             mensaje.SetToolTip(btnSalir, "Salir");
             mensaje.SetToolTip(btnEliminar, "Eliminar");
+            mensaje.SetToolTip(btn_buscar, "Buscar");
             lblFecha.Text = cl_clin.MtdFecha().ToString("d");
             tabPage1.Text = "Agregar Cliente";
             tabPage2.Text = "Buscar Cliente";
