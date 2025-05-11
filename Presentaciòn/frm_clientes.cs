@@ -289,26 +289,26 @@ namespace Presentaciòn
 
         private void btn_buscar_Click(object sender, EventArgs e)
         {
-            //if (txt_buscarclientes.Text != "" && txt_buscarclientes.Text != " ")
-            //{
-            //    lst_historial.Items.Add(txt_buscarclientes.Text);
-            //    txt_buscarclientes.Clear();
-            //    lst_historial.Focus();
-            //    try
-            //    {
-            Mtdmostrarbusquedaclientes(txt_buscarclientes.Text);
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("Error: " + ex, "A ocurrido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
-            //}
+            if (txt_buscarclientes.Text != "" && txt_buscarclientes.Text != " ")
+            {
+                lst_historial.Items.Add(txt_buscarclientes.Text);
+
+                lst_historial.Focus();
+                try
+                {
+                    Mtdmostrarbusquedaclientes(txt_buscarclientes.Text);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex, "A ocurrido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
-        //private void lst_historial_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    txt_buscarclientes.Text = lst_historial.SelectedItem.ToString();
-        //}
+        private void lst_historial_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txt_buscarclientes.Text = lst_historial.SelectedItem.ToString();
+        }
 
         public void Mtdmostrarbusquedaclientes(string nombre)
         {
@@ -326,6 +326,10 @@ namespace Presentaciòn
             Mtdmostrarbusquedaclientes("%");
             txt_buscarclientes.Text = "";
             txt_buscarclientes.Focus();
+        }
+
+        private void dgv_buscarclientes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
         }
     }
 }

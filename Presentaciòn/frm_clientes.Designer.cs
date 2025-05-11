@@ -31,7 +31,6 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
-            this.label1 = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
             this.dgvDatosPlanilla = new System.Windows.Forms.DataGridView();
             this.label8 = new System.Windows.Forms.Label();
@@ -58,16 +57,21 @@
             this.txt_buscarclientes = new System.Windows.Forms.TextBox();
             this.lst_historial = new System.Windows.Forms.ListBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.dgv_buscarclientes = new System.Windows.Forms.DataGridView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosPlanilla)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_buscarclientes)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -83,8 +87,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Controls.Add(this.btnEliminar);
-            this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.lblFecha);
             this.tabPage1.Controls.Add(this.dgvDatosPlanilla);
             this.tabPage1.Controls.Add(this.label8);
@@ -112,16 +116,6 @@
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(616, 66);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 38);
-            this.label1.TabIndex = 48;
-            this.label1.Text = "Clientes";
             // 
             // lblFecha
             // 
@@ -361,13 +355,13 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.panel2);
             this.tabPage2.Controls.Add(this.iconButton1);
             this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this.btn_buscar);
             this.tabPage2.Controls.Add(this.txt_buscarclientes);
             this.tabPage2.Controls.Add(this.lst_historial);
             this.tabPage2.Controls.Add(this.label10);
-            this.tabPage2.Controls.Add(this.label9);
             this.tabPage2.Controls.Add(this.dgv_buscarclientes);
             this.tabPage2.Location = new System.Drawing.Point(4, 29);
             this.tabPage2.Name = "tabPage2";
@@ -428,16 +422,6 @@
             this.label10.TabIndex = 58;
             this.label10.Text = "Nombre de el cliente:";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(541, 43);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(262, 38);
-            this.label9.TabIndex = 57;
-            this.label9.Text = "Buscar Clientes";
-            // 
             // dgv_buscarclientes
             // 
             this.dgv_buscarclientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
@@ -450,6 +434,7 @@
             this.dgv_buscarclientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_buscarclientes.Size = new System.Drawing.Size(1456, 351);
             this.dgv_buscarclientes.TabIndex = 55;
+            this.dgv_buscarclientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_buscarclientes_CellClick);
             // 
             // iconButton1
             // 
@@ -465,6 +450,46 @@
             this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton1.UseVisualStyleBackColor = true;
             this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click_1);
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.DarkOrange;
+            this.panel2.Controls.Add(this.label9);
+            this.panel2.Location = new System.Drawing.Point(4, 32);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1546, 95);
+            this.panel2.TabIndex = 70;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(642, 28);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(262, 38);
+            this.label9.TabIndex = 58;
+            this.label9.Text = "Buscar Clientes";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DarkOrange;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(4, 8);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1546, 95);
+            this.panel1.TabIndex = 71;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(702, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(143, 38);
+            this.label1.TabIndex = 49;
+            this.label1.Text = "Clientes";
             // 
             // frm_clientes
             // 
@@ -485,6 +510,10 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_buscarclientes)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -495,7 +524,6 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private FontAwesome.Sharp.IconButton btnEliminar;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label label8;
         private FontAwesome.Sharp.IconButton btnSalir;
@@ -518,12 +546,15 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.DataGridView dgvDatosPlanilla;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dgv_buscarclientes;
         private System.Windows.Forms.ListBox lst_historial;
         private System.Windows.Forms.TextBox txt_buscarclientes;
         private FontAwesome.Sharp.IconButton btn_buscar;
         private System.Windows.Forms.Label label11;
         private FontAwesome.Sharp.IconButton iconButton1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label9;
     }
 }
