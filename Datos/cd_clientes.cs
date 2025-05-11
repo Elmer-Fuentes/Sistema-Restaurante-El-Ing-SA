@@ -11,10 +11,9 @@ namespace Datos
 {
     public class cd_clientes : Conexion
     {
-        
         public DataTable MtdDevolverdatos()
         {
-            string query = "select * from tbl_clientes";
+            string query = "select codigo_cliente as'codigo de cliente',nombre as 'Nombre',nit as 'NIT',telefono as 'Telefono',categoria as 'Categoria',estado as 'Estado',usuario_sistema as 'Usuario Sistema',fecha_sistema as 'Fecha de el sistema'from tbl_clientes";
             using (SqlConnection connection = GetConnection())
             {
                 SqlDataAdapter retornar = new SqlDataAdapter(query, connection);
@@ -81,18 +80,20 @@ namespace Datos
 
         public DataTable MtdBuscarclientes(string nombre)
         {
-            string query = "select * from tbl_clientes where nombre = @nombre";
+            DataTable busqueda = new DataTable();
+
+            string query = "select * from tbl_clientes where nombre like @nombre";
             using (SqlConnection connection = GetConnection())
             {
                 connection.Open();
                 using (SqlCommand buscar = new SqlCommand(query, connection))
                 {
-                    DataTable busqueda = new DataTable();
-                    //buscar.SelectCommand.Parameters.AddWithValue("@nombre", nombre);
-                    //buscar.Fill(busqueda);
-                    return busqueda;
+                    buscar.Parameters.AddWithValue("@nombre", "%" + nombre + "%");
+                    SqlDataAdapter datos = new SqlDataAdapter(buscar);
+                    datos.Fill(busqueda);
                 }
             }
+            return busqueda;
         }
     }
 }

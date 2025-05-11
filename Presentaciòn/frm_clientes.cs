@@ -287,14 +287,14 @@ namespace Presentaciòn
                 lst_historial.Items.Add(txt_buscarclientes.Text);
                 txt_buscarclientes.Clear();
                 lst_historial.Focus();
-            }
-            try
-            {
-                Mtdmostrarbusquedaclientes();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex, "A ocurrido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                try
+                {
+                    Mtdmostrarbusquedaclientes();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex, "A ocurrido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

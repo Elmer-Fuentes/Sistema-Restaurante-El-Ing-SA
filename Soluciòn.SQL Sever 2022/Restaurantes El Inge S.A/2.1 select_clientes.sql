@@ -1,0 +1,1 @@
+select codigo_cliente as'codigo de cliente',nombre as 'Nombre',nit as 'NIT',telefono as 'Telefono',categoria as 'Categoria',estado as 'Estado',usuario_sistema as 'Usuario Sistema',fecha_sistema as 'Fecha de el sistema'from tbl_clientes 
