@@ -214,12 +214,19 @@ namespace Presentaciòn
 
         private void dgvDatosPlanilla_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txt_codigoCliente.Text = dgvDatosPlanilla.SelectedCells[0].Value.ToString();
-            txt_nit.Text = dgvDatosPlanilla.SelectedCells[2].Value.ToString();
-            txt_nombre.Text = dgvDatosPlanilla.SelectedCells[1].Value.ToString();
-            txt_telefono.Text = dgvDatosPlanilla.SelectedCells[3].Value.ToString();
-            txt_categoria.Text = dgvDatosPlanilla.SelectedCells[4].Value.ToString();
-            txt_estado.Text = dgvDatosPlanilla.SelectedCells[5].Value.ToString();
+            try
+            {
+                txt_codigoCliente.Text = dgvDatosPlanilla.SelectedCells[0].Value.ToString();
+                txt_nit.Text = dgvDatosPlanilla.SelectedCells[2].Value.ToString();
+                txt_nombre.Text = dgvDatosPlanilla.SelectedCells[1].Value.ToString();
+                txt_telefono.Text = dgvDatosPlanilla.SelectedCells[3].Value.ToString();
+                txt_categoria.Text = dgvDatosPlanilla.SelectedCells[4].Value.ToString();
+                txt_estado.Text = dgvDatosPlanilla.SelectedCells[5].Value.ToString();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Seleccione una fila", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void btnCancelar_Click_1(object sender, EventArgs e)
@@ -233,9 +240,9 @@ namespace Presentaciòn
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            int codigo = int.Parse(txt_codigoCliente.Text);
             try
             {
+                int codigo = int.Parse(txt_codigoCliente.Text);
                 DialogResult r = MessageBox.Show("Esta seguro que decea eliminar el registro de la base de datos?", "Confirmacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if (r == DialogResult.OK)
@@ -246,9 +253,9 @@ namespace Presentaciòn
                     MtdBorrardatos();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show("Error: " + ex, "A ocurrido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Selecciona una fila con datos ", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
