@@ -75,7 +75,7 @@
             this.dvg_empleados_sin_Usuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dvg_empleados_sin_Usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvg_empleados_sin_Usuarios.Location = new System.Drawing.Point(46, 180);
-            this.dvg_empleados_sin_Usuarios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dvg_empleados_sin_Usuarios.Margin = new System.Windows.Forms.Padding(2);
             this.dvg_empleados_sin_Usuarios.Name = "dvg_empleados_sin_Usuarios";
             this.dvg_empleados_sin_Usuarios.ReadOnly = true;
             this.dvg_empleados_sin_Usuarios.RowHeadersWidth = 51;
@@ -122,7 +122,7 @@
             this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1026, 585);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Especialidades";
@@ -176,7 +176,7 @@
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1026, 585);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Menu";
@@ -208,7 +208,7 @@
             this.btnEliminar_usuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEliminar_usuario.IconSize = 25;
             this.btnEliminar_usuario.Location = new System.Drawing.Point(655, 524);
-            this.btnEliminar_usuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminar_usuario.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar_usuario.Name = "btnEliminar_usuario";
             this.btnEliminar_usuario.Size = new System.Drawing.Size(129, 31);
             this.btnEliminar_usuario.TabIndex = 8;
@@ -230,7 +230,7 @@
             this.dgvMenus.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvMenus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMenus.Location = new System.Drawing.Point(31, 276);
-            this.dgvMenus.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvMenus.Margin = new System.Windows.Forms.Padding(2);
             this.dgvMenus.Name = "dgvMenus";
             this.dgvMenus.ReadOnly = true;
             this.dgvMenus.RowHeadersWidth = 51;
@@ -247,7 +247,7 @@
             this.btnSalir_frm_usuarios.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSalir_frm_usuarios.IconSize = 25;
             this.btnSalir_frm_usuarios.Location = new System.Drawing.Point(812, 524);
-            this.btnSalir_frm_usuarios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSalir_frm_usuarios.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalir_frm_usuarios.Name = "btnSalir_frm_usuarios";
             this.btnSalir_frm_usuarios.Size = new System.Drawing.Size(129, 31);
             this.btnSalir_frm_usuarios.TabIndex = 7;
@@ -296,9 +296,9 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(17, 105);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(1004, 152);
             this.groupBox1.TabIndex = 65;
             this.groupBox1.TabStop = false;
@@ -310,7 +310,7 @@
             this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCancelar.IconSize = 25;
             this.btnCancelar.Location = new System.Drawing.Point(860, 93);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(129, 31);
             this.btnCancelar.TabIndex = 9;
@@ -326,7 +326,7 @@
             this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEditar.IconSize = 25;
             this.btnEditar.Location = new System.Drawing.Point(860, 56);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(129, 31);
             this.btnEditar.TabIndex = 8;
@@ -342,7 +342,7 @@
             this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGuardar.IconSize = 25;
             this.btnGuardar.Location = new System.Drawing.Point(860, 21);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(129, 31);
             this.btnGuardar.TabIndex = 7;
@@ -463,7 +463,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(913, 487);
+            this.ClientSize = new System.Drawing.Size(1034, 598);
             this.Controls.Add(this.tabControl_Menu);
             this.Name = "frm_menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

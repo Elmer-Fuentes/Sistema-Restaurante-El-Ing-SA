@@ -64,6 +64,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dashboard_Empleados_Usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboard_Empleados_Usuarios.Designer.cs">
+      <DependentUpon>Dashboard_Empleados_Usuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_clientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Dashboard_Empleados_Usuarios.resx">
+      <DependentUpon>Dashboard_Empleados_Usuarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_clientes.resx">
       <DependentUpon>frm_clientes.cs</DependentUpon>
     </EmbeddedResource>

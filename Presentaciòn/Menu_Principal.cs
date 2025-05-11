@@ -22,6 +22,7 @@ namespace Presentaciòn
         private frm_clientes frm_Clientes = null; //instancia del formulario hijo
         private frm_menu frm_Menu = null; //instancia del formulario hijo
 		private frm_pago_planillas frm_Pago_Planillas = null; //instancia del formulario hijo
+		private Dashboard_Empleados_Usuarios frm_Das_empleados = null; //instancia del formulario hijo
 		#endregion
 
 		#region = "Load";
@@ -118,6 +119,19 @@ namespace Presentaciòn
 
 		}
 
-	}
+        private void dashboardEmpleadosUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (frm_Das_empleados == null || frm_Das_empleados.IsDisposed)   //form cerrado o nUll
+            {
+                frm_Das_empleados = new Dashboard_Empleados_Usuarios(); // Crea una nueva instancia solo cuando es necesario
+                frm_Das_empleados.MdiParent = this; //asigna el formulario hijo al padre
+                frm_Das_empleados.Show();
+            }
+            else
+            {
+                frm_Das_empleados.Focus(); // frm abierto, lo pone al frente
+            }
+        }
+    }
 	}
 
