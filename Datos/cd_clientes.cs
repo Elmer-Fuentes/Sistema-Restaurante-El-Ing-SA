@@ -80,17 +80,19 @@ namespace Datos
 
         public DataTable MtdBuscarclientes(string nombre)
         {
+            string query = "USP_BusCliente";
             DataTable busqueda = new DataTable();
-
-            string query = "select * from tbl_clientes where nombre like @nombre";
             using (SqlConnection connection = GetConnection())
             {
-                connection.Open();
                 using (SqlCommand buscar = new SqlCommand(query, connection))
                 {
-                    buscar.Parameters.AddWithValue("@nombre", "%" + nombre + "%");
-                    SqlDataAdapter datos = new SqlDataAdapter(buscar);
-                    datos.Fill(busqueda);
+                    buscar.CommandType = CommandType.StoredProcedure;
+                    buscar.Parameters.AddWithValue("@nombre", nombre);
+
+                    using (SqlDataAdapter datos = new SqlDataAdapter(buscar))
+                    {
+                        datos.Fill(busqueda);
+                    }
                 }
             }
             return busqueda;

@@ -61,6 +61,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.dgv_buscarclientes = new System.Windows.Forms.DataGridView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosPlanilla)).BeginInit();
@@ -78,6 +79,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1541, 843);
             this.tabControl1.TabIndex = 0;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -359,6 +361,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.iconButton1);
             this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this.btn_buscar);
             this.tabPage2.Controls.Add(this.txt_buscarclientes);
@@ -414,7 +417,6 @@
             this.lst_historial.Name = "lst_historial";
             this.lst_historial.Size = new System.Drawing.Size(300, 84);
             this.lst_historial.TabIndex = 59;
-            this.lst_historial.SelectedIndexChanged += new System.EventHandler(this.lst_historial_SelectedIndexChanged);
             // 
             // label10
             // 
@@ -448,6 +450,21 @@
             this.dgv_buscarclientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_buscarclientes.Size = new System.Drawing.Size(1456, 351);
             this.dgv_buscarclientes.TabIndex = 55;
+            // 
+            // iconButton1
+            // 
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Remove;
+            this.iconButton1.IconColor = System.Drawing.Color.Black;
+            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton1.IconSize = 25;
+            this.iconButton1.Location = new System.Drawing.Point(1026, 177);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Size = new System.Drawing.Size(194, 48);
+            this.iconButton1.TabIndex = 65;
+            this.iconButton1.Text = "Cancelar";
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton1.UseVisualStyleBackColor = true;
+            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click_1);
             // 
             // frm_clientes
             // 
@@ -507,5 +524,6 @@
         private System.Windows.Forms.TextBox txt_buscarclientes;
         private FontAwesome.Sharp.IconButton btn_buscar;
         private System.Windows.Forms.Label label11;
+        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }
