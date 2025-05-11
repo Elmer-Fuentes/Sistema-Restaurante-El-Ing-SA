@@ -43,6 +43,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.lbl_rol_usuario = new System.Windows.Forms.Label();
             this.DataAnalitycsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dashboardEmpleadosUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.formulariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Usuarios_FormToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,7 +61,6 @@
             this.salirDelSistemaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.salirDelSistemaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.dashboardEmpleadosUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -89,12 +89,13 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.panel1.Controls.Add(this.groupBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lbl_rol_usuario);
             this.panel1.Controls.Add(this.lbl_usuario_logo);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel1.Location = new System.Drawing.Point(861, 24);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(173, 525);
@@ -219,6 +220,13 @@
             this.DataAnalitycsToolStripMenuItem.Name = "DataAnalitycsToolStripMenuItem";
             this.DataAnalitycsToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
             this.DataAnalitycsToolStripMenuItem.Text = "Data Analitycs";
+            // 
+            // dashboardEmpleadosUsuariosToolStripMenuItem
+            // 
+            this.dashboardEmpleadosUsuariosToolStripMenuItem.Name = "dashboardEmpleadosUsuariosToolStripMenuItem";
+            this.dashboardEmpleadosUsuariosToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
+            this.dashboardEmpleadosUsuariosToolStripMenuItem.Text = "Dashboard Empleados-Usuarios";
+            this.dashboardEmpleadosUsuariosToolStripMenuItem.Click += new System.EventHandler(this.dashboardEmpleadosUsuariosToolStripMenuItem_Click);
             // 
             // menuStrip
             // 
@@ -349,13 +357,6 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // dashboardEmpleadosUsuariosToolStripMenuItem
-            // 
-            this.dashboardEmpleadosUsuariosToolStripMenuItem.Name = "dashboardEmpleadosUsuariosToolStripMenuItem";
-            this.dashboardEmpleadosUsuariosToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
-            this.dashboardEmpleadosUsuariosToolStripMenuItem.Text = "Dashboard Empleados-Usuarios";
-            this.dashboardEmpleadosUsuariosToolStripMenuItem.Click += new System.EventHandler(this.dashboardEmpleadosUsuariosToolStripMenuItem_Click);
             // 
             // Menu_Principal
             // 
