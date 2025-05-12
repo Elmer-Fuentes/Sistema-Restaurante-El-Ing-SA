@@ -28,48 +28,33 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.btnEliminar = new FontAwesome.Sharp.IconButton();
 			this.lbl_salario = new System.Windows.Forms.Label();
 			this.cbox_estado = new System.Windows.Forms.ComboBox();
 			this.label10 = new System.Windows.Forms.Label();
 			this.label9 = new System.Windows.Forms.Label();
-			this.btnCancelar = new FontAwesome.Sharp.IconButton();
-			this.btnEditar = new FontAwesome.Sharp.IconButton();
-			this.btnGuardar = new FontAwesome.Sharp.IconButton();
 			this.txt_Nombre = new System.Windows.Forms.TextBox();
 			this.txt_codigo_empleado = new System.Windows.Forms.TextBox();
 			this.dgvEmpleados = new System.Windows.Forms.DataGridView();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.cboxcargo = new System.Windows.Forms.ComboBox();
+			this.dtp_contratacion = new System.Windows.Forms.DateTimePicker();
 			this.label7 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
-			this.btnSalir = new FontAwesome.Sharp.IconButton();
 			this.label1 = new System.Windows.Forms.Label();
 			this.lblFecha = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
-			this.dtp_contratacion = new System.Windows.Forms.DateTimePicker();
-			this.cboxcargo = new System.Windows.Forms.ComboBox();
+			this.btnEliminar = new FontAwesome.Sharp.IconButton();
+			this.btnCancelar = new FontAwesome.Sharp.IconButton();
+			this.btnEditar = new FontAwesome.Sharp.IconButton();
+			this.btnGuardar = new FontAwesome.Sharp.IconButton();
+			this.btnSalir = new FontAwesome.Sharp.IconButton();
 			((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
 			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
-			// 
-			// btnEliminar
-			// 
-			this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.Trash;
-			this.btnEliminar.IconColor = System.Drawing.Color.Black;
-			this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-			this.btnEliminar.IconSize = 25;
-			this.btnEliminar.Location = new System.Drawing.Point(653, 494);
-			this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
-			this.btnEliminar.Name = "btnEliminar";
-			this.btnEliminar.Size = new System.Drawing.Size(129, 31);
-			this.btnEliminar.TabIndex = 64;
-			this.btnEliminar.Text = "Eliminar";
-			this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnEliminar.UseVisualStyleBackColor = true;
 			// 
 			// lbl_salario
 			// 
@@ -116,51 +101,6 @@
 			this.label9.Size = new System.Drawing.Size(56, 17);
 			this.label9.TabIndex = 53;
 			this.label9.Text = "Salario:";
-			// 
-			// btnCancelar
-			// 
-			this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.Remove;
-			this.btnCancelar.IconColor = System.Drawing.Color.Black;
-			this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-			this.btnCancelar.IconSize = 25;
-			this.btnCancelar.Location = new System.Drawing.Point(842, 84);
-			this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
-			this.btnCancelar.Name = "btnCancelar";
-			this.btnCancelar.Size = new System.Drawing.Size(129, 31);
-			this.btnCancelar.TabIndex = 22;
-			this.btnCancelar.Text = "Cancelar";
-			this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnCancelar.UseVisualStyleBackColor = true;
-			// 
-			// btnEditar
-			// 
-			this.btnEditar.IconChar = FontAwesome.Sharp.IconChar.SquarePen;
-			this.btnEditar.IconColor = System.Drawing.Color.Black;
-			this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-			this.btnEditar.IconSize = 25;
-			this.btnEditar.Location = new System.Drawing.Point(842, 47);
-			this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
-			this.btnEditar.Name = "btnEditar";
-			this.btnEditar.Size = new System.Drawing.Size(129, 31);
-			this.btnEditar.TabIndex = 21;
-			this.btnEditar.Text = "Editar";
-			this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnEditar.UseVisualStyleBackColor = true;
-			// 
-			// btnGuardar
-			// 
-			this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
-			this.btnGuardar.IconColor = System.Drawing.Color.Black;
-			this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-			this.btnGuardar.IconSize = 25;
-			this.btnGuardar.Location = new System.Drawing.Point(842, 12);
-			this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
-			this.btnGuardar.Name = "btnGuardar";
-			this.btnGuardar.Size = new System.Drawing.Size(129, 31);
-			this.btnGuardar.TabIndex = 20;
-			this.btnGuardar.Text = "Guardar";
-			this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnGuardar.UseVisualStyleBackColor = true;
 			// 
 			// txt_Nombre
 			// 
@@ -217,6 +157,26 @@
 			this.groupBox1.Size = new System.Drawing.Size(1004, 167);
 			this.groupBox1.TabIndex = 62;
 			this.groupBox1.TabStop = false;
+			// 
+			// cboxcargo
+			// 
+			this.cboxcargo.FormattingEnabled = true;
+			this.cboxcargo.Items.AddRange(new object[] {
+            "Pendiente ",
+            "Proceso ",
+            "Pagado ",
+            "Rechazado"});
+			this.cboxcargo.Location = new System.Drawing.Point(240, 84);
+			this.cboxcargo.Name = "cboxcargo";
+			this.cboxcargo.Size = new System.Drawing.Size(164, 21);
+			this.cboxcargo.TabIndex = 62;
+			// 
+			// dtp_contratacion
+			// 
+			this.dtp_contratacion.Location = new System.Drawing.Point(615, 53);
+			this.dtp_contratacion.Name = "dtp_contratacion";
+			this.dtp_contratacion.Size = new System.Drawing.Size(160, 20);
+			this.dtp_contratacion.TabIndex = 61;
 			// 
 			// label7
 			// 
@@ -282,21 +242,6 @@
 			this.label2.TabIndex = 1;
 			this.label2.Text = "Codigo Empleado:";
 			// 
-			// btnSalir
-			// 
-			this.btnSalir.IconChar = FontAwesome.Sharp.IconChar.PowerOff;
-			this.btnSalir.IconColor = System.Drawing.Color.Black;
-			this.btnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
-			this.btnSalir.IconSize = 25;
-			this.btnSalir.Location = new System.Drawing.Point(810, 494);
-			this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
-			this.btnSalir.Name = "btnSalir";
-			this.btnSalir.Size = new System.Drawing.Size(129, 31);
-			this.btnSalir.TabIndex = 65;
-			this.btnSalir.Text = "Salir";
-			this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnSalir.UseVisualStyleBackColor = true;
-			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
@@ -330,25 +275,80 @@
 			this.label8.TabIndex = 60;
 			this.label8.Text = "Fecha actual:";
 			// 
-			// dtp_contratacion
+			// btnEliminar
 			// 
-			this.dtp_contratacion.Location = new System.Drawing.Point(615, 53);
-			this.dtp_contratacion.Name = "dtp_contratacion";
-			this.dtp_contratacion.Size = new System.Drawing.Size(160, 20);
-			this.dtp_contratacion.TabIndex = 61;
+			this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.Trash;
+			this.btnEliminar.IconColor = System.Drawing.Color.Black;
+			this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.btnEliminar.IconSize = 25;
+			this.btnEliminar.Location = new System.Drawing.Point(653, 494);
+			this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
+			this.btnEliminar.Name = "btnEliminar";
+			this.btnEliminar.Size = new System.Drawing.Size(129, 31);
+			this.btnEliminar.TabIndex = 64;
+			this.btnEliminar.Text = "Eliminar";
+			this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnEliminar.UseVisualStyleBackColor = true;
 			// 
-			// cboxcargo
+			// btnCancelar
 			// 
-			this.cboxcargo.FormattingEnabled = true;
-			this.cboxcargo.Items.AddRange(new object[] {
-            "Pendiente ",
-            "Proceso ",
-            "Pagado ",
-            "Rechazado"});
-			this.cboxcargo.Location = new System.Drawing.Point(240, 84);
-			this.cboxcargo.Name = "cboxcargo";
-			this.cboxcargo.Size = new System.Drawing.Size(164, 21);
-			this.cboxcargo.TabIndex = 62;
+			this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.Remove;
+			this.btnCancelar.IconColor = System.Drawing.Color.Black;
+			this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.btnCancelar.IconSize = 25;
+			this.btnCancelar.Location = new System.Drawing.Point(842, 84);
+			this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
+			this.btnCancelar.Name = "btnCancelar";
+			this.btnCancelar.Size = new System.Drawing.Size(129, 31);
+			this.btnCancelar.TabIndex = 22;
+			this.btnCancelar.Text = "Cancelar";
+			this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnCancelar.UseVisualStyleBackColor = true;
+			// 
+			// btnEditar
+			// 
+			this.btnEditar.IconChar = FontAwesome.Sharp.IconChar.SquarePen;
+			this.btnEditar.IconColor = System.Drawing.Color.Black;
+			this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.btnEditar.IconSize = 25;
+			this.btnEditar.Location = new System.Drawing.Point(842, 47);
+			this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
+			this.btnEditar.Name = "btnEditar";
+			this.btnEditar.Size = new System.Drawing.Size(129, 31);
+			this.btnEditar.TabIndex = 21;
+			this.btnEditar.Text = "Editar";
+			this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnEditar.UseVisualStyleBackColor = true;
+			// 
+			// btnGuardar
+			// 
+			this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
+			this.btnGuardar.IconColor = System.Drawing.Color.Black;
+			this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.btnGuardar.IconSize = 25;
+			this.btnGuardar.Location = new System.Drawing.Point(842, 12);
+			this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
+			this.btnGuardar.Name = "btnGuardar";
+			this.btnGuardar.Size = new System.Drawing.Size(129, 31);
+			this.btnGuardar.TabIndex = 20;
+			this.btnGuardar.Text = "Guardar";
+			this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnGuardar.UseVisualStyleBackColor = true;
+			// 
+			// btnSalir
+			// 
+			this.btnSalir.IconChar = FontAwesome.Sharp.IconChar.PowerOff;
+			this.btnSalir.IconColor = System.Drawing.Color.Black;
+			this.btnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.btnSalir.IconSize = 25;
+			this.btnSalir.Location = new System.Drawing.Point(810, 494);
+			this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
+			this.btnSalir.Name = "btnSalir";
+			this.btnSalir.Size = new System.Drawing.Size(129, 31);
+			this.btnSalir.TabIndex = 65;
+			this.btnSalir.Text = "Salir";
+			this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnSalir.UseVisualStyleBackColor = true;
 			// 
 			// frm_empleados
 			// 
@@ -365,6 +365,7 @@
 			this.Name = "frm_empleados";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "frm_empleados";
+			this.Load += new System.EventHandler(this.frm_empleados_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();

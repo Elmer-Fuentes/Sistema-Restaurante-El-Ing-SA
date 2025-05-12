@@ -16,5 +16,16 @@ namespace Presentaciòn
 		{
 			InitializeComponent();
 		}
+
+		private void frm_encabezado_ordenes_Load(object sender, EventArgs e)
+		{
+			style();
+		}
+		public void style()
+		{
+			this.ControlBox = false; // Oculta los botones de la barra de título
+			this.FormBorderStyle = FormBorderStyle.None; // Quita los bordes
+		}
+
 	}
 }

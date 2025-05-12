@@ -361,6 +361,7 @@
 			this.Name = "frm_encabezado_ordenes";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "frm_encabezado_ordenes";
+			this.Load += new System.EventHandler(this.frm_encabezado_ordenes_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dgvEncabezadoOrdenes)).EndInit();
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
