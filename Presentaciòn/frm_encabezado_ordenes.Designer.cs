@@ -82,7 +82,7 @@
             "Proceso ",
             "Pagado ",
             "Rechazado"});
-			this.cbox_estado.Location = new System.Drawing.Point(617, 80);
+			this.cbox_estado.Location = new System.Drawing.Point(617, 90);
 			this.cbox_estado.Name = "cbox_estado";
 			this.cbox_estado.Size = new System.Drawing.Size(164, 21);
 			this.cbox_estado.TabIndex = 55;

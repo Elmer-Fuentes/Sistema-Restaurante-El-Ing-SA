@@ -330,6 +330,7 @@
 			this.encabezadoDeÓrdenesToolStripMenuItem.Name = "encabezadoDeÓrdenesToolStripMenuItem";
 			this.encabezadoDeÓrdenesToolStripMenuItem.Size = new System.Drawing.Size(200, 34);
 			this.encabezadoDeÓrdenesToolStripMenuItem.Text = "Encabezado de Órdenes";
+			this.encabezadoDeÓrdenesToolStripMenuItem.Click += new System.EventHandler(this.encabezadoDeÓrdenesToolStripMenuItem_Click);
 			// 
 			// detallesDeÓrdenesToolStripMenuItem
 			// 
