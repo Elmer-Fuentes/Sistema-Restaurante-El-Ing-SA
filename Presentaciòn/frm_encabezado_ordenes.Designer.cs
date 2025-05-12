@@ -359,6 +359,7 @@
 			this.Controls.Add(this.lblFecha);
 			this.Controls.Add(this.label8);
 			this.Name = "frm_encabezado_ordenes";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "frm_encabezado_ordenes";
 			((System.ComponentModel.ISupportInitialize)(this.dgvEncabezadoOrdenes)).EndInit();
 			this.groupBox1.ResumeLayout(false);

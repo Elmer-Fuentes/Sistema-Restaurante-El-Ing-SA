@@ -21,9 +21,10 @@ namespace Presentaciòn
         private frm_usuarios frm_Usuario = null; //instancia del formulario hijo
         private frm_clientes frm_Clientes = null; //instancia del formulario hijo
         private frm_menu frm_Menu = null; //instancia del formulario hijo
-		private frm_pago_planillas frm_Pago_Planillas = null; //instancia del formulario hijo
-		private Dashboard_Empleados_Usuarios frm_Das_empleados = null; //instancia del formulario hijo
-		
+        private frm_pago_planillas frm_Pago_Planillas = null; //instancia del formulario hijo
+        private Dashboard_Empleados_Usuarios frm_Das_empleados = null; //instancia del formulario hijo
+		private frm_encabezado_ordenes frm_Encabezado_Ordenes = null; //instancia del formulario hijo
+
 		#endregion
 
 		#region = "Load";
@@ -31,7 +32,7 @@ namespace Presentaciòn
         {
             lbl_usuario_logo.Text = Mis_Variables.UsuarioLogueado; //muestra el nombre del usuario en el label
             lbl_rol_usuario.Text = Mis_Variables.rolusuario; //muestra el rol del usuario en el label
-            
+
         }
         #endregion
 
@@ -105,20 +106,20 @@ namespace Presentaciòn
 
         }
 
-		private void mesasToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			if (frm_Pago_Planillas == null || frm_Pago_Planillas.IsDisposed)   //form cerrado o nUll
-			{
-				frm_Pago_Planillas = new frm_pago_planillas(); // Crea una nueva instancia solo cuando es necesario
-				frm_Pago_Planillas.MdiParent = this; //asigna el formulario hijo al padre
-				frm_Pago_Planillas.Show();
-			}
-			else
-			{
-				frm_Pago_Planillas.Focus(); // frm abierto, lo pone al frente
-			}
+        private void mesasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (frm_Pago_Planillas == null || frm_Pago_Planillas.IsDisposed)   //form cerrado o nUll
+            {
+                frm_Pago_Planillas = new frm_pago_planillas(); // Crea una nueva instancia solo cuando es necesario
+                frm_Pago_Planillas.MdiParent = this; //asigna el formulario hijo al padre
+                frm_Pago_Planillas.Show();
+            }
+            else
+            {
+                frm_Pago_Planillas.Focus(); // frm abierto, lo pone al frente
+            }
 
-		}
+        }
 
         private void dashboardEmpleadosUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -138,6 +139,23 @@ namespace Presentaciòn
         {
 
         }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (frm_Encabezado_Ordenes == null || frm_Encabezado_Ordenes.IsDisposed)   //form cerrado o nUll
+            {
+				frm_Encabezado_Ordenes = new frm_encabezado_ordenes(); // Crea una nueva instancia solo cuando es necesario
+				frm_Encabezado_Ordenes.MdiParent = this; //asigna el formulario hijo al padre
+				frm_Encabezado_Ordenes.Show();
+            }
+            else
+            {
+				frm_Encabezado_Ordenes.Focus(); // frm abierto, lo pone al frente
+
+
+
+            }
+        }
     }
-	}
+}
 
