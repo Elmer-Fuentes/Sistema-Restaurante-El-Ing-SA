@@ -38,7 +38,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.lbl_fecha_so = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lbl_rol_usuario = new System.Windows.Forms.Label();
@@ -61,10 +60,13 @@
             this.salirDelSistemaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.salirDelSistemaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.empleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.empleadosSinUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -170,16 +172,6 @@
             this.label7.Size = new System.Drawing.Size(171, 15);
             this.label7.TabIndex = 39;
             this.label7.Text = "Fecha y Hora del Sistema";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Presentaciòn.Properties.Resources.restaurantes;
-            this.pictureBox1.Location = new System.Drawing.Point(16, 118);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(135, 89);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 27;
-            this.pictureBox1.TabStop = false;
             // 
             // label4
             // 
@@ -342,6 +334,8 @@
             // 
             // salirDelSistemaToolStripMenuItem1
             // 
+            this.salirDelSistemaToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.empleadosToolStripMenuItem});
             this.salirDelSistemaToolStripMenuItem1.Name = "salirDelSistemaToolStripMenuItem1";
             this.salirDelSistemaToolStripMenuItem1.Size = new System.Drawing.Size(65, 22);
             this.salirDelSistemaToolStripMenuItem1.Text = "Reportes";
@@ -357,6 +351,31 @@
             // 
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Presentaciòn.Properties.Resources.restaurantes;
+            this.pictureBox1.Location = new System.Drawing.Point(16, 118);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(135, 89);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 27;
+            this.pictureBox1.TabStop = false;
+            // 
+            // empleadosToolStripMenuItem
+            // 
+            this.empleadosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.empleadosSinUsuarioToolStripMenuItem});
+            this.empleadosToolStripMenuItem.Name = "empleadosToolStripMenuItem";
+            this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.empleadosToolStripMenuItem.Text = "Empleados";
+            // 
+            // empleadosSinUsuarioToolStripMenuItem
+            // 
+            this.empleadosSinUsuarioToolStripMenuItem.Name = "empleadosSinUsuarioToolStripMenuItem";
+            this.empleadosSinUsuarioToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
+            this.empleadosSinUsuarioToolStripMenuItem.Text = "Empleados Sin Usuario";
+            this.empleadosSinUsuarioToolStripMenuItem.Click += new System.EventHandler(this.empleadosSinUsuarioToolStripMenuItem_Click);
             // 
             // Menu_Principal
             // 
@@ -376,9 +395,9 @@
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -418,5 +437,7 @@
         private System.Windows.Forms.Label lbl_fecha_so;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ToolStripMenuItem dashboardEmpleadosUsuariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem empleadosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem empleadosSinUsuarioToolStripMenuItem;
     }
 }

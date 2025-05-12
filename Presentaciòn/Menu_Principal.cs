@@ -23,6 +23,7 @@ namespace Presentaciòn
         private frm_menu frm_Menu = null; //instancia del formulario hijo
 		private frm_pago_planillas frm_Pago_Planillas = null; //instancia del formulario hijo
 		private Dashboard_Empleados_Usuarios frm_Das_empleados = null; //instancia del formulario hijo
+		
 		#endregion
 
 		#region = "Load";
@@ -131,6 +132,11 @@ namespace Presentaciòn
             {
                 frm_Das_empleados.Focus(); // frm abierto, lo pone al frente
             }
+        }
+
+        private void empleadosSinUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 	}
