@@ -306,7 +306,7 @@ namespace Presentaciòn
                     MessageBox.Show("Error: " + ex, "A ocurrido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else if (txt_buscarclientes.Text == "" || txt_buscarclientes.Text.Contains(""))
+            else if (txt_buscarclientes.Text == "" || txt_buscarclientes.Text.Contains(" "))
             {
                 txt_buscarclientes.BackColor = Color.Coral;
                 MessageBox.Show("No se puede hacer una busqueda en blanco", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Error);

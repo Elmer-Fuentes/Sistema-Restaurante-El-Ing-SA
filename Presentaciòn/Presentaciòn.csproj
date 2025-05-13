@@ -118,6 +118,12 @@
     <Compile Include="frm_menu.Designer.cs">
       <DependentUpon>frm_menu.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_mesas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_mesas.Designer.cs">
+      <DependentUpon>frm_mesas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_pago_planillas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_menu.resx">
       <DependentUpon>frm_menu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_mesas.resx">
+      <DependentUpon>frm_mesas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_pago_planillas.resx">
       <DependentUpon>frm_pago_planillas.cs</DependentUpon>
