@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using C_Logica;
 using System.Diagnostics.Eventing.Reader;
 using Entidades;
+using System.Security.Permissions;
 
 namespace Presentaciòn
 {
@@ -32,6 +33,7 @@ namespace Presentaciòn
             mensaje.SetToolTip(btnSalir, "Salir");
             mensaje.SetToolTip(btnEliminar, "Eliminar");
             mensaje.SetToolTip(btn_buscar, "Buscar");
+            mensaje.SetToolTip(dgv_buscarclientes, "Selecciona uno para editar...");
             lblFecha.Text = cl_clin.MtdFecha().ToString("d");
             tabPage1.Text = "Agregar Cliente";
             tabPage2.Text = "Buscar Cliente";
@@ -289,19 +291,34 @@ namespace Presentaciòn
 
         private void btn_buscar_Click(object sender, EventArgs e)
         {
-            if (txt_buscarclientes.Text != "" && txt_buscarclientes.Text != " ")
+            if (txt_buscarclientes.Text != "" && !txt_buscarclientes.Text.Contains(" ") && MtdVerificarRetornodedatos() == true)
             {
                 lst_historial.Items.Add(txt_buscarclientes.Text);
-
-                lst_historial.Focus();
+                txt_buscarclientes.BackColor = Color.White;
                 try
                 {
                     Mtdmostrarbusquedaclientes(txt_buscarclientes.Text);
+                    txt_buscarclientes.Text = "";
+                    txt_buscarclientes.Focus();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error: " + ex, "A ocurrido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+            else if (txt_buscarclientes.Text == "" || txt_buscarclientes.Text.Contains(""))
+            {
+                txt_buscarclientes.BackColor = Color.Coral;
+                MessageBox.Show("No se puede hacer una busqueda en blanco", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_buscarclientes.Text = "";
+                txt_buscarclientes.Focus();
+            }
+            else
+            {
+                MessageBox.Show("No se a encontrado ningun registro con ese nombre", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lst_historial.Items.Add(txt_buscarclientes.Text);
+                txt_buscarclientes.Text = "";
+                txt_buscarclientes.Focus();
             }
         }
 
@@ -313,7 +330,21 @@ namespace Presentaciòn
         public void Mtdmostrarbusquedaclientes(string nombre)
         {
             DataTable dt = cd_clin.MtdBuscarclientes(nombre);
+
             dgv_buscarclientes.DataSource = dt;
+        }
+
+        public bool MtdVerificarRetornodedatos()
+        {
+            DataTable dt = cd_clin.MtdBuscarclientes(txt_buscarclientes.Text);
+            if (dt.Rows.Count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
@@ -323,9 +354,6 @@ namespace Presentaciòn
 
         private void iconButton1_Click_1(object sender, EventArgs e)
         {
-            Mtdmostrarbusquedaclientes("%");
-            txt_buscarclientes.Text = "";
-            txt_buscarclientes.Focus();
         }
 
         private void dgv_buscarclientes_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -348,7 +376,26 @@ namespace Presentaciòn
 
         private void lst_historial_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            txt_buscarclientes.Text = lst_historial.SelectedItem.ToString();
+            try
+            {
+                if (lst_historial.SelectedItem != null)
+                {
+                    txt_buscarclientes.Text = lst_historial.SelectedItem.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione una opcion", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Seleccione una opcion", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+            txt_buscarclientes.Focus();
         }
     }
 }

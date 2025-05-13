@@ -56,7 +56,6 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.label11 = new System.Windows.Forms.Label();
             this.btn_buscar = new FontAwesome.Sharp.IconButton();
             this.txt_buscarclientes = new System.Windows.Forms.TextBox();
@@ -376,7 +375,6 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.panel2);
-            this.tabPage2.Controls.Add(this.iconButton1);
             this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this.btn_buscar);
             this.tabPage2.Controls.Add(this.txt_buscarclientes);
@@ -390,6 +388,7 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // panel2
             // 
@@ -411,26 +410,11 @@
             this.label9.TabIndex = 58;
             this.label9.Text = "Buscar Clientes";
             // 
-            // iconButton1
-            // 
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Remove;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.IconSize = 25;
-            this.iconButton1.Location = new System.Drawing.Point(1026, 177);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(194, 48);
-            this.iconButton1.TabIndex = 65;
-            this.iconButton1.Text = "Cancelar";
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = true;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click_1);
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(553, 205);
+            this.label11.Location = new System.Drawing.Point(570, 205);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(163, 20);
             this.label11.TabIndex = 63;
@@ -462,9 +446,9 @@
             // 
             this.lst_historial.FormattingEnabled = true;
             this.lst_historial.ItemHeight = 20;
-            this.lst_historial.Location = new System.Drawing.Point(524, 254);
+            this.lst_historial.Location = new System.Drawing.Point(506, 239);
             this.lst_historial.Name = "lst_historial";
-            this.lst_historial.Size = new System.Drawing.Size(300, 84);
+            this.lst_historial.Size = new System.Drawing.Size(318, 104);
             this.lst_historial.TabIndex = 59;
             this.lst_historial.SelectedIndexChanged += new System.EventHandler(this.lst_historial_SelectedIndexChanged_1);
             // 
@@ -552,7 +536,6 @@
         private System.Windows.Forms.TextBox txt_buscarclientes;
         private FontAwesome.Sharp.IconButton btn_buscar;
         private System.Windows.Forms.Label label11;
-        private FontAwesome.Sharp.IconButton iconButton1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
