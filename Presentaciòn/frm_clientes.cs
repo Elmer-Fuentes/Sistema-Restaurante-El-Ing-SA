@@ -330,6 +330,25 @@ namespace Presentaciòn
 
         private void dgv_buscarclientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            try
+            {
+                txt_codigoCliente.Text = dgv_buscarclientes.SelectedCells[0].Value.ToString();
+                txt_nit.Text = dgv_buscarclientes.SelectedCells[2].Value.ToString();
+                txt_nombre.Text = dgv_buscarclientes.SelectedCells[1].Value.ToString();
+                txt_telefono.Text = dgv_buscarclientes.SelectedCells[3].Value.ToString();
+                txt_categoria.Text = dgv_buscarclientes.SelectedCells[4].Value.ToString();
+                txt_estado.Text = dgv_buscarclientes.SelectedCells[5].Value.ToString();
+                tabControl1.SelectedIndex = 0;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Seleccione una fila", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void lst_historial_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            txt_buscarclientes.Text = lst_historial.SelectedItem.ToString();
         }
     }
 }
