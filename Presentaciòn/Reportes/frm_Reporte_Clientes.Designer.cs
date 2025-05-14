@@ -1,6 +1,6 @@
 ﻿namespace Presentaciòn.Reportes
 {
-    partial class frm_Reporte_Empleados_Sin_Usuarios
+    partial class frm_Reporte_Clientes
     {
         /// <summary>
         /// Required designer variable.
@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.uSPBusEmpleadoSinUsuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource3 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.uSPBusClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dS_Reportes = new Presentaciòn.Reportes.DS_Reportes();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.txt_p1 = new System.Windows.Forms.TextBox();
-            this.uSP_BusEmpleadoSin_UsuarioTableAdapter = new Presentaciòn.Reportes.DS_ReportesTableAdapters.USP_BusEmpleadoSin_UsuarioTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.uSPBusEmpleadoSinUsuarioBindingSource)).BeginInit();
+            this.uSP_BusClienteTableAdapter = new Presentaciòn.Reportes.DS_ReportesTableAdapters.USP_BusClienteTableAdapter();
+            this.txt_p2_clientes = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.uSPBusClienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_Reportes)).BeginInit();
             this.SuspendLayout();
             // 
-            // uSPBusEmpleadoSinUsuarioBindingSource
+            // uSPBusClienteBindingSource
             // 
-            this.uSPBusEmpleadoSinUsuarioBindingSource.DataMember = "USP_BusEmpleadoSin_Usuario";
-            this.uSPBusEmpleadoSinUsuarioBindingSource.DataSource = this.dS_Reportes;
+            this.uSPBusClienteBindingSource.DataMember = "USP_BusCliente";
+            this.uSPBusClienteBindingSource.DataSource = this.dS_Reportes;
             // 
             // dS_Reportes
             // 
@@ -52,40 +52,40 @@
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource2.Name = "DS_EmpleadosSinUsuarios";
-            reportDataSource2.Value = this.uSPBusEmpleadoSinUsuarioBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Presentaciòn.Reportes.Report_Empleados_sin_Usuarios.rdlc";
+            reportDataSource3.Name = "DS_Bus_Clientes";
+            reportDataSource3.Value = this.uSPBusClienteBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource3);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Presentaciòn.Reportes.Report_Bus_Clientes.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(1032, 450);
             this.reportViewer1.TabIndex = 0;
             // 
-            // txt_p1
+            // uSP_BusClienteTableAdapter
             // 
-            this.txt_p1.Location = new System.Drawing.Point(70, 37);
-            this.txt_p1.Name = "txt_p1";
-            this.txt_p1.Size = new System.Drawing.Size(147, 20);
-            this.txt_p1.TabIndex = 1;
-            this.txt_p1.Visible = false;
+            this.uSP_BusClienteTableAdapter.ClearBeforeFill = true;
             // 
-            // uSP_BusEmpleadoSin_UsuarioTableAdapter
+            // txt_p2_clientes
             // 
-            this.uSP_BusEmpleadoSin_UsuarioTableAdapter.ClearBeforeFill = true;
+            this.txt_p2_clientes.Location = new System.Drawing.Point(66, 46);
+            this.txt_p2_clientes.Name = "txt_p2_clientes";
+            this.txt_p2_clientes.Size = new System.Drawing.Size(186, 20);
+            this.txt_p2_clientes.TabIndex = 1;
+            this.txt_p2_clientes.Visible = false;
             // 
-            // frm_Reporte_Empleados_Sin_Usuarios
+            // frm_Reporte_Clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1032, 450);
-            this.Controls.Add(this.txt_p1);
+            this.Controls.Add(this.txt_p2_clientes);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "frm_Reporte_Empleados_Sin_Usuarios";
+            this.Name = "frm_Reporte_Clientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Reporte Empleados Sin Usuarios";
-            this.Load += new System.EventHandler(this.frm_Reporte_Empleados_Sin_Usuarios_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.uSPBusEmpleadoSinUsuarioBindingSource)).EndInit();
+            this.Text = "Reporte Clientes";
+            this.Load += new System.EventHandler(this.frm_Reporte_Clientes_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.uSPBusClienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS_Reportes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -95,9 +95,9 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.BindingSource uSPBusEmpleadoSinUsuarioBindingSource;
+        private System.Windows.Forms.BindingSource uSPBusClienteBindingSource;
         private DS_Reportes dS_Reportes;
-        private DS_ReportesTableAdapters.USP_BusEmpleadoSin_UsuarioTableAdapter uSP_BusEmpleadoSin_UsuarioTableAdapter;
-        public System.Windows.Forms.TextBox txt_p1;
+        private DS_ReportesTableAdapters.USP_BusClienteTableAdapter uSP_BusClienteTableAdapter;
+        public System.Windows.Forms.TextBox txt_p2_clientes;
     }
 }

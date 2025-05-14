@@ -61,6 +61,7 @@
             this.salirDelSistemaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadosSinUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirDelSistemaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
@@ -73,10 +74,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(20, 51);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(13, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 25);
+            this.label1.Size = new System.Drawing.Size(89, 16);
             this.label1.TabIndex = 2;
             this.label1.Text = "Bienvenido:";
             // 
@@ -84,10 +84,9 @@
             // 
             this.lbl_usuario_logo.AutoSize = true;
             this.lbl_usuario_logo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_usuario_logo.Location = new System.Drawing.Point(20, 80);
-            this.lbl_usuario_logo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_usuario_logo.Location = new System.Drawing.Point(13, 52);
             this.lbl_usuario_logo.Name = "lbl_usuario_logo";
-            this.lbl_usuario_logo.Size = new System.Drawing.Size(79, 25);
+            this.lbl_usuario_logo.Size = new System.Drawing.Size(54, 16);
             this.lbl_usuario_logo.TabIndex = 0;
             this.lbl_usuario_logo.Text = "Usuario";
             // 
@@ -100,10 +99,9 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.lbl_rol_usuario);
             this.panel1.Controls.Add(this.lbl_usuario_logo);
-            this.panel1.Location = new System.Drawing.Point(1292, 37);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel1.Location = new System.Drawing.Point(736, 24);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(260, 808);
+            this.panel1.Size = new System.Drawing.Size(298, 525);
             this.panel1.TabIndex = 4;
             // 
             // groupBox1
@@ -120,11 +118,9 @@
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(0, 390);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.groupBox1.Location = new System.Drawing.Point(0, 253);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox1.Size = new System.Drawing.Size(260, 418);
+            this.groupBox1.Size = new System.Drawing.Size(298, 272);
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
             // 
@@ -132,10 +128,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(16, 102);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(11, 66);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 22);
+            this.label3.Size = new System.Drawing.Size(42, 15);
             this.label3.TabIndex = 41;
             this.label3.Text = "Hora:";
             // 
@@ -143,10 +138,9 @@
             // 
             this.lbl_hora_so.AutoSize = true;
             this.lbl_hora_so.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_hora_so.Location = new System.Drawing.Point(18, 128);
-            this.lbl_hora_so.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_hora_so.Location = new System.Drawing.Point(12, 83);
             this.lbl_hora_so.Name = "lbl_hora_so";
-            this.lbl_hora_so.Size = new System.Drawing.Size(86, 37);
+            this.lbl_hora_so.Size = new System.Drawing.Size(59, 25);
             this.lbl_hora_so.TabIndex = 38;
             this.lbl_hora_so.Text = "hora";
             // 
@@ -154,10 +148,9 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(15, 42);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(10, 27);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(71, 22);
+            this.label6.Size = new System.Drawing.Size(50, 15);
             this.label6.TabIndex = 40;
             this.label6.Text = "Fecha:";
             // 
@@ -165,10 +158,9 @@
             // 
             this.lbl_fecha_so.AutoSize = true;
             this.lbl_fecha_so.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_fecha_so.Location = new System.Drawing.Point(18, 71);
-            this.lbl_fecha_so.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_fecha_so.Location = new System.Drawing.Point(12, 46);
             this.lbl_fecha_so.Name = "lbl_fecha_so";
-            this.lbl_fecha_so.Size = new System.Drawing.Size(48, 17);
+            this.lbl_fecha_so.Size = new System.Drawing.Size(33, 12);
             this.lbl_fecha_so.TabIndex = 37;
             this.lbl_fecha_so.Text = "fecha";
             // 
@@ -176,20 +168,18 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(2, 2);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(1, 1);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(240, 22);
+            this.label7.Size = new System.Drawing.Size(171, 15);
             this.label7.TabIndex = 39;
             this.label7.Text = "Fecha y Hora del Sistema";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Presentaciòn.Properties.Resources.restaurantes;
-            this.pictureBox1.Location = new System.Drawing.Point(24, 182);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox1.Location = new System.Drawing.Point(16, 112);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(202, 137);
+            this.pictureBox1.Size = new System.Drawing.Size(135, 89);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 27;
             this.pictureBox1.TabStop = false;
@@ -199,10 +189,9 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.label4.Location = new System.Drawing.Point(20, 358);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(13, 233);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(203, 25);
+            this.label4.Size = new System.Drawing.Size(139, 16);
             this.label4.TabIndex = 25;
             this.label4.Text = "Sistema Restaurantes";
             // 
@@ -211,10 +200,9 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.label5.Location = new System.Drawing.Point(20, 388);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(13, 252);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(101, 22);
+            this.label5.Size = new System.Drawing.Size(68, 15);
             this.label5.TabIndex = 26;
             this.label5.Text = "Version 1,0";
             // 
@@ -222,10 +210,9 @@
             // 
             this.lbl_rol_usuario.AutoSize = true;
             this.lbl_rol_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_rol_usuario.Location = new System.Drawing.Point(20, 112);
-            this.lbl_rol_usuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lbl_rol_usuario.Location = new System.Drawing.Point(13, 73);
             this.lbl_rol_usuario.Name = "lbl_rol_usuario";
-            this.lbl_rol_usuario.Size = new System.Drawing.Size(139, 25);
+            this.lbl_rol_usuario.Size = new System.Drawing.Size(96, 16);
             this.lbl_rol_usuario.TabIndex = 1;
             this.lbl_rol_usuario.Text = "lbl_Rol_usuaio";
             // 
@@ -234,19 +221,18 @@
             this.DataAnalitycsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dashboardEmpleadosUsuariosToolStripMenuItem});
             this.DataAnalitycsToolStripMenuItem.Name = "DataAnalitycsToolStripMenuItem";
-            this.DataAnalitycsToolStripMenuItem.Size = new System.Drawing.Size(140, 29);
+            this.DataAnalitycsToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
             this.DataAnalitycsToolStripMenuItem.Text = "Data Analitycs";
             // 
             // dashboardEmpleadosUsuariosToolStripMenuItem
             // 
             this.dashboardEmpleadosUsuariosToolStripMenuItem.Name = "dashboardEmpleadosUsuariosToolStripMenuItem";
-            this.dashboardEmpleadosUsuariosToolStripMenuItem.Size = new System.Drawing.Size(370, 34);
+            this.dashboardEmpleadosUsuariosToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
             this.dashboardEmpleadosUsuariosToolStripMenuItem.Text = "Dashboard Empleados-Usuarios";
             this.dashboardEmpleadosUsuariosToolStripMenuItem.Click += new System.EventHandler(this.dashboardEmpleadosUsuariosToolStripMenuItem_Click);
             // 
             // menuStrip
             // 
-            this.menuStrip.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
             this.menuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.formulariosToolStripMenuItem,
@@ -257,8 +243,8 @@
             this.salirDelSistemaToolStripMenuItem2});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
-            this.menuStrip.Padding = new System.Windows.Forms.Padding(6, 2, 0, 2);
-            this.menuStrip.Size = new System.Drawing.Size(1551, 33);
+            this.menuStrip.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.menuStrip.Size = new System.Drawing.Size(913, 24);
             this.menuStrip.TabIndex = 3;
             this.menuStrip.Text = "MenuStrip";
             // 
@@ -269,27 +255,27 @@
             this.usuariosToolStripMenuItem,
             this.mesasToolStripMenuItem});
             this.formulariosToolStripMenuItem.Name = "formulariosToolStripMenuItem";
-            this.formulariosToolStripMenuItem.Size = new System.Drawing.Size(147, 29);
+            this.formulariosToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
             this.formulariosToolStripMenuItem.Text = "Administración";
             // 
             // Usuarios_FormToolStripMenuItem
             // 
             this.Usuarios_FormToolStripMenuItem.Name = "Usuarios_FormToolStripMenuItem";
-            this.Usuarios_FormToolStripMenuItem.Size = new System.Drawing.Size(202, 34);
+            this.Usuarios_FormToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.Usuarios_FormToolStripMenuItem.Text = "Usuarios";
             this.Usuarios_FormToolStripMenuItem.Click += new System.EventHandler(this.Usuarios_FormToolStripMenuItem_Click);
             // 
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(202, 34);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.usuariosToolStripMenuItem.Text = "Empleados";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // mesasToolStripMenuItem
             // 
             this.mesasToolStripMenuItem.Name = "mesasToolStripMenuItem";
-            this.mesasToolStripMenuItem.Size = new System.Drawing.Size(202, 34);
+            this.mesasToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.mesasToolStripMenuItem.Text = "Planillas";
             this.mesasToolStripMenuItem.Click += new System.EventHandler(this.mesasToolStripMenuItem_Click);
             // 
@@ -301,33 +287,33 @@
             this.inventariosToolStripMenuItem,
             this.inventariosToolStripMenuItem1});
             this.salirDelSistemaToolStripMenuItem.Name = "salirDelSistemaToolStripMenuItem";
-            this.salirDelSistemaToolStripMenuItem.Size = new System.Drawing.Size(108, 29);
+            this.salirDelSistemaToolStripMenuItem.Size = new System.Drawing.Size(72, 22);
             this.salirDelSistemaToolStripMenuItem.Text = "Catálogos";
             // 
             // Clinetes_menuToolStripMenuItem
             // 
             this.Clinetes_menuToolStripMenuItem.Name = "Clinetes_menuToolStripMenuItem";
-            this.Clinetes_menuToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.Clinetes_menuToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.Clinetes_menuToolStripMenuItem.Text = "Clientes";
             this.Clinetes_menuToolStripMenuItem.Click += new System.EventHandler(this.Clinetes_menuToolStripMenuItem_Click);
             // 
             // detalleDeOrdenesToolStripMenuItem
             // 
             this.detalleDeOrdenesToolStripMenuItem.Name = "detalleDeOrdenesToolStripMenuItem";
-            this.detalleDeOrdenesToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.detalleDeOrdenesToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.detalleDeOrdenesToolStripMenuItem.Text = "Menu";
             this.detalleDeOrdenesToolStripMenuItem.Click += new System.EventHandler(this.detalleDeOrdenesToolStripMenuItem_Click);
             // 
             // inventariosToolStripMenuItem
             // 
             this.inventariosToolStripMenuItem.Name = "inventariosToolStripMenuItem";
-            this.inventariosToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.inventariosToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.inventariosToolStripMenuItem.Text = "Inventarios";
             // 
             // inventariosToolStripMenuItem1
             // 
             this.inventariosToolStripMenuItem1.Name = "inventariosToolStripMenuItem1";
-            this.inventariosToolStripMenuItem1.Size = new System.Drawing.Size(270, 34);
+            this.inventariosToolStripMenuItem1.Size = new System.Drawing.Size(132, 22);
             this.inventariosToolStripMenuItem1.Text = "Mesas";
             this.inventariosToolStripMenuItem1.Click += new System.EventHandler(this.inventariosToolStripMenuItem1_Click);
             // 
@@ -338,34 +324,35 @@
             this.detallesDeÓrdenesToolStripMenuItem,
             this.pagoDeÓrdenesToolStripMenuItem});
             this.operacionesToolStripMenuItem.Name = "operacionesToolStripMenuItem";
-            this.operacionesToolStripMenuItem.Size = new System.Drawing.Size(127, 29);
+            this.operacionesToolStripMenuItem.Size = new System.Drawing.Size(85, 22);
             this.operacionesToolStripMenuItem.Text = "Operaciones";
             // 
             // encabezadoDeÓrdenesToolStripMenuItem
             // 
             this.encabezadoDeÓrdenesToolStripMenuItem.Name = "encabezadoDeÓrdenesToolStripMenuItem";
-            this.encabezadoDeÓrdenesToolStripMenuItem.Size = new System.Drawing.Size(306, 58);
+            this.encabezadoDeÓrdenesToolStripMenuItem.Size = new System.Drawing.Size(200, 34);
             this.encabezadoDeÓrdenesToolStripMenuItem.Text = "Encabezado de Órdenes";
             this.encabezadoDeÓrdenesToolStripMenuItem.Click += new System.EventHandler(this.encabezadoDeÓrdenesToolStripMenuItem_Click);
             // 
             // detallesDeÓrdenesToolStripMenuItem
             // 
             this.detallesDeÓrdenesToolStripMenuItem.Name = "detallesDeÓrdenesToolStripMenuItem";
-            this.detallesDeÓrdenesToolStripMenuItem.Size = new System.Drawing.Size(306, 58);
+            this.detallesDeÓrdenesToolStripMenuItem.Size = new System.Drawing.Size(200, 34);
             this.detallesDeÓrdenesToolStripMenuItem.Text = "Detalles de Órdenes\n";
             // 
             // pagoDeÓrdenesToolStripMenuItem
             // 
             this.pagoDeÓrdenesToolStripMenuItem.Name = "pagoDeÓrdenesToolStripMenuItem";
-            this.pagoDeÓrdenesToolStripMenuItem.Size = new System.Drawing.Size(306, 58);
+            this.pagoDeÓrdenesToolStripMenuItem.Size = new System.Drawing.Size(200, 34);
             this.pagoDeÓrdenesToolStripMenuItem.Text = "Pago de Órdenes\n";
             // 
             // salirDelSistemaToolStripMenuItem1
             // 
             this.salirDelSistemaToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.empleadosToolStripMenuItem});
+            this.empleadosToolStripMenuItem,
+            this.clientesToolStripMenuItem});
             this.salirDelSistemaToolStripMenuItem1.Name = "salirDelSistemaToolStripMenuItem1";
-            this.salirDelSistemaToolStripMenuItem1.Size = new System.Drawing.Size(98, 29);
+            this.salirDelSistemaToolStripMenuItem1.Size = new System.Drawing.Size(65, 22);
             this.salirDelSistemaToolStripMenuItem1.Text = "Reportes";
             // 
             // empleadosToolStripMenuItem
@@ -373,20 +360,27 @@
             this.empleadosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.empleadosSinUsuarioToolStripMenuItem});
             this.empleadosToolStripMenuItem.Name = "empleadosToolStripMenuItem";
-            this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(202, 34);
+            this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.empleadosToolStripMenuItem.Text = "Empleados";
             // 
             // empleadosSinUsuarioToolStripMenuItem
             // 
             this.empleadosSinUsuarioToolStripMenuItem.Name = "empleadosSinUsuarioToolStripMenuItem";
-            this.empleadosSinUsuarioToolStripMenuItem.Size = new System.Drawing.Size(296, 34);
+            this.empleadosSinUsuarioToolStripMenuItem.Size = new System.Drawing.Size(194, 22);
             this.empleadosSinUsuarioToolStripMenuItem.Text = "Empleados Sin Usuario";
             this.empleadosSinUsuarioToolStripMenuItem.Click += new System.EventHandler(this.empleadosSinUsuarioToolStripMenuItem_Click);
+            // 
+            // clientesToolStripMenuItem
+            // 
+            this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.clientesToolStripMenuItem.Text = "Clientes";
+            this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
             // 
             // salirDelSistemaToolStripMenuItem2
             // 
             this.salirDelSistemaToolStripMenuItem2.Name = "salirDelSistemaToolStripMenuItem2";
-            this.salirDelSistemaToolStripMenuItem2.Size = new System.Drawing.Size(159, 29);
+            this.salirDelSistemaToolStripMenuItem2.Size = new System.Drawing.Size(105, 22);
             this.salirDelSistemaToolStripMenuItem2.Text = "Salir Del Sistema";
             this.salirDelSistemaToolStripMenuItem2.Click += new System.EventHandler(this.salirDelSistemaToolStripMenuItem2_Click);
             // 
@@ -397,14 +391,13 @@
             // 
             // Menu_Principal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1551, 845);
+            this.ClientSize = new System.Drawing.Size(913, 487);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip);
             this.IsMdiContainer = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Menu_Principal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Menu_Principal";
@@ -458,5 +451,6 @@
         private System.Windows.Forms.ToolStripMenuItem dashboardEmpleadosUsuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem empleadosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem empleadosSinUsuarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
     }
 }

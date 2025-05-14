@@ -186,5 +186,12 @@ namespace Presentaciòn
                 frm_Mesas.Focus(); // pone el formulario abierto alfrente
             }
         }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.frm_Reporte_Clientes objcli = new Reportes.frm_Reporte_Clientes();
+            objcli.txt_p2_clientes.Text = "";
+            objcli.ShowDialog();
+        }
     }
 }
