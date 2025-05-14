@@ -1,4 +1,5 @@
 ﻿using C_Logica;
+using Datos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,9 @@ namespace Presentaciòn
 {
     public partial class frm_mesas : Form
     {
+        private cl_MtdFechas cl_fechas = new cl_MtdFechas();
+        private cd_mesas cd_Mesas = new cd_mesas();
+
         public frm_mesas()
         {
             InitializeComponent();
@@ -21,13 +25,23 @@ namespace Presentaciòn
         private void frm_mesas_Load(object sender, EventArgs e)
         {
             Style();
+            lblFecha.Text = cl_fechas.MtdFecha().ToString("d");
+            MtdMostrardatos();
             tabPage1.Text = "Mesas";
             tabPage2.Text = "Buscar Mesas";
             ToolTip mensaje = new ToolTip();
             mensaje.SetToolTip(btnSalir, "Salir...");
+            mensaje.SetToolTip(btnEliminar, "Eliminar");
+            mensaje.SetToolTip(lblFecha, "Fecha Actual");
         }
 
-        public void Style()
+        private void MtdMostrardatos()
+        {
+            DataTable dt = cd_Mesas.MtdRetornardatos();
+            dgv_Mesas.DataSource = dt;
+        }
+
+        private void Style()
         {
             this.ControlBox = false;
             this.FormBorderStyle = FormBorderStyle.None;
@@ -45,6 +59,11 @@ namespace Presentaciòn
 
         private void tabPage1_Click(object sender, EventArgs e)
         {
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

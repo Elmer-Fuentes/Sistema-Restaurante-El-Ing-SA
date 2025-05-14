@@ -52,7 +52,6 @@
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.lblFecha = new System.Windows.Forms.Label();
             this.dgv_Mesas = new System.Windows.Forms.DataGridView();
-            this.label8 = new System.Windows.Forms.Label();
             this.btnSalir = new FontAwesome.Sharp.IconButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cbox_tipomesa = new System.Windows.Forms.ComboBox();
@@ -121,7 +120,7 @@
             this.txt_estado.Items.AddRange(new object[] {
             "Activo",
             "Inactivo"});
-            this.txt_estado.Location = new System.Drawing.Point(891, 129);
+            this.txt_estado.Location = new System.Drawing.Point(923, 126);
             this.txt_estado.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_estado.Name = "txt_estado";
             this.txt_estado.Size = new System.Drawing.Size(244, 28);
@@ -150,7 +149,7 @@
             // 
             // txt_Ubicacion
             // 
-            this.txt_Ubicacion.Location = new System.Drawing.Point(891, 22);
+            this.txt_Ubicacion.Location = new System.Drawing.Point(923, 22);
             this.txt_Ubicacion.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_Ubicacion.Name = "txt_Ubicacion";
             this.txt_Ubicacion.Size = new System.Drawing.Size(246, 26);
@@ -267,7 +266,6 @@
             this.tabPage1.Controls.Add(this.btnEliminar);
             this.tabPage1.Controls.Add(this.lblFecha);
             this.tabPage1.Controls.Add(this.dgv_Mesas);
-            this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Controls.Add(this.btnSalir);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
@@ -316,7 +314,7 @@
             // 
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.Location = new System.Drawing.Point(1351, 108);
+            this.lblFecha.Location = new System.Drawing.Point(1304, 120);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(152, 25);
             this.lblFecha.TabIndex = 51;
@@ -336,16 +334,6 @@
             this.dgv_Mesas.TabIndex = 54;
             this.dgv_Mesas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Mesas_CellClick);
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(1098, 108);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(142, 25);
-            this.label8.TabIndex = 49;
-            this.label8.Text = "Fecha actual:";
-            // 
             // btnSalir
             // 
             this.btnSalir.IconChar = FontAwesome.Sharp.IconChar.PowerOff;
@@ -358,6 +346,7 @@
             this.btnSalir.TabIndex = 52;
             this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // groupBox1
             // 
@@ -390,7 +379,7 @@
             "Exterior",
             "Juegos",
             "Privadas"});
-            this.cbox_tipomesa.Location = new System.Drawing.Point(891, 72);
+            this.cbox_tipomesa.Location = new System.Drawing.Point(923, 72);
             this.cbox_tipomesa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbox_tipomesa.Name = "cbox_tipomesa";
             this.cbox_tipomesa.Size = new System.Drawing.Size(244, 28);
@@ -518,7 +507,6 @@
         private FontAwesome.Sharp.IconButton btnEliminar;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.DataGridView dgv_Mesas;
-        private System.Windows.Forms.Label label8;
         private FontAwesome.Sharp.IconButton btnSalir;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txt_codigoMesa;
