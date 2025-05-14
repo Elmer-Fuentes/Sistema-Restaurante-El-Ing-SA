@@ -20,7 +20,7 @@ namespace Presentaciòn
         private void frm_inventario_Load(object sender, EventArgs e)
         {
 
-            this.reportViewer1.RefreshReport();
+          
         }
     }
 }
