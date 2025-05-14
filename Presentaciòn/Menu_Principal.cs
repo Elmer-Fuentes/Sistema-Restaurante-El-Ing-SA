@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using Microsoft.ReportingServices.RdlExpressions.ExpressionHostObjectModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,27 +18,32 @@ namespace Presentaciòn
         {
             InitializeComponent();
         }
+
         #region = "instancias de todos los formularios";
+
         private frm_usuarios frm_Usuario = null; //instancia del formulario hijo
         private frm_clientes frm_Clientes = null; //instancia del formulario hijo
         private frm_menu frm_Menu = null; //instancia del formulario hijo
         private frm_pago_planillas frm_Pago_Planillas = null; //instancia del formulario hijo
         private Dashboard_Empleados_Usuarios frm_Das_empleados = null; //instancia del formulario hijo
         private frm_encabezado_ordenes frm_Encabezado_Ordenes = null; //instancia del formulario hijo
-		private frm_empleados frm_Empleados = null; //instancia del formulario hijo
+        private frm_empleados frm_Empleados = null; //instancia del formulario hijo
+        private frm_mesas frm_Mesas = null; // instancia del formulario hijo
 
-		#endregion
+        #endregion = "instancias de todos los formularios";
 
-		#region = "Load";
-		private void Menu_Principal_Load(object sender, EventArgs e)
+        #region = "Load";
+
+        private void Menu_Principal_Load(object sender, EventArgs e)
         {
             lbl_usuario_logo.Text = Mis_Variables.UsuarioLogueado; //muestra el nombre del usuario en el label
             lbl_rol_usuario.Text = Mis_Variables.rolusuario; //muestra el rol del usuario en el label
-
         }
-        #endregion
+
+        #endregion = "Load";
 
         #region = "Instancia de form en Usuaios"
+
         private void Usuarios_FormToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (frm_Usuario == null || frm_Usuario.IsDisposed)   //form cerrado o nUll
@@ -50,11 +56,12 @@ namespace Presentaciòn
             {
                 frm_Usuario.Focus(); // frm abierto, lo pone al frente
             }
-
         }
-        #endregion
+
+        #endregion = "Instancia de form en Usuaios"
 
         #region = "Instancia de form en clientes"
+
         private void Clinetes_menuToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (frm_Clientes == null || frm_Clientes.IsDisposed)   //form cerrado o nUll
@@ -68,22 +75,18 @@ namespace Presentaciòn
                 frm_Clientes.Focus(); // frm abierto, lo pone al frente
             }
         }
-        #endregion
 
+        #endregion = "Instancia de form en clientes"
 
         #region = #"Boton Salir del sistema";
+
         private void salirDelSistemaToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Saliendo del sistema...");
             Application.Exit();
         }
 
-
-
-        #endregion
-
-        #region = "Boton Analisis de datos";
-        #endregion
+        #endregion = #"Boton Salir del sistema";
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -93,7 +96,6 @@ namespace Presentaciòn
 
         private void detalleDeOrdenesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             if (frm_Menu == null || frm_Menu.IsDisposed)   //form cerrado o nUll
             {
                 frm_Menu = new frm_menu(); // Crea una nueva instancia solo cuando es necesario
@@ -104,7 +106,6 @@ namespace Presentaciòn
             {
                 frm_Menu.Focus(); // frm abierto, lo pone al frente
             }
-
         }
 
         private void mesasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -119,7 +120,6 @@ namespace Presentaciòn
             {
                 frm_Pago_Planillas.Focus(); // frm abierto, lo pone al frente
             }
-
         }
 
         private void dashboardEmpleadosUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -138,23 +138,19 @@ namespace Presentaciòn
 
         private void empleadosSinUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
         }
 
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (frm_Empleados == null || frm_Empleados.IsDisposed)   //form cerrado o nUll
             {
-				frm_Empleados = new frm_empleados(); // Crea una nueva instancia solo cuando es necesario
-				frm_Empleados.MdiParent = this; //asigna el formulario hijo al padre
-				frm_Empleados.Show();
+                frm_Empleados = new frm_empleados(); // Crea una nueva instancia solo cuando es necesario
+                frm_Empleados.MdiParent = this; //asigna el formulario hijo al padre
+                frm_Empleados.Show();
             }
             else
             {
-				frm_Empleados.Focus(); // frm abierto, lo pone al frente
-
-
-
+                frm_Empleados.Focus(); // frm abierto, lo pone al frente
             }
         }
 
@@ -169,11 +165,21 @@ namespace Presentaciòn
             else
             {
                 frm_Encabezado_Ordenes.Focus(); // frm abierto, lo pone al frente
+            }
+        }
 
-
-
+        private void inventariosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (frm_Mesas == null || frm_Mesas.IsDisposed)
+            {
+                frm_Mesas = new frm_mesas(); //crea una nueva instancia solo cuando sea necesario
+                frm_Mesas.MdiParent = this; //asigna el formulario hijo al padre
+                frm_Mesas.Show(); //abre el formulario
+            }
+            else
+            {
+                frm_Mesas.Focus(); // pone el formulario abierto alfrente
             }
         }
     }
 }
-

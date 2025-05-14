@@ -20,12 +20,31 @@ namespace Presentaciòn
 
         private void frm_mesas_Load(object sender, EventArgs e)
         {
+            Style();
+            tabPage1.Text = "Mesas";
+            tabPage2.Text = "Buscar Mesas";
+            ToolTip mensaje = new ToolTip();
+            mensaje.SetToolTip(btnSalir, "Salir...");
         }
 
         public void Style()
         {
             this.ControlBox = false;
             this.FormBorderStyle = FormBorderStyle.None;
+        }
+
+        private void dgv_Mesas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txt_codigoMesa.Text = dgv_Mesas.SelectedCells[0].Value.ToString();
+            txt_NumeroMesa.Text = dgv_Mesas.SelectedCells[1].Value.ToString();
+            txt_CantidadSillas.Text = dgv_Mesas.SelectedCells[2].Value.ToString();
+            txt_Ubicacion.Text = dgv_Mesas.SelectedCells[3].Value.ToString();
+            cbox_tipomesa.Text = dgv_Mesas.SelectedCells[4].Value.ToString();
+            txt_estado.Text = dgv_Mesas.SelectedCells[5].Value.ToString();
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
         }
     }
 }
