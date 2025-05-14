@@ -473,6 +473,10 @@
                   <Value>= "Fecha y Hora: " &amp; Globals.ExecutionTime</Value>
                   <Style />
                 </TextRun>
+                <TextRun>
+                  <Value>&lt;</Value>
+                  <Style />
+                </TextRun>
               </TextRuns>
               <Style>
                 <TextAlign>Right</TextAlign>
@@ -501,14 +505,14 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Reporte Empleados Sin Usuarios en Sistema</Value>
+                  <Value>Reporte Empleados Sin Usuario</Value>
                   <Style>
                     <FontSize>15pt</FontSize>
                   </Style>
                 </TextRun>
               </TextRuns>
               <Style>
-                <TextAlign>Right</TextAlign>
+                <TextAlign>Center</TextAlign>
               </Style>
             </Paragraph>
           </Paragraphs>
@@ -543,15 +547,49 @@
             </Border>
           </Style>
         </Image>
+        <Textbox Name="Textbox6">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Sistema Restaurante</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox3</rd:DefaultName>
+          <Top>2.43398cm</Top>
+          <Left>1.00278cm</Left>
+          <Height>0.63528cm</Height>
+          <Width>3.69062cm</Width>
+          <ZIndex>3</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
         <Image Name="IconoSistema">
           <Source>Embedded</Source>
           <Value>restaurantes</Value>
           <Sizing>FitProportional</Sizing>
-          <Top>0.3175cm</Top>
-          <Left>1.48536cm</Left>
-          <Height>2.59271cm</Height>
+          <Top>0.34059cm</Top>
+          <Left>1.7139cm</Left>
+          <Height>2.03949cm</Height>
           <Width>2.4429cm</Width>
-          <ZIndex>3</ZIndex>
+          <ZIndex>4</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
