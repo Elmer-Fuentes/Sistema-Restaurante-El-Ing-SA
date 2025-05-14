@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Datos
 {
@@ -22,6 +23,26 @@ namespace Datos
             }
 
             return datos;
+        }
+
+        public void MtdAgregardatos(int numero_mesa, int cantidad_sillas, string ubicacion, string tipo_mesa, string estado, string usuario_sistema, DateTime FechaSistema)
+        {
+            string query = "insert into tbl_mesas( numero_mesa, cantidad_sillas, ubicacion, tipo_mesa, estado, usuario_sistema, FechaSistema ) values ( @numero_mesa, @cantidad_sillas, @ubicacion, @tipo_mesa, @estado, @usuario_sistema, @FechaSistema)";
+            using (SqlConnection connection = GetConnection())
+            {
+                connection.Open();
+                using (SqlCommand agregar = new SqlCommand(query, connection))
+                {
+                    agregar.Parameters.AddWithValue("@numero_mesa", numero_mesa);
+                    agregar.Parameters.AddWithValue("@cantidad_sillas", cantidad_sillas);
+                    agregar.Parameters.AddWithValue("@ubicacion", ubicacion);
+                    agregar.Parameters.AddWithValue("@tipo_mesa", tipo_mesa);
+                    agregar.Parameters.AddWithValue("@estado", estado);
+                    agregar.Parameters.AddWithValue("@usuario_sistema", usuario_sistema);
+                    agregar.Parameters.AddWithValue("@FechaSistema", FechaSistema);
+                    agregar.ExecuteNonQuery();
+                }
+            }
         }
     }
 }
