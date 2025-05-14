@@ -65,5 +65,19 @@ namespace Datos
                 }
             }
         }
+
+        public void MtdEliminarRegistro(int codigo_mesa)
+        {
+            string query = "delete from tbl_mesas where codigo_mesa = @codigo_mesa";
+            using (SqlConnection connection = GetConnection())
+            {
+                connection.Open();
+                using (SqlCommand eliminar = new SqlCommand(query, connection))
+                {
+                    eliminar.Parameters.AddWithValue("@codigo_mesa", codigo_mesa);
+                    eliminar.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }

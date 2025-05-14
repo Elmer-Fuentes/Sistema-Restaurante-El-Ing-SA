@@ -245,5 +245,26 @@ namespace Presentaciòn
             txt_estado.Text = "";
             cbox_tipomesa.Text = "";
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int codigo = int.Parse(txt_codigoMesa.Text);
+            try
+            {
+                DialogResult r = MessageBox.Show("Esta seguro que de eliminar el registro", "Sistema Restaurante", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (r == DialogResult.Yes)
+                {
+                    cd_Mesas.MtdEliminarRegistro(codigo);
+                    MtdMostrardatos();
+                    MtdLimpiarcampos();
+                    MessageBox.Show("Se elimino correctamente de la base de datos", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txt_NumeroMesa.Focus();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Seleccione el registro que decea eliminar " + ex, "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }
