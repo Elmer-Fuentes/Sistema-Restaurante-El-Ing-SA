@@ -571,7 +571,7 @@
         </TablixRowHierarchy>
         <DataSetName>DS_Bus_Clientes</DataSetName>
         <Top>0.85063cm</Top>
-        <Left>0.15504cm</Left>
+        <Left>0.47254cm</Left>
         <Height>1.2cm</Height>
         <Width>25.66804cm</Width>
         <Style>
@@ -584,7 +584,7 @@
     <Height>0.95833in</Height>
     <Style />
   </Body>
-  <Width>10.28992in</Width>
+  <Width>10.29157in</Width>
   <Page>
     <PageHeader>
       <Height>2.90506cm</Height>
@@ -608,6 +608,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>0.01924cm</Top>
           <Left>17.88963cm</Left>
           <Height>0.6cm</Height>
           <Width>7.09493cm</Width>
@@ -640,7 +641,7 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>1.6243cm</Top>
+          <Top>1.64354cm</Top>
           <Left>9.18249cm</Left>
           <Height>0.96841cm</Height>
           <Width>5.45298cm</Width>
@@ -659,9 +660,9 @@
           <Source>Embedded</Source>
           <Value>Clientes</Value>
           <Sizing>FitProportional</Sizing>
-          <Top>0.8861cm</Top>
-          <Left>15.33695cm</Left>
-          <Height>1.84257cm</Height>
+          <Top>1.07737cm</Top>
+          <Left>17.55945cm</Left>
+          <Height>1.6513cm</Height>
           <Width>1.96059cm</Width>
           <ZIndex>2</ZIndex>
           <Style>
@@ -674,8 +675,9 @@
           <Source>Embedded</Source>
           <Value>restaurantes</Value>
           <Sizing>FitProportional</Sizing>
-          <Left>0.86616cm</Left>
-          <Height>2.59271cm</Height>
+          <Top>0.0539cm</Top>
+          <Left>1.43209cm</Left>
+          <Height>2.03949cm</Height>
           <Width>2.4429cm</Width>
           <ZIndex>3</ZIndex>
           <Style>
@@ -684,6 +686,40 @@
             </Border>
           </Style>
         </Image>
+        <Textbox Name="Textbox3">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Sistema Restaurante</Value>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox3</rd:DefaultName>
+          <Top>2.09339cm</Top>
+          <Left>0.79004cm</Left>
+          <Height>0.63528cm</Height>
+          <Width>3.69062cm</Width>
+          <ZIndex>4</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
       </ReportItems>
       <Style>
         <Border>

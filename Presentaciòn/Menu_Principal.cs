@@ -193,5 +193,14 @@ namespace Presentaciòn
             objcli.txt_p2_clientes.Text = "";
             objcli.ShowDialog();
         }
+
+        private void dataDashboardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           Reportes.frm_data_dash_emp_user obj = new Reportes.frm_data_dash_emp_user();
+            obj.txt_dash_emp_user.Text = "";
+            obj.ShowDialog();
+
+
+        }
     }
 }

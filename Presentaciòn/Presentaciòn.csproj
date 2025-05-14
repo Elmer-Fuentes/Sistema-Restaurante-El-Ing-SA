@@ -155,6 +155,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_Reportes.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\frm_data_dash_emp_user.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frm_data_dash_emp_user.Designer.cs">
+      <DependentUpon>frm_data_dash_emp_user.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\frm_Reporte_Clientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,6 +216,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reportes\frm_data_dash_emp_user.resx">
+      <DependentUpon>frm_data_dash_emp_user.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frm_Reporte_Clientes.resx">
       <DependentUpon>frm_Reporte_Clientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -217,6 +226,7 @@
       <DependentUpon>frm_Reporte_Empleados_Sin_Usuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Report_Bus_Clientes.rdlc" />
+    <EmbeddedResource Include="Reportes\Report_Data_dash_Emp_user.rdlc" />
     <EmbeddedResource Include="Reportes\Report_Empleados_sin_Usuarios.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -269,6 +279,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Clientes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Analitycs_Empleados.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Web.WebView2.1.0.3240.44\build\Microsoft.Web.WebView2.targets" Condition="Exists('..\packages\Microsoft.Web.WebView2.1.0.3240.44\build\Microsoft.Web.WebView2.targets')" />
