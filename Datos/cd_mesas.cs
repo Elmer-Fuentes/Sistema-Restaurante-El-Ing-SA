@@ -44,5 +44,26 @@ namespace Datos
                 }
             }
         }
+
+        public void MtdEditar(int codigo_mesa, int numero_mesa, int cantidad_sillas, string ubicacion, string tipo_mesa, string estado, string usuario_sistema, DateTime FechaSistema)
+        {
+            string query = "update  tbl_mesas set  numero_mesa = @numero_mesa, cantidad_sillas = @cantidad_sillas, ubicacion = @ubicacion, tipo_mesa = @tipo_mesa, estado = @estado, usuario_sistema = @usuario_sistema, FechaSistema = @FechaSistema where codigo_mesa = @codigo_mesa";
+            using (SqlConnection connection = GetConnection())
+            {
+                connection.Open();
+                using (SqlCommand editar = new SqlCommand(query, connection))
+                {
+                    editar.Parameters.AddWithValue("@codigo_mesa", codigo_mesa);
+                    editar.Parameters.AddWithValue("@numero_mesa", numero_mesa);
+                    editar.Parameters.AddWithValue("@cantidad_sillas", cantidad_sillas);
+                    editar.Parameters.AddWithValue("@ubicacion", ubicacion);
+                    editar.Parameters.AddWithValue("@tipo_mesa", tipo_mesa);
+                    editar.Parameters.AddWithValue("@estado", estado);
+                    editar.Parameters.AddWithValue("@usuario_sistema", usuario_sistema);
+                    editar.Parameters.AddWithValue("@FechaSistema", FechaSistema);
+                    editar.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }

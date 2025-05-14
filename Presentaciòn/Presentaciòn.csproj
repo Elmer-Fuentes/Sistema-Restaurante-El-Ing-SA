@@ -106,6 +106,12 @@
     <Compile Include="frm_encabezado_ordenes.Designer.cs">
       <DependentUpon>frm_encabezado_ordenes.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_inventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_inventario.Designer.cs">
+      <DependentUpon>frm_inventario.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -166,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_encabezado_ordenes.resx">
       <DependentUpon>frm_encabezado_ordenes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_inventario.resx">
+      <DependentUpon>frm_inventario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_login.resx">
       <DependentUpon>frm_login.cs</DependentUpon>
