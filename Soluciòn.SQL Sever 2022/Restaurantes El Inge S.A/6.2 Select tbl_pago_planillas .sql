@@ -1,0 +1,1 @@
+Select * from tbl_pago_planillas
