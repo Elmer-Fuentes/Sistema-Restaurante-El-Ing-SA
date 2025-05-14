@@ -222,5 +222,12 @@ namespace Presentaciòn
             obj.txt_p_usuario.Text = "";
             obj.ShowDialog();
         }
+
+        private void pagoPlanillaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.frm_Reporte_Pago_Planilla obj = new Reportes.frm_Reporte_Pago_Planilla();
+            obj.txt_p_pago_planilla.Text = "";
+            obj.ShowDialog();
+        }
     }
 }

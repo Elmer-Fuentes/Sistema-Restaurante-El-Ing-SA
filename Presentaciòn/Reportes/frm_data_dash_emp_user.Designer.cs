@@ -30,14 +30,24 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dS_Reportes = new Presentaciòn.Reportes.DS_Reportes();
             this.upsDataDashEmpuserBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dS_Reportes = new Presentaciòn.Reportes.DS_Reportes();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.ups_Data_Dash_Emp_userTableAdapter = new Presentaciòn.Reportes.DS_ReportesTableAdapters.Ups_Data_Dash_Emp_userTableAdapter();
             this.txt_dash_emp_user = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dS_Reportes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.upsDataDashEmpuserBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS_Reportes)).BeginInit();
             this.SuspendLayout();
+            // 
+            // upsDataDashEmpuserBindingSource
+            // 
+            this.upsDataDashEmpuserBindingSource.DataMember = "Ups_Data_Dash_Emp_user";
+            this.upsDataDashEmpuserBindingSource.DataSource = this.dS_Reportes;
+            // 
+            // dS_Reportes
+            // 
+            this.dS_Reportes.DataSetName = "DS_Reportes";
+            this.dS_Reportes.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -51,16 +61,6 @@
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(1032, 450);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // dS_Reportes
-            // 
-            this.dS_Reportes.DataSetName = "DS_Reportes";
-            this.dS_Reportes.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // upsDataDashEmpuserBindingSource
-            // 
-            this.upsDataDashEmpuserBindingSource.DataMember = "Ups_Data_Dash_Emp_user";
-            this.upsDataDashEmpuserBindingSource.DataSource = this.dS_Reportes;
             // 
             // ups_Data_Dash_Emp_userTableAdapter
             // 
@@ -82,10 +82,10 @@
             this.Controls.Add(this.txt_dash_emp_user);
             this.Controls.Add(this.reportViewer1);
             this.Name = "frm_data_dash_emp_user";
-            this.Text = "frm_data_dash_emp_user";
+            this.Text = "Reporte Analisis Empleados Con Usuarios";
             this.Load += new System.EventHandler(this.frm_data_dash_emp_user_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dS_Reportes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.upsDataDashEmpuserBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS_Reportes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

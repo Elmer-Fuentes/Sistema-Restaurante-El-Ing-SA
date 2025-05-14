@@ -30,14 +30,24 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dS_Reportes = new Presentaciòn.Reportes.DS_Reportes();
             this.uspselempleadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dS_Reportes = new Presentaciòn.Reportes.DS_Reportes();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.usp_sel_empleadosTableAdapter = new Presentaciòn.Reportes.DS_ReportesTableAdapters.Usp_sel_empleadosTableAdapter();
             this.txt_p_Empleados = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dS_Reportes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uspselempleadosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS_Reportes)).BeginInit();
             this.SuspendLayout();
+            // 
+            // uspselempleadosBindingSource
+            // 
+            this.uspselempleadosBindingSource.DataMember = "Usp_sel_empleados";
+            this.uspselempleadosBindingSource.DataSource = this.dS_Reportes;
+            // 
+            // dS_Reportes
+            // 
+            this.dS_Reportes.DataSetName = "DS_Reportes";
+            this.dS_Reportes.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
@@ -51,16 +61,6 @@
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(1032, 450);
             this.reportViewer1.TabIndex = 0;
-            // 
-            // dS_Reportes
-            // 
-            this.dS_Reportes.DataSetName = "DS_Reportes";
-            this.dS_Reportes.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // uspselempleadosBindingSource
-            // 
-            this.uspselempleadosBindingSource.DataMember = "Usp_sel_empleados";
-            this.uspselempleadosBindingSource.DataSource = this.dS_Reportes;
             // 
             // usp_sel_empleadosTableAdapter
             // 
@@ -83,10 +83,10 @@
             this.Controls.Add(this.reportViewer1);
             this.Name = "frm_Reporte_Empleado";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_Reporte_Empleado";
+            this.Text = "Reporte Empleados";
             this.Load += new System.EventHandler(this.frm_Reporte_Empleado_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dS_Reportes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uspselempleadosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS_Reportes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

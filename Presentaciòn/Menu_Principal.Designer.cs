@@ -67,6 +67,7 @@
             this.empleadosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.usuariosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pagoPlanillaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.menuStrip.SuspendLayout();
@@ -344,7 +345,8 @@
             this.salirDelSistemaToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.empleadosToolStripMenuItem,
             this.clientesToolStripMenuItem,
-            this.usuariosToolStripMenuItem1});
+            this.usuariosToolStripMenuItem1,
+            this.pagoPlanillaToolStripMenuItem});
             this.salirDelSistemaToolStripMenuItem1.Name = "salirDelSistemaToolStripMenuItem1";
             this.salirDelSistemaToolStripMenuItem1.Size = new System.Drawing.Size(65, 22);
             this.salirDelSistemaToolStripMenuItem1.Text = "Reportes";
@@ -416,6 +418,13 @@
             this.pictureBox1.TabIndex = 27;
             this.pictureBox1.TabStop = false;
             // 
+            // pagoPlanillaToolStripMenuItem
+            // 
+            this.pagoPlanillaToolStripMenuItem.Name = "pagoPlanillaToolStripMenuItem";
+            this.pagoPlanillaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pagoPlanillaToolStripMenuItem.Text = "Pago Planilla";
+            this.pagoPlanillaToolStripMenuItem.Click += new System.EventHandler(this.pagoPlanillaToolStripMenuItem_Click);
+            // 
             // Menu_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -482,5 +491,6 @@
         private System.Windows.Forms.ToolStripMenuItem dataDashboardToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem empleadosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem pagoPlanillaToolStripMenuItem;
     }
 }
