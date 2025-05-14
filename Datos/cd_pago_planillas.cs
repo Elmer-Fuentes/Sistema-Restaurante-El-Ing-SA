@@ -12,17 +12,50 @@ namespace Datos
 {
 	public class cd_pago_planillas : Conexion
 	{
-		public DataTable MtdConsultarRentas()
+		#region = "Metodo para vista del select o mostrar en el dgv";
+		public DataTable MtdConsultarPagoPlanillas()
 		{
-			string QueryConsultarpagoplanillas = "Select * from tbl_pago_planillas;";
+			string query = "select * from tbl_pago_planillas";
 			using (SqlConnection connection = GetConnection())
 			{
-                SqlDataAdapter sqlAdap = new SqlDataAdapter(QueryConsultarpagoplanillas, connection);
-                DataTable dtpagoplanillas = new DataTable();
-				sqlAdap.Fill(dtpagoplanillas);
-				return dtpagoplanillas;
+				SqlDataAdapter retornar = new SqlDataAdapter(query, connection);
+				DataTable datospagoplanillas = new DataTable();
+				retornar.Fill(datospagoplanillas);
+				return datospagoplanillas;
 			}
 		}
+		#endregion
+
+
+		#region = "Metodo para Recuperar codigo empleado en frm_pago_planillas";
+		public string MtdSalarioPlanilla(int codigoEmpleado)
+		{
+			string resultado = string.Empty;
+			string query = "Select Salario FROM tbl_Empleados WHERE CodigoEmpleado = @CodigoEmpleado";
+
+			using (SqlConnection connection = GetConnection())
+			{
+				connection.Open();
+				using (SqlCommand cmd = new SqlCommand(query, connection))
+				{
+					cmd.Parameters.AddWithValue("@CodigoEmpleado", codigoEmpleado);
+					SqlDataReader reader = cmd.ExecuteReader();
+
+					if (reader.Read())
+					{
+						decimal salario = reader.GetDecimal(0);
+						resultado = salario.ToString("F2");
+					}
+
+					reader.Close();
+				}
+			}
+
+			return resultado;
+		}
+		#endregion
+
+
 	}
 }
 
