@@ -149,6 +149,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_Reportes.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\frm_Reporte_Empleados_Sin_Usuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frm_Reporte_Empleados_Sin_Usuarios.Designer.cs">
+      <DependentUpon>frm_Reporte_Empleados_Sin_Usuarios.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Dashboard_Empleados_Usuarios.resx">
       <DependentUpon>Dashboard_Empleados_Usuarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -189,6 +195,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reportes\frm_Reporte_Empleados_Sin_Usuarios.resx">
+      <DependentUpon>frm_Reporte_Empleados_Sin_Usuarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Report_Empleados_sin_Usuarios.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

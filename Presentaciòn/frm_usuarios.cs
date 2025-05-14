@@ -207,5 +207,11 @@ namespace Presentaciòn
             txt_asignar_nombre_usuario.Focus();
         }
 
+        private void btn_Reporte_Click(object sender, EventArgs e)
+        {
+            Reportes.frm_Reporte_Empleados_Sin_Usuarios obj = new Reportes.frm_Reporte_Empleados_Sin_Usuarios();
+            obj.txt_p1.Text = txt_buscar_empleado.Text;
+            obj.ShowDialog();
+        }
     }
 }

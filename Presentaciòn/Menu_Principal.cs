@@ -136,9 +136,14 @@ namespace Presentaciòn
             }
         }
 
+        #region = "Instancia de form en empleados"
         private void empleadosSinUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Reportes.frm_Reporte_Empleados_Sin_Usuarios obj= new Reportes.frm_Reporte_Empleados_Sin_Usuarios();
+            obj.txt_p1.Text = "";
+            obj.ShowDialog();
         }
+        #endregion
 
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {

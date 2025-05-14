@@ -9,19 +9,19 @@
               <Width>4.16879cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>5.39073cm</Width>
+              <Width>6.4762cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>3.80059cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>3.73361cm</Width>
+              <Width>4.30959cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>3.19774cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.69537cm</Width>
+              <Width>3.12413cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -445,7 +445,7 @@
         <Top>0.97578cm</Top>
         <Left>1.06995cm</Left>
         <Height>1.2cm</Height>
-        <Width>22.98683cm</Width>
+        <Width>25.07705cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -456,7 +456,7 @@
     <Height>1.48727in</Height>
     <Style />
   </Body>
-  <Width>9.86674in</Width>
+  <Width>10.74259in</Width>
   <Page>
     <PageHeader>
       <Height>3.40984cm</Height>
@@ -481,7 +481,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
           <Top>0.3175cm</Top>
-          <Left>17.39061cm</Left>
+          <Left>19.37499cm</Left>
           <Height>0.6cm</Height>
           <Width>7.09493cm</Width>
           <Style>
@@ -513,8 +513,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>1.9527cm</Top>
-          <Left>6.78402cm</Left>
+          <Top>1.94181cm</Top>
+          <Left>8.37152cm</Left>
           <Height>0.96841cm</Height>
           <Width>11.37965cm</Width>
           <ZIndex>1</ZIndex>
@@ -532,8 +532,8 @@
           <Source>Embedded</Source>
           <Value>agregarusuario</Value>
           <Sizing>FitProportional</Sizing>
-          <Top>1.39088cm</Top>
-          <Left>19.04481cm</Left>
+          <Top>1.37999cm</Top>
+          <Left>20.63231cm</Left>
           <Height>1.84257cm</Height>
           <Width>1.96059cm</Width>
           <ZIndex>2</ZIndex>
@@ -548,7 +548,7 @@
           <Value>restaurantes</Value>
           <Sizing>FitProportional</Sizing>
           <Top>0.3175cm</Top>
-          <Left>2.48595cm</Left>
+          <Left>0.46482cm</Left>
           <Height>2.59271cm</Height>
           <Width>2.4429cm</Width>
           <ZIndex>3</ZIndex>
