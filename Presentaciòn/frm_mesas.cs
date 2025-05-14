@@ -100,7 +100,7 @@ namespace Presentaciòn
                 FechaSistema = DateTime.Parse(fecha);
             }
 
-            if (txt_NumeroMesa.Text != "" && !txt_NumeroMesa.Text.Contains(" ") && txt_CantidadSillas.Text != "" && !txt_CantidadSillas.Text.Contains(" ") && txt_Ubicacion.Text != "" && !txt_Ubicacion.Text.Contains(" ") && txt_estado.Text != "" && !txt_estado.Text.Contains(" ") && cbox_tipomesa.Text != "" && !cbox_tipomesa.Text.Contains(" "))
+            if (txt_NumeroMesa.Text != "" && !txt_NumeroMesa.Text.Contains(" ") && txt_CantidadSillas.Text != "" && !txt_CantidadSillas.Text.Contains(" ") && txt_Ubicacion.Text != "" && txt_Ubicacion.Text.Trim().Length != 0 && txt_estado.Text != "" && !txt_estado.Text.Contains(" ") && cbox_tipomesa.Text != "" && !cbox_tipomesa.Text.Contains(" "))
             {
                 MtdRevisarcamposllenados();
 
@@ -116,7 +116,7 @@ namespace Presentaciòn
                     MessageBox.Show("Error" + ex, "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            else
+            else // si los campos de entrada estan en blanco o solo tienen espacios en blanco se pondran en rojo
             {
                 MtdRevisarcamposllenados();
                 MessageBox.Show("Faltan datos en los campos marcados en rojo", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Stop);
@@ -143,11 +143,11 @@ namespace Presentaciòn
             {
                 txt_CantidadSillas.BackColor = Color.White;
             }
-            if (txt_Ubicacion.Text == "" || txt_Ubicacion.Text.Contains(" "))
+            if (txt_Ubicacion.Text == "" || txt_Ubicacion.Text.Trim().Length == 0)
             {
                 txt_Ubicacion.BackColor = Color.Coral;
             }
-            else if (txt_Ubicacion.Text != "" || !txt_Ubicacion.Text.Contains(" "))
+            else if (txt_Ubicacion.Text != "" || txt_Ubicacion.Text.Trim().Length != 0)
             {
                 txt_Ubicacion.BackColor = Color.White;
             }
@@ -170,5 +170,63 @@ namespace Presentaciòn
         }
 
         #endregion cambiar a color rojo los campos que no tengan datos al dar click en el boton agregar
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            int codigo;
+            string fecha;
+            int numero_mesa;
+            int cantidad_sillas;
+            string ubicacion;
+            string tipo_mesa;
+            string estado;
+            string usuario_sistema;
+            DateTime FechaSistema;
+            if (txt_NumeroMesa.Text != "" && txt_CantidadSillas.Text != "") // si los texbox tienen datos las variables tomaran los datos ingresados
+            {
+                codigo = int.Parse(txt_codigoMesa.Text);
+                fecha = cl_fechas.MtdFecha().ToString("d"); // para que se guarde con formato de fecha corta
+                numero_mesa = int.Parse(txt_NumeroMesa.Text);
+                cantidad_sillas = int.Parse(txt_CantidadSillas.Text);
+                ubicacion = txt_Ubicacion.Text;
+                tipo_mesa = cbox_tipomesa.Text;
+                estado = txt_estado.Text;
+                usuario_sistema = Mis_Variables.UsuarioLogueado;
+                FechaSistema = DateTime.Parse(fecha);
+            }
+            else // si no tomaran valor 0 para evitar errores
+            {
+                codigo = int.Parse(txt_codigoMesa.Text);
+                fecha = cl_fechas.MtdFecha().ToString("d"); // para que se guarde con formato de fecha corta
+                numero_mesa = 0;
+                cantidad_sillas = 0;
+                ubicacion = txt_Ubicacion.Text;
+                tipo_mesa = cbox_tipomesa.Text;
+                estado = txt_estado.Text;
+                usuario_sistema = Mis_Variables.UsuarioLogueado;
+                FechaSistema = DateTime.Parse(fecha);
+            }
+            if (txt_NumeroMesa.Text != "" && !txt_NumeroMesa.Text.Contains(" ") && txt_CantidadSillas.Text != "" && !string.IsNullOrWhiteSpace(txt_Ubicacion.Text) && txt_Ubicacion.Text != "" && !txt_Ubicacion.Text.Contains(" ") && txt_estado.Text != "" && !txt_estado.Text.Contains(" ") && cbox_tipomesa.Text != "" && !cbox_tipomesa.Text.Contains(" "))
+            {
+                MtdRevisarcamposllenados();
+
+                try
+                {
+                    cd_Mesas.MtdEditar(codigo, numero_mesa, cantidad_sillas, ubicacion, tipo_mesa, estado, usuario_sistema, FechaSistema);
+                    MtdRevisarcamposllenados();
+                    MtdMostrardatos();
+                    MessageBox.Show("Se a registrado correctamente en la base de datos", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error" + ex, "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else // si los campos de entrada estan en blanco o solo tienen espacios en blanco se pondran en rojo
+            {
+                MtdRevisarcamposllenados();
+                MessageBox.Show("Faltan datos en los campos marcados en rojo", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+        }
     }
 }
