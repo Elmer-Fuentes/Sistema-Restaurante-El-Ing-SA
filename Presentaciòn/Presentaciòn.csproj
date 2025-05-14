@@ -167,6 +167,12 @@
     <Compile Include="Reportes\frm_Reporte_Clientes.Designer.cs">
       <DependentUpon>frm_Reporte_Clientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\frm_Reporte_Empleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frm_Reporte_Empleado.Designer.cs">
+      <DependentUpon>frm_Reporte_Empleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\frm_Reporte_Empleados_Sin_Usuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -222,11 +228,15 @@
     <EmbeddedResource Include="Reportes\frm_Reporte_Clientes.resx">
       <DependentUpon>frm_Reporte_Clientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frm_Reporte_Empleado.resx">
+      <DependentUpon>frm_Reporte_Empleado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frm_Reporte_Empleados_Sin_Usuarios.resx">
       <DependentUpon>frm_Reporte_Empleados_Sin_Usuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Report_Bus_Clientes.rdlc" />
     <EmbeddedResource Include="Reportes\Report_Data_dash_Emp_user.rdlc" />
+    <EmbeddedResource Include="Reportes\Report_Empleados.rdlc" />
     <EmbeddedResource Include="Reportes\Report_Empleados_sin_Usuarios.rdlc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
