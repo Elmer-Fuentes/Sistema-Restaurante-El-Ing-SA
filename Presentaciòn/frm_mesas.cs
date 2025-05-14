@@ -100,7 +100,7 @@ namespace Presentaciòn
                 FechaSistema = DateTime.Parse(fecha);
             }
 
-            if (txt_NumeroMesa.Text != "" && !txt_NumeroMesa.Text.Contains(" ") && txt_CantidadSillas.Text != "" && !txt_CantidadSillas.Text.Contains(" ") && txt_Ubicacion.Text != "" && txt_Ubicacion.Text.Trim().Length != 0 && txt_estado.Text != "" && !txt_estado.Text.Contains(" ") && cbox_tipomesa.Text != "" && !cbox_tipomesa.Text.Contains(" "))
+            if (!string.IsNullOrWhiteSpace(txt_NumeroMesa.Text) && !string.IsNullOrWhiteSpace(txt_CantidadSillas.Text) && !string.IsNullOrWhiteSpace(txt_Ubicacion.Text) && !string.IsNullOrWhiteSpace(txt_estado.Text) && !string.IsNullOrWhiteSpace(cbox_tipomesa.Text))
             {
                 MtdRevisarcamposllenados();
 
@@ -109,7 +109,9 @@ namespace Presentaciòn
                     cd_Mesas.MtdAgregardatos(numero_mesa, cantidad_sillas, ubicacion, tipo_mesa, estado, usuario_sistema, FechaSistema);
                     MtdRevisarcamposllenados();
                     MtdMostrardatos();
+                    MtdLimpiarcampos();
                     MessageBox.Show("Se a registrado correctamente en la base de datos", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txt_NumeroMesa.Focus();
                 }
                 catch (Exception ex)
                 {
@@ -206,7 +208,7 @@ namespace Presentaciòn
                 usuario_sistema = Mis_Variables.UsuarioLogueado;
                 FechaSistema = DateTime.Parse(fecha);
             }
-            if (txt_NumeroMesa.Text != "" && !txt_NumeroMesa.Text.Contains(" ") && txt_CantidadSillas.Text != "" && !string.IsNullOrWhiteSpace(txt_Ubicacion.Text) && txt_Ubicacion.Text != "" && !txt_Ubicacion.Text.Contains(" ") && txt_estado.Text != "" && !txt_estado.Text.Contains(" ") && cbox_tipomesa.Text != "" && !cbox_tipomesa.Text.Contains(" "))
+            if (!string.IsNullOrWhiteSpace(txt_NumeroMesa.Text) && !string.IsNullOrWhiteSpace(txt_CantidadSillas.Text) && !string.IsNullOrWhiteSpace(txt_Ubicacion.Text) && !string.IsNullOrWhiteSpace(txt_estado.Text) && !string.IsNullOrWhiteSpace(cbox_tipomesa.Text))
             {
                 MtdRevisarcamposllenados();
 
@@ -227,6 +229,21 @@ namespace Presentaciòn
                 MtdRevisarcamposllenados();
                 MessageBox.Show("Faltan datos en los campos marcados en rojo", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            MtdLimpiarcampos();
+        }
+
+        private void MtdLimpiarcampos()
+        {
+            txt_NumeroMesa.Text = "";
+            txt_CantidadSillas.Text = "";
+            txt_codigoMesa.Text = "";
+            txt_Ubicacion.Text = "";
+            txt_estado.Text = "";
+            cbox_tipomesa.Text = "";
         }
     }
 }
