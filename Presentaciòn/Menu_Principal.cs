@@ -214,7 +214,13 @@ namespace Presentaciòn
             obj.txt_p_Empleados.Text = "";
             obj.ShowDialog();
         }
-#endregion
+        #endregion
 
+        private void usuariosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Reportes.frm_Reporte_Usuarios obj = new Reportes.frm_Reporte_Usuarios();
+            obj.txt_p_usuario.Text = "";
+            obj.ShowDialog();
+        }
     }
 }

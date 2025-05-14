@@ -1,0 +1,37 @@
+--use Proyecto_Restaurante
+--go
+
+--Create proc Usp_sel_empleados 
+--	@nombre varchar (50)
+--as
+--begin 
+--	select 
+--	a.codigo_empleado 
+--	,a.nombre as Nombre_Empleado
+--	,a.cargo
+--	,a.salario
+--	,a.fecha_contratacion
+--	,a.estado
+--	,a.usuario_sistema
+--	,a.fecha_sistema	
+--	from tbl_empleados a
+--	where Upper(Trim(a.nombre)) like + '%'+ Upper(Trim(@nombre)) +'%'
+--end
+
+
+--create proc Ups_usuarios
+--	@nombre_usuario varchar(50)
+--as
+--begin 
+--select 
+--	a.codigo_usuario
+--	,a.codigo_empleado
+--	,a.nombre_usuario
+--	,a.contrasena
+--	,a.rol
+--	,a.estado
+--	,a.usuario_sistema
+--	,a.FechaSistema
+--from tbl_usuarios a
+--where Upper(Trim(a.nombre_usuario)) like '%' + Upper(Trim(@nombre_usuario))+ '%'
+--end
