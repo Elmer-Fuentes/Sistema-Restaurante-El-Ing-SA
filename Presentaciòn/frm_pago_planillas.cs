@@ -35,7 +35,7 @@ namespace Presentaciòn
 		{
 			cd_pago_planillas CD_Pago_planillas = new cd_pago_planillas();
 
-			DataTable dtpagoplanillas = CD_Pago_planillas.MtdConsultarRentas();
+			DataTable dtpagoplanillas = CD_Pago_planillas.MtdConsultarPagoPlanillas();
 			dgvPagoPlanillas.DataSource = dtpagoplanillas;
 		}
 		public void style()
