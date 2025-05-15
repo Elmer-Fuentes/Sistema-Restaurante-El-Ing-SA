@@ -23,7 +23,7 @@ namespace C_Logica
 			decimal montoTotal = salario + bono + montoHoras;
 			return montoTotal;
 		}
-		public DateTime MtdFecha()
+		public DateTime MtdFechaHoy()
 		{
 			return DateTime.Now;
 		}

@@ -28,34 +28,98 @@ namespace Datos
 
 
 		#region = "Metodo para Recuperar codigo empleado en frm_pago_planillas";
-		public string MtdSalarioPlanilla(int codigoEmpleado)
+
+		public List<dynamic> MtdListaEmpleados()
+		{
+			string QueryListaEmpleados = "SELECT codigo_empleado, Nombre FROM tbl_empleados";
+			List<dynamic> ListaEmpleados = new List<dynamic>();
+
+			using (SqlConnection connection = GetConnection())
+			{
+				connection.Open();
+				using (SqlCommand cmd = new SqlCommand(QueryListaEmpleados, connection))
+				{
+					using (SqlDataReader reader = cmd.ExecuteReader())
+					{
+						while (reader.Read())
+						{
+							ListaEmpleados.Add(new
+							{
+								Value = reader["codigo_empleado"],
+								Text = $"{reader["codigo_empleado"]} - {reader["Nombre"]}"
+							});
+						}
+					}
+				}
+			}
+
+			return ListaEmpleados;
+		}
+
+		#endregion
+
+		public string MtdListaEmpleadosDgv(int codigo_empleado)
 		{
 			string resultado = string.Empty;
-			string query = "Select Salario FROM tbl_Empleados WHERE CodigoEmpleado = @CodigoEmpleado";
+			string QueryListaEmpleados = "SELECT codigo_empleado, Nombre FROM tbl_empleados WHERE codigo_empleado = @codigo_empleado";
+
+			using (SqlConnection connection = GetConnection())
+			{
+				connection.Open();
+				using (SqlCommand cmd = new SqlCommand(QueryListaEmpleados, connection))
+				{
+					cmd.Parameters.AddWithValue("@codigo_empleado", codigo_empleado);
+					using (SqlDataReader reader = cmd.ExecuteReader())
+					{
+						if (reader.Read())
+						{
+							string codigo = reader["codigo_empleado"].ToString();
+							string nombre = reader["Nombre"].ToString();
+							resultado = $"{codigo} - {nombre}";
+						}
+					}
+				}
+			}
+
+			return resultado;
+		}
+		public decimal MtdSalarioPlanilla(int codigo_empleado, DateTime fecha_pago)
+		{
+			decimal salario = 0;
+			string query = "SELECT Salario FROM tbl_empleados WHERE codigo_empleado = @codigo_empleado AND fecha_pago = @fecha_pago";
 
 			using (SqlConnection connection = GetConnection())
 			{
 				connection.Open();
 				using (SqlCommand cmd = new SqlCommand(query, connection))
 				{
-					cmd.Parameters.AddWithValue("@CodigoEmpleado", codigoEmpleado);
-					SqlDataReader reader = cmd.ExecuteReader();
+					cmd.Parameters.AddWithValue("@codigo_empleado", codigo_empleado);
+					cmd.Parameters.AddWithValue("@fecha_pago", fecha_pago);
 
-					if (reader.Read())
+					using (SqlDataReader reader = cmd.ExecuteReader())
 					{
-						decimal salario = reader.GetDecimal(0);
-						resultado = salario.ToString("F2");
+						if (reader.Read())
+						{
+							if (reader["Salario"] != DBNull.Value)
+							{
+								salario = Convert.ToDecimal(reader["Salario"]);
+							}
+						}
 					}
-
-					reader.Close();
 				}
 			}
 
-			return resultado;
+			return salario;
 		}
-		#endregion
-
-
 	}
 }
+
+
+
+
+
+
+
+
+
 

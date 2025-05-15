@@ -38,7 +38,6 @@
 			this.label9 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.lblFecha = new System.Windows.Forms.Label();
-			this.txt_codigoempleado = new System.Windows.Forms.TextBox();
 			this.txt_codigo_pago_planilla = new System.Windows.Forms.TextBox();
 			this.label7 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
@@ -48,12 +47,13 @@
 			this.dgvPagoPlanillas = new System.Windows.Forms.DataGridView();
 			this.label5 = new System.Windows.Forms.Label();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.btnSalir = new FontAwesome.Sharp.IconButton();
-			this.btnEliminar = new FontAwesome.Sharp.IconButton();
+			this.DtpFechaPago = new System.Windows.Forms.DateTimePicker();
+			this.cbox_codigoempleado = new System.Windows.Forms.ComboBox();
 			this.btnCancelar = new FontAwesome.Sharp.IconButton();
 			this.btnEditar = new FontAwesome.Sharp.IconButton();
 			this.btnGuardar = new FontAwesome.Sharp.IconButton();
-			this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+			this.btnSalir = new FontAwesome.Sharp.IconButton();
+			this.btnEliminar = new FontAwesome.Sharp.IconButton();
 			((System.ComponentModel.ISupportInitialize)(this.dgvPagoPlanillas)).BeginInit();
 			this.groupBox1.SuspendLayout();
 			this.SuspendLayout();
@@ -170,18 +170,12 @@
 			this.lblFecha.TabIndex = 54;
 			this.lblFecha.Text = "Imprimir fecha:";
 			// 
-			// txt_codigoempleado
-			// 
-			this.txt_codigoempleado.Location = new System.Drawing.Point(240, 53);
-			this.txt_codigoempleado.Name = "txt_codigoempleado";
-			this.txt_codigoempleado.Size = new System.Drawing.Size(165, 20);
-			this.txt_codigoempleado.TabIndex = 15;
-			// 
 			// txt_codigo_pago_planilla
 			// 
 			this.txt_codigo_pago_planilla.Enabled = false;
 			this.txt_codigo_pago_planilla.Location = new System.Drawing.Point(240, 16);
 			this.txt_codigo_pago_planilla.Name = "txt_codigo_pago_planilla";
+			this.txt_codigo_pago_planilla.ReadOnly = true;
 			this.txt_codigo_pago_planilla.Size = new System.Drawing.Size(165, 20);
 			this.txt_codigo_pago_planilla.TabIndex = 14;
 			// 
@@ -267,7 +261,8 @@
 			// 
 			// groupBox1
 			// 
-			this.groupBox1.Controls.Add(this.dateTimePicker1);
+			this.groupBox1.Controls.Add(this.DtpFechaPago);
+			this.groupBox1.Controls.Add(this.cbox_codigoempleado);
 			this.groupBox1.Controls.Add(this.lbl_montototal);
 			this.groupBox1.Controls.Add(this.lbl_horasextras);
 			this.groupBox1.Controls.Add(this.lbl_bono);
@@ -278,7 +273,6 @@
 			this.groupBox1.Controls.Add(this.btnCancelar);
 			this.groupBox1.Controls.Add(this.btnEditar);
 			this.groupBox1.Controls.Add(this.btnGuardar);
-			this.groupBox1.Controls.Add(this.txt_codigoempleado);
 			this.groupBox1.Controls.Add(this.txt_codigo_pago_planilla);
 			this.groupBox1.Controls.Add(this.label7);
 			this.groupBox1.Controls.Add(this.label6);
@@ -294,35 +288,24 @@
 			this.groupBox1.TabIndex = 55;
 			this.groupBox1.TabStop = false;
 			// 
-			// btnSalir
+			// DtpFechaPago
 			// 
-			this.btnSalir.IconChar = FontAwesome.Sharp.IconChar.PowerOff;
-			this.btnSalir.IconColor = System.Drawing.Color.Black;
-			this.btnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
-			this.btnSalir.IconSize = 25;
-			this.btnSalir.Location = new System.Drawing.Point(810, 494);
-			this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
-			this.btnSalir.Name = "btnSalir";
-			this.btnSalir.Size = new System.Drawing.Size(129, 31);
-			this.btnSalir.TabIndex = 58;
-			this.btnSalir.Text = "Salir";
-			this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnSalir.UseVisualStyleBackColor = true;
+			this.DtpFechaPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.DtpFechaPago.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+			this.DtpFechaPago.Location = new System.Drawing.Point(240, 86);
+			this.DtpFechaPago.Margin = new System.Windows.Forms.Padding(2);
+			this.DtpFechaPago.Name = "DtpFechaPago";
+			this.DtpFechaPago.Size = new System.Drawing.Size(165, 21);
+			this.DtpFechaPago.TabIndex = 62;
 			// 
-			// btnEliminar
+			// cbox_codigoempleado
 			// 
-			this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.Trash;
-			this.btnEliminar.IconColor = System.Drawing.Color.Black;
-			this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-			this.btnEliminar.IconSize = 25;
-			this.btnEliminar.Location = new System.Drawing.Point(653, 494);
-			this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
-			this.btnEliminar.Name = "btnEliminar";
-			this.btnEliminar.Size = new System.Drawing.Size(129, 31);
-			this.btnEliminar.TabIndex = 57;
-			this.btnEliminar.Text = "Eliminar";
-			this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnEliminar.UseVisualStyleBackColor = true;
+			this.cbox_codigoempleado.FormattingEnabled = true;
+			this.cbox_codigoempleado.Location = new System.Drawing.Point(241, 53);
+			this.cbox_codigoempleado.Name = "cbox_codigoempleado";
+			this.cbox_codigoempleado.Size = new System.Drawing.Size(164, 21);
+			this.cbox_codigoempleado.TabIndex = 61;
+			this.cbox_codigoempleado.SelectedIndexChanged += new System.EventHandler(this.cbox_codigoempleado_SelectedIndexChanged);
 			// 
 			// btnCancelar
 			// 
@@ -369,12 +352,35 @@
 			this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnGuardar.UseVisualStyleBackColor = true;
 			// 
-			// dateTimePicker1
+			// btnSalir
 			// 
-			this.dateTimePicker1.Location = new System.Drawing.Point(240, 87);
-			this.dateTimePicker1.Name = "dateTimePicker1";
-			this.dateTimePicker1.Size = new System.Drawing.Size(160, 20);
-			this.dateTimePicker1.TabIndex = 60;
+			this.btnSalir.IconChar = FontAwesome.Sharp.IconChar.PowerOff;
+			this.btnSalir.IconColor = System.Drawing.Color.Black;
+			this.btnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.btnSalir.IconSize = 25;
+			this.btnSalir.Location = new System.Drawing.Point(810, 494);
+			this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
+			this.btnSalir.Name = "btnSalir";
+			this.btnSalir.Size = new System.Drawing.Size(129, 31);
+			this.btnSalir.TabIndex = 58;
+			this.btnSalir.Text = "Salir";
+			this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnSalir.UseVisualStyleBackColor = true;
+			// 
+			// btnEliminar
+			// 
+			this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.Trash;
+			this.btnEliminar.IconColor = System.Drawing.Color.Black;
+			this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.btnEliminar.IconSize = 25;
+			this.btnEliminar.Location = new System.Drawing.Point(653, 494);
+			this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
+			this.btnEliminar.Name = "btnEliminar";
+			this.btnEliminar.Size = new System.Drawing.Size(129, 31);
+			this.btnEliminar.TabIndex = 57;
+			this.btnEliminar.Text = "Eliminar";
+			this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnEliminar.UseVisualStyleBackColor = true;
 			// 
 			// frm_pago_planillas
 			// 
@@ -417,7 +423,6 @@
 		private FontAwesome.Sharp.IconButton btnEliminar;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label lblFecha;
-		private System.Windows.Forms.TextBox txt_codigoempleado;
 		private System.Windows.Forms.TextBox txt_codigo_pago_planilla;
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.Label label6;
@@ -427,6 +432,7 @@
 		private System.Windows.Forms.DataGridView dgvPagoPlanillas;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.GroupBox groupBox1;
-		private System.Windows.Forms.DateTimePicker dateTimePicker1;
+		private System.Windows.Forms.ComboBox cbox_codigoempleado;
+		private System.Windows.Forms.DateTimePicker DtpFechaPago;
 	}
 }
