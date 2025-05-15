@@ -79,5 +79,24 @@ namespace Datos
                 }
             }
         }
+
+        public DataTable MtdBuscador(string usuario_sistema)
+        {
+            DataTable datos = new DataTable();
+            string query = "select codigo_mesa as 'Codigo Mesa',numero_mesa as 'Numero de Mesa',cantidad_sillas as 'Cantidad de Sillas',ubicacion as 'Ubicacion', tipo_mesa as 'Tipo de Mesa',estado as 'Estado',usuario_sistema as 'Usuario de el Sistema',FechaSistema as 'Fecha' from tbl_mesas where lower(usuario_sistema) like '%' +@usuario_sistema +'%'";
+            using (SqlConnection connection = GetConnection())
+            {
+                connection.Open();
+                using (SqlCommand buscar = new SqlCommand(query, connection))
+                {
+                    buscar.Parameters.AddWithValue("@usuario_sistema", "%" + usuario_sistema + "%");
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(buscar))
+                    {
+                        adapter.Fill(datos);
+                    }
+                }
+            }
+            return datos;
+        }
     }
 }

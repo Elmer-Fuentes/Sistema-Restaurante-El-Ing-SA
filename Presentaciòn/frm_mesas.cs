@@ -266,5 +266,43 @@ namespace Presentaciòn
                 MessageBox.Show("Seleccione el registro que decea eliminar " + ex, "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        private void txt_buscarMesas_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void btn_buscar_Click(object sender, EventArgs e)
+        {
+            lst_historial.Items.Add(txt_buscarMesas.Text);
+            string busqueda = txt_buscarMesas.Text;
+            MtdMostrarbusqueda(busqueda);
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+            MtdMostrardatos();
+        }
+
+        private void MtdMostrarbusqueda(string busqueda)
+        {
+            DataTable dt = cd_Mesas.MtdBuscador(busqueda);
+            dgv_buscarMesas.DataSource = dt;
+        }
+
+        private void lst_historial_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txt_buscarMesas.Text = lst_historial.SelectedItem.ToString();
+        }
+
+        private void dgv_buscarMesas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txt_codigoMesa.Text = dgv_buscarMesas.SelectedCells[0].Value.ToString();
+            txt_NumeroMesa.Text = dgv_buscarMesas.SelectedCells[1].Value.ToString();
+            txt_CantidadSillas.Text = dgv_buscarMesas.SelectedCells[2].Value.ToString();
+            txt_Ubicacion.Text = dgv_buscarMesas.SelectedCells[3].Value.ToString();
+            txt_estado.Text = dgv_buscarMesas.SelectedCells[4].Value.ToString();
+            cbox_tipomesa.Text = dgv_buscarMesas.SelectedCells[5].Value.ToString();
+            tabControl1.SelectedIndex = 0;
+        }
     }
 }

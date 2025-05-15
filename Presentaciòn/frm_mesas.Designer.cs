@@ -149,6 +149,7 @@
             this.dgv_buscarMesas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_buscarMesas.Size = new System.Drawing.Size(1456, 351);
             this.dgv_buscarMesas.TabIndex = 55;
+            this.dgv_buscarMesas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_buscarMesas_CellClick);
             // 
             // txt_Ubicacion
             // 
@@ -174,6 +175,7 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // panel2
             // 
@@ -199,7 +201,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(570, 205);
+            this.label11.Location = new System.Drawing.Point(552, 205);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(163, 20);
             this.label11.TabIndex = 63;
@@ -217,6 +219,7 @@
             this.btn_buscar.TabIndex = 62;
             this.btn_buscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_buscar.UseVisualStyleBackColor = true;
+            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
             // 
             // txt_buscarMesas
             // 
@@ -225,15 +228,17 @@
             this.txt_buscarMesas.Name = "txt_buscarMesas";
             this.txt_buscarMesas.Size = new System.Drawing.Size(300, 26);
             this.txt_buscarMesas.TabIndex = 61;
+            this.txt_buscarMesas.TextChanged += new System.EventHandler(this.txt_buscarMesas_TextChanged);
             // 
             // lst_historial
             // 
             this.lst_historial.FormattingEnabled = true;
             this.lst_historial.ItemHeight = 20;
-            this.lst_historial.Location = new System.Drawing.Point(506, 239);
+            this.lst_historial.Location = new System.Drawing.Point(494, 237);
             this.lst_historial.Name = "lst_historial";
             this.lst_historial.Size = new System.Drawing.Size(318, 104);
             this.lst_historial.TabIndex = 59;
+            this.lst_historial.SelectedIndexChanged += new System.EventHandler(this.lst_historial_SelectedIndexChanged);
             // 
             // label10
             // 
