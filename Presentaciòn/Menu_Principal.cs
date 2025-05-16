@@ -30,6 +30,7 @@ namespace Presentaciòn
         private frm_encabezado_ordenes frm_Encabezado_Ordenes = null; //instancia del formulario hijo
         private frm_empleados frm_Empleados = null; //instancia del formulario hijo
         private frm_mesas frm_Mesas = null; // instancia del formulario hijo
+        private frm_Menu_v2 frm_menu_v2 = null;
 
         #endregion = "instancias de todos los formularios";
 
@@ -228,6 +229,20 @@ namespace Presentaciòn
             Reportes.frm_Reporte_Pago_Planilla obj = new Reportes.frm_Reporte_Pago_Planilla();
             obj.txt_p_pago_planilla.Text = "";
             obj.ShowDialog();
+        }
+
+        private void mENUV2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (frm_menu_v2 == null || frm_menu_v2.IsDisposed)
+            {
+                frm_menu_v2 = new frm_Menu_v2(); //crea una nueva instancia solo cuando sea necesario
+                frm_menu_v2.MdiParent = this; //asigna el formulario hijo al padre
+                frm_menu_v2.Show(); //abre el formulario
+            }
+            else
+            {
+                frm_menu_v2.Focus(); // pone el formulario abierto alfrente
+            }
         }
     }
 }
