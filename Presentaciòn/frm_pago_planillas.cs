@@ -85,6 +85,36 @@ namespace Presentaciòn
 				}
 			}
 		}
+
+		private void btnEliminar_usuario_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void dgvUsuarios_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void btnSalir_frm_usuarios_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void btnCancelar_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void btnEditar_Click(object sender, EventArgs e)
+		{
+
+		}
+
+		private void btnGuardar_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 }
 

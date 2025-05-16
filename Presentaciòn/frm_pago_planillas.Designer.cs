@@ -28,7 +28,10 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.label8 = new System.Windows.Forms.Label();
+			this.tabControl1 = new System.Windows.Forms.TabControl();
+			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.DtpFechaPago = new System.Windows.Forms.DateTimePicker();
+			this.cbox_codigoempleado = new System.Windows.Forms.ComboBox();
 			this.lbl_montototal = new System.Windows.Forms.Label();
 			this.lbl_horasextras = new System.Windows.Forms.Label();
 			this.lbl_bono = new System.Windows.Forms.Label();
@@ -36,38 +39,84 @@
 			this.cbox_estado = new System.Windows.Forms.ComboBox();
 			this.label10 = new System.Windows.Forms.Label();
 			this.label9 = new System.Windows.Forms.Label();
-			this.label1 = new System.Windows.Forms.Label();
-			this.lblFecha = new System.Windows.Forms.Label();
-			this.txt_codigo_pago_planilla = new System.Windows.Forms.TextBox();
-			this.label7 = new System.Windows.Forms.Label();
-			this.label6 = new System.Windows.Forms.Label();
-			this.label4 = new System.Windows.Forms.Label();
-			this.label3 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
-			this.dgvPagoPlanillas = new System.Windows.Forms.DataGridView();
-			this.label5 = new System.Windows.Forms.Label();
-			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.DtpFechaPago = new System.Windows.Forms.DateTimePicker();
-			this.cbox_codigoempleado = new System.Windows.Forms.ComboBox();
 			this.btnCancelar = new FontAwesome.Sharp.IconButton();
 			this.btnEditar = new FontAwesome.Sharp.IconButton();
 			this.btnGuardar = new FontAwesome.Sharp.IconButton();
+			this.txt_codigo_pago_planilla = new System.Windows.Forms.TextBox();
+			this.label7 = new System.Windows.Forms.Label();
+			this.label6 = new System.Windows.Forms.Label();
+			this.label5 = new System.Windows.Forms.Label();
+			this.label4 = new System.Windows.Forms.Label();
+			this.label3 = new System.Windows.Forms.Label();
+			this.label2 = new System.Windows.Forms.Label();
 			this.btnSalir = new FontAwesome.Sharp.IconButton();
 			this.btnEliminar = new FontAwesome.Sharp.IconButton();
-			((System.ComponentModel.ISupportInitialize)(this.dgvPagoPlanillas)).BeginInit();
+			this.dgvPagoPlanillas = new System.Windows.Forms.DataGridView();
+			this.panel2 = new System.Windows.Forms.Panel();
+			this.label1 = new System.Windows.Forms.Label();
+			this.lblFecha = new System.Windows.Forms.Label();
+			this.label8 = new System.Windows.Forms.Label();
 			this.groupBox1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dgvPagoPlanillas)).BeginInit();
+			this.panel2.SuspendLayout();
 			this.SuspendLayout();
 			// 
-			// label8
+			// tabControl1
 			// 
-			this.label8.AutoSize = true;
-			this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label8.Location = new System.Drawing.Point(629, 51);
-			this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(93, 17);
-			this.label8.TabIndex = 53;
-			this.label8.Text = "Fecha actual:";
+			this.tabControl1.Location = new System.Drawing.Point(-5, -2);
+			this.tabControl1.Name = "tabControl1";
+			this.tabControl1.SelectedIndex = 0;
+			this.tabControl1.Size = new System.Drawing.Size(1041, 555);
+			this.tabControl1.TabIndex = 0;
+			// 
+			// groupBox1
+			// 
+			this.groupBox1.BackColor = System.Drawing.Color.White;
+			this.groupBox1.Controls.Add(this.DtpFechaPago);
+			this.groupBox1.Controls.Add(this.cbox_codigoempleado);
+			this.groupBox1.Controls.Add(this.lbl_montototal);
+			this.groupBox1.Controls.Add(this.lbl_horasextras);
+			this.groupBox1.Controls.Add(this.lbl_bono);
+			this.groupBox1.Controls.Add(this.lbl_salario);
+			this.groupBox1.Controls.Add(this.cbox_estado);
+			this.groupBox1.Controls.Add(this.label10);
+			this.groupBox1.Controls.Add(this.label9);
+			this.groupBox1.Controls.Add(this.btnCancelar);
+			this.groupBox1.Controls.Add(this.btnEditar);
+			this.groupBox1.Controls.Add(this.btnGuardar);
+			this.groupBox1.Controls.Add(this.txt_codigo_pago_planilla);
+			this.groupBox1.Controls.Add(this.label7);
+			this.groupBox1.Controls.Add(this.label6);
+			this.groupBox1.Controls.Add(this.label5);
+			this.groupBox1.Controls.Add(this.label4);
+			this.groupBox1.Controls.Add(this.label3);
+			this.groupBox1.Controls.Add(this.label2);
+			this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.groupBox1.Location = new System.Drawing.Point(15, 104);
+			this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+			this.groupBox1.Name = "groupBox1";
+			this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+			this.groupBox1.Size = new System.Drawing.Size(1004, 161);
+			this.groupBox1.TabIndex = 80;
+			this.groupBox1.TabStop = false;
+			// 
+			// DtpFechaPago
+			// 
+			this.DtpFechaPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.DtpFechaPago.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+			this.DtpFechaPago.Location = new System.Drawing.Point(240, 86);
+			this.DtpFechaPago.Margin = new System.Windows.Forms.Padding(2);
+			this.DtpFechaPago.Name = "DtpFechaPago";
+			this.DtpFechaPago.Size = new System.Drawing.Size(165, 21);
+			this.DtpFechaPago.TabIndex = 62;
+			// 
+			// cbox_codigoempleado
+			// 
+			this.cbox_codigoempleado.FormattingEnabled = true;
+			this.cbox_codigoempleado.Location = new System.Drawing.Point(241, 53);
+			this.cbox_codigoempleado.Name = "cbox_codigoempleado";
+			this.cbox_codigoempleado.Size = new System.Drawing.Size(164, 21);
+			this.cbox_codigoempleado.TabIndex = 61;
 			// 
 			// lbl_montototal
 			// 
@@ -148,165 +197,6 @@
 			this.label9.TabIndex = 53;
 			this.label9.Text = "Salario:";
 			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(412, 23);
-			this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(165, 26);
-			this.label1.TabIndex = 52;
-			this.label1.Text = "Pago Planillas";
-			// 
-			// lblFecha
-			// 
-			this.lblFecha.AutoSize = true;
-			this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblFecha.Location = new System.Drawing.Point(735, 51);
-			this.lblFecha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-			this.lblFecha.Name = "lblFecha";
-			this.lblFecha.Size = new System.Drawing.Size(100, 17);
-			this.lblFecha.TabIndex = 54;
-			this.lblFecha.Text = "Imprimir fecha:";
-			// 
-			// txt_codigo_pago_planilla
-			// 
-			this.txt_codigo_pago_planilla.Enabled = false;
-			this.txt_codigo_pago_planilla.Location = new System.Drawing.Point(240, 16);
-			this.txt_codigo_pago_planilla.Name = "txt_codigo_pago_planilla";
-			this.txt_codigo_pago_planilla.ReadOnly = true;
-			this.txt_codigo_pago_planilla.Size = new System.Drawing.Size(165, 20);
-			this.txt_codigo_pago_planilla.TabIndex = 14;
-			// 
-			// label7
-			// 
-			this.label7.AutoSize = true;
-			this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label7.Location = new System.Drawing.Point(476, 81);
-			this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(87, 17);
-			this.label7.TabIndex = 6;
-			this.label7.Text = "Monto Total:";
-			// 
-			// label6
-			// 
-			this.label6.AutoSize = true;
-			this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label6.Location = new System.Drawing.Point(476, 49);
-			this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(93, 17);
-			this.label6.TabIndex = 5;
-			this.label6.Text = "Horas Extras:";
-			// 
-			// label4
-			// 
-			this.label4.AutoSize = true;
-			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label4.Location = new System.Drawing.Point(27, 85);
-			this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-			this.label4.Name = "label4";
-			this.label4.Size = new System.Drawing.Size(108, 17);
-			this.label4.TabIndex = 3;
-			this.label4.Text = "Fecha de Pago:";
-			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label3.Location = new System.Drawing.Point(27, 50);
-			this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(123, 17);
-			this.label3.TabIndex = 2;
-			this.label3.Text = "Codigo Empleado:";
-			// 
-			// label2
-			// 
-			this.label2.AutoSize = true;
-			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.Location = new System.Drawing.Point(27, 15);
-			this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(142, 17);
-			this.label2.TabIndex = 1;
-			this.label2.Text = "Codigo Pago Planilla:";
-			// 
-			// dgvPagoPlanillas
-			// 
-			this.dgvPagoPlanillas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-			this.dgvPagoPlanillas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dgvPagoPlanillas.Location = new System.Drawing.Point(15, 241);
-			this.dgvPagoPlanillas.Margin = new System.Windows.Forms.Padding(2);
-			this.dgvPagoPlanillas.Name = "dgvPagoPlanillas";
-			this.dgvPagoPlanillas.ReadOnly = true;
-			this.dgvPagoPlanillas.RowHeadersWidth = 51;
-			this.dgvPagoPlanillas.RowTemplate.Height = 24;
-			this.dgvPagoPlanillas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.dgvPagoPlanillas.Size = new System.Drawing.Size(1004, 228);
-			this.dgvPagoPlanillas.TabIndex = 56;
-			// 
-			// label5
-			// 
-			this.label5.AutoSize = true;
-			this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label5.Location = new System.Drawing.Point(476, 18);
-			this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-			this.label5.Name = "label5";
-			this.label5.Size = new System.Drawing.Size(45, 17);
-			this.label5.TabIndex = 4;
-			this.label5.Text = "Bono:";
-			// 
-			// groupBox1
-			// 
-			this.groupBox1.Controls.Add(this.DtpFechaPago);
-			this.groupBox1.Controls.Add(this.cbox_codigoempleado);
-			this.groupBox1.Controls.Add(this.lbl_montototal);
-			this.groupBox1.Controls.Add(this.lbl_horasextras);
-			this.groupBox1.Controls.Add(this.lbl_bono);
-			this.groupBox1.Controls.Add(this.lbl_salario);
-			this.groupBox1.Controls.Add(this.cbox_estado);
-			this.groupBox1.Controls.Add(this.label10);
-			this.groupBox1.Controls.Add(this.label9);
-			this.groupBox1.Controls.Add(this.btnCancelar);
-			this.groupBox1.Controls.Add(this.btnEditar);
-			this.groupBox1.Controls.Add(this.btnGuardar);
-			this.groupBox1.Controls.Add(this.txt_codigo_pago_planilla);
-			this.groupBox1.Controls.Add(this.label7);
-			this.groupBox1.Controls.Add(this.label6);
-			this.groupBox1.Controls.Add(this.label5);
-			this.groupBox1.Controls.Add(this.label4);
-			this.groupBox1.Controls.Add(this.label3);
-			this.groupBox1.Controls.Add(this.label2);
-			this.groupBox1.Location = new System.Drawing.Point(15, 70);
-			this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
-			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-			this.groupBox1.Size = new System.Drawing.Size(1004, 167);
-			this.groupBox1.TabIndex = 55;
-			this.groupBox1.TabStop = false;
-			// 
-			// DtpFechaPago
-			// 
-			this.DtpFechaPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.DtpFechaPago.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.DtpFechaPago.Location = new System.Drawing.Point(240, 86);
-			this.DtpFechaPago.Margin = new System.Windows.Forms.Padding(2);
-			this.DtpFechaPago.Name = "DtpFechaPago";
-			this.DtpFechaPago.Size = new System.Drawing.Size(165, 21);
-			this.DtpFechaPago.TabIndex = 62;
-			// 
-			// cbox_codigoempleado
-			// 
-			this.cbox_codigoempleado.FormattingEnabled = true;
-			this.cbox_codigoempleado.Location = new System.Drawing.Point(241, 53);
-			this.cbox_codigoempleado.Name = "cbox_codigoempleado";
-			this.cbox_codigoempleado.Size = new System.Drawing.Size(164, 21);
-			this.cbox_codigoempleado.TabIndex = 61;
-			this.cbox_codigoempleado.SelectedIndexChanged += new System.EventHandler(this.cbox_codigoempleado_SelectedIndexChanged);
-			// 
 			// btnCancelar
 			// 
 			this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.Remove;
@@ -352,17 +242,92 @@
 			this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnGuardar.UseVisualStyleBackColor = true;
 			// 
+			// txt_codigo_pago_planilla
+			// 
+			this.txt_codigo_pago_planilla.Enabled = false;
+			this.txt_codigo_pago_planilla.Location = new System.Drawing.Point(240, 16);
+			this.txt_codigo_pago_planilla.Name = "txt_codigo_pago_planilla";
+			this.txt_codigo_pago_planilla.ReadOnly = true;
+			this.txt_codigo_pago_planilla.Size = new System.Drawing.Size(165, 20);
+			this.txt_codigo_pago_planilla.TabIndex = 14;
+			// 
+			// label7
+			// 
+			this.label7.AutoSize = true;
+			this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label7.Location = new System.Drawing.Point(476, 81);
+			this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(87, 17);
+			this.label7.TabIndex = 6;
+			this.label7.Text = "Monto Total:";
+			// 
+			// label6
+			// 
+			this.label6.AutoSize = true;
+			this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label6.Location = new System.Drawing.Point(476, 49);
+			this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(93, 17);
+			this.label6.TabIndex = 5;
+			this.label6.Text = "Horas Extras:";
+			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label5.Location = new System.Drawing.Point(476, 18);
+			this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(45, 17);
+			this.label5.TabIndex = 4;
+			this.label5.Text = "Bono:";
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label4.Location = new System.Drawing.Point(27, 85);
+			this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(108, 17);
+			this.label4.TabIndex = 3;
+			this.label4.Text = "Fecha de Pago:";
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label3.Location = new System.Drawing.Point(27, 50);
+			this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(123, 17);
+			this.label3.TabIndex = 2;
+			this.label3.Text = "Codigo Empleado:";
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label2.Location = new System.Drawing.Point(27, 15);
+			this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(142, 17);
+			this.label2.TabIndex = 1;
+			this.label2.Text = "Codigo Pago Planilla:";
+			// 
 			// btnSalir
 			// 
 			this.btnSalir.IconChar = FontAwesome.Sharp.IconChar.PowerOff;
 			this.btnSalir.IconColor = System.Drawing.Color.Black;
 			this.btnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
 			this.btnSalir.IconSize = 25;
-			this.btnSalir.Location = new System.Drawing.Point(810, 494);
+			this.btnSalir.Location = new System.Drawing.Point(810, 503);
 			this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
 			this.btnSalir.Name = "btnSalir";
 			this.btnSalir.Size = new System.Drawing.Size(129, 31);
-			this.btnSalir.TabIndex = 58;
+			this.btnSalir.TabIndex = 83;
 			this.btnSalir.Text = "Salir";
 			this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnSalir.UseVisualStyleBackColor = true;
@@ -373,34 +338,95 @@
 			this.btnEliminar.IconColor = System.Drawing.Color.Black;
 			this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
 			this.btnEliminar.IconSize = 25;
-			this.btnEliminar.Location = new System.Drawing.Point(653, 494);
+			this.btnEliminar.Location = new System.Drawing.Point(653, 503);
 			this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
 			this.btnEliminar.Name = "btnEliminar";
 			this.btnEliminar.Size = new System.Drawing.Size(129, 31);
-			this.btnEliminar.TabIndex = 57;
+			this.btnEliminar.TabIndex = 82;
 			this.btnEliminar.Text = "Eliminar";
 			this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnEliminar.UseVisualStyleBackColor = true;
+			// 
+			// dgvPagoPlanillas
+			// 
+			this.dgvPagoPlanillas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+			this.dgvPagoPlanillas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgvPagoPlanillas.Location = new System.Drawing.Point(15, 269);
+			this.dgvPagoPlanillas.Margin = new System.Windows.Forms.Padding(2);
+			this.dgvPagoPlanillas.Name = "dgvPagoPlanillas";
+			this.dgvPagoPlanillas.ReadOnly = true;
+			this.dgvPagoPlanillas.RowHeadersWidth = 51;
+			this.dgvPagoPlanillas.RowTemplate.Height = 24;
+			this.dgvPagoPlanillas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+			this.dgvPagoPlanillas.Size = new System.Drawing.Size(1004, 209);
+			this.dgvPagoPlanillas.TabIndex = 81;
+			// 
+			// panel2
+			// 
+			this.panel2.BackColor = System.Drawing.Color.DarkOrange;
+			this.panel2.Controls.Add(this.label1);
+			this.panel2.Location = new System.Drawing.Point(2, -2);
+			this.panel2.Name = "panel2";
+			this.panel2.Size = new System.Drawing.Size(1031, 62);
+			this.panel2.TabIndex = 84;
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label1.Location = new System.Drawing.Point(395, 18);
+			this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(165, 26);
+			this.label1.TabIndex = 64;
+			this.label1.Text = "Pago Planillas";
+			// 
+			// lblFecha
+			// 
+			this.lblFecha.AutoSize = true;
+			this.lblFecha.BackColor = System.Drawing.SystemColors.ControlLightLight;
+			this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lblFecha.Location = new System.Drawing.Point(731, 80);
+			this.lblFecha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.lblFecha.Name = "lblFecha";
+			this.lblFecha.Size = new System.Drawing.Size(100, 17);
+			this.lblFecha.TabIndex = 79;
+			this.lblFecha.Text = "Imprimir fecha:";
+			// 
+			// label8
+			// 
+			this.label8.AutoSize = true;
+			this.label8.BackColor = System.Drawing.SystemColors.ControlLightLight;
+			this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label8.Location = new System.Drawing.Point(634, 80);
+			this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.label8.Name = "label8";
+			this.label8.Size = new System.Drawing.Size(93, 17);
+			this.label8.TabIndex = 78;
+			this.label8.Text = "Fecha actual:";
 			// 
 			// frm_pago_planillas
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1034, 549);
-			this.Controls.Add(this.label8);
+			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.btnSalir);
 			this.Controls.Add(this.btnEliminar);
-			this.Controls.Add(this.label1);
-			this.Controls.Add(this.lblFecha);
 			this.Controls.Add(this.dgvPagoPlanillas);
-			this.Controls.Add(this.groupBox1);
+			this.Controls.Add(this.panel2);
+			this.Controls.Add(this.lblFecha);
+			this.Controls.Add(this.label8);
+			this.Controls.Add(this.tabControl1);
 			this.Name = "frm_pago_planillas";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "frm_pago_planillas";
 			this.Load += new System.EventHandler(this.frm_pago_planillas_Load);
-			((System.ComponentModel.ISupportInitialize)(this.dgvPagoPlanillas)).EndInit();
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dgvPagoPlanillas)).EndInit();
+			this.panel2.ResumeLayout(false);
+			this.panel2.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -408,7 +434,10 @@
 
 		#endregion
 
-		private System.Windows.Forms.Label label8;
+		private System.Windows.Forms.TabControl tabControl1;
+		private System.Windows.Forms.GroupBox groupBox1;
+		private System.Windows.Forms.DateTimePicker DtpFechaPago;
+		private System.Windows.Forms.ComboBox cbox_codigoempleado;
 		private System.Windows.Forms.Label lbl_montototal;
 		private System.Windows.Forms.Label lbl_horasextras;
 		private System.Windows.Forms.Label lbl_bono;
@@ -419,20 +448,19 @@
 		private FontAwesome.Sharp.IconButton btnCancelar;
 		private FontAwesome.Sharp.IconButton btnEditar;
 		private FontAwesome.Sharp.IconButton btnGuardar;
-		private FontAwesome.Sharp.IconButton btnSalir;
-		private FontAwesome.Sharp.IconButton btnEliminar;
-		private System.Windows.Forms.Label label1;
-		private System.Windows.Forms.Label lblFecha;
 		private System.Windows.Forms.TextBox txt_codigo_pago_planilla;
 		private System.Windows.Forms.Label label7;
 		private System.Windows.Forms.Label label6;
+		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label2;
+		private FontAwesome.Sharp.IconButton btnSalir;
+		private FontAwesome.Sharp.IconButton btnEliminar;
 		private System.Windows.Forms.DataGridView dgvPagoPlanillas;
-		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.GroupBox groupBox1;
-		private System.Windows.Forms.ComboBox cbox_codigoempleado;
-		private System.Windows.Forms.DateTimePicker DtpFechaPago;
+		private System.Windows.Forms.Panel panel2;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.Label lblFecha;
+		private System.Windows.Forms.Label label8;
 	}
 }
