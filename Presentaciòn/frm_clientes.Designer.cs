@@ -98,7 +98,7 @@
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1533, 810);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.Text = "Clientes";
             this.tabPage1.UseVisualStyleBackColor = true;
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
@@ -148,7 +148,7 @@
             // 
             // dgvDatosPlanilla
             // 
-            this.dgvDatosPlanilla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvDatosPlanilla.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvDatosPlanilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDatosPlanilla.Location = new System.Drawing.Point(20, 386);
             this.dgvDatosPlanilla.Name = "dgvDatosPlanilla";
@@ -386,7 +386,7 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(1533, 810);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.Text = "Buscar Cliente";
             this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
@@ -426,7 +426,7 @@
             this.btn_buscar.IconColor = System.Drawing.Color.Black;
             this.btn_buscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_buscar.IconSize = 25;
-            this.btn_buscar.Location = new System.Drawing.Point(910, 177);
+            this.btn_buscar.Location = new System.Drawing.Point(865, 177);
             this.btn_buscar.Name = "btn_buscar";
             this.btn_buscar.Size = new System.Drawing.Size(82, 48);
             this.btn_buscar.TabIndex = 62;
@@ -464,7 +464,7 @@
             // 
             // dgv_buscarclientes
             // 
-            this.dgv_buscarclientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgv_buscarclientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_buscarclientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_buscarclientes.Location = new System.Drawing.Point(6, 363);
             this.dgv_buscarclientes.Name = "dgv_buscarclientes";
@@ -480,7 +480,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1616, 933);
+            this.ClientSize = new System.Drawing.Size(1077, 622);
             this.Controls.Add(this.tabControl1);
             this.Name = "frm_clientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

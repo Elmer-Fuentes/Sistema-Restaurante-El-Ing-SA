@@ -139,7 +139,7 @@
             // 
             // dgv_buscarMesas
             // 
-            this.dgv_buscarMesas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgv_buscarMesas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_buscarMesas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_buscarMesas.Location = new System.Drawing.Point(6, 363);
             this.dgv_buscarMesas.Name = "dgv_buscarMesas";
@@ -332,7 +332,7 @@
             // 
             // dgv_Mesas
             // 
-            this.dgv_Mesas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgv_Mesas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_Mesas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Mesas.Location = new System.Drawing.Point(20, 386);
             this.dgv_Mesas.Name = "dgv_Mesas";

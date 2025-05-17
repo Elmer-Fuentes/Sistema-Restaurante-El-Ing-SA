@@ -26,7 +26,7 @@ namespace Presentaciòn
         private void frm_mesas_Load(object sender, EventArgs e)
         {
             Style();
-            MtdMostrarbusqueda("%");
+
             MtdMostrardatos();
             tabPage1.Text = "Mesas";
             tabPage2.Text = "Buscar Mesas";
