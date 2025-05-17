@@ -7,12 +7,14 @@ using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using Entidades;
+
 namespace capa_datos
 
 {
     public class cd_Login : Conexion //herencia clase Conexion
     {
         #region = "Validación login V2";
+
         public bool Login(string usuario, string contrasena)
         {
             using (var connection = GetConnection())
@@ -30,7 +32,6 @@ namespace capa_datos
                     {
                         while (reader.Read())
                         {
-
                             Mis_Variables.rolusuario = reader.GetString(4);
                         }
                         return true;
@@ -42,6 +43,7 @@ namespace capa_datos
                 }
             }
         }
-        #endregion
+
+        #endregion = "Validación login V2";
     }
 }

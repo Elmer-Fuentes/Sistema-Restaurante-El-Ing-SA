@@ -26,7 +26,7 @@ namespace Presentaciòn
         private void frm_mesas_Load(object sender, EventArgs e)
         {
             Style();
-            lblFecha.Text = cl_fechas.MtdFecha().ToString("d");
+            MtdMostrarbusqueda("%");
             MtdMostrardatos();
             tabPage1.Text = "Mesas";
             tabPage2.Text = "Buscar Mesas";
@@ -273,14 +273,17 @@ namespace Presentaciòn
 
         private void btn_buscar_Click(object sender, EventArgs e)
         {
-            lst_historial.Items.Add(txt_buscarMesas.Text);
             string busqueda = txt_buscarMesas.Text;
-            MtdMostrarbusqueda(busqueda);
+            if (!string.IsNullOrWhiteSpace(txt_buscarMesas.Text))
+            {
+                lst_historial.Items.Add(txt_buscarMesas.Text);
+                MtdMostrarbusqueda(busqueda);
+                txt_buscarMesas.Text = "";
+            }
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
         {
-            MtdMostrardatos();
         }
 
         private void MtdMostrarbusqueda(string busqueda)
@@ -303,6 +306,12 @@ namespace Presentaciòn
             txt_estado.Text = dgv_buscarMesas.SelectedCells[4].Value.ToString();
             cbox_tipomesa.Text = dgv_buscarMesas.SelectedCells[5].Value.ToString();
             tabControl1.SelectedIndex = 0;
+        }
+
+        private void tabControl1_TabIndexChanged(object sender, EventArgs e)
+        {
+            DataTable dt = cd_Mesas.MtdRetornardatos();
+            dgv_buscarMesas.DataSource = dt;
         }
     }
 }
