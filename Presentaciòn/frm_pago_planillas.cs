@@ -116,9 +116,12 @@ namespace Presentaciòn
 			{
 				lbl_salario.Text = datosPlanillas.MtdSalarioPlanilla(cbox_codigoempleado.Text).ToString("c");
 
-				
 			}
+			lbl_bono.Text = logicaPlanillas.MtdSalarioBono(cbox_codigoempleado.Text).ToString("c");
+
 		}
+			
+		
 
 		private void txtHorasExtras_TextChanged(object sender, EventArgs e)
 		{
@@ -127,16 +130,23 @@ namespace Presentaciòn
 
 		private void textBox1_TextChanged(object sender, EventArgs e)
 		{
-			int codigo = Convert.ToInt32(cbox_codigoempleado.SelectedValue);
-			lbl_bono.Text = logicaPlanillas.MtdSalarioBono(codigo).ToString("C");
 
 
-			decimal salario = Convert.ToDecimal(lbl_salario.Text.Replace("Q", "").Replace("$", "").Replace(",", "").Trim());
-			decimal bono = Convert.ToDecimal(lbl_bono.Text.Replace("Q", "").Replace("$", "").Replace(",", "").Trim());
-			int horasExtras = Convert.ToInt32(txtHorasExtras.Text);
+			decimal salario = datosPlanillas.MtdSalarioPlanilla(cbox_codigoempleado.Text);
+			decimal bono = logicaPlanillas.MtdSalarioBono(cbox_codigoempleado.Text);
+			int horasExtras = int.Parse(txtHorasExtras.Text);
 
 
-			lbl_montototal.Text = logicaPlanillas.MtdMontoTotal(salario, bono, horasExtras).ToString("C");
+			decimal montoTotal = logicaPlanillas.MtdMontoTotal(salario, bono, horasExtras);
+
+			lbl_montototal.Text = "Q" + montoTotal.ToString("N2");
+
+
+		}
+
+		private void btnSalir_Click(object sender, EventArgs e)
+		{
+			this.Close();
 		}
 	}
 	}

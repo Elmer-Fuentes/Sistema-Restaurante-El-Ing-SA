@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
+using System.Windows.Forms;
 
 
 namespace Datos
@@ -111,8 +112,8 @@ namespace Datos
 			}
 			else
 			{
-				// Puedes lanzar una excepción o manejar el error como prefieras
-				throw new ArgumentException("El código de empleado no tiene el formato esperado.");
+
+				MessageBox.Show("El código de empleado no tiene el formato Correcto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 
 			return salario;

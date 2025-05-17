@@ -30,6 +30,7 @@
 		{
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.txtHorasExtras = new System.Windows.Forms.TextBox();
 			this.DtpFechaPago = new System.Windows.Forms.DateTimePicker();
 			this.lbl_salario = new System.Windows.Forms.Label();
 			this.cbox_codigoempleado = new System.Windows.Forms.ComboBox();
@@ -55,7 +56,6 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.lblFecha = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
-			this.txtHorasExtras = new System.Windows.Forms.TextBox();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvPagoPlanillas)).BeginInit();
 			this.panel2.SuspendLayout();
@@ -99,6 +99,14 @@
 			this.groupBox1.Size = new System.Drawing.Size(1004, 161);
 			this.groupBox1.TabIndex = 80;
 			this.groupBox1.TabStop = false;
+			// 
+			// txtHorasExtras
+			// 
+			this.txtHorasExtras.Location = new System.Drawing.Point(617, 53);
+			this.txtHorasExtras.Name = "txtHorasExtras";
+			this.txtHorasExtras.Size = new System.Drawing.Size(164, 20);
+			this.txtHorasExtras.TabIndex = 63;
+			this.txtHorasExtras.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
 			// 
 			// DtpFechaPago
 			// 
@@ -322,6 +330,7 @@
 			this.btnSalir.Text = "Salir";
 			this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnSalir.UseVisualStyleBackColor = true;
+			this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
 			// 
 			// btnEliminar
 			// 
@@ -395,14 +404,6 @@
 			this.label8.Size = new System.Drawing.Size(93, 17);
 			this.label8.TabIndex = 78;
 			this.label8.Text = "Fecha actual:";
-			// 
-			// txtHorasExtras
-			// 
-			this.txtHorasExtras.Location = new System.Drawing.Point(617, 53);
-			this.txtHorasExtras.Name = "txtHorasExtras";
-			this.txtHorasExtras.Size = new System.Drawing.Size(164, 20);
-			this.txtHorasExtras.TabIndex = 63;
-			this.txtHorasExtras.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
 			// 
 			// frm_pago_planillas
 			// 

@@ -89,6 +89,10 @@
       <Project>{83902075-9d55-4d78-89cc-4b997c402824}</Project>
       <Name>capa_datos</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{34790c58-4ac7-4fc1-87d0-4357206661d7}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
