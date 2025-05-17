@@ -199,6 +199,7 @@
             this.dashboardEmpleadosUsuariosToolStripMenuItem.Name = "dashboardEmpleadosUsuariosToolStripMenuItem";
             this.dashboardEmpleadosUsuariosToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
             this.dashboardEmpleadosUsuariosToolStripMenuItem.Text = "Dashboard Empleados-Usuarios";
+            this.dashboardEmpleadosUsuariosToolStripMenuItem.Click += new System.EventHandler(this.dashboardEmpleadosUsuariosToolStripMenuItem_Click);
             // 
             // salirDelSistemaToolStripMenuItem2
             // 

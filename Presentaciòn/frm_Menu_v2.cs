@@ -186,45 +186,42 @@ namespace Presentaciòn
 
         private void empleadosSinUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Reportes.frm_Reporte_Empleados_Sin_Usuarios obj = new Reportes.frm_Reporte_Empleados_Sin_Usuarios();
-            obj.txt_p1.Text = "";
-            obj.ShowDialog();
+            openChildForm(new frm_Reporte_Inventario_menu());
+           
         }
 
         private void dataDashboardToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Reportes.frm_data_dash_emp_user obj = new Reportes.frm_data_dash_emp_user();
-            obj.txt_dash_emp_user.Text = "";
-            obj.ShowDialog();
+            openChildForm(new frm_data_dash_emp_user());
+            
         }
 
         private void empleadosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            frm_Reporte_Empleado obj = new frm_Reporte_Empleado();
-            obj.txt_p_Empleados.Text = "";
-            obj.ShowDialog();
+            openChildForm(new frm_Reporte_Empleado());
+           
         }
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Reportes.frm_Reporte_Clientes objcli = new Reportes.frm_Reporte_Clientes();
-            objcli.txt_p2_clientes.Text = "";
-            objcli.ShowDialog();
+            openChildForm(new frm_Reporte_Clientes());
+            
         }
 
         private void usuariosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Reportes.frm_Reporte_Usuarios obj = new Reportes.frm_Reporte_Usuarios();
-            obj.txt_p_usuario.Text = "";
-            obj.ShowDialog();
+            openChildForm(new frm_Reporte_Usuarios());
         }
 
         private void pagoPlanillaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Reportes.frm_Reporte_Pago_Planilla obj = new Reportes.frm_Reporte_Pago_Planilla();
-            obj.txt_p_pago_planilla.Text = "";
-            obj.ShowDialog();
+            openChildForm(new frm_Reporte_Pago_Planilla());
         }
         #endregion
+
+        private void dashboardEmpleadosUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Dashboard_Empleados_Usuarios());
+        }
     }
 }
