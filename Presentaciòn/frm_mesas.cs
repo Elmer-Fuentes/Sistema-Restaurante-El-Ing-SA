@@ -273,17 +273,18 @@ namespace Presentaciòn
 
         private void btn_buscar_Click(object sender, EventArgs e)
         {
-            string busqueda = txt_buscarMesas.Text;
-            if (!string.IsNullOrWhiteSpace(txt_buscarMesas.Text))
+            string busqueda = cbox_buscarMesas.Text;
+            if (!string.IsNullOrWhiteSpace(cbox_buscarMesas.Text))
             {
-                lst_historial.Items.Add(txt_buscarMesas.Text);
+                lst_historial.Items.Add(cbox_buscarMesas.Text);
                 MtdMostrarbusqueda(busqueda);
-                txt_buscarMesas.Text = "";
+                cbox_buscarMesas.Text = "";
             }
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
         {
+            MtdMostrarbusqueda("");
         }
 
         private void MtdMostrarbusqueda(string busqueda)
@@ -294,7 +295,7 @@ namespace Presentaciòn
 
         private void lst_historial_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txt_buscarMesas.Text = lst_historial.SelectedItem.ToString();
+            cbox_buscarMesas.Text = lst_historial.SelectedItem.ToString();
         }
 
         private void dgv_buscarMesas_CellClick(object sender, DataGridViewCellEventArgs e)

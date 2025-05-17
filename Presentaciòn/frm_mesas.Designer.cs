@@ -40,7 +40,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.btn_buscar = new FontAwesome.Sharp.IconButton();
-            this.txt_buscarMesas = new System.Windows.Forms.TextBox();
             this.lst_historial = new System.Windows.Forms.ListBox();
             this.label10 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
@@ -62,6 +61,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.cbox_buscarMesas = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_buscarMesas)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -161,10 +161,10 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.cbox_buscarMesas);
             this.tabPage2.Controls.Add(this.panel2);
             this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this.btn_buscar);
-            this.tabPage2.Controls.Add(this.txt_buscarMesas);
             this.tabPage2.Controls.Add(this.lst_historial);
             this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Controls.Add(this.dgv_buscarMesas);
@@ -221,15 +221,6 @@
             this.btn_buscar.UseVisualStyleBackColor = true;
             this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
             // 
-            // txt_buscarMesas
-            // 
-            this.txt_buscarMesas.Location = new System.Drawing.Point(524, 157);
-            this.txt_buscarMesas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txt_buscarMesas.Name = "txt_buscarMesas";
-            this.txt_buscarMesas.Size = new System.Drawing.Size(300, 26);
-            this.txt_buscarMesas.TabIndex = 61;
-            this.txt_buscarMesas.TextChanged += new System.EventHandler(this.txt_buscarMesas_TextChanged);
-            // 
             // lst_historial
             // 
             this.lst_historial.FormattingEnabled = true;
@@ -246,9 +237,9 @@
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(197, 158);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(215, 25);
+            this.label10.Size = new System.Drawing.Size(222, 38);
             this.label10.TabIndex = 58;
-            this.label10.Text = "Nombre de el cliente:";
+            this.label10.Text = "Tipo de mesa:";
             // 
             // txt_NumeroMesa
             // 
@@ -385,7 +376,7 @@
             // 
             this.cbox_tipomesa.FormattingEnabled = true;
             this.cbox_tipomesa.Items.AddRange(new object[] {
-            "(Interior",
+            "Interior",
             "Exterior",
             "Juegos",
             "Privadas"});
@@ -464,6 +455,19 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Codigo Mesas:";
             // 
+            // cbox_buscarMesas
+            // 
+            this.cbox_buscarMesas.FormattingEnabled = true;
+            this.cbox_buscarMesas.Items.AddRange(new object[] {
+            "Interior",
+            "Exterior",
+            "Juegos",
+            "Privadas"});
+            this.cbox_buscarMesas.Location = new System.Drawing.Point(494, 164);
+            this.cbox_buscarMesas.Name = "cbox_buscarMesas";
+            this.cbox_buscarMesas.Size = new System.Drawing.Size(265, 28);
+            this.cbox_buscarMesas.TabIndex = 71;
+            // 
             // frm_mesas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -505,7 +509,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label11;
         private FontAwesome.Sharp.IconButton btn_buscar;
-        private System.Windows.Forms.TextBox txt_buscarMesas;
         private System.Windows.Forms.ListBox lst_historial;
         private System.Windows.Forms.Label label10;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
@@ -527,5 +530,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbox_tipomesa;
+        private System.Windows.Forms.ComboBox cbox_buscarMesas;
     }
 }
