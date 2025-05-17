@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using Presentaciòn.Reportes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -179,5 +180,10 @@ namespace Presentaciòn
         }
 
         #endregion
+
+        private void inventariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frm_Reporte_Inventario_menu());
+        }
     }
 }

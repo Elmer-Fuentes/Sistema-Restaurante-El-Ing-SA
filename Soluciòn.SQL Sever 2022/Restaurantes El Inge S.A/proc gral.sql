@@ -66,3 +66,48 @@ FROM information_schema.tables
 
 
 --execute Usp_Pago_Planilla '%'
+
+
+
+
+
+select * from tbl_inventarios;
+select * from tbl_menus;
+
+-- tala de menu
+
+--select 
+--	 a.codigo_menu
+--	,a.nombre
+--	,a.ingredientes
+--	,a.categoria
+--	,a.precio
+--	,a.estado
+--	,a.usuario_sistema
+--	,a.fecha_sistema
+-- from tbl_menus a
+
+
+--create proc USP_Inventario_Menu
+--	@nombre varchar (50)
+--as
+--begin
+--select 
+--	 i.codigo_inventario
+--	,i.codigo_menu
+--	,a.nombre as 'Nombre_Menu'
+--	,a.Precio
+--	,i.categoria
+--	,i.cantidad
+--	,i.fecha_entrada
+--	,i.fecha_vencimiento
+--	,i.dias_vigencia
+--	,i.usuario_sistema
+--	,i.fecha_sistema
+--from tbl_inventarios i
+--	left join tbl_menus a on i.codigo_menu = a.codigo_menu
+--	where Lower(Trim(a.nombre)) like '%'+ Lower(Trim(@nombre))+'%'
+--end
+
+
+--Exec USP_Inventario_Menu 'car'
