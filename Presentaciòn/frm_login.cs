@@ -18,6 +18,7 @@ namespace Presentaciòn
         {
             InitializeComponent();
             txt_contrasena.UseSystemPasswordChar = true;
+            estilo();
         }
 
         private C_seguridad c_seguridad = new C_seguridad();
@@ -94,6 +95,12 @@ namespace Presentaciòn
             }
             entrada = !entrada;
             txt_contrasena.Focus();
+        }
+
+        public void estilo()
+        {
+            iconButton1.FlatStyle = FlatStyle.Flat;
+            iconButton1.FlatAppearance.BorderSize = 0;
         }
 
         #endregion = "Mostrar contraseña";
