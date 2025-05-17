@@ -110,25 +110,33 @@ namespace Presentaciòn
             Close();
         }
 
-        #region "Mis Variables"; 
+        #region = "Evento fromclosing desde propiedades para controlar el btn_cerrar del MDI";
+        private void frm_Menu_v2_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+        #endregion
+
+        #region "Mis Variables Form Secundario (hijo)"; 
         private Form activeForm = null;
         #endregion
 
-        #region "Mis Métodos";
-
+        #region "Mtd Abrir y Mostrar form";    
         private void openChildForm(Form childForm)
         {
             if (activeForm != null) activeForm.Close();
             activeForm = childForm;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            pnl_body.Controls.Add(childForm);
-            childForm.BringToFront();
-            childForm.Show();
+            childForm.TopLevel = false; //no ventana independiente mostrar en otro control
+            childForm.FormBorderStyle = FormBorderStyle.None; //sin bordes
+            childForm.Dock = DockStyle.Fill; // centro
+            pnl_body.Controls.Add(childForm); //cargar el form hijo en el panel del cuerpo
+            childForm.BringToFront(); //carga el form
+            childForm.Show();// llama al form hijo
 
         }
         #endregion
+
+        #region = "Instancia de form hijos";
 
         private void btn_usuarios_Click(object sender, EventArgs e)
         {
@@ -170,6 +178,6 @@ namespace Presentaciòn
             openChildForm(new frm_encabezado_ordenes());
         }
 
-
+        #endregion
     }
 }

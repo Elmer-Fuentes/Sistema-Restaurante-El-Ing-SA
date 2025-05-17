@@ -42,9 +42,6 @@
             this.DataAnalitycsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dashboardEmpleadosUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirDelSistemaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.pnl_titulo = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.pnl_Menu = new System.Windows.Forms.Panel();
             this.pnl_operaciones = new System.Windows.Forms.Panel();
             this.btn_pago_Orden = new FontAwesome.Sharp.IconButton();
@@ -67,6 +64,8 @@
             this.lbl_rol_usuario = new System.Windows.Forms.Label();
             this.lbl_usuario_logo = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btn_ocultar_Menu = new FontAwesome.Sharp.IconButton();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.pnl_body = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
@@ -78,19 +77,20 @@
             this.label6 = new System.Windows.Forms.Label();
             this.lbl_hora_so_v2 = new System.Windows.Forms.Label();
             this.lbl_fecha_so_v2 = new System.Windows.Forms.Label();
-            this.btn_ocultar_Menu = new FontAwesome.Sharp.IconButton();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnl_titulo = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.menuStrip.SuspendLayout();
-            this.pnl_titulo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnl_Menu.SuspendLayout();
             this.pnl_operaciones.SuspendLayout();
             this.pnl_catalogos.SuspendLayout();
             this.pnl_administracion.SuspendLayout();
             this.pnl_login_data.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.pnl_body.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.pnl_titulo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -191,40 +191,6 @@
             this.salirDelSistemaToolStripMenuItem2.Size = new System.Drawing.Size(105, 22);
             this.salirDelSistemaToolStripMenuItem2.Text = "Salir Del Sistema";
             this.salirDelSistemaToolStripMenuItem2.Click += new System.EventHandler(this.salirDelSistemaToolStripMenuItem2_Click);
-            // 
-            // pnl_titulo
-            // 
-            this.pnl_titulo.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.pnl_titulo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pnl_titulo.Controls.Add(this.pictureBox1);
-            this.pnl_titulo.Controls.Add(this.label2);
-            this.pnl_titulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_titulo.Location = new System.Drawing.Point(0, 0);
-            this.pnl_titulo.Name = "pnl_titulo";
-            this.pnl_titulo.Size = new System.Drawing.Size(1169, 52);
-            this.pnl_titulo.TabIndex = 28;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.pictureBox1.Image = global::Presentaciòn.Properties.Resources.restaurantes;
-            this.pictureBox1.Location = new System.Drawing.Point(350, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(85, 47);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(441, 13);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(287, 31);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Sistema Restaurante";
             // 
             // pnl_Menu
             // 
@@ -559,16 +525,45 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // btn_ocultar_Menu
+            // 
+            this.btn_ocultar_Menu.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.btn_ocultar_Menu.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_ocultar_Menu.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btn_ocultar_Menu.FlatAppearance.BorderSize = 0;
+            this.btn_ocultar_Menu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
+            this.btn_ocultar_Menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ocultar_Menu.IconChar = FontAwesome.Sharp.IconChar.ReplyAll;
+            this.btn_ocultar_Menu.IconColor = System.Drawing.Color.Black;
+            this.btn_ocultar_Menu.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btn_ocultar_Menu.IconSize = 25;
+            this.btn_ocultar_Menu.Location = new System.Drawing.Point(0, 0);
+            this.btn_ocultar_Menu.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_ocultar_Menu.Name = "btn_ocultar_Menu";
+            this.btn_ocultar_Menu.Size = new System.Drawing.Size(20, 682);
+            this.btn_ocultar_Menu.TabIndex = 30;
+            this.btn_ocultar_Menu.UseVisualStyleBackColor = false;
+            this.btn_ocultar_Menu.Click += new System.EventHandler(this.btn_ocultar_Menu_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btn_ocultar_Menu);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel3.Location = new System.Drawing.Point(206, 24);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(20, 682);
+            this.panel3.TabIndex = 50;
+            // 
             // pnl_body
             // 
             this.pnl_body.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.pnl_body.Controls.Add(this.panel1);
             this.pnl_body.Controls.Add(this.pnl_titulo);
             this.pnl_body.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_body.Location = new System.Drawing.Point(206, 24);
+            this.pnl_body.Location = new System.Drawing.Point(226, 24);
             this.pnl_body.Name = "pnl_body";
-            this.pnl_body.Size = new System.Drawing.Size(1169, 682);
-            this.pnl_body.TabIndex = 49;
+            this.pnl_body.Size = new System.Drawing.Size(1149, 682);
+            this.pnl_body.TabIndex = 52;
             // 
             // panel1
             // 
@@ -586,7 +581,7 @@
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(0, 596);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1169, 86);
+            this.panel1.Size = new System.Drawing.Size(1149, 86);
             this.panel1.TabIndex = 49;
             // 
             // label9
@@ -643,7 +638,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(845, 17);
+            this.label7.Location = new System.Drawing.Point(825, 17);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(171, 15);
             this.label7.TabIndex = 45;
@@ -655,7 +650,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1056, 34);
+            this.label3.Location = new System.Drawing.Point(1036, 34);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 15);
             this.label3.TabIndex = 47;
@@ -667,7 +662,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(845, 37);
+            this.label6.Location = new System.Drawing.Point(825, 37);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(50, 15);
             this.label6.TabIndex = 46;
@@ -679,7 +674,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_hora_so_v2.AutoSize = true;
             this.lbl_hora_so_v2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_hora_so_v2.Location = new System.Drawing.Point(1054, 52);
+            this.lbl_hora_so_v2.Location = new System.Drawing.Point(1034, 52);
             this.lbl_hora_so_v2.Name = "lbl_hora_so_v2";
             this.lbl_hora_so_v2.Size = new System.Drawing.Size(59, 25);
             this.lbl_hora_so_v2.TabIndex = 44;
@@ -691,70 +686,76 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_fecha_so_v2.AutoSize = true;
             this.lbl_fecha_so_v2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_fecha_so_v2.Location = new System.Drawing.Point(846, 58);
+            this.lbl_fecha_so_v2.Location = new System.Drawing.Point(826, 58);
             this.lbl_fecha_so_v2.Name = "lbl_fecha_so_v2";
             this.lbl_fecha_so_v2.Size = new System.Drawing.Size(42, 15);
             this.lbl_fecha_so_v2.TabIndex = 43;
             this.lbl_fecha_so_v2.Text = "fecha";
             // 
-            // btn_ocultar_Menu
+            // pnl_titulo
             // 
-            this.btn_ocultar_Menu.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_ocultar_Menu.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btn_ocultar_Menu.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btn_ocultar_Menu.FlatAppearance.BorderSize = 0;
-            this.btn_ocultar_Menu.FlatAppearance.MouseDownBackColor = System.Drawing.Color.White;
-            this.btn_ocultar_Menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ocultar_Menu.IconChar = FontAwesome.Sharp.IconChar.ReplyAll;
-            this.btn_ocultar_Menu.IconColor = System.Drawing.Color.Black;
-            this.btn_ocultar_Menu.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.btn_ocultar_Menu.IconSize = 25;
-            this.btn_ocultar_Menu.Location = new System.Drawing.Point(0, 0);
-            this.btn_ocultar_Menu.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_ocultar_Menu.Name = "btn_ocultar_Menu";
-            this.btn_ocultar_Menu.Size = new System.Drawing.Size(20, 682);
-            this.btn_ocultar_Menu.TabIndex = 30;
-            this.btn_ocultar_Menu.UseVisualStyleBackColor = false;
-            this.btn_ocultar_Menu.Click += new System.EventHandler(this.btn_ocultar_Menu_Click);
+            this.pnl_titulo.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.pnl_titulo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pnl_titulo.Controls.Add(this.pictureBox1);
+            this.pnl_titulo.Controls.Add(this.label2);
+            this.pnl_titulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnl_titulo.Location = new System.Drawing.Point(0, 0);
+            this.pnl_titulo.Name = "pnl_titulo";
+            this.pnl_titulo.Size = new System.Drawing.Size(1149, 52);
+            this.pnl_titulo.TabIndex = 28;
             // 
-            // panel3
+            // pictureBox1
             // 
-            this.panel3.Controls.Add(this.btn_ocultar_Menu);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(206, 24);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(20, 682);
-            this.panel3.TabIndex = 50;
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.pictureBox1.Image = global::Presentaciòn.Properties.Resources.restaurantes;
+            this.pictureBox1.Location = new System.Drawing.Point(340, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(85, 47);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(431, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(287, 31);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Sistema Restaurante";
             // 
             // frm_Menu_v2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1375, 706);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.pnl_body);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.pnl_Menu);
             this.Controls.Add(this.menuStrip);
             this.IsMdiContainer = true;
             this.Name = "frm_Menu_v2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_Dashboard";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frm_Menu_v2_FormClosing);
             this.Load += new System.EventHandler(this.frm_Menu_v2_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
-            this.pnl_titulo.ResumeLayout(false);
-            this.pnl_titulo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnl_Menu.ResumeLayout(false);
             this.pnl_operaciones.ResumeLayout(false);
             this.pnl_catalogos.ResumeLayout(false);
             this.pnl_administracion.ResumeLayout(false);
             this.pnl_login_data.ResumeLayout(false);
             this.pnl_login_data.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.pnl_body.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
+            this.pnl_titulo.ResumeLayout(false);
+            this.pnl_titulo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -775,10 +776,8 @@
         private System.Windows.Forms.ToolStripMenuItem dashboardEmpleadosUsuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirDelSistemaToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem operacionesToolStripMenuItem;
-        private System.Windows.Forms.Panel pnl_titulo;
         private System.Windows.Forms.Panel pnl_Menu;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Panel pnl_body;
         private System.Windows.Forms.Panel pnl_administracion;
         private FontAwesome.Sharp.IconButton btn_planillas;
         private FontAwesome.Sharp.IconButton btn_empleados;
@@ -799,19 +798,21 @@
         private FontAwesome.Sharp.IconButton btn_clientes;
         private FontAwesome.Sharp.IconButton btn_menu;
         private FontAwesome.Sharp.IconButton btn_catalogos;
+        private FontAwesome.Sharp.IconButton btn_ocultar_Menu;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel pnl_body;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lbl_hora_so_v2;
         private System.Windows.Forms.Label lbl_fecha_so_v2;
-        private FontAwesome.Sharp.IconButton btn_ocultar_Menu;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel pnl_titulo;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label9;
     }
 }
