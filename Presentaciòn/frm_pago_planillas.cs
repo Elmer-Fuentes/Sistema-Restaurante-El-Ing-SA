@@ -132,18 +132,29 @@ namespace Presentaciòn
 		{
 
 
-			decimal salario = datosPlanillas.MtdSalarioPlanilla(cbox_codigoempleado.Text);
-			decimal bono = logicaPlanillas.MtdSalarioBono(cbox_codigoempleado.Text);
-			int horasExtras = int.Parse(txtHorasExtras.Text);
+			if (cbox_codigoempleado.Text == "" || string.IsNullOrWhiteSpace(txtHorasExtras.Text))
+			{
+				lbl_montototal.Text = "";
+			}
+			else
+			{
+				int horasExtras;
+				if (!int.TryParse(txtHorasExtras.Text, out horasExtras))
+				{
+					MessageBox.Show("Por favor, ingresa un número válido de horas extras.");
+					txtHorasExtras.Focus();
+					return;
+				}
 
+				decimal salario = datosPlanillas.MtdSalarioPlanilla(cbox_codigoempleado.Text);
+				decimal bono = logicaPlanillas.MtdSalarioBono(cbox_codigoempleado.Text);
 
-			decimal montoTotal = logicaPlanillas.MtdMontoTotal(salario, bono, horasExtras);
+				decimal montoTotal = logicaPlanillas.MtdMontoTotal(salario, bono, horasExtras);
 
-			lbl_montototal.Text = "Q" + montoTotal.ToString("N2");
-
+				lbl_montototal.Text = "Q" + montoTotal.ToString("N2");
+			}
 
 		}
-
 		private void btnSalir_Click(object sender, EventArgs e)
 		{
 			this.Close();
