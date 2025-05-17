@@ -7,7 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms; 
+using System.Windows.Forms;
 using Entidades;
 
 namespace Presentaciòn
@@ -17,12 +17,10 @@ namespace Presentaciòn
         public frm_login()
         {
             InitializeComponent();
+            txt_contrasena.UseSystemPasswordChar = true;
         }
-        C_seguridad c_seguridad = new C_seguridad();
 
-
-
-
+        private C_seguridad c_seguridad = new C_seguridad();
 
         public void Limpiardatos()
         {
@@ -52,7 +50,6 @@ namespace Presentaciòn
             {
                 if (txt_contrasena.Text != "Password")
                 {
-
                     var validlogin = c_seguridad.LoginUser(txt_usuario.Text, txt_contrasena.Text);
                     if (validlogin == true)
                     {
@@ -80,5 +77,25 @@ namespace Presentaciòn
                 MessageBox.Show("Ingresa una  Contraseña");
             }
         }
+
+        #region = "Mostrar contraseña";
+
+        private bool entrada = false;
+
+        private void iconButton1_Click(object sender, EventArgs e)
+        {
+            if (entrada == true)
+            {
+                txt_contrasena.UseSystemPasswordChar = true;
+            }
+            else
+            {
+                txt_contrasena.UseSystemPasswordChar = false;
+            }
+            entrada = !entrada;
+            txt_contrasena.Focus();
+        }
+
+        #endregion = "Mostrar contraseña";
     }
 }
