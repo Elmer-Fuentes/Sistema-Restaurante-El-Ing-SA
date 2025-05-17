@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -32,11 +33,9 @@ namespace Presentaciòn
 		
 			MtdMostrarListaEmpleados();
 			MtdConsultarPagoPlanillas();
-
-
-
-
+		
 		}
+
 		public void MtdConsultarPagoPlanillas()
 		{
 			cd_pago_planillas CD_Pago_planillas = new cd_pago_planillas();
@@ -66,24 +65,10 @@ namespace Presentaciòn
 
 		private void cbox_codigoempleado_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			if (string.IsNullOrEmpty(cbox_codigoempleado.Text))
-			{
-				MessageBox.Show("Seleccione un Empleado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-			}
-			else
-			{
-				int codigoEmpleado;
-				DateTime fecha_pago;
 
-				if (int.TryParse(cbox_codigoempleado.Text, out codigoEmpleado) && DateTime.TryParse(DtpFechaPago.Text, out fecha_pago))
-				{
-					lbl_salario.Text = datosPlanillas.MtdSalarioPlanilla(codigoEmpleado, fecha_pago).ToString("c");
-				}
-				else
-				{
-					MessageBox.Show("El código de empleado o la fecha de pago no son válidos.");
-				}
-			}
+
+
+
 		}
 
 		private void btnEliminar_usuario_Click(object sender, EventArgs e)
@@ -115,8 +100,49 @@ namespace Presentaciòn
 		{
 
 		}
+
+		private void lbl_salario_Click(object sender, EventArgs e)
+		{
+			
+		}
+
+		private void cbox_codigoempleado_SelectedIndexChanged_1(object sender, EventArgs e)
+		{
+			if (string.IsNullOrEmpty(cbox_codigoempleado.Text))
+			{
+				MessageBox.Show("Seleccione una descripcion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			else
+			{
+				lbl_salario.Text = datosPlanillas.MtdSalarioPlanilla(cbox_codigoempleado.Text).ToString("c");
+
+				
+			}
+		}
+
+		private void txtHorasExtras_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void textBox1_TextChanged(object sender, EventArgs e)
+		{
+			int codigo = Convert.ToInt32(cbox_codigoempleado.SelectedValue);
+			lbl_bono.Text = logicaPlanillas.MtdSalarioBono(codigo).ToString("C");
+
+
+			decimal salario = Convert.ToDecimal(lbl_salario.Text.Replace("Q", "").Replace("$", "").Replace(",", "").Trim());
+			decimal bono = Convert.ToDecimal(lbl_bono.Text.Replace("Q", "").Replace("$", "").Replace(",", "").Trim());
+			int horasExtras = Convert.ToInt32(txtHorasExtras.Text);
+
+
+			lbl_montototal.Text = logicaPlanillas.MtdMontoTotal(salario, bono, horasExtras).ToString("C");
+		}
 	}
-}
+	}
+
+	
+
 
 
 

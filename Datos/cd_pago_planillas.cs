@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
 
+
 namespace Datos
 {
 	public class cd_pago_planillas : Conexion
@@ -83,36 +84,50 @@ namespace Datos
 
 			return resultado;
 		}
-		public decimal MtdSalarioPlanilla(int codigo_empleado, DateTime fecha_pago)
+
+
+		public decimal MtdSalarioPlanilla(string codigo_empleado)
 		{
 			decimal salario = 0;
-			string query = "SELECT Salario FROM tbl_empleados WHERE codigo_empleado = @codigo_empleado AND fecha_pago = @fecha_pago";
 
-			using (SqlConnection connection = GetConnection())
+			
+			string[] partes = codigo_empleado.Split('-');
+			if (partes.Length > 0 && int.TryParse(partes[0].Trim(), out int codigoNumerico))
 			{
-				connection.Open();
-				using (SqlCommand cmd = new SqlCommand(query, connection))
+				using (SqlConnection conn = GetConnection())
 				{
-					cmd.Parameters.AddWithValue("@codigo_empleado", codigo_empleado);
-					cmd.Parameters.AddWithValue("@fecha_pago", fecha_pago);
-
-					using (SqlDataReader reader = cmd.ExecuteReader())
+					string query = "SELECT salario FROM tbl_empleados WHERE codigo_empleado = @codigo_empleado";
+					using (SqlCommand cmd = new SqlCommand(query, conn))
 					{
-						if (reader.Read())
+						cmd.Parameters.AddWithValue("@codigo_empleado", codigoNumerico);
+						conn.Open();
+						object resultado = cmd.ExecuteScalar();
+						if (resultado != null && resultado != DBNull.Value)
 						{
-							if (reader["Salario"] != DBNull.Value)
-							{
-								salario = Convert.ToDecimal(reader["Salario"]);
-							}
+							salario = Convert.ToDecimal(resultado);
 						}
 					}
 				}
+			}
+			else
+			{
+				// Puedes lanzar una excepción o manejar el error como prefieras
+				throw new ArgumentException("El código de empleado no tiene el formato esperado.");
 			}
 
 			return salario;
 		}
 	}
 }
+
+
+
+
+
+
+
+
+
 
 
 

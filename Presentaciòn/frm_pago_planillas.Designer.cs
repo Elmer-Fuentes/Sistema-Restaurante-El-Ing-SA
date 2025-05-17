@@ -31,11 +31,10 @@
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.DtpFechaPago = new System.Windows.Forms.DateTimePicker();
+			this.lbl_salario = new System.Windows.Forms.Label();
 			this.cbox_codigoempleado = new System.Windows.Forms.ComboBox();
 			this.lbl_montototal = new System.Windows.Forms.Label();
-			this.lbl_horasextras = new System.Windows.Forms.Label();
 			this.lbl_bono = new System.Windows.Forms.Label();
-			this.lbl_salario = new System.Windows.Forms.Label();
 			this.cbox_estado = new System.Windows.Forms.ComboBox();
 			this.label10 = new System.Windows.Forms.Label();
 			this.label9 = new System.Windows.Forms.Label();
@@ -56,6 +55,7 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.lblFecha = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
+			this.txtHorasExtras = new System.Windows.Forms.TextBox();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dgvPagoPlanillas)).BeginInit();
 			this.panel2.SuspendLayout();
@@ -72,12 +72,12 @@
 			// groupBox1
 			// 
 			this.groupBox1.BackColor = System.Drawing.Color.White;
+			this.groupBox1.Controls.Add(this.txtHorasExtras);
 			this.groupBox1.Controls.Add(this.DtpFechaPago);
+			this.groupBox1.Controls.Add(this.lbl_salario);
 			this.groupBox1.Controls.Add(this.cbox_codigoempleado);
 			this.groupBox1.Controls.Add(this.lbl_montototal);
-			this.groupBox1.Controls.Add(this.lbl_horasextras);
 			this.groupBox1.Controls.Add(this.lbl_bono);
-			this.groupBox1.Controls.Add(this.lbl_salario);
 			this.groupBox1.Controls.Add(this.cbox_estado);
 			this.groupBox1.Controls.Add(this.label10);
 			this.groupBox1.Controls.Add(this.label9);
@@ -110,6 +110,18 @@
 			this.DtpFechaPago.Size = new System.Drawing.Size(165, 21);
 			this.DtpFechaPago.TabIndex = 62;
 			// 
+			// lbl_salario
+			// 
+			this.lbl_salario.AutoSize = true;
+			this.lbl_salario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.lbl_salario.Location = new System.Drawing.Point(261, 114);
+			this.lbl_salario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.lbl_salario.Name = "lbl_salario";
+			this.lbl_salario.Size = new System.Drawing.Size(109, 17);
+			this.lbl_salario.TabIndex = 56;
+			this.lbl_salario.Text = "Imprimir Salario:";
+			this.lbl_salario.Click += new System.EventHandler(this.lbl_salario_Click);
+			// 
 			// cbox_codigoempleado
 			// 
 			this.cbox_codigoempleado.FormattingEnabled = true;
@@ -117,6 +129,7 @@
 			this.cbox_codigoempleado.Name = "cbox_codigoempleado";
 			this.cbox_codigoempleado.Size = new System.Drawing.Size(164, 21);
 			this.cbox_codigoempleado.TabIndex = 61;
+			this.cbox_codigoempleado.SelectedIndexChanged += new System.EventHandler(this.cbox_codigoempleado_SelectedIndexChanged_1);
 			// 
 			// lbl_montototal
 			// 
@@ -129,17 +142,6 @@
 			this.lbl_montototal.TabIndex = 59;
 			this.lbl_montototal.Text = "Imprimir Monto Total:";
 			// 
-			// lbl_horasextras
-			// 
-			this.lbl_horasextras.AutoSize = true;
-			this.lbl_horasextras.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbl_horasextras.Location = new System.Drawing.Point(614, 47);
-			this.lbl_horasextras.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-			this.lbl_horasextras.Name = "lbl_horasextras";
-			this.lbl_horasextras.Size = new System.Drawing.Size(146, 34);
-			this.lbl_horasextras.TabIndex = 58;
-			this.lbl_horasextras.Text = "Imprimir Horas Extras:\r\n\r\n";
-			// 
 			// lbl_bono
 			// 
 			this.lbl_bono.AutoSize = true;
@@ -150,17 +152,6 @@
 			this.lbl_bono.Size = new System.Drawing.Size(98, 17);
 			this.lbl_bono.TabIndex = 57;
 			this.lbl_bono.Text = "Imprimir Bono:";
-			// 
-			// lbl_salario
-			// 
-			this.lbl_salario.AutoSize = true;
-			this.lbl_salario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbl_salario.Location = new System.Drawing.Point(257, 124);
-			this.lbl_salario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-			this.lbl_salario.Name = "lbl_salario";
-			this.lbl_salario.Size = new System.Drawing.Size(109, 17);
-			this.lbl_salario.TabIndex = 56;
-			this.lbl_salario.Text = "Imprimir Salario:";
 			// 
 			// cbox_estado
 			// 
@@ -405,6 +396,14 @@
 			this.label8.TabIndex = 78;
 			this.label8.Text = "Fecha actual:";
 			// 
+			// txtHorasExtras
+			// 
+			this.txtHorasExtras.Location = new System.Drawing.Point(617, 53);
+			this.txtHorasExtras.Name = "txtHorasExtras";
+			this.txtHorasExtras.Size = new System.Drawing.Size(164, 20);
+			this.txtHorasExtras.TabIndex = 63;
+			this.txtHorasExtras.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+			// 
 			// frm_pago_planillas
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -439,7 +438,6 @@
 		private System.Windows.Forms.DateTimePicker DtpFechaPago;
 		private System.Windows.Forms.ComboBox cbox_codigoempleado;
 		private System.Windows.Forms.Label lbl_montototal;
-		private System.Windows.Forms.Label lbl_horasextras;
 		private System.Windows.Forms.Label lbl_bono;
 		private System.Windows.Forms.Label lbl_salario;
 		private System.Windows.Forms.ComboBox cbox_estado;
@@ -462,5 +460,6 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label lblFecha;
 		private System.Windows.Forms.Label label8;
+		private System.Windows.Forms.TextBox txtHorasExtras;
 	}
 }

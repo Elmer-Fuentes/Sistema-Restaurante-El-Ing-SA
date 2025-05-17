@@ -13,6 +13,8 @@ namespace C_Logica
 		#region = "Metodos necesarios para frm_pago_planillas";
 		public decimal MtdSalarioBono(decimal salario)
 		{
+			
+		
 			decimal bono = salario * 0.10m;
 			return bono;
 		}
