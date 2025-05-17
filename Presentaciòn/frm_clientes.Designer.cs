@@ -56,7 +56,6 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.btn_buscar = new FontAwesome.Sharp.IconButton();
             this.txt_buscarclientes = new System.Windows.Forms.TextBox();
             this.lst_historial = new System.Windows.Forms.ListBox();
@@ -375,7 +374,6 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.panel2);
-            this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this.btn_buscar);
             this.tabPage2.Controls.Add(this.txt_buscarclientes);
             this.tabPage2.Controls.Add(this.lst_historial);
@@ -410,16 +408,6 @@
             this.label9.TabIndex = 58;
             this.label9.Text = "Buscar Clientes";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(546, 205);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(163, 20);
-            this.label11.TabIndex = 63;
-            this.label11.Text = "Historial de busqueda";
-            // 
             // btn_buscar
             // 
             this.btn_buscar.IconChar = FontAwesome.Sharp.IconChar.MagnifyingGlass;
@@ -439,17 +427,20 @@
             this.txt_buscarclientes.Location = new System.Drawing.Point(506, 157);
             this.txt_buscarclientes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_buscarclientes.Name = "txt_buscarclientes";
-            this.txt_buscarclientes.Size = new System.Drawing.Size(300, 26);
+            this.txt_buscarclientes.Size = new System.Drawing.Size(318, 26);
             this.txt_buscarclientes.TabIndex = 61;
+            this.txt_buscarclientes.Click += new System.EventHandler(this.txt_buscarclientes_Click);
+            this.txt_buscarclientes.TextChanged += new System.EventHandler(this.txt_buscarclientes_TextChanged_1);
             // 
             // lst_historial
             // 
             this.lst_historial.FormattingEnabled = true;
             this.lst_historial.ItemHeight = 20;
-            this.lst_historial.Location = new System.Drawing.Point(506, 239);
+            this.lst_historial.Location = new System.Drawing.Point(506, 191);
             this.lst_historial.Name = "lst_historial";
             this.lst_historial.Size = new System.Drawing.Size(318, 104);
             this.lst_historial.TabIndex = 59;
+            this.lst_historial.Visible = false;
             this.lst_historial.SelectedIndexChanged += new System.EventHandler(this.lst_historial_SelectedIndexChanged_1);
             // 
             // label10
@@ -535,7 +526,6 @@
         private System.Windows.Forms.ListBox lst_historial;
         private System.Windows.Forms.TextBox txt_buscarclientes;
         private FontAwesome.Sharp.IconButton btn_buscar;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;

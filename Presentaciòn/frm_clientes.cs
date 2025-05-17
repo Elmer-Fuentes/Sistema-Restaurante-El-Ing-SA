@@ -33,6 +33,7 @@ namespace Presentaciòn
             mensaje.SetToolTip(btnSalir, "Salir");
             mensaje.SetToolTip(btnEliminar, "Eliminar");
             mensaje.SetToolTip(btn_buscar, "Buscar");
+            mensaje.SetToolTip(lst_historial, "Historial de busqueda...");
             mensaje.SetToolTip(dgv_buscarclientes, "Selecciona uno para editar...");
             lblFecha.Text = cl_clin.MtdFecha().ToString("d");
             tabPage1.Text = "Agregar Cliente";
@@ -330,6 +331,7 @@ namespace Presentaciòn
                 txt_buscarclientes.Text = "";
                 txt_buscarclientes.Focus();
             }
+            lst_historial.Visible = false;
         }
 
         private void lst_historial_SelectedIndexChanged(object sender, EventArgs e)
@@ -406,6 +408,21 @@ namespace Presentaciòn
         private void tabPage2_Click(object sender, EventArgs e)
         {
             txt_buscarclientes.Focus();
+        }
+
+        private void txt_buscarclientes_TextChanged(object sender, EventArgs e)
+        {
+            lst_historial.Visible = true;
+        }
+
+        private void txt_buscarclientes_Click(object sender, EventArgs e)
+        {
+            lst_historial.Visible = true;
+        }
+
+        private void txt_buscarclientes_TextChanged_1(object sender, EventArgs e)
+        {
+            lst_historial.Visible = true;
         }
     }
 }
