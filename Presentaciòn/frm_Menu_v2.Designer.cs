@@ -43,11 +43,13 @@
             this.dashboardEmpleadosUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirDelSistemaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_titulo = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.pnl_Menu = new System.Windows.Forms.Panel();
             this.pnl_operaciones = new System.Windows.Forms.Panel();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.iconButton3 = new FontAwesome.Sharp.IconButton();
+            this.btn_pago_Orden = new FontAwesome.Sharp.IconButton();
+            this.btn_det_ordenen = new FontAwesome.Sharp.IconButton();
+            this.btn_enca_orden = new FontAwesome.Sharp.IconButton();
             this.btn_operaciones = new FontAwesome.Sharp.IconButton();
             this.pnl_catalogos = new System.Windows.Forms.Panel();
             this.btn_mesas = new FontAwesome.Sharp.IconButton();
@@ -65,8 +67,12 @@
             this.lbl_rol_usuario = new System.Windows.Forms.Label();
             this.lbl_usuario_logo = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnl_body = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -74,19 +80,17 @@
             this.lbl_fecha_so_v2 = new System.Windows.Forms.Label();
             this.btn_ocultar_Menu = new FontAwesome.Sharp.IconButton();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip.SuspendLayout();
             this.pnl_titulo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.pnl_Menu.SuspendLayout();
             this.pnl_operaciones.SuspendLayout();
             this.pnl_catalogos.SuspendLayout();
             this.pnl_administracion.SuspendLayout();
             this.pnl_login_data.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.pnl_body.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip
@@ -100,7 +104,7 @@
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.menuStrip.Size = new System.Drawing.Size(1084, 24);
+            this.menuStrip.Size = new System.Drawing.Size(1375, 24);
             this.menuStrip.TabIndex = 4;
             this.menuStrip.Text = "MenuStrip";
             // 
@@ -128,7 +132,7 @@
             this.dataDashboardToolStripMenuItem,
             this.empleadosToolStripMenuItem1});
             this.empleadosToolStripMenuItem.Name = "empleadosToolStripMenuItem";
-            this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.empleadosToolStripMenuItem.Text = "Empleados";
             // 
             // empleadosSinUsuarioToolStripMenuItem
@@ -152,19 +156,19 @@
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.clientesToolStripMenuItem.Text = "Clientes";
             // 
             // usuariosToolStripMenuItem1
             // 
             this.usuariosToolStripMenuItem1.Name = "usuariosToolStripMenuItem1";
-            this.usuariosToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.usuariosToolStripMenuItem1.Size = new System.Drawing.Size(142, 22);
             this.usuariosToolStripMenuItem1.Text = "Usuarios";
             // 
             // pagoPlanillaToolStripMenuItem
             // 
             this.pagoPlanillaToolStripMenuItem.Name = "pagoPlanillaToolStripMenuItem";
-            this.pagoPlanillaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pagoPlanillaToolStripMenuItem.Size = new System.Drawing.Size(142, 22);
             this.pagoPlanillaToolStripMenuItem.Text = "Pago Planilla";
             // 
             // DataAnalitycsToolStripMenuItem
@@ -197,8 +201,30 @@
             this.pnl_titulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_titulo.Location = new System.Drawing.Point(0, 0);
             this.pnl_titulo.Name = "pnl_titulo";
-            this.pnl_titulo.Size = new System.Drawing.Size(878, 68);
+            this.pnl_titulo.Size = new System.Drawing.Size(1169, 52);
             this.pnl_titulo.TabIndex = 28;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.pictureBox1.Image = global::Presentaciòn.Properties.Resources.restaurantes;
+            this.pictureBox1.Location = new System.Drawing.Point(350, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(85, 47);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(441, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(287, 31);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Sistema Restaurante";
             // 
             // pnl_Menu
             // 
@@ -214,71 +240,72 @@
             this.pnl_Menu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnl_Menu.Location = new System.Drawing.Point(0, 24);
             this.pnl_Menu.Name = "pnl_Menu";
-            this.pnl_Menu.Size = new System.Drawing.Size(206, 527);
+            this.pnl_Menu.Size = new System.Drawing.Size(206, 682);
             this.pnl_Menu.TabIndex = 26;
             // 
             // pnl_operaciones
             // 
-            this.pnl_operaciones.Controls.Add(this.iconButton1);
-            this.pnl_operaciones.Controls.Add(this.iconButton2);
-            this.pnl_operaciones.Controls.Add(this.iconButton3);
+            this.pnl_operaciones.Controls.Add(this.btn_pago_Orden);
+            this.pnl_operaciones.Controls.Add(this.btn_det_ordenen);
+            this.pnl_operaciones.Controls.Add(this.btn_enca_orden);
             this.pnl_operaciones.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_operaciones.Location = new System.Drawing.Point(0, 542);
             this.pnl_operaciones.Name = "pnl_operaciones";
-            this.pnl_operaciones.Size = new System.Drawing.Size(189, 98);
+            this.pnl_operaciones.Size = new System.Drawing.Size(206, 98);
             this.pnl_operaciones.TabIndex = 34;
             // 
-            // iconButton1
+            // btn_pago_Orden
             // 
-            this.iconButton1.BackColor = System.Drawing.Color.Orange;
-            this.iconButton1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton1.IconColor = System.Drawing.Color.Black;
-            this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton1.Location = new System.Drawing.Point(0, 67);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Size = new System.Drawing.Size(189, 31);
-            this.iconButton1.TabIndex = 11;
-            this.iconButton1.Text = "Pago de Órdenes\n";
-            this.iconButton1.UseVisualStyleBackColor = false;
+            this.btn_pago_Orden.BackColor = System.Drawing.Color.Orange;
+            this.btn_pago_Orden.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_pago_Orden.FlatAppearance.BorderSize = 0;
+            this.btn_pago_Orden.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_pago_Orden.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_pago_Orden.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btn_pago_Orden.IconColor = System.Drawing.Color.Black;
+            this.btn_pago_Orden.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_pago_Orden.Location = new System.Drawing.Point(0, 67);
+            this.btn_pago_Orden.Name = "btn_pago_Orden";
+            this.btn_pago_Orden.Size = new System.Drawing.Size(206, 31);
+            this.btn_pago_Orden.TabIndex = 11;
+            this.btn_pago_Orden.Text = "Pago de Órdenes\n";
+            this.btn_pago_Orden.UseVisualStyleBackColor = false;
             // 
-            // iconButton2
+            // btn_det_ordenen
             // 
-            this.iconButton2.BackColor = System.Drawing.Color.Orange;
-            this.iconButton2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton2.FlatAppearance.BorderSize = 0;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton2.IconColor = System.Drawing.Color.Black;
-            this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton2.Location = new System.Drawing.Point(0, 34);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Size = new System.Drawing.Size(189, 33);
-            this.iconButton2.TabIndex = 10;
-            this.iconButton2.Text = "Detalles de Órdenes\n";
-            this.iconButton2.UseVisualStyleBackColor = false;
+            this.btn_det_ordenen.BackColor = System.Drawing.Color.Orange;
+            this.btn_det_ordenen.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_det_ordenen.FlatAppearance.BorderSize = 0;
+            this.btn_det_ordenen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_det_ordenen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_det_ordenen.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btn_det_ordenen.IconColor = System.Drawing.Color.Black;
+            this.btn_det_ordenen.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_det_ordenen.Location = new System.Drawing.Point(0, 34);
+            this.btn_det_ordenen.Name = "btn_det_ordenen";
+            this.btn_det_ordenen.Size = new System.Drawing.Size(206, 33);
+            this.btn_det_ordenen.TabIndex = 10;
+            this.btn_det_ordenen.Text = "Detalles de Órdenes\n";
+            this.btn_det_ordenen.UseVisualStyleBackColor = false;
             // 
-            // iconButton3
+            // btn_enca_orden
             // 
-            this.iconButton3.BackColor = System.Drawing.Color.Orange;
-            this.iconButton3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.iconButton3.FlatAppearance.BorderSize = 0;
-            this.iconButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.iconButton3.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.iconButton3.IconColor = System.Drawing.Color.Black;
-            this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconButton3.Location = new System.Drawing.Point(0, 0);
-            this.iconButton3.Name = "iconButton3";
-            this.iconButton3.Size = new System.Drawing.Size(189, 34);
-            this.iconButton3.TabIndex = 9;
-            this.iconButton3.Text = "Encabezado de Órdenes";
-            this.iconButton3.UseVisualStyleBackColor = false;
+            this.btn_enca_orden.BackColor = System.Drawing.Color.Orange;
+            this.btn_enca_orden.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_enca_orden.FlatAppearance.BorderSize = 0;
+            this.btn_enca_orden.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_enca_orden.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_enca_orden.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_enca_orden.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btn_enca_orden.IconColor = System.Drawing.Color.Black;
+            this.btn_enca_orden.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btn_enca_orden.Location = new System.Drawing.Point(0, 0);
+            this.btn_enca_orden.Name = "btn_enca_orden";
+            this.btn_enca_orden.Size = new System.Drawing.Size(206, 34);
+            this.btn_enca_orden.TabIndex = 9;
+            this.btn_enca_orden.Text = "Encabezado de Órdenes";
+            this.btn_enca_orden.UseVisualStyleBackColor = false;
+            this.btn_enca_orden.Click += new System.EventHandler(this.btn_enca_orden_Click);
             // 
             // btn_operaciones
             // 
@@ -292,7 +319,7 @@
             this.btn_operaciones.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_operaciones.Location = new System.Drawing.Point(0, 511);
             this.btn_operaciones.Name = "btn_operaciones";
-            this.btn_operaciones.Size = new System.Drawing.Size(189, 31);
+            this.btn_operaciones.Size = new System.Drawing.Size(206, 31);
             this.btn_operaciones.TabIndex = 33;
             this.btn_operaciones.Text = "Operaciones";
             this.btn_operaciones.UseVisualStyleBackColor = false;
@@ -307,7 +334,7 @@
             this.pnl_catalogos.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_catalogos.Location = new System.Drawing.Point(0, 387);
             this.pnl_catalogos.Name = "pnl_catalogos";
-            this.pnl_catalogos.Size = new System.Drawing.Size(189, 124);
+            this.pnl_catalogos.Size = new System.Drawing.Size(206, 124);
             this.pnl_catalogos.TabIndex = 32;
             // 
             // btn_mesas
@@ -322,10 +349,11 @@
             this.btn_mesas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_mesas.Location = new System.Drawing.Point(0, 93);
             this.btn_mesas.Name = "btn_mesas";
-            this.btn_mesas.Size = new System.Drawing.Size(189, 31);
+            this.btn_mesas.Size = new System.Drawing.Size(206, 31);
             this.btn_mesas.TabIndex = 12;
             this.btn_mesas.Text = "Mesas";
             this.btn_mesas.UseVisualStyleBackColor = false;
+            this.btn_mesas.Click += new System.EventHandler(this.btn_mesas_Click);
             // 
             // btn_inventarios
             // 
@@ -339,10 +367,11 @@
             this.btn_inventarios.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_inventarios.Location = new System.Drawing.Point(0, 62);
             this.btn_inventarios.Name = "btn_inventarios";
-            this.btn_inventarios.Size = new System.Drawing.Size(189, 31);
+            this.btn_inventarios.Size = new System.Drawing.Size(206, 31);
             this.btn_inventarios.TabIndex = 11;
             this.btn_inventarios.Text = "Inventarios";
             this.btn_inventarios.UseVisualStyleBackColor = false;
+            this.btn_inventarios.Click += new System.EventHandler(this.btn_inventarios_Click);
             // 
             // btn_clientes
             // 
@@ -356,10 +385,11 @@
             this.btn_clientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_clientes.Location = new System.Drawing.Point(0, 31);
             this.btn_clientes.Name = "btn_clientes";
-            this.btn_clientes.Size = new System.Drawing.Size(189, 31);
+            this.btn_clientes.Size = new System.Drawing.Size(206, 31);
             this.btn_clientes.TabIndex = 10;
             this.btn_clientes.Text = "Clientes";
             this.btn_clientes.UseVisualStyleBackColor = false;
+            this.btn_clientes.Click += new System.EventHandler(this.btn_clientes_Click);
             // 
             // btn_menu
             // 
@@ -374,10 +404,11 @@
             this.btn_menu.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_menu.Location = new System.Drawing.Point(0, 0);
             this.btn_menu.Name = "btn_menu";
-            this.btn_menu.Size = new System.Drawing.Size(189, 31);
+            this.btn_menu.Size = new System.Drawing.Size(206, 31);
             this.btn_menu.TabIndex = 9;
             this.btn_menu.Text = "Menu";
             this.btn_menu.UseVisualStyleBackColor = false;
+            this.btn_menu.Click += new System.EventHandler(this.btn_menu_Click);
             // 
             // btn_catalogos
             // 
@@ -391,7 +422,7 @@
             this.btn_catalogos.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_catalogos.Location = new System.Drawing.Point(0, 356);
             this.btn_catalogos.Name = "btn_catalogos";
-            this.btn_catalogos.Size = new System.Drawing.Size(189, 31);
+            this.btn_catalogos.Size = new System.Drawing.Size(206, 31);
             this.btn_catalogos.TabIndex = 31;
             this.btn_catalogos.Text = "Catalogos";
             this.btn_catalogos.UseVisualStyleBackColor = false;
@@ -405,7 +436,7 @@
             this.pnl_administracion.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_administracion.Location = new System.Drawing.Point(0, 266);
             this.pnl_administracion.Name = "pnl_administracion";
-            this.pnl_administracion.Size = new System.Drawing.Size(189, 90);
+            this.pnl_administracion.Size = new System.Drawing.Size(206, 90);
             this.pnl_administracion.TabIndex = 15;
             // 
             // btn_planillas
@@ -420,10 +451,11 @@
             this.btn_planillas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_planillas.Location = new System.Drawing.Point(0, 62);
             this.btn_planillas.Name = "btn_planillas";
-            this.btn_planillas.Size = new System.Drawing.Size(189, 31);
+            this.btn_planillas.Size = new System.Drawing.Size(206, 31);
             this.btn_planillas.TabIndex = 11;
             this.btn_planillas.Text = "Planillas";
             this.btn_planillas.UseVisualStyleBackColor = false;
+            this.btn_planillas.Click += new System.EventHandler(this.btn_planillas_Click);
             // 
             // btn_empleados
             // 
@@ -437,10 +469,11 @@
             this.btn_empleados.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_empleados.Location = new System.Drawing.Point(0, 31);
             this.btn_empleados.Name = "btn_empleados";
-            this.btn_empleados.Size = new System.Drawing.Size(189, 31);
+            this.btn_empleados.Size = new System.Drawing.Size(206, 31);
             this.btn_empleados.TabIndex = 10;
             this.btn_empleados.Text = "Empleados";
             this.btn_empleados.UseVisualStyleBackColor = false;
+            this.btn_empleados.Click += new System.EventHandler(this.btn_empleados_Click);
             // 
             // btn_usuarios
             // 
@@ -455,10 +488,11 @@
             this.btn_usuarios.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_usuarios.Location = new System.Drawing.Point(0, 0);
             this.btn_usuarios.Name = "btn_usuarios";
-            this.btn_usuarios.Size = new System.Drawing.Size(189, 31);
+            this.btn_usuarios.Size = new System.Drawing.Size(206, 31);
             this.btn_usuarios.TabIndex = 9;
             this.btn_usuarios.Text = "Usuarios";
             this.btn_usuarios.UseVisualStyleBackColor = false;
+            this.btn_usuarios.Click += new System.EventHandler(this.btn_usuarios_Click);
             // 
             // btn_administracion
             // 
@@ -472,7 +506,7 @@
             this.btn_administracion.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_administracion.Location = new System.Drawing.Point(0, 235);
             this.btn_administracion.Name = "btn_administracion";
-            this.btn_administracion.Size = new System.Drawing.Size(189, 31);
+            this.btn_administracion.Size = new System.Drawing.Size(206, 31);
             this.btn_administracion.TabIndex = 14;
             this.btn_administracion.Text = "Administración";
             this.btn_administracion.UseVisualStyleBackColor = false;
@@ -487,7 +521,7 @@
             this.pnl_login_data.Location = new System.Drawing.Point(0, 0);
             this.pnl_login_data.Margin = new System.Windows.Forms.Padding(0);
             this.pnl_login_data.Name = "pnl_login_data";
-            this.pnl_login_data.Size = new System.Drawing.Size(189, 235);
+            this.pnl_login_data.Size = new System.Drawing.Size(206, 235);
             this.pnl_login_data.TabIndex = 13;
             // 
             // label1
@@ -525,30 +559,83 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // panel2
+            // pnl_body
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel2.Controls.Add(this.panel1);
-            this.panel2.Controls.Add(this.pnl_titulo);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(206, 24);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(878, 527);
-            this.panel2.TabIndex = 49;
+            this.pnl_body.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pnl_body.Controls.Add(this.panel1);
+            this.pnl_body.Controls.Add(this.pnl_titulo);
+            this.pnl_body.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_body.Location = new System.Drawing.Point(206, 24);
+            this.pnl_body.Name = "pnl_body";
+            this.pnl_body.Size = new System.Drawing.Size(1169, 682);
+            this.pnl_body.TabIndex = 49;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.lbl_hora_so_v2);
             this.panel1.Controls.Add(this.lbl_fecha_so_v2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 429);
+            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Location = new System.Drawing.Point(0, 596);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(878, 98);
+            this.panel1.Size = new System.Drawing.Size(1169, 86);
             this.panel1.TabIndex = 49;
+            // 
+            // label9
+            // 
+            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(26, 70);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(33, 13);
+            this.label9.TabIndex = 52;
+            this.label9.Text = "Elmer";
+            // 
+            // label8
+            // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(26, 52);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(97, 13);
+            this.label8.TabIndex = 50;
+            this.label8.Text = "Ing. Dr. David Cruz";
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(26, 31);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(84, 13);
+            this.label5.TabIndex = 49;
+            this.label5.Text = "Dr. Edgar Lopez";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(26, 8);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(69, 13);
+            this.label4.TabIndex = 48;
+            this.label4.Text = "Desarrollador";
             // 
             // label7
             // 
@@ -556,7 +643,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(554, 17);
+            this.label7.Location = new System.Drawing.Point(845, 17);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(171, 15);
             this.label7.TabIndex = 45;
@@ -568,7 +655,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(765, 34);
+            this.label3.Location = new System.Drawing.Point(1056, 34);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 15);
             this.label3.TabIndex = 47;
@@ -580,7 +667,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(554, 37);
+            this.label6.Location = new System.Drawing.Point(845, 37);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(50, 15);
             this.label6.TabIndex = 46;
@@ -592,7 +679,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_hora_so_v2.AutoSize = true;
             this.lbl_hora_so_v2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_hora_so_v2.Location = new System.Drawing.Point(763, 60);
+            this.lbl_hora_so_v2.Location = new System.Drawing.Point(1054, 52);
             this.lbl_hora_so_v2.Name = "lbl_hora_so_v2";
             this.lbl_hora_so_v2.Size = new System.Drawing.Size(59, 25);
             this.lbl_hora_so_v2.TabIndex = 44;
@@ -604,7 +691,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_fecha_so_v2.AutoSize = true;
             this.lbl_fecha_so_v2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_fecha_so_v2.Location = new System.Drawing.Point(555, 58);
+            this.lbl_fecha_so_v2.Location = new System.Drawing.Point(846, 58);
             this.lbl_fecha_so_v2.Name = "lbl_fecha_so_v2";
             this.lbl_fecha_so_v2.Size = new System.Drawing.Size(42, 15);
             this.lbl_fecha_so_v2.TabIndex = 43;
@@ -625,7 +712,7 @@
             this.btn_ocultar_Menu.Location = new System.Drawing.Point(0, 0);
             this.btn_ocultar_Menu.Margin = new System.Windows.Forms.Padding(0);
             this.btn_ocultar_Menu.Name = "btn_ocultar_Menu";
-            this.btn_ocultar_Menu.Size = new System.Drawing.Size(20, 527);
+            this.btn_ocultar_Menu.Size = new System.Drawing.Size(20, 682);
             this.btn_ocultar_Menu.TabIndex = 30;
             this.btn_ocultar_Menu.UseVisualStyleBackColor = false;
             this.btn_ocultar_Menu.Click += new System.EventHandler(this.btn_ocultar_Menu_Click);
@@ -636,40 +723,19 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(206, 24);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(20, 527);
+            this.panel3.Size = new System.Drawing.Size(20, 682);
             this.panel3.TabIndex = 50;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(296, 19);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(287, 31);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Sistema Restaurante";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.pictureBox1.Image = global::Presentaciòn.Properties.Resources.restaurantes;
-            this.pictureBox1.Location = new System.Drawing.Point(205, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(85, 63);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
             // 
             // frm_Menu_v2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1084, 551);
+            this.ClientSize = new System.Drawing.Size(1375, 706);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.pnl_body);
             this.Controls.Add(this.pnl_Menu);
             this.Controls.Add(this.menuStrip);
+            this.IsMdiContainer = true;
             this.Name = "frm_Menu_v2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_Dashboard";
@@ -678,17 +744,17 @@
             this.menuStrip.PerformLayout();
             this.pnl_titulo.ResumeLayout(false);
             this.pnl_titulo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.pnl_Menu.ResumeLayout(false);
             this.pnl_operaciones.ResumeLayout(false);
             this.pnl_catalogos.ResumeLayout(false);
             this.pnl_administracion.ResumeLayout(false);
             this.pnl_login_data.ResumeLayout(false);
             this.pnl_login_data.PerformLayout();
-            this.panel2.ResumeLayout(false);
+            this.pnl_body.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -712,7 +778,7 @@
         private System.Windows.Forms.Panel pnl_titulo;
         private System.Windows.Forms.Panel pnl_Menu;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel pnl_body;
         private System.Windows.Forms.Panel pnl_administracion;
         private FontAwesome.Sharp.IconButton btn_planillas;
         private FontAwesome.Sharp.IconButton btn_empleados;
@@ -723,9 +789,9 @@
         private System.Windows.Forms.Label lbl_rol_usuario;
         private System.Windows.Forms.Label lbl_usuario_logo;
         private System.Windows.Forms.Panel pnl_operaciones;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton iconButton2;
-        private FontAwesome.Sharp.IconButton iconButton3;
+        private FontAwesome.Sharp.IconButton btn_pago_Orden;
+        private FontAwesome.Sharp.IconButton btn_det_ordenen;
+        private FontAwesome.Sharp.IconButton btn_enca_orden;
         private FontAwesome.Sharp.IconButton btn_operaciones;
         private System.Windows.Forms.Panel pnl_catalogos;
         private FontAwesome.Sharp.IconButton btn_mesas;
@@ -743,5 +809,9 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label9;
     }
 }

@@ -56,7 +56,7 @@ namespace Presentaciòn
                     var validlogin = c_seguridad.LoginUser(txt_usuario.Text, txt_contrasena.Text);
                     if (validlogin == true)
                     {
-                        Menu_Principal mainMenu = new Menu_Principal();
+                        frm_Menu_v2 mainMenu = new frm_Menu_v2();
                         Mis_Variables.UsuarioLogueado = txt_usuario.Text;
                         mainMenu.Show();
                         this.Hide();

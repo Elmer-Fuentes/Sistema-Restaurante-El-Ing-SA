@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -25,8 +26,8 @@ namespace Presentaciòn
 
         private void sub_pnl_opeccion()
         {
-        this.pnl_administracion.Visible = false;
-        this.pnl_catalogos.Visible = false;
+            this.pnl_administracion.Visible = false;
+            this.pnl_catalogos.Visible = false;
             this.pnl_operaciones.Visible = false;
 
         }
@@ -108,5 +109,67 @@ namespace Presentaciòn
         {
             Close();
         }
+
+        #region "Mis Variables"; 
+        private Form activeForm = null;
+        #endregion
+
+        #region "Mis Métodos";
+
+        private void openChildForm(Form childForm)
+        {
+            if (activeForm != null) activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            pnl_body.Controls.Add(childForm);
+            childForm.BringToFront();
+            childForm.Show();
+
+        }
+        #endregion
+
+        private void btn_usuarios_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frm_usuarios());
+        }
+
+        private void btn_empleados_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frm_empleados());
+        }
+
+        private void btn_planillas_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frm_pago_planillas());
+        }
+
+        private void btn_menu_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frm_menu());
+        }
+
+        private void btn_clientes_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frm_clientes());
+        }
+
+        private void btn_inventarios_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frm_inventario());
+        }
+
+        private void btn_mesas_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frm_mesas());
+        }
+
+        private void btn_enca_orden_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frm_encabezado_ordenes());
+        }
+
+
     }
 }
