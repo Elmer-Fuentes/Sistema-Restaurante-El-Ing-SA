@@ -43,6 +43,16 @@ namespace Presentaciòn
         {
             this.ControlBox = false; // Oculta los botones de la barra de título
             this.FormBorderStyle = FormBorderStyle.None; // Quita los bordes
+            btnCancelar.FlatStyle = FlatStyle.Flat;
+            btnCancelar.FlatAppearance.BorderSize = 0;
+            btnEditar.FlatStyle = FlatStyle.Flat;
+            btnEditar.FlatAppearance.BorderSize = 0;
+            btnGuardar.FlatStyle = FlatStyle.Flat;
+            btnGuardar.FlatAppearance.BorderSize = 0;
+            btnEliminar.FlatStyle = FlatStyle.Flat;
+            btnEliminar.FlatAppearance.BorderSize = 0;
+            btnSalir.FlatStyle = FlatStyle.Flat;
+            btnSalir.FlatAppearance.BorderSize = 0;
         }
 
         private void tabPage1_Click(object sender, EventArgs e)

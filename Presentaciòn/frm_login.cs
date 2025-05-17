@@ -88,10 +88,12 @@ namespace Presentaciòn
             if (entrada == true)
             {
                 txt_contrasena.UseSystemPasswordChar = true;
+                iconButton1.IconChar = FontAwesome.Sharp.IconChar.Lock;
             }
             else
             {
                 txt_contrasena.UseSystemPasswordChar = false;
+                iconButton1.IconChar = FontAwesome.Sharp.IconChar.LockOpen;
             }
             entrada = !entrada;
             txt_contrasena.Focus();
