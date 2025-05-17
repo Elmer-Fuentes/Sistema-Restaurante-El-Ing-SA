@@ -179,11 +179,52 @@ namespace Presentaciòn
             openChildForm(new frm_encabezado_ordenes());
         }
 
-        #endregion
-
         private void inventariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             openChildForm(new frm_Reporte_Inventario_menu());
         }
+
+        private void empleadosSinUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.frm_Reporte_Empleados_Sin_Usuarios obj = new Reportes.frm_Reporte_Empleados_Sin_Usuarios();
+            obj.txt_p1.Text = "";
+            obj.ShowDialog();
+        }
+
+        private void dataDashboardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.frm_data_dash_emp_user obj = new Reportes.frm_data_dash_emp_user();
+            obj.txt_dash_emp_user.Text = "";
+            obj.ShowDialog();
+        }
+
+        private void empleadosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frm_Reporte_Empleado obj = new frm_Reporte_Empleado();
+            obj.txt_p_Empleados.Text = "";
+            obj.ShowDialog();
+        }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.frm_Reporte_Clientes objcli = new Reportes.frm_Reporte_Clientes();
+            objcli.txt_p2_clientes.Text = "";
+            objcli.ShowDialog();
+        }
+
+        private void usuariosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Reportes.frm_Reporte_Usuarios obj = new Reportes.frm_Reporte_Usuarios();
+            obj.txt_p_usuario.Text = "";
+            obj.ShowDialog();
+        }
+
+        private void pagoPlanillaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Reportes.frm_Reporte_Pago_Planilla obj = new Reportes.frm_Reporte_Pago_Planilla();
+            obj.txt_p_pago_planilla.Text = "";
+            obj.ShowDialog();
+        }
+        #endregion
     }
 }
