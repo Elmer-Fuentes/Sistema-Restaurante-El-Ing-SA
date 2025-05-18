@@ -110,4 +110,4 @@ select * from tbl_menus;
 --end
 
 
---Exec USP_Inventario_Menu 'car'
+Exec USP_Inventario_Menu ''
