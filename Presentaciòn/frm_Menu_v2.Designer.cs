@@ -79,8 +79,8 @@
             this.lbl_hora_so_v2 = new System.Windows.Forms.Label();
             this.lbl_fecha_so_v2 = new System.Windows.Forms.Label();
             this.pnl_titulo = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip.SuspendLayout();
             this.pnl_Menu.SuspendLayout();
             this.pnl_operaciones.SuspendLayout();
@@ -105,7 +105,7 @@
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.menuStrip.Size = new System.Drawing.Size(1375, 24);
+            this.menuStrip.Size = new System.Drawing.Size(1400, 24);
             this.menuStrip.TabIndex = 4;
             this.menuStrip.Text = "MenuStrip";
             // 
@@ -222,7 +222,7 @@
             this.pnl_Menu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnl_Menu.Location = new System.Drawing.Point(0, 24);
             this.pnl_Menu.Name = "pnl_Menu";
-            this.pnl_Menu.Size = new System.Drawing.Size(206, 666);
+            this.pnl_Menu.Size = new System.Drawing.Size(206, 692);
             this.pnl_Menu.TabIndex = 26;
             // 
             // pnl_operaciones
@@ -496,6 +496,7 @@
             // 
             // pnl_login_data
             // 
+            this.pnl_login_data.Controls.Add(this.pictureBox1);
             this.pnl_login_data.Controls.Add(this.label1);
             this.pnl_login_data.Controls.Add(this.lbl_rol_usuario);
             this.pnl_login_data.Controls.Add(this.lbl_usuario_logo);
@@ -510,7 +511,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(36, 24);
+            this.label1.Location = new System.Drawing.Point(28, 115);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 16);
             this.label1.TabIndex = 5;
@@ -520,7 +521,7 @@
             // 
             this.lbl_rol_usuario.AutoSize = true;
             this.lbl_rol_usuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_rol_usuario.Location = new System.Drawing.Point(36, 73);
+            this.lbl_rol_usuario.Location = new System.Drawing.Point(28, 164);
             this.lbl_rol_usuario.Name = "lbl_rol_usuario";
             this.lbl_rol_usuario.Size = new System.Drawing.Size(96, 16);
             this.lbl_rol_usuario.TabIndex = 4;
@@ -530,7 +531,7 @@
             // 
             this.lbl_usuario_logo.AutoSize = true;
             this.lbl_usuario_logo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_usuario_logo.Location = new System.Drawing.Point(36, 52);
+            this.lbl_usuario_logo.Location = new System.Drawing.Point(28, 143);
             this.lbl_usuario_logo.Name = "lbl_usuario_logo";
             this.lbl_usuario_logo.Size = new System.Drawing.Size(54, 16);
             this.lbl_usuario_logo.TabIndex = 3;
@@ -547,7 +548,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(206, 24);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(20, 666);
+            this.panel3.Size = new System.Drawing.Size(20, 692);
             this.panel3.TabIndex = 50;
             // 
             // btn_ocultar_Menu
@@ -565,7 +566,7 @@
             this.btn_ocultar_Menu.Location = new System.Drawing.Point(0, 0);
             this.btn_ocultar_Menu.Margin = new System.Windows.Forms.Padding(0);
             this.btn_ocultar_Menu.Name = "btn_ocultar_Menu";
-            this.btn_ocultar_Menu.Size = new System.Drawing.Size(20, 666);
+            this.btn_ocultar_Menu.Size = new System.Drawing.Size(20, 692);
             this.btn_ocultar_Menu.TabIndex = 30;
             this.btn_ocultar_Menu.UseVisualStyleBackColor = false;
             this.btn_ocultar_Menu.Click += new System.EventHandler(this.btn_ocultar_Menu_Click);
@@ -580,7 +581,7 @@
             this.pnl_body.Controls.Add(this.pnl_titulo);
             this.pnl_body.Location = new System.Drawing.Point(226, 21);
             this.pnl_body.Name = "pnl_body";
-            this.pnl_body.Size = new System.Drawing.Size(1149, 684);
+            this.pnl_body.Size = new System.Drawing.Size(1174, 710);
             this.pnl_body.TabIndex = 52;
             // 
             // panel1
@@ -597,9 +598,9 @@
             this.panel1.Controls.Add(this.lbl_fecha_so_v2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(0, 598);
+            this.panel1.Location = new System.Drawing.Point(0, 605);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1149, 86);
+            this.panel1.Size = new System.Drawing.Size(1174, 105);
             this.panel1.TabIndex = 49;
             // 
             // label9
@@ -656,7 +657,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(825, 17);
+            this.label7.Location = new System.Drawing.Point(850, 22);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(171, 15);
             this.label7.TabIndex = 45;
@@ -668,7 +669,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1035, 34);
+            this.label3.Location = new System.Drawing.Point(1060, 39);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 15);
             this.label3.TabIndex = 47;
@@ -680,7 +681,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(825, 37);
+            this.label6.Location = new System.Drawing.Point(850, 42);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(50, 15);
             this.label6.TabIndex = 46;
@@ -692,7 +693,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_hora_so_v2.AutoSize = true;
             this.lbl_hora_so_v2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_hora_so_v2.Location = new System.Drawing.Point(1033, 52);
+            this.lbl_hora_so_v2.Location = new System.Drawing.Point(1058, 57);
             this.lbl_hora_so_v2.Name = "lbl_hora_so_v2";
             this.lbl_hora_so_v2.Size = new System.Drawing.Size(59, 25);
             this.lbl_hora_so_v2.TabIndex = 44;
@@ -704,7 +705,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_fecha_so_v2.AutoSize = true;
             this.lbl_fecha_so_v2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_fecha_so_v2.Location = new System.Drawing.Point(825, 58);
+            this.lbl_fecha_so_v2.Location = new System.Drawing.Point(850, 63);
             this.lbl_fecha_so_v2.Name = "lbl_fecha_so_v2";
             this.lbl_fecha_so_v2.Size = new System.Drawing.Size(42, 15);
             this.lbl_fecha_so_v2.TabIndex = 43;
@@ -714,41 +715,40 @@
             // 
             this.pnl_titulo.BackColor = System.Drawing.SystemColors.HighlightText;
             this.pnl_titulo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.pnl_titulo.Controls.Add(this.pictureBox1);
             this.pnl_titulo.Controls.Add(this.label2);
             this.pnl_titulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_titulo.Location = new System.Drawing.Point(0, 0);
             this.pnl_titulo.Name = "pnl_titulo";
-            this.pnl_titulo.Size = new System.Drawing.Size(1149, 52);
+            this.pnl_titulo.Size = new System.Drawing.Size(1174, 52);
             this.pnl_titulo.TabIndex = 28;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.pictureBox1.Image = global::Presentaciòn.Properties.Resources.restaurantes;
-            this.pictureBox1.Location = new System.Drawing.Point(339, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(85, 47);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
             // 
             // label2
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(430, 13);
+            this.label2.Location = new System.Drawing.Point(443, 13);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(287, 31);
             this.label2.TabIndex = 6;
             this.label2.Text = "Sistema Restaurante";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.pictureBox1.Image = global::Presentaciòn.Properties.Resources.restaurantes;
+            this.pictureBox1.Location = new System.Drawing.Point(24, 10);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(141, 93);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
             // frm_Menu_v2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1375, 690);
+            this.ClientSize = new System.Drawing.Size(1400, 716);
             this.Controls.Add(this.pnl_body);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.pnl_Menu);
@@ -831,8 +831,8 @@
         private System.Windows.Forms.Label lbl_hora_so_v2;
         private System.Windows.Forms.Label lbl_fecha_so_v2;
         private System.Windows.Forms.Panel pnl_titulo;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolStripMenuItem inventariosToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
