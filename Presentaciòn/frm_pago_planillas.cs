@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using C_Logica;
 using Datos;
+using Entidades;
 
 namespace Presentaciòn
 {
@@ -155,14 +156,56 @@ namespace Presentaciòn
 			}
 
 		}
+		public void  MtdLimpiarCampos()
+		{
+			cbox_codigoempleado.Text = "";
+			DtpFechaPago.Value = DateTime.Now;   
+			lbl_salario.Text = "";          
+			lbl_bono.Text = "";              
+			txtHorasExtras.Text = "";          
+			lbl_montototal.Text = "";         
+		}
+
+
+		private void btnGuardar_Click_1(object sender, EventArgs e)
+		{
+			try
+			{
+				int codigo_empleado = int.Parse(cbox_codigoempleado.Text);
+				DateTime fecha_pago = DtpFechaPago.Value;  
+				decimal salario = decimal.Parse(lbl_salario.Text);
+				decimal bono = decimal.Parse(lbl_bono.Text);
+				int horas_extras = int.Parse(txtHorasExtras.Text);
+				decimal monto_total = decimal.Parse(lbl_montototal.Text.Replace("Q", "").Trim()); // Si lo muestras con Q
+				string estado = cbox_estado.Text;
+				string usuario_sistema = Mis_Variables.UsuarioLogueado;
+				DateTime fecha_sistema = logicaPlanillas.MtdFechaHoy();
+
+				datosPlanillas.MtdInsPagoPlanillas(codigo_empleado, fecha_pago, salario, bono, horas_extras, monto_total, estado, usuario_sistema, fecha_sistema);
+
+				MessageBox.Show("Pago registrado correctamente", "Estado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+				MtdConsultarPagoPlanillas();  
+				MtdLimpiarCampos();     
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Error: " + ex.Message, "Ha ocurrido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+		}
+	
+
 		private void btnSalir_Click(object sender, EventArgs e)
 		{
 			this.Close();
 		}
-	}
-	}
 
-	
+		private void btnCancelar_Click_1(object sender, EventArgs e)
+		{
+			MtdLimpiarCampos(); 
+		}
+	}
+}
 
 
 

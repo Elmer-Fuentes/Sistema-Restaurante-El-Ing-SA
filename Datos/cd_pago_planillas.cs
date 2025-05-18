@@ -118,6 +118,31 @@ namespace Datos
 
 			return salario;
 		}
+
+
+		public void MtdInsPagoPlanillas(int codigo_empleado, DateTime fecha_pago, decimal salario, decimal bono, int horas_extras, decimal monto_total, string estado, string usuario_sistema, DateTime fecha_sistema)
+		{
+			string query = @"INSERT INTO tbl_pago_planillas (codigo_empleado, fecha_pago, salario, bono, horas_extras, monto_total, estado, usuario_sistema, fecha_sistema)VALUES(@codigo_empleado, @fecha_pago, @salario, @bono, @horas_extras, @monto_total, @estado, @usuario_sistema, @fecha_sistema)";
+
+			using (SqlConnection connection = GetConnection())
+			{
+				connection.Open();
+				using (SqlCommand cmd = new SqlCommand(query, connection))
+				{
+					cmd.Parameters.AddWithValue("@codigo_empleado", codigo_empleado);
+					cmd.Parameters.AddWithValue("@fecha_pago", fecha_pago);
+					cmd.Parameters.AddWithValue("@salario", salario);
+					cmd.Parameters.AddWithValue("@bono", bono);
+					cmd.Parameters.AddWithValue("@horas_extras", horas_extras);
+					cmd.Parameters.AddWithValue("@monto_total", monto_total);
+					cmd.Parameters.AddWithValue("@estado", estado);
+					cmd.Parameters.AddWithValue("@usuario_sistema", usuario_sistema);
+					cmd.Parameters.AddWithValue("@fecha_sistema", fecha_sistema);
+
+					cmd.ExecuteNonQuery();
+				}
+			}
+		}
 	}
 }
 

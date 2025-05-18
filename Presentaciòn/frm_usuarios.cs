@@ -213,5 +213,10 @@ namespace Presentaciòn
             obj.txt_p1.Text = txt_buscar_empleado.Text;
             obj.ShowDialog();
         }
-    }
+
+		private void tabPage1_Click(object sender, EventArgs e)
+		{
+
+		}
+	}
 }
