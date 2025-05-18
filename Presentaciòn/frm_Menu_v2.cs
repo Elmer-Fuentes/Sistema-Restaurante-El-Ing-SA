@@ -24,13 +24,11 @@ namespace Presentaciòn
         {
         }
 
-
         private void sub_pnl_opeccion()
         {
             this.pnl_administracion.Visible = false;
             this.pnl_catalogos.Visible = false;
             this.pnl_operaciones.Visible = false;
-
         }
 
         private void frm_Menu_v2_Load(object sender, EventArgs e)
@@ -41,14 +39,11 @@ namespace Presentaciòn
             lbl_rol_usuario.Text = Mis_Variables.rolusuario; //muestra el rol del usuario en el label
         }
 
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             lbl_fecha_so_v2.Text = DateTime.Now.ToLongDateString(); //muestra la fecha en el label
             lbl_hora_so_v2.Text = DateTime.Now.ToLongTimeString(); //muestra la hora en el label
         }
-
-
 
         private void btn_administracion_Click(object sender, EventArgs e)
         {
@@ -94,14 +89,15 @@ namespace Presentaciòn
 
         private void btn_ocultar_Menu_Click(object sender, EventArgs e)
         {
-
             if (this.pnl_Menu.Visible == false)
             {
                 this.pnl_Menu.Visible = true;
+                btn_ocultar_Menu.IconChar = FontAwesome.Sharp.IconChar.ReplyAll;
             }
             else
             {
                 this.pnl_Menu.Visible = false;
+                btn_ocultar_Menu.IconChar = FontAwesome.Sharp.IconChar.RightToBracket;
             }
             sub_pnl_opeccion();
         }
@@ -112,17 +108,22 @@ namespace Presentaciòn
         }
 
         #region = "Evento fromclosing desde propiedades para controlar el btn_cerrar del MDI";
+
         private void frm_Menu_v2_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }
-        #endregion
 
-        #region "Mis Variables Form Secundario (hijo)"; 
+        #endregion = "Evento fromclosing desde propiedades para controlar el btn_cerrar del MDI";
+
+        #region "Mis Variables Form Secundario (hijo)";
+
         private Form activeForm = null;
-        #endregion
 
-        #region "Mtd Abrir y Mostrar form";    
+        #endregion "Mis Variables Form Secundario (hijo)";
+
+        #region "Mtd Abrir y Mostrar form";
+
         private void openChildForm(Form childForm)
         {
             if (activeForm != null) activeForm.Close();
@@ -133,9 +134,9 @@ namespace Presentaciòn
             pnl_body.Controls.Add(childForm); //cargar el form hijo en el panel del cuerpo
             childForm.BringToFront(); //carga el form
             childForm.Show();// llama al form hijo
-
         }
-        #endregion
+
+        #endregion "Mtd Abrir y Mostrar form";
 
         #region = "Instancia de form hijos";
 
@@ -187,25 +188,21 @@ namespace Presentaciòn
         private void empleadosSinUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             openChildForm(new frm_Reporte_Inventario_menu());
-           
         }
 
         private void dataDashboardToolStripMenuItem_Click(object sender, EventArgs e)
         {
             openChildForm(new frm_data_dash_emp_user());
-            
         }
 
         private void empleadosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             openChildForm(new frm_Reporte_Empleado());
-           
         }
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             openChildForm(new frm_Reporte_Clientes());
-            
         }
 
         private void usuariosToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -217,7 +214,8 @@ namespace Presentaciòn
         {
             openChildForm(new frm_Reporte_Pago_Planilla());
         }
-        #endregion
+
+        #endregion = "Instancia de form hijos";
 
         private void dashboardEmpleadosUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
