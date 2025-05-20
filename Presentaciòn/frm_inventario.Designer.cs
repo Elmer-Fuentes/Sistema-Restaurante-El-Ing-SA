@@ -212,14 +212,14 @@
             // 
             // txt_Cantidad
             // 
-            this.txt_Cantidad.Location = new System.Drawing.Point(612, 16);
+            this.txt_Cantidad.Location = new System.Drawing.Point(603, 20);
             this.txt_Cantidad.Name = "txt_Cantidad";
             this.txt_Cantidad.Size = new System.Drawing.Size(165, 20);
             this.txt_Cantidad.TabIndex = 17;
             // 
             // txt_Categoria
             // 
-            this.txt_Categoria.Location = new System.Drawing.Point(240, 86);
+            this.txt_Categoria.Location = new System.Drawing.Point(214, 85);
             this.txt_Categoria.Name = "txt_Categoria";
             this.txt_Categoria.Size = new System.Drawing.Size(165, 20);
             this.txt_Categoria.TabIndex = 16;
@@ -365,7 +365,7 @@
             // 
             // txt_codigomenu
             // 
-            this.txt_codigomenu.Location = new System.Drawing.Point(240, 53);
+            this.txt_codigomenu.Location = new System.Drawing.Point(214, 49);
             this.txt_codigomenu.Name = "txt_codigomenu";
             this.txt_codigomenu.Size = new System.Drawing.Size(165, 20);
             this.txt_codigomenu.TabIndex = 15;
@@ -373,7 +373,7 @@
             // txt_codigoInventario
             // 
             this.txt_codigoInventario.Enabled = false;
-            this.txt_codigoInventario.Location = new System.Drawing.Point(240, 16);
+            this.txt_codigoInventario.Location = new System.Drawing.Point(214, 15);
             this.txt_codigoInventario.Name = "txt_codigoInventario";
             this.txt_codigoInventario.Size = new System.Drawing.Size(165, 20);
             this.txt_codigoInventario.TabIndex = 14;
@@ -382,7 +382,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(443, 85);
+            this.label7.Location = new System.Drawing.Point(423, 85);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(152, 17);
@@ -393,7 +393,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(471, 52);
+            this.label6.Location = new System.Drawing.Point(451, 50);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(124, 17);
@@ -404,7 +404,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(516, 22);
+            this.label5.Location = new System.Drawing.Point(507, 22);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(68, 17);
@@ -446,23 +446,23 @@
             // 
             // dtm_fechaentrada
             // 
-            this.dtm_fechaentrada.Location = new System.Drawing.Point(612, 49);
+            this.dtm_fechaentrada.Location = new System.Drawing.Point(603, 51);
             this.dtm_fechaentrada.Name = "dtm_fechaentrada";
-            this.dtm_fechaentrada.Size = new System.Drawing.Size(173, 20);
+            this.dtm_fechaentrada.Size = new System.Drawing.Size(198, 20);
             this.dtm_fechaentrada.TabIndex = 27;
             // 
             // dtm_fechavencimiento
             // 
-            this.dtm_fechavencimiento.Location = new System.Drawing.Point(612, 82);
+            this.dtm_fechavencimiento.Location = new System.Drawing.Point(603, 82);
             this.dtm_fechavencimiento.Name = "dtm_fechavencimiento";
-            this.dtm_fechavencimiento.Size = new System.Drawing.Size(173, 20);
+            this.dtm_fechavencimiento.Size = new System.Drawing.Size(198, 20);
             this.dtm_fechavencimiento.TabIndex = 28;
             // 
             // frm_inventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1069, 632);
+            this.ClientSize = new System.Drawing.Size(1179, 731);
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frm_inventario";
