@@ -32,12 +32,9 @@
 			this.cbox_estado = new System.Windows.Forms.ComboBox();
 			this.label10 = new System.Windows.Forms.Label();
 			this.label9 = new System.Windows.Forms.Label();
-			this.txt_codigocliente = new System.Windows.Forms.TextBox();
 			this.txt_codigoorden = new System.Windows.Forms.TextBox();
 			this.dgvEncabezadoOrdenes = new System.Windows.Forms.DataGridView();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.txt_codigoempleado = new System.Windows.Forms.TextBox();
-			this.txt_codigomesa = new System.Windows.Forms.TextBox();
 			this.btnCancelar = new FontAwesome.Sharp.IconButton();
 			this.btnEditar = new FontAwesome.Sharp.IconButton();
 			this.btnGuardar = new FontAwesome.Sharp.IconButton();
@@ -54,6 +51,9 @@
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.label11 = new System.Windows.Forms.Label();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
+			this.cbox_CodigoCliente = new System.Windows.Forms.ComboBox();
+			this.cbox_CodigoMesa = new System.Windows.Forms.ComboBox();
+			this.cbox_CodigoEmpleado = new System.Windows.Forms.ComboBox();
 			((System.ComponentModel.ISupportInitialize)(this.dgvEncabezadoOrdenes)).BeginInit();
 			this.groupBox1.SuspendLayout();
 			this.panel2.SuspendLayout();
@@ -106,13 +106,6 @@
 			this.label9.TabIndex = 53;
 			this.label9.Text = "Codigo Empleado:";
 			// 
-			// txt_codigocliente
-			// 
-			this.txt_codigocliente.Location = new System.Drawing.Point(240, 53);
-			this.txt_codigocliente.Name = "txt_codigocliente";
-			this.txt_codigocliente.Size = new System.Drawing.Size(165, 20);
-			this.txt_codigocliente.TabIndex = 15;
-			// 
 			// txt_codigoorden
 			// 
 			this.txt_codigoorden.Enabled = false;
@@ -140,9 +133,10 @@
 			// 
 			this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
 			this.groupBox1.CausesValidation = false;
+			this.groupBox1.Controls.Add(this.cbox_CodigoEmpleado);
+			this.groupBox1.Controls.Add(this.cbox_CodigoMesa);
+			this.groupBox1.Controls.Add(this.cbox_CodigoCliente);
 			this.groupBox1.Controls.Add(this.DtpFechaPago);
-			this.groupBox1.Controls.Add(this.txt_codigoempleado);
-			this.groupBox1.Controls.Add(this.txt_codigomesa);
 			this.groupBox1.Controls.Add(this.lbl_horasextras);
 			this.groupBox1.Controls.Add(this.cbox_estado);
 			this.groupBox1.Controls.Add(this.label10);
@@ -150,7 +144,6 @@
 			this.groupBox1.Controls.Add(this.btnCancelar);
 			this.groupBox1.Controls.Add(this.btnEditar);
 			this.groupBox1.Controls.Add(this.btnGuardar);
-			this.groupBox1.Controls.Add(this.txt_codigocliente);
 			this.groupBox1.Controls.Add(this.txt_codigoorden);
 			this.groupBox1.Controls.Add(this.label6);
 			this.groupBox1.Controls.Add(this.label5);
@@ -164,22 +157,6 @@
 			this.groupBox1.Size = new System.Drawing.Size(1004, 167);
 			this.groupBox1.TabIndex = 62;
 			this.groupBox1.TabStop = false;
-			// 
-			// txt_codigoempleado
-			// 
-			this.txt_codigoempleado.Enabled = false;
-			this.txt_codigoempleado.Location = new System.Drawing.Point(240, 114);
-			this.txt_codigoempleado.Name = "txt_codigoempleado";
-			this.txt_codigoempleado.Size = new System.Drawing.Size(165, 20);
-			this.txt_codigoempleado.TabIndex = 62;
-			// 
-			// txt_codigomesa
-			// 
-			this.txt_codigomesa.Enabled = false;
-			this.txt_codigomesa.Location = new System.Drawing.Point(240, 84);
-			this.txt_codigomesa.Name = "txt_codigomesa";
-			this.txt_codigomesa.Size = new System.Drawing.Size(165, 20);
-			this.txt_codigomesa.TabIndex = 61;
 			// 
 			// btnCancelar
 			// 
@@ -373,6 +350,30 @@
 			this.tabControl1.Size = new System.Drawing.Size(1041, 555);
 			this.tabControl1.TabIndex = 87;
 			// 
+			// cbox_CodigoCliente
+			// 
+			this.cbox_CodigoCliente.FormattingEnabled = true;
+			this.cbox_CodigoCliente.Location = new System.Drawing.Point(241, 46);
+			this.cbox_CodigoCliente.Name = "cbox_CodigoCliente";
+			this.cbox_CodigoCliente.Size = new System.Drawing.Size(164, 21);
+			this.cbox_CodigoCliente.TabIndex = 65;
+			// 
+			// cbox_CodigoMesa
+			// 
+			this.cbox_CodigoMesa.FormattingEnabled = true;
+			this.cbox_CodigoMesa.Location = new System.Drawing.Point(241, 81);
+			this.cbox_CodigoMesa.Name = "cbox_CodigoMesa";
+			this.cbox_CodigoMesa.Size = new System.Drawing.Size(164, 21);
+			this.cbox_CodigoMesa.TabIndex = 66;
+			// 
+			// cbox_CodigoEmpleado
+			// 
+			this.cbox_CodigoEmpleado.FormattingEnabled = true;
+			this.cbox_CodigoEmpleado.Location = new System.Drawing.Point(240, 110);
+			this.cbox_CodigoEmpleado.Name = "cbox_CodigoEmpleado";
+			this.cbox_CodigoEmpleado.Size = new System.Drawing.Size(164, 21);
+			this.cbox_CodigoEmpleado.TabIndex = 67;
+			// 
 			// frm_encabezado_ordenes
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -410,7 +411,6 @@
 		private FontAwesome.Sharp.IconButton btnCancelar;
 		private FontAwesome.Sharp.IconButton btnEditar;
 		private FontAwesome.Sharp.IconButton btnGuardar;
-		private System.Windows.Forms.TextBox txt_codigocliente;
 		private System.Windows.Forms.TextBox txt_codigoorden;
 		private System.Windows.Forms.DataGridView dgvEncabezadoOrdenes;
 		private System.Windows.Forms.GroupBox groupBox1;
@@ -422,11 +422,12 @@
 		private FontAwesome.Sharp.IconButton btnSalir;
 		private System.Windows.Forms.Label lblFecha;
 		private System.Windows.Forms.Label label8;
-		private System.Windows.Forms.TextBox txt_codigoempleado;
-		private System.Windows.Forms.TextBox txt_codigomesa;
 		private System.Windows.Forms.DateTimePicker DtpFechaPago;
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Label label11;
 		private System.Windows.Forms.TabControl tabControl1;
+		private System.Windows.Forms.ComboBox cbox_CodigoEmpleado;
+		private System.Windows.Forms.ComboBox cbox_CodigoMesa;
+		private System.Windows.Forms.ComboBox cbox_CodigoCliente;
 	}
 }
