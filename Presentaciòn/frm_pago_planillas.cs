@@ -64,6 +64,118 @@ namespace Presentaciòn
 			cbox_codigoempleado.ValueMember = "Value";
 		}
 
+		
+		private void cbox_codigoempleado_SelectedIndexChanged_1(object sender, EventArgs e)
+		{
+			if (string.IsNullOrEmpty(cbox_codigoempleado.Text))
+			{
+				MessageBox.Show("Seleccione una descripcion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			else
+			{
+				lbl_salario.Text = logicaPlanillas.MtdSalarioPlanilla(cbox_codigoempleado.Text).ToString("F2");
+			}
+				lbl_bono.Text = logicaPlanillas.MtdSalarioBono(cbox_codigoempleado.Text).ToString("F2");
+			}
+			
+		
+
+		private void txtHorasExtras_TextChanged(object sender, EventArgs e)
+		{
+
+		}
+
+		private void textBox1_TextChanged(object sender, EventArgs e)
+		{
+
+
+			if (cbox_codigoempleado.Text == "" || string.IsNullOrWhiteSpace(txtHorasExtras.Text))
+			{
+				lbl_montototal.Text = "";
+			}
+			else
+			{
+				int horasExtras;
+				if (!int.TryParse(txtHorasExtras.Text, out horasExtras))
+				{
+					MessageBox.Show("Por favor, ingresa un número válido de horas extras.");
+					txtHorasExtras.Focus();
+					return;
+				}
+
+				decimal salario = logicaPlanillas.MtdSalarioPlanilla(cbox_codigoempleado.Text);
+				decimal bono = logicaPlanillas.MtdSalarioBono(cbox_codigoempleado.Text);
+
+				decimal montoTotal = logicaPlanillas.MtdMontoTotal(salario, bono, horasExtras);
+
+				lbl_montototal.Text =  montoTotal.ToString();
+			}
+
+		}
+		public void  MtdLimpiarCampos()
+		{
+			cbox_codigoempleado.Text = "";
+			DtpFechaPago.Value = DateTime.Now;   
+			lbl_salario.Text = "";          
+			lbl_bono.Text = "";              
+			txtHorasExtras.Text = "";          
+			lbl_montototal.Text = "";
+			cbox_estado.Text = "";
+		}
+
+
+		private void btnGuardar_Click_1(object sender, EventArgs e)
+		{
+			
+			if (string.IsNullOrWhiteSpace(cbox_codigoempleado.Text) ||
+					string.IsNullOrWhiteSpace(lbl_salario.Text) ||
+					string.IsNullOrWhiteSpace(lbl_bono.Text) ||
+					string.IsNullOrWhiteSpace(lbl_montototal.Text))
+			{
+				MessageBox.Show("Complete todos los datos antes de guardar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				return;
+			}
+
+			try
+			{
+				int codigoEmpleado = int.Parse(cbox_codigoempleado.Text.Split('-')[0].Trim());
+				DateTime fechaPago = DtpFechaPago.Value;
+				decimal salario = decimal.Parse(lbl_salario.Text);
+				decimal bono = decimal.Parse(lbl_bono.Text);
+				int horasExtras = int.Parse(txtHorasExtras.Text);
+				decimal montoTotal = decimal.Parse(lbl_montototal.Text);
+				string estado = cbox_estado.Text;
+				string usuario_sistema = Mis_Variables.UsuarioLogueado;
+				DateTime fechaSistema = logicaPlanillas.MtdFechaHoy();
+
+				datosPlanillas.MtdInsPagoPlanillas(codigoEmpleado, fechaPago, salario, bono, horasExtras, montoTotal, estado, usuario_sistema, fechaSistema);
+
+				MessageBox.Show("Pago guardado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Ocurrió un error al guardar el pago: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				
+			}
+
+			MtdLimpiarCampos();
+			MtdConsultarPagoPlanillas();
+		}
+
+		private void btnSalir_Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
+
+		private void btnCancelar_Click_1(object sender, EventArgs e)
+		{
+			MtdLimpiarCampos();
+
+
+		
+		}
+
+
 		private void cbox_codigoempleado_SelectedIndexChanged(object sender, EventArgs e)
 		{
 
@@ -104,106 +216,9 @@ namespace Presentaciòn
 
 		private void lbl_salario_Click(object sender, EventArgs e)
 		{
-			
-		}
-
-		private void cbox_codigoempleado_SelectedIndexChanged_1(object sender, EventArgs e)
-		{
-			if (string.IsNullOrEmpty(cbox_codigoempleado.Text))
-			{
-				MessageBox.Show("Seleccione una descripcion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-			}
-			else
-			{
-				lbl_salario.Text = datosPlanillas.MtdSalarioPlanilla(cbox_codigoempleado.Text).ToString("c");
-
-			}
-			lbl_bono.Text = logicaPlanillas.MtdSalarioBono(cbox_codigoempleado.Text).ToString("c");
-
-		}
-			
-		
-
-		private void txtHorasExtras_TextChanged(object sender, EventArgs e)
-		{
 
 		}
 
-		private void textBox1_TextChanged(object sender, EventArgs e)
-		{
-
-
-			if (cbox_codigoempleado.Text == "" || string.IsNullOrWhiteSpace(txtHorasExtras.Text))
-			{
-				lbl_montototal.Text = "";
-			}
-			else
-			{
-				int horasExtras;
-				if (!int.TryParse(txtHorasExtras.Text, out horasExtras))
-				{
-					MessageBox.Show("Por favor, ingresa un número válido de horas extras.");
-					txtHorasExtras.Focus();
-					return;
-				}
-
-				decimal salario = datosPlanillas.MtdSalarioPlanilla(cbox_codigoempleado.Text);
-				decimal bono = logicaPlanillas.MtdSalarioBono(cbox_codigoempleado.Text);
-
-				decimal montoTotal = logicaPlanillas.MtdMontoTotal(salario, bono, horasExtras);
-
-				lbl_montototal.Text = "Q" + montoTotal.ToString("N2");
-			}
-
-		}
-		public void  MtdLimpiarCampos()
-		{
-			cbox_codigoempleado.Text = "";
-			DtpFechaPago.Value = DateTime.Now;   
-			lbl_salario.Text = "";          
-			lbl_bono.Text = "";              
-			txtHorasExtras.Text = "";          
-			lbl_montototal.Text = "";         
-		}
-
-
-		private void btnGuardar_Click_1(object sender, EventArgs e)
-		{
-			try
-			{
-				int codigo_empleado = int.Parse(cbox_codigoempleado.Text);
-				DateTime fecha_pago = DtpFechaPago.Value;  
-				decimal salario = decimal.Parse(lbl_salario.Text);
-				decimal bono = decimal.Parse(lbl_bono.Text);
-				int horas_extras = int.Parse(txtHorasExtras.Text);
-				decimal monto_total = decimal.Parse(lbl_montototal.Text.Replace("Q", "").Trim()); // Si lo muestras con Q
-				string estado = cbox_estado.Text;
-				string usuario_sistema = Mis_Variables.UsuarioLogueado;
-				DateTime fecha_sistema = logicaPlanillas.MtdFechaHoy();
-
-				datosPlanillas.MtdInsPagoPlanillas(codigo_empleado, fecha_pago, salario, bono, horas_extras, monto_total, estado, usuario_sistema, fecha_sistema);
-
-				MessageBox.Show("Pago registrado correctamente", "Estado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-				MtdConsultarPagoPlanillas();  
-				MtdLimpiarCampos();     
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show("Error: " + ex.Message, "Ha ocurrido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-			}
-		}
-	
-
-		private void btnSalir_Click(object sender, EventArgs e)
-		{
-			this.Close();
-		}
-
-		private void btnCancelar_Click_1(object sender, EventArgs e)
-		{
-			MtdLimpiarCampos(); 
-		}
 	}
 }
 

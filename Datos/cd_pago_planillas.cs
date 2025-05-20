@@ -87,37 +87,8 @@ namespace Datos
 		}
 
 
-		public decimal MtdSalarioPlanilla(string codigo_empleado)
-		{
-			decimal salario = 0;
+		
 
-			
-			string[] partes = codigo_empleado.Split('-');
-			if (partes.Length > 0 && int.TryParse(partes[0].Trim(), out int codigoNumerico))
-			{
-				using (SqlConnection conn = GetConnection())
-				{
-					string query = "SELECT salario FROM tbl_empleados WHERE codigo_empleado = @codigo_empleado";
-					using (SqlCommand cmd = new SqlCommand(query, conn))
-					{
-						cmd.Parameters.AddWithValue("@codigo_empleado", codigoNumerico);
-						conn.Open();
-						object resultado = cmd.ExecuteScalar();
-						if (resultado != null && resultado != DBNull.Value)
-						{
-							salario = Convert.ToDecimal(resultado);
-						}
-					}
-				}
-			}
-			else
-			{
-
-				MessageBox.Show("El código de empleado no tiene el formato Correcto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-			}
-
-			return salario;
-		}
 
 
 		public void MtdInsPagoPlanillas(int codigo_empleado, DateTime fecha_pago, decimal salario, decimal bono, int horas_extras, decimal monto_total, string estado, string usuario_sistema, DateTime fecha_sistema)
