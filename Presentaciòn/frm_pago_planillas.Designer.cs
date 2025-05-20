@@ -362,6 +362,7 @@
 			this.dgvPagoPlanillas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dgvPagoPlanillas.Size = new System.Drawing.Size(1004, 209);
 			this.dgvPagoPlanillas.TabIndex = 81;
+			this.dgvPagoPlanillas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPagoPlanillas_CellClick);
 			// 
 			// panel2
 			// 

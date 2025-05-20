@@ -219,7 +219,39 @@ namespace Presentaciòn
 
 		}
 
+		private void dgvPagoPlanillas_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			
+		{
+			var filaSeleccionada = dgvPagoPlanillas.SelectedRows[0];
+
+			
+			if (filaSeleccionada.Index == dgvPagoPlanillas.RowCount - 1)
+			{
+				MessageBox.Show("Seleccione una fila con datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			else
+			{
+				
+				txt_codigo_pago_planilla.Text = dgvPagoPlanillas.SelectedCells[0].Value.ToString();
+
+				int CodigoEmpleado = (int)dgvPagoPlanillas.SelectedCells[1].Value;
+				cbox_codigoempleado.Text = datosPlanillas.MtdListaEmpleadosDgv(CodigoEmpleado);
+
+
+				
+				DtpFechaPago.Text = dgvPagoPlanillas.SelectedCells[2].Value.ToString();       
+				lbl_salario.Text = dgvPagoPlanillas.SelectedCells[3].Value.ToString();        
+				lbl_bono.Text = dgvPagoPlanillas.SelectedCells[4].Value.ToString();           
+				txtHorasExtras.Text = dgvPagoPlanillas.SelectedCells[5].Value.ToString();     
+				lbl_montototal.Text = dgvPagoPlanillas.SelectedCells[6].Value.ToString();     
+				cbox_estado.Text = dgvPagoPlanillas.SelectedCells[7].Value.ToString();        
+				
+			}
+		}
+
 	}
+}
 }
 
 
