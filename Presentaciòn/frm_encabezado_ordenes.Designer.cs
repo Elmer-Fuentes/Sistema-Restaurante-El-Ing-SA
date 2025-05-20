@@ -28,7 +28,6 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.dtp_fechaorden = new System.Windows.Forms.DateTimePicker();
 			this.lbl_horasextras = new System.Windows.Forms.Label();
 			this.cbox_estado = new System.Windows.Forms.ComboBox();
 			this.label10 = new System.Windows.Forms.Label();
@@ -37,51 +36,49 @@
 			this.txt_codigoorden = new System.Windows.Forms.TextBox();
 			this.dgvEncabezadoOrdenes = new System.Windows.Forms.DataGridView();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.txt_codigoempleado = new System.Windows.Forms.TextBox();
+			this.txt_codigomesa = new System.Windows.Forms.TextBox();
+			this.btnCancelar = new FontAwesome.Sharp.IconButton();
+			this.btnEditar = new FontAwesome.Sharp.IconButton();
+			this.btnGuardar = new FontAwesome.Sharp.IconButton();
 			this.label6 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
-			this.label1 = new System.Windows.Forms.Label();
 			this.lblFecha = new System.Windows.Forms.Label();
 			this.label8 = new System.Windows.Forms.Label();
 			this.btnEliminar = new FontAwesome.Sharp.IconButton();
-			this.btnCancelar = new FontAwesome.Sharp.IconButton();
-			this.btnEditar = new FontAwesome.Sharp.IconButton();
-			this.btnGuardar = new FontAwesome.Sharp.IconButton();
 			this.btnSalir = new FontAwesome.Sharp.IconButton();
-			this.txt_codigomesa = new System.Windows.Forms.TextBox();
-			this.txt_codigoempleado = new System.Windows.Forms.TextBox();
+			this.DtpFechaPago = new System.Windows.Forms.DateTimePicker();
+			this.panel2 = new System.Windows.Forms.Panel();
+			this.label11 = new System.Windows.Forms.Label();
+			this.tabControl1 = new System.Windows.Forms.TabControl();
 			((System.ComponentModel.ISupportInitialize)(this.dgvEncabezadoOrdenes)).BeginInit();
 			this.groupBox1.SuspendLayout();
+			this.panel2.SuspendLayout();
 			this.SuspendLayout();
-			// 
-			// dtp_fechaorden
-			// 
-			this.dtp_fechaorden.Location = new System.Drawing.Point(617, 12);
-			this.dtp_fechaorden.Name = "dtp_fechaorden";
-			this.dtp_fechaorden.Size = new System.Drawing.Size(160, 20);
-			this.dtp_fechaorden.TabIndex = 60;
 			// 
 			// lbl_horasextras
 			// 
 			this.lbl_horasextras.AutoSize = true;
 			this.lbl_horasextras.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lbl_horasextras.Location = new System.Drawing.Point(614, 47);
+			this.lbl_horasextras.Location = new System.Drawing.Point(623, 47);
 			this.lbl_horasextras.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.lbl_horasextras.Name = "lbl_horasextras";
-			this.lbl_horasextras.Size = new System.Drawing.Size(146, 34);
+			this.lbl_horasextras.Size = new System.Drawing.Size(144, 17);
 			this.lbl_horasextras.TabIndex = 58;
-			this.lbl_horasextras.Text = "Imprimir Horas Extras:\r\n\r\n";
+			this.lbl_horasextras.Text = "Imprimir Monto Total: ";
 			// 
 			// cbox_estado
 			// 
 			this.cbox_estado.FormattingEnabled = true;
 			this.cbox_estado.Items.AddRange(new object[] {
-            "Pendiente ",
-            "Proceso ",
-            "Pagado ",
-            "Rechazado"});
+            "Creado",
+            "Preparacion",
+            "Entregado",
+            "Finalizado",
+            "Cancelado)"});
 			this.cbox_estado.Location = new System.Drawing.Point(617, 90);
 			this.cbox_estado.Name = "cbox_estado";
 			this.cbox_estado.Size = new System.Drawing.Size(164, 21);
@@ -129,22 +126,23 @@
 			// 
 			this.dgvEncabezadoOrdenes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
 			this.dgvEncabezadoOrdenes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dgvEncabezadoOrdenes.Location = new System.Drawing.Point(15, 241);
+			this.dgvEncabezadoOrdenes.Location = new System.Drawing.Point(15, 263);
 			this.dgvEncabezadoOrdenes.Margin = new System.Windows.Forms.Padding(2);
 			this.dgvEncabezadoOrdenes.Name = "dgvEncabezadoOrdenes";
 			this.dgvEncabezadoOrdenes.ReadOnly = true;
 			this.dgvEncabezadoOrdenes.RowHeadersWidth = 51;
 			this.dgvEncabezadoOrdenes.RowTemplate.Height = 24;
 			this.dgvEncabezadoOrdenes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-			this.dgvEncabezadoOrdenes.Size = new System.Drawing.Size(1004, 228);
+			this.dgvEncabezadoOrdenes.Size = new System.Drawing.Size(1004, 206);
 			this.dgvEncabezadoOrdenes.TabIndex = 63;
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
 			this.groupBox1.CausesValidation = false;
+			this.groupBox1.Controls.Add(this.DtpFechaPago);
 			this.groupBox1.Controls.Add(this.txt_codigoempleado);
 			this.groupBox1.Controls.Add(this.txt_codigomesa);
-			this.groupBox1.Controls.Add(this.dtp_fechaorden);
 			this.groupBox1.Controls.Add(this.lbl_horasextras);
 			this.groupBox1.Controls.Add(this.cbox_estado);
 			this.groupBox1.Controls.Add(this.label10);
@@ -159,13 +157,74 @@
 			this.groupBox1.Controls.Add(this.label4);
 			this.groupBox1.Controls.Add(this.label3);
 			this.groupBox1.Controls.Add(this.label2);
-			this.groupBox1.Location = new System.Drawing.Point(15, 70);
+			this.groupBox1.Location = new System.Drawing.Point(15, 92);
 			this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
 			this.groupBox1.Size = new System.Drawing.Size(1004, 167);
 			this.groupBox1.TabIndex = 62;
 			this.groupBox1.TabStop = false;
+			// 
+			// txt_codigoempleado
+			// 
+			this.txt_codigoempleado.Enabled = false;
+			this.txt_codigoempleado.Location = new System.Drawing.Point(240, 114);
+			this.txt_codigoempleado.Name = "txt_codigoempleado";
+			this.txt_codigoempleado.Size = new System.Drawing.Size(165, 20);
+			this.txt_codigoempleado.TabIndex = 62;
+			// 
+			// txt_codigomesa
+			// 
+			this.txt_codigomesa.Enabled = false;
+			this.txt_codigomesa.Location = new System.Drawing.Point(240, 84);
+			this.txt_codigomesa.Name = "txt_codigomesa";
+			this.txt_codigomesa.Size = new System.Drawing.Size(165, 20);
+			this.txt_codigomesa.TabIndex = 61;
+			// 
+			// btnCancelar
+			// 
+			this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.Remove;
+			this.btnCancelar.IconColor = System.Drawing.Color.Black;
+			this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.btnCancelar.IconSize = 25;
+			this.btnCancelar.Location = new System.Drawing.Point(842, 84);
+			this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
+			this.btnCancelar.Name = "btnCancelar";
+			this.btnCancelar.Size = new System.Drawing.Size(129, 31);
+			this.btnCancelar.TabIndex = 22;
+			this.btnCancelar.Text = "Cancelar";
+			this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnCancelar.UseVisualStyleBackColor = true;
+			// 
+			// btnEditar
+			// 
+			this.btnEditar.IconChar = FontAwesome.Sharp.IconChar.SquarePen;
+			this.btnEditar.IconColor = System.Drawing.Color.Black;
+			this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.btnEditar.IconSize = 25;
+			this.btnEditar.Location = new System.Drawing.Point(842, 47);
+			this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
+			this.btnEditar.Name = "btnEditar";
+			this.btnEditar.Size = new System.Drawing.Size(129, 31);
+			this.btnEditar.TabIndex = 21;
+			this.btnEditar.Text = "Editar";
+			this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnEditar.UseVisualStyleBackColor = true;
+			// 
+			// btnGuardar
+			// 
+			this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
+			this.btnGuardar.IconColor = System.Drawing.Color.Black;
+			this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+			this.btnGuardar.IconSize = 25;
+			this.btnGuardar.Location = new System.Drawing.Point(842, 12);
+			this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
+			this.btnGuardar.Name = "btnGuardar";
+			this.btnGuardar.Size = new System.Drawing.Size(129, 31);
+			this.btnGuardar.TabIndex = 20;
+			this.btnGuardar.Text = "Guardar";
+			this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+			this.btnGuardar.UseVisualStyleBackColor = true;
 			// 
 			// label6
 			// 
@@ -222,22 +281,12 @@
 			this.label2.TabIndex = 1;
 			this.label2.Text = "Codigo Orden: ";
 			// 
-			// label1
-			// 
-			this.label1.AutoSize = true;
-			this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(412, 23);
-			this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(240, 26);
-			this.label1.TabIndex = 59;
-			this.label1.Text = "Encabezado Ordenes";
-			// 
 			// lblFecha
 			// 
 			this.lblFecha.AutoSize = true;
+			this.lblFecha.BackColor = System.Drawing.SystemColors.ControlLightLight;
 			this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblFecha.Location = new System.Drawing.Point(735, 51);
+			this.lblFecha.Location = new System.Drawing.Point(738, 73);
 			this.lblFecha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.lblFecha.Name = "lblFecha";
 			this.lblFecha.Size = new System.Drawing.Size(100, 17);
@@ -247,8 +296,9 @@
 			// label8
 			// 
 			this.label8.AutoSize = true;
+			this.label8.BackColor = System.Drawing.SystemColors.ControlLightLight;
 			this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label8.Location = new System.Drawing.Point(629, 51);
+			this.label8.Location = new System.Drawing.Point(629, 73);
 			this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.label8.Name = "label8";
 			this.label8.Size = new System.Drawing.Size(93, 17);
@@ -270,51 +320,6 @@
 			this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnEliminar.UseVisualStyleBackColor = true;
 			// 
-			// btnCancelar
-			// 
-			this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.Remove;
-			this.btnCancelar.IconColor = System.Drawing.Color.Black;
-			this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-			this.btnCancelar.IconSize = 25;
-			this.btnCancelar.Location = new System.Drawing.Point(842, 84);
-			this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
-			this.btnCancelar.Name = "btnCancelar";
-			this.btnCancelar.Size = new System.Drawing.Size(129, 31);
-			this.btnCancelar.TabIndex = 22;
-			this.btnCancelar.Text = "Cancelar";
-			this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnCancelar.UseVisualStyleBackColor = true;
-			// 
-			// btnEditar
-			// 
-			this.btnEditar.IconChar = FontAwesome.Sharp.IconChar.SquarePen;
-			this.btnEditar.IconColor = System.Drawing.Color.Black;
-			this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-			this.btnEditar.IconSize = 25;
-			this.btnEditar.Location = new System.Drawing.Point(842, 47);
-			this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
-			this.btnEditar.Name = "btnEditar";
-			this.btnEditar.Size = new System.Drawing.Size(129, 31);
-			this.btnEditar.TabIndex = 21;
-			this.btnEditar.Text = "Editar";
-			this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnEditar.UseVisualStyleBackColor = true;
-			// 
-			// btnGuardar
-			// 
-			this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
-			this.btnGuardar.IconColor = System.Drawing.Color.Black;
-			this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
-			this.btnGuardar.IconSize = 25;
-			this.btnGuardar.Location = new System.Drawing.Point(842, 12);
-			this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
-			this.btnGuardar.Name = "btnGuardar";
-			this.btnGuardar.Size = new System.Drawing.Size(129, 31);
-			this.btnGuardar.TabIndex = 20;
-			this.btnGuardar.Text = "Guardar";
-			this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-			this.btnGuardar.UseVisualStyleBackColor = true;
-			// 
 			// btnSalir
 			// 
 			this.btnSalir.IconChar = FontAwesome.Sharp.IconChar.PowerOff;
@@ -330,34 +335,57 @@
 			this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnSalir.UseVisualStyleBackColor = true;
 			// 
-			// txt_codigomesa
+			// DtpFechaPago
 			// 
-			this.txt_codigomesa.Enabled = false;
-			this.txt_codigomesa.Location = new System.Drawing.Point(240, 84);
-			this.txt_codigomesa.Name = "txt_codigomesa";
-			this.txt_codigomesa.Size = new System.Drawing.Size(165, 20);
-			this.txt_codigomesa.TabIndex = 61;
+			this.DtpFechaPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.DtpFechaPago.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+			this.DtpFechaPago.Location = new System.Drawing.Point(616, 12);
+			this.DtpFechaPago.Margin = new System.Windows.Forms.Padding(2);
+			this.DtpFechaPago.Name = "DtpFechaPago";
+			this.DtpFechaPago.Size = new System.Drawing.Size(165, 21);
+			this.DtpFechaPago.TabIndex = 64;
 			// 
-			// txt_codigoempleado
+			// panel2
 			// 
-			this.txt_codigoempleado.Enabled = false;
-			this.txt_codigoempleado.Location = new System.Drawing.Point(240, 114);
-			this.txt_codigoempleado.Name = "txt_codigoempleado";
-			this.txt_codigoempleado.Size = new System.Drawing.Size(165, 20);
-			this.txt_codigoempleado.TabIndex = 62;
+			this.panel2.BackColor = System.Drawing.Color.DarkOrange;
+			this.panel2.Controls.Add(this.label11);
+			this.panel2.Location = new System.Drawing.Point(-5, -2);
+			this.panel2.Name = "panel2";
+			this.panel2.Size = new System.Drawing.Size(1058, 62);
+			this.panel2.TabIndex = 86;
+			// 
+			// label11
+			// 
+			this.label11.AutoSize = true;
+			this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label11.Location = new System.Drawing.Point(428, 21);
+			this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+			this.label11.Name = "label11";
+			this.label11.Size = new System.Drawing.Size(240, 26);
+			this.label11.TabIndex = 64;
+			this.label11.Text = "Encabezado Ordenes";
+			// 
+			// tabControl1
+			// 
+			this.tabControl1.Location = new System.Drawing.Point(-3, -3);
+			this.tabControl1.Name = "tabControl1";
+			this.tabControl1.SelectedIndex = 0;
+			this.tabControl1.Size = new System.Drawing.Size(1041, 555);
+			this.tabControl1.TabIndex = 87;
 			// 
 			// frm_encabezado_ordenes
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1034, 549);
+			this.Controls.Add(this.panel2);
 			this.Controls.Add(this.btnEliminar);
 			this.Controls.Add(this.dgvEncabezadoOrdenes);
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.btnSalir);
-			this.Controls.Add(this.label1);
 			this.Controls.Add(this.lblFecha);
 			this.Controls.Add(this.label8);
+			this.Controls.Add(this.tabControl1);
 			this.Name = "frm_encabezado_ordenes";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "frm_encabezado_ordenes";
@@ -365,6 +393,8 @@
 			((System.ComponentModel.ISupportInitialize)(this.dgvEncabezadoOrdenes)).EndInit();
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
+			this.panel2.ResumeLayout(false);
+			this.panel2.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -373,7 +403,6 @@
 		#endregion
 
 		private FontAwesome.Sharp.IconButton btnEliminar;
-		private System.Windows.Forms.DateTimePicker dtp_fechaorden;
 		private System.Windows.Forms.Label lbl_horasextras;
 		private System.Windows.Forms.ComboBox cbox_estado;
 		private System.Windows.Forms.Label label10;
@@ -391,10 +420,13 @@
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label2;
 		private FontAwesome.Sharp.IconButton btnSalir;
-		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label lblFecha;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.TextBox txt_codigoempleado;
 		private System.Windows.Forms.TextBox txt_codigomesa;
+		private System.Windows.Forms.DateTimePicker DtpFechaPago;
+		private System.Windows.Forms.Panel panel2;
+		private System.Windows.Forms.Label label11;
+		private System.Windows.Forms.TabControl tabControl1;
 	}
 }
