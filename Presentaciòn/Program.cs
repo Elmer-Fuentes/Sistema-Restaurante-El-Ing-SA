@@ -16,7 +16,7 @@ namespace Presentaciòn
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_pago_planillas());
+            Application.Run(new frm_login());
         }
     }
 }

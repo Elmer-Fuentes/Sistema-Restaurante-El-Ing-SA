@@ -114,6 +114,7 @@ namespace Presentaciòn
 		}
 		public void  MtdLimpiarCampos()
 		{
+			txt_codigo_pago_planilla.Text = "";
 			cbox_codigoempleado.Text = "";
 			DtpFechaPago.Value = DateTime.Now;   
 			lbl_salario.Text = "";          
@@ -151,6 +152,8 @@ namespace Presentaciòn
 				datosPlanillas.MtdInsPagoPlanillas(codigoEmpleado, fechaPago, salario, bono, horasExtras, montoTotal, estado, usuario_sistema, fechaSistema);
 
 				MessageBox.Show("Pago guardado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				MtdLimpiarCampos();
+				MtdConsultarPagoPlanillas();
 			}
 			catch (Exception ex)
 			{
@@ -158,8 +161,7 @@ namespace Presentaciòn
 				
 			}
 
-			MtdLimpiarCampos();
-			MtdConsultarPagoPlanillas();
+			
 		}
 
 		private void btnSalir_Click(object sender, EventArgs e)
@@ -170,10 +172,50 @@ namespace Presentaciòn
 		private void btnCancelar_Click_1(object sender, EventArgs e)
 		{
 			MtdLimpiarCampos();
+		
+		}
 
 
 		
+
+		private void dgvPagoPlanillas_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+
+			{
+				var filaSeleccionada = dgvPagoPlanillas.SelectedRows[0];
+
+
+				if (filaSeleccionada.Index == dgvPagoPlanillas.RowCount - 1)
+				{
+					MessageBox.Show("Seleccione una fila con datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
+				else
+				{
+
+					txt_codigo_pago_planilla.Text = dgvPagoPlanillas.SelectedCells[0].Value.ToString();
+
+					int CodigoEmpleado = (int)dgvPagoPlanillas.SelectedCells[1].Value;
+					cbox_codigoempleado.Text = datosPlanillas.MtdListaEmpleadosDgv(CodigoEmpleado);
+
+
+
+					DtpFechaPago.Text = dgvPagoPlanillas.SelectedCells[2].Value.ToString();
+					lbl_salario.Text = dgvPagoPlanillas.SelectedCells[3].Value.ToString();
+					lbl_bono.Text = dgvPagoPlanillas.SelectedCells[4].Value.ToString();
+					txtHorasExtras.Text = dgvPagoPlanillas.SelectedCells[5].Value.ToString();
+					lbl_montototal.Text = dgvPagoPlanillas.SelectedCells[6].Value.ToString();
+					cbox_estado.Text = dgvPagoPlanillas.SelectedCells[7].Value.ToString();
+
+				}
+
+			}
 		}
+		private void btnEditar_Click(object sender, EventArgs e)
+		{
+		}
+			
+		
+
 
 
 		private void cbox_codigoempleado_SelectedIndexChanged(object sender, EventArgs e)
@@ -204,10 +246,6 @@ namespace Presentaciòn
 
 		}
 
-		private void btnEditar_Click(object sender, EventArgs e)
-		{
-
-		}
 
 		private void btnGuardar_Click(object sender, EventArgs e)
 		{
@@ -219,40 +257,76 @@ namespace Presentaciòn
 
 		}
 
-		private void dgvPagoPlanillas_CellClick(object sender, DataGridViewCellEventArgs e)
+		private void btnEditar_Click_1(object sender, EventArgs e)
 		{
-			
-		{
-			var filaSeleccionada = dgvPagoPlanillas.SelectedRows[0];
-
-			
-			if (filaSeleccionada.Index == dgvPagoPlanillas.RowCount - 1)
+			if (string.IsNullOrWhiteSpace(cbox_codigoempleado.Text) ||
+		string.IsNullOrWhiteSpace(lbl_salario.Text) ||
+		string.IsNullOrWhiteSpace(lbl_bono.Text) ||
+		string.IsNullOrWhiteSpace(lbl_montototal.Text))
 			{
-				MessageBox.Show("Seleccione una fila con datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("Complete todos los datos antes de editar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				return;
 			}
-			else
+
+			try
 			{
-				
-				txt_codigo_pago_planilla.Text = dgvPagoPlanillas.SelectedCells[0].Value.ToString();
+				int codigo_pago_planilla = int.Parse(txt_codigo_pago_planilla.Text);
+				int codigoEmpleado = int.Parse(cbox_codigoempleado.Text.Split('-')[0].Trim());
+				DateTime fechaPago = DtpFechaPago.Value;
+				decimal salario = decimal.Parse(lbl_salario.Text);
+				decimal bono = decimal.Parse(lbl_bono.Text);
+				int horasExtras = int.Parse(txtHorasExtras.Text);
+				decimal montoTotal = decimal.Parse(lbl_montototal.Text);
+				string estado = cbox_estado.Text;
+				string usuario_sistema = Mis_Variables.UsuarioLogueado;
+				DateTime fechaSistema = logicaPlanillas.MtdFechaHoy();
 
-				int CodigoEmpleado = (int)dgvPagoPlanillas.SelectedCells[1].Value;
-				cbox_codigoempleado.Text = datosPlanillas.MtdListaEmpleadosDgv(CodigoEmpleado);
+				datosPlanillas.MtdEditarPagoPlanillas(codigo_pago_planilla, codigoEmpleado, fechaPago, salario, bono, horasExtras, montoTotal, estado, usuario_sistema, fechaSistema);
 
-
-				
-				DtpFechaPago.Text = dgvPagoPlanillas.SelectedCells[2].Value.ToString();       
-				lbl_salario.Text = dgvPagoPlanillas.SelectedCells[3].Value.ToString();        
-				lbl_bono.Text = dgvPagoPlanillas.SelectedCells[4].Value.ToString();           
-				txtHorasExtras.Text = dgvPagoPlanillas.SelectedCells[5].Value.ToString();     
-				lbl_montototal.Text = dgvPagoPlanillas.SelectedCells[6].Value.ToString();     
-				cbox_estado.Text = dgvPagoPlanillas.SelectedCells[7].Value.ToString();        
-				
+				MessageBox.Show("Pago actualizado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+				MtdLimpiarCampos();
+				MtdConsultarPagoPlanillas();
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Ocurrió un error al actualizar el pago: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
 
+		private void btnEliminar_Click(object sender, EventArgs e)
+		{
+			if (string.IsNullOrWhiteSpace(txt_codigo_pago_planilla.Text))
+			{
+				MessageBox.Show("Seleccione el código de la planilla que desea eliminar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				return;
+			}
+
+			try
+			{
+				int codigo_pago_planilla = int.Parse(txt_codigo_pago_planilla.Text);
+
+				
+				DialogResult resultado = MessageBox.Show("¿Está seguro que desea eliminar este pago?", "Confirmar eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+				if (resultado == DialogResult.Yes)
+				{
+					datosPlanillas.MtdEliminarPagoPlanilla(codigo_pago_planilla);
+
+					MessageBox.Show("Pago eliminado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+					MtdLimpiarCampos();
+					MtdConsultarPagoPlanillas();
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Ocurrió un error al eliminar el pago: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+		}
 	}
-}
-}
+	}
+	
+
+
+
 
 
 

@@ -16,9 +16,10 @@ namespace capa_datos
         //inicializa la cadena de conexión
         public Conexion()
         {
-            Conexiondatabase = "Server=tcp:sources.database.windows.net,1433;Initial Catalog=Proyecto_Restaurante;Persist Security Info=False;User ID=Administrador;Password=Sources01081997;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-        }
-        protected SqlConnection GetConnection()
+			
+	    Conexiondatabase = "Server=tcp:sources.database.windows.net,1433;Initial Catalog=Proyecto_Restaurante;Persist Security Info=False;User ID=Administrador;Password=Sources01081997;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
+		}
+		protected SqlConnection GetConnection()
         {
             return new SqlConnection(Conexiondatabase);
         }
