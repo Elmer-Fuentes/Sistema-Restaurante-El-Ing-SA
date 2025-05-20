@@ -44,7 +44,7 @@ namespace Presentaciòn
         {
             this.ControlBox = false; // Oculta los botones de la barra de título
             this.FormBorderStyle = FormBorderStyle.None; // Quita los bordes
-            btnCancelar.FlatStyle = FlatStyle.Flat;
+            btnCancelar.FlatStyle = FlatStyle.Flat; //quita los bordes a los botones
             btnCancelar.FlatAppearance.BorderSize = 0;
             btnEditar.FlatStyle = FlatStyle.Flat;
             btnEditar.FlatAppearance.BorderSize = 0;
