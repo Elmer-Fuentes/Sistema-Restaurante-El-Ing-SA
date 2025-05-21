@@ -268,6 +268,7 @@
             this.btn_det_ordenen.TabIndex = 10;
             this.btn_det_ordenen.Text = "Detalles de Órdenes\n";
             this.btn_det_ordenen.UseVisualStyleBackColor = false;
+            this.btn_det_ordenen.Click += new System.EventHandler(this.btn_det_ordenen_Click);
             // 
             // btn_enca_orden
             // 

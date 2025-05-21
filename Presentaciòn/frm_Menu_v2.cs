@@ -215,11 +215,17 @@ namespace Presentaciòn
             openChildForm(new frm_Reporte_Pago_Planilla());
         }
 
-        #endregion = "Instancia de form hijos";
 
         private void dashboardEmpleadosUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             openChildForm(new Dashboard_Empleados_Usuarios());
         }
+
+        private void btn_det_ordenen_Click(object sender, EventArgs e)
+        {
+            openChildForm (new frm_detalle_ordenes());
+        }
+        #endregion;
+
     }
 }

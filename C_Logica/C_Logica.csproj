@@ -79,6 +79,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cl_Detalle_Ordenes.cs" />
     <Compile Include="cl_empleados.cs" />
     <Compile Include="Cl_Menu.cs" />
     <Compile Include="cl_MtdFechas.cs" />
