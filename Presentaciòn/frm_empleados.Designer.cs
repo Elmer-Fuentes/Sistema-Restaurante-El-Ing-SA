@@ -36,6 +36,7 @@
 			this.txt_codigo_empleado = new System.Windows.Forms.TextBox();
 			this.dgvEmpleados = new System.Windows.Forms.DataGridView();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.DtpFechaContratacion = new System.Windows.Forms.DateTimePicker();
 			this.cboxcargo = new System.Windows.Forms.ComboBox();
 			this.btnCancelar = new FontAwesome.Sharp.IconButton();
 			this.btnEditar = new FontAwesome.Sharp.IconButton();
@@ -53,7 +54,6 @@
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.label11 = new System.Windows.Forms.Label();
-			this.DtpFechaPago = new System.Windows.Forms.DateTimePicker();
 			((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
 			this.groupBox1.SuspendLayout();
 			this.panel2.SuspendLayout();
@@ -138,7 +138,7 @@
 			// groupBox1
 			// 
 			this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-			this.groupBox1.Controls.Add(this.DtpFechaPago);
+			this.groupBox1.Controls.Add(this.DtpFechaContratacion);
 			this.groupBox1.Controls.Add(this.cboxcargo);
 			this.groupBox1.Controls.Add(this.lbl_salario);
 			this.groupBox1.Controls.Add(this.cbox_estado);
@@ -163,6 +163,16 @@
 			this.groupBox1.TabIndex = 62;
 			this.groupBox1.TabStop = false;
 			// 
+			// DtpFechaContratacion
+			// 
+			this.DtpFechaContratacion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.DtpFechaContratacion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+			this.DtpFechaContratacion.Location = new System.Drawing.Point(616, 52);
+			this.DtpFechaContratacion.Margin = new System.Windows.Forms.Padding(2);
+			this.DtpFechaContratacion.Name = "DtpFechaContratacion";
+			this.DtpFechaContratacion.Size = new System.Drawing.Size(165, 21);
+			this.DtpFechaContratacion.TabIndex = 63;
+			// 
 			// cboxcargo
 			// 
 			this.cboxcargo.FormattingEnabled = true;
@@ -176,6 +186,7 @@
 			this.cboxcargo.Name = "cboxcargo";
 			this.cboxcargo.Size = new System.Drawing.Size(164, 21);
 			this.cboxcargo.TabIndex = 62;
+			this.cboxcargo.SelectedIndexChanged += new System.EventHandler(this.cboxcargo_SelectedIndexChanged);
 			// 
 			// btnCancelar
 			// 
@@ -191,6 +202,7 @@
 			this.btnCancelar.Text = "Cancelar";
 			this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnCancelar.UseVisualStyleBackColor = true;
+			this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
 			// 
 			// btnEditar
 			// 
@@ -221,6 +233,7 @@
 			this.btnGuardar.Text = "Guardar";
 			this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnGuardar.UseVisualStyleBackColor = true;
+			this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
 			// 
 			// label7
 			// 
@@ -339,6 +352,7 @@
 			this.btnSalir.Text = "Salir";
 			this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnSalir.UseVisualStyleBackColor = true;
+			this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
 			// 
 			// tabControl1
 			// 
@@ -367,16 +381,6 @@
 			this.label11.Size = new System.Drawing.Size(131, 26);
 			this.label11.TabIndex = 64;
 			this.label11.Text = "Empleados";
-			// 
-			// DtpFechaPago
-			// 
-			this.DtpFechaPago.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.DtpFechaPago.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.DtpFechaPago.Location = new System.Drawing.Point(616, 52);
-			this.DtpFechaPago.Margin = new System.Windows.Forms.Padding(2);
-			this.DtpFechaPago.Name = "DtpFechaPago";
-			this.DtpFechaPago.Size = new System.Drawing.Size(165, 21);
-			this.DtpFechaPago.TabIndex = 63;
 			// 
 			// frm_empleados
 			// 
@@ -432,6 +436,6 @@
 		private System.Windows.Forms.TabControl tabControl1;
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Label label11;
-		private System.Windows.Forms.DateTimePicker DtpFechaPago;
+		private System.Windows.Forms.DateTimePicker DtpFechaContratacion;
 	}
 }

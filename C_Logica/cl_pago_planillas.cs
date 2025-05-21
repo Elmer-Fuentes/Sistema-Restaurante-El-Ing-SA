@@ -45,11 +45,6 @@ namespace C_Logica
 		}
 
 
-
-
-
-
-
 		public decimal MtdSalarioBono(string codigo_empleado)
 		{
 			

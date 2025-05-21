@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using capa_datos;
+using Entidades;
 
 
 namespace Presentaciòn
@@ -29,6 +30,7 @@ namespace Presentaciòn
 		{
 			style();
 			MtdConsultarEmpleados();
+			lblFecha.Text = logicaEmpleados.MtdFechaHoy().ToString();
 		}
 		public void MtdConsultarEmpleados()
 		{
@@ -44,5 +46,67 @@ namespace Presentaciòn
 			this.FormBorderStyle = FormBorderStyle.None; // Quita los bordes
 		}
 
+		private void cboxcargo_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			lbl_salario.Text = logicaEmpleados.MtdSalarioEmpleado(cboxcargo.Text).ToString();
+		}
+		public void MtdLimpiarCampos()
+		{
+			txt_codigo_empleado.Text = "";
+			txt_Nombre.Text = "";
+			cboxcargo.Text = "";
+			lbl_salario.Text = "";
+			DtpFechaContratacion.Value = DateTime.Now;
+			cbox_estado.Text = "";
+		}
+
+		private void btnSalir_Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
+
+		private void btnCancelar_Click(object sender, EventArgs e)
+		{
+			MtdLimpiarCampos();	
+		}
+
+		private void btnGuardar_Click(object sender, EventArgs e)
+		{
+			if (string.IsNullOrEmpty(txt_Nombre.Text) ||string.IsNullOrEmpty(cboxcargo.Text) ||string.IsNullOrEmpty(lbl_salario.Text) ||string.IsNullOrEmpty(cbox_estado.Text))
+			{
+				MessageBox.Show("Favor completar todos los campos del formulario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			else
+			{
+				try
+				{
+					
+				
+					string nombre = txt_Nombre.Text;
+					string cargo = cboxcargo.Text;
+					decimal salario = decimal.Parse(lbl_salario.Text);
+					DateTime fechaContratacion = DtpFechaContratacion.Value;
+					string estado = cbox_estado.Text;
+					DateTime fecha_sistema = logicaEmpleados.MtdFechaHoy();
+					string usuario_sistema = Mis_Variables.UsuarioLogueado;
+
+
+					datosEmpleados.MtdInsEmpleado(nombre, cargo, salario, fechaContratacion, estado, usuario_sistema, fecha_sistema);
+
+
+
+					MessageBox.Show("Empleado agregado correctamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+					
+					MtdConsultarEmpleados();
+					MtdLimpiarCampos();
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show("Error al guardar: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
+			}
+		}
 	}
-}
+	}
+
