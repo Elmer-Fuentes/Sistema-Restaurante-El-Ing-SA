@@ -107,6 +107,90 @@ namespace Presentaciòn
 				}
 			}
 		}
+
+		private void dgvEmpleados_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+				var FilaSeleccionada = dgvEmpleados.SelectedRows[0];
+
+				
+				if (FilaSeleccionada.Index == dgvEmpleados.Rows.Count - 1)
+				{
+					MessageBox.Show("Seleccione una fila con datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
+				else
+				{
+					txt_codigo_empleado.Text = dgvEmpleados.SelectedCells[0].Value.ToString();
+					txt_Nombre.Text = dgvEmpleados.SelectedCells[1].Value.ToString();
+					cboxcargo.Text = dgvEmpleados.SelectedCells[2].Value.ToString();
+					lbl_salario.Text = dgvEmpleados.SelectedCells[3].Value.ToString();
+					DtpFechaContratacion.Text = dgvEmpleados.SelectedCells[4].Value.ToString();
+					cbox_estado.Text = dgvEmpleados.SelectedCells[5].Value.ToString();
+				}
+			
+			}
+		
+
+		private void btnEditar_Click(object sender, EventArgs e)
+
+		{
+			if (string.IsNullOrEmpty(txt_codigo_empleado.Text) || string.IsNullOrEmpty(txt_Nombre.Text) || string.IsNullOrEmpty(cboxcargo.Text) || string.IsNullOrEmpty(lbl_salario.Text) || string.IsNullOrEmpty(cbox_estado.Text))
+			{
+				MessageBox.Show("Favor completar todos los campos del formulario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			else
+			{
+				try
+				{
+					int codigoEmpleado = int.Parse(txt_codigo_empleado.Text);
+					string nombre = txt_Nombre.Text;
+					string cargo = cboxcargo.Text;
+					decimal salario = decimal.Parse(lbl_salario.Text);
+					DateTime fechaContratacion = DtpFechaContratacion.Value;
+					string estado = cbox_estado.Text;
+					DateTime fecha_sistema = logicaEmpleados.MtdFechaHoy();
+					string usuario_sistema = Mis_Variables.UsuarioLogueado;
+
+					datosEmpleados.MtdEditarEmpleado(codigoEmpleado, nombre, cargo, salario, fechaContratacion, estado, usuario_sistema, fecha_sistema);
+
+					MessageBox.Show("Empleado editado correctamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+					MtdConsultarEmpleados();
+					MtdLimpiarCampos();
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show("Error al editar: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
+			}
+		}
+
+		private void btnEliminar_Click(object sender, EventArgs e)
+		{
+			if (string.IsNullOrEmpty(txt_codigo_empleado.Text))
+			{
+				MessageBox.Show("Seleccione un empleado para eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			else
+			{
+				try
+				{
+					int codigoEmpleado = int.Parse(txt_codigo_empleado.Text);
+
+					datosEmpleados.MtdEliminarEmpleado(codigoEmpleado);
+
+					MessageBox.Show("Empleado eliminado correctamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+					MtdConsultarEmpleados();
+					MtdLimpiarCampos();
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show("Error al eliminar: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
+			}
+		}
 	}
-	}
+}
+
+
 

@@ -134,6 +134,7 @@
 			this.dgvEmpleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
 			this.dgvEmpleados.Size = new System.Drawing.Size(1004, 202);
 			this.dgvEmpleados.TabIndex = 63;
+			this.dgvEmpleados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellClick);
 			// 
 			// groupBox1
 			// 
@@ -218,6 +219,7 @@
 			this.btnEditar.Text = "Editar";
 			this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnEditar.UseVisualStyleBackColor = true;
+			this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
 			// 
 			// btnGuardar
 			// 
@@ -337,6 +339,7 @@
 			this.btnEliminar.Text = "Eliminar";
 			this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnEliminar.UseVisualStyleBackColor = true;
+			this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
 			// 
 			// btnSalir
 			// 
