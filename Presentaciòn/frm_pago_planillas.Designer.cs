@@ -28,7 +28,6 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.txtHorasExtras = new System.Windows.Forms.TextBox();
 			this.DtpFechaPago = new System.Windows.Forms.DateTimePicker();
@@ -60,14 +59,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.dgvPagoPlanillas)).BeginInit();
 			this.panel2.SuspendLayout();
 			this.SuspendLayout();
-			// 
-			// tabControl1
-			// 
-			this.tabControl1.Location = new System.Drawing.Point(-5, -2);
-			this.tabControl1.Name = "tabControl1";
-			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(1041, 555);
-			this.tabControl1.TabIndex = 0;
 			// 
 			// groupBox1
 			// 
@@ -414,6 +405,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackColor = System.Drawing.SystemColors.ControlLightLight;
 			this.ClientSize = new System.Drawing.Size(1034, 549);
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.btnSalir);
@@ -422,7 +414,6 @@
 			this.Controls.Add(this.panel2);
 			this.Controls.Add(this.lblFecha);
 			this.Controls.Add(this.label8);
-			this.Controls.Add(this.tabControl1);
 			this.Name = "frm_pago_planillas";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "frm_pago_planillas";
@@ -438,8 +429,6 @@
 		}
 
 		#endregion
-
-		private System.Windows.Forms.TabControl tabControl1;
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.DateTimePicker DtpFechaPago;
 		private System.Windows.Forms.ComboBox cbox_codigoempleado;

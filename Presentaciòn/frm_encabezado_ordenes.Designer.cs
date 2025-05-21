@@ -53,7 +53,6 @@
 			this.btnSalir = new FontAwesome.Sharp.IconButton();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.label11 = new System.Windows.Forms.Label();
-			this.tabControl1 = new System.Windows.Forms.TabControl();
 			((System.ComponentModel.ISupportInitialize)(this.dgvEncabezadoOrdenes)).BeginInit();
 			this.groupBox1.SuspendLayout();
 			this.panel2.SuspendLayout();
@@ -367,18 +366,11 @@
 			this.label11.TabIndex = 64;
 			this.label11.Text = "Encabezado Ordenes";
 			// 
-			// tabControl1
-			// 
-			this.tabControl1.Location = new System.Drawing.Point(-3, -3);
-			this.tabControl1.Name = "tabControl1";
-			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(1041, 555);
-			this.tabControl1.TabIndex = 87;
-			// 
 			// frm_encabezado_ordenes
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackColor = System.Drawing.SystemColors.ControlLightLight;
 			this.ClientSize = new System.Drawing.Size(1034, 549);
 			this.Controls.Add(this.panel2);
 			this.Controls.Add(this.btnEliminar);
@@ -387,7 +379,6 @@
 			this.Controls.Add(this.btnSalir);
 			this.Controls.Add(this.lblFecha);
 			this.Controls.Add(this.label8);
-			this.Controls.Add(this.tabControl1);
 			this.Name = "frm_encabezado_ordenes";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "frm_encabezado_ordenes";
@@ -425,7 +416,6 @@
 		private System.Windows.Forms.DateTimePicker DtpFechaPago;
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Label label11;
-		private System.Windows.Forms.TabControl tabControl1;
 		private System.Windows.Forms.ComboBox cbox_CodigoEmpleado;
 		private System.Windows.Forms.ComboBox cbox_CodigoMesa;
 		private System.Windows.Forms.ComboBox cbox_CodigoCliente;

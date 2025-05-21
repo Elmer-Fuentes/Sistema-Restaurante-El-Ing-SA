@@ -51,7 +51,6 @@
 			this.label8 = new System.Windows.Forms.Label();
 			this.btnEliminar = new FontAwesome.Sharp.IconButton();
 			this.btnSalir = new FontAwesome.Sharp.IconButton();
-			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.label11 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
@@ -357,14 +356,6 @@
 			this.btnSalir.UseVisualStyleBackColor = true;
 			this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
 			// 
-			// tabControl1
-			// 
-			this.tabControl1.Location = new System.Drawing.Point(-3, 2);
-			this.tabControl1.Name = "tabControl1";
-			this.tabControl1.SelectedIndex = 0;
-			this.tabControl1.Size = new System.Drawing.Size(1041, 550);
-			this.tabControl1.TabIndex = 66;
-			// 
 			// panel2
 			// 
 			this.panel2.BackColor = System.Drawing.Color.DarkOrange;
@@ -389,6 +380,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+			this.BackColor = System.Drawing.SystemColors.ControlLightLight;
 			this.ClientSize = new System.Drawing.Size(1034, 549);
 			this.Controls.Add(this.panel2);
 			this.Controls.Add(this.btnEliminar);
@@ -397,7 +389,6 @@
 			this.Controls.Add(this.btnSalir);
 			this.Controls.Add(this.lblFecha);
 			this.Controls.Add(this.label8);
-			this.Controls.Add(this.tabControl1);
 			this.Name = "frm_empleados";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "frm_empleados";
@@ -436,7 +427,6 @@
 		private System.Windows.Forms.Label lblFecha;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.ComboBox cboxcargo;
-		private System.Windows.Forms.TabControl tabControl1;
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Label label11;
 		private System.Windows.Forms.DateTimePicker DtpFechaContratacion;
