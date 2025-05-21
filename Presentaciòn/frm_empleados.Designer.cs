@@ -53,9 +53,11 @@
 			this.btnSalir = new FontAwesome.Sharp.IconButton();
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.label11 = new System.Windows.Forms.Label();
+			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
 			this.groupBox1.SuspendLayout();
 			this.panel2.SuspendLayout();
+			this.groupBox2.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// lbl_salario
@@ -124,7 +126,7 @@
 			// 
 			this.dgvEmpleados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dgvEmpleados.Location = new System.Drawing.Point(15, 267);
+			this.dgvEmpleados.Location = new System.Drawing.Point(13, 267);
 			this.dgvEmpleados.Margin = new System.Windows.Forms.Padding(2);
 			this.dgvEmpleados.Name = "dgvEmpleados";
 			this.dgvEmpleados.ReadOnly = true;
@@ -155,7 +157,7 @@
 			this.groupBox1.Controls.Add(this.label4);
 			this.groupBox1.Controls.Add(this.label3);
 			this.groupBox1.Controls.Add(this.label2);
-			this.groupBox1.Location = new System.Drawing.Point(19, 96);
+			this.groupBox1.Location = new System.Drawing.Point(17, 96);
 			this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
@@ -305,7 +307,7 @@
 			this.lblFecha.AutoSize = true;
 			this.lblFecha.BackColor = System.Drawing.SystemColors.ControlLightLight;
 			this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.lblFecha.Location = new System.Drawing.Point(730, 77);
+			this.lblFecha.Location = new System.Drawing.Point(728, 77);
 			this.lblFecha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.lblFecha.Name = "lblFecha";
 			this.lblFecha.Size = new System.Drawing.Size(100, 17);
@@ -317,7 +319,7 @@
 			this.label8.AutoSize = true;
 			this.label8.BackColor = System.Drawing.SystemColors.ControlLightLight;
 			this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label8.Location = new System.Drawing.Point(633, 77);
+			this.label8.Location = new System.Drawing.Point(631, 77);
 			this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.label8.Name = "label8";
 			this.label8.Size = new System.Drawing.Size(93, 17);
@@ -330,7 +332,7 @@
 			this.btnEliminar.IconColor = System.Drawing.Color.Black;
 			this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
 			this.btnEliminar.IconSize = 25;
-			this.btnEliminar.Location = new System.Drawing.Point(653, 494);
+			this.btnEliminar.Location = new System.Drawing.Point(651, 494);
 			this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
 			this.btnEliminar.Name = "btnEliminar";
 			this.btnEliminar.Size = new System.Drawing.Size(129, 31);
@@ -346,7 +348,7 @@
 			this.btnSalir.IconColor = System.Drawing.Color.Black;
 			this.btnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
 			this.btnSalir.IconSize = 25;
-			this.btnSalir.Location = new System.Drawing.Point(810, 494);
+			this.btnSalir.Location = new System.Drawing.Point(808, 494);
 			this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
 			this.btnSalir.Name = "btnSalir";
 			this.btnSalir.Size = new System.Drawing.Size(129, 31);
@@ -362,19 +364,34 @@
 			this.panel2.Controls.Add(this.label11);
 			this.panel2.Location = new System.Drawing.Point(-3, 2);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(1041, 62);
+			this.panel2.Size = new System.Drawing.Size(1038, 62);
 			this.panel2.TabIndex = 85;
 			// 
 			// label11
 			// 
 			this.label11.AutoSize = true;
 			this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label11.Location = new System.Drawing.Point(491, 18);
+			this.label11.Location = new System.Drawing.Point(454, 16);
 			this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.label11.Name = "label11";
 			this.label11.Size = new System.Drawing.Size(131, 26);
 			this.label11.TabIndex = 64;
 			this.label11.Text = "Empleados";
+			// 
+			// groupBox2
+			// 
+			this.groupBox2.Controls.Add(this.btnEliminar);
+			this.groupBox2.Controls.Add(this.dgvEmpleados);
+			this.groupBox2.Controls.Add(this.groupBox1);
+			this.groupBox2.Controls.Add(this.btnSalir);
+			this.groupBox2.Controls.Add(this.lblFecha);
+			this.groupBox2.Controls.Add(this.label8);
+			this.groupBox2.Location = new System.Drawing.Point(0, 2);
+			this.groupBox2.Name = "groupBox2";
+			this.groupBox2.Size = new System.Drawing.Size(1035, 548);
+			this.groupBox2.TabIndex = 86;
+			this.groupBox2.TabStop = false;
+			this.groupBox2.Text = "groupBox2";
 			// 
 			// frm_empleados
 			// 
@@ -383,12 +400,7 @@
 			this.BackColor = System.Drawing.SystemColors.ControlLightLight;
 			this.ClientSize = new System.Drawing.Size(1034, 549);
 			this.Controls.Add(this.panel2);
-			this.Controls.Add(this.btnEliminar);
-			this.Controls.Add(this.dgvEmpleados);
-			this.Controls.Add(this.groupBox1);
-			this.Controls.Add(this.btnSalir);
-			this.Controls.Add(this.lblFecha);
-			this.Controls.Add(this.label8);
+			this.Controls.Add(this.groupBox2);
 			this.Name = "frm_empleados";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "frm_empleados";
@@ -398,8 +410,9 @@
 			this.groupBox1.PerformLayout();
 			this.panel2.ResumeLayout(false);
 			this.panel2.PerformLayout();
+			this.groupBox2.ResumeLayout(false);
+			this.groupBox2.PerformLayout();
 			this.ResumeLayout(false);
-			this.PerformLayout();
 
 		}
 
@@ -430,5 +443,6 @@
 		private System.Windows.Forms.Panel panel2;
 		private System.Windows.Forms.Label label11;
 		private System.Windows.Forms.DateTimePicker DtpFechaContratacion;
+		private System.Windows.Forms.GroupBox groupBox2;
 	}
 }
