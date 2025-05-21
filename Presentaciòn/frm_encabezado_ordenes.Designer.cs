@@ -41,6 +41,7 @@
 			this.btnCancelar = new FontAwesome.Sharp.IconButton();
 			this.btnEditar = new FontAwesome.Sharp.IconButton();
 			this.btnGuardar = new FontAwesome.Sharp.IconButton();
+			this.txt_codigoorden = new System.Windows.Forms.TextBox();
 			this.label6 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
@@ -53,7 +54,6 @@
 			this.panel2 = new System.Windows.Forms.Panel();
 			this.label11 = new System.Windows.Forms.Label();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
-			this.txt_codigoorden = new System.Windows.Forms.TextBox();
 			((System.ComponentModel.ISupportInitialize)(this.dgvEncabezadoOrdenes)).BeginInit();
 			this.groupBox1.SuspendLayout();
 			this.panel2.SuspendLayout();
@@ -108,7 +108,7 @@
 			// 
 			// dgvEncabezadoOrdenes
 			// 
-			this.dgvEncabezadoOrdenes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+			this.dgvEncabezadoOrdenes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dgvEncabezadoOrdenes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvEncabezadoOrdenes.Location = new System.Drawing.Point(15, 263);
 			this.dgvEncabezadoOrdenes.Margin = new System.Windows.Forms.Padding(2);
@@ -228,6 +228,15 @@
 			this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
 			this.btnGuardar.UseVisualStyleBackColor = true;
 			// 
+			// txt_codigoorden
+			// 
+			this.txt_codigoorden.Enabled = false;
+			this.txt_codigoorden.Location = new System.Drawing.Point(240, 16);
+			this.txt_codigoorden.Name = "txt_codigoorden";
+			this.txt_codigoorden.ReadOnly = true;
+			this.txt_codigoorden.Size = new System.Drawing.Size(165, 20);
+			this.txt_codigoorden.TabIndex = 14;
+			// 
 			// label6
 			// 
 			this.label6.AutoSize = true;
@@ -344,7 +353,7 @@
 			this.panel2.Controls.Add(this.label11);
 			this.panel2.Location = new System.Drawing.Point(-5, -2);
 			this.panel2.Name = "panel2";
-			this.panel2.Size = new System.Drawing.Size(1058, 62);
+			this.panel2.Size = new System.Drawing.Size(1043, 62);
 			this.panel2.TabIndex = 86;
 			// 
 			// label11
@@ -365,15 +374,6 @@
 			this.tabControl1.SelectedIndex = 0;
 			this.tabControl1.Size = new System.Drawing.Size(1041, 555);
 			this.tabControl1.TabIndex = 87;
-			// 
-			// txt_codigoorden
-			// 
-			this.txt_codigoorden.Enabled = false;
-			this.txt_codigoorden.Location = new System.Drawing.Point(240, 16);
-			this.txt_codigoorden.Name = "txt_codigoorden";
-			this.txt_codigoorden.ReadOnly = true;
-			this.txt_codigoorden.Size = new System.Drawing.Size(165, 20);
-			this.txt_codigoorden.TabIndex = 14;
 			// 
 			// frm_encabezado_ordenes
 			// 
