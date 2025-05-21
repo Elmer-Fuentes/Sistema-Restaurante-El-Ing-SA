@@ -82,6 +82,7 @@
     <Compile Include="cd_clientes.cs" />
     <Compile Include="cd_detalle_ordenes.cs" />
     <Compile Include="cd_Empleados.cs" />
+    <Compile Include="cd_encabezado_ordenes.cs" />
     <Compile Include="Cd_Inventario.cs" />
     <Compile Include="cd_Login.cs" />
     <Compile Include="cd_Menus.cs" />
