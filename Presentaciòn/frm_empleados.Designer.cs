@@ -123,7 +123,7 @@
 			// 
 			// dgvEmpleados
 			// 
-			this.dgvEmpleados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+			this.dgvEmpleados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvEmpleados.Location = new System.Drawing.Point(15, 267);
 			this.dgvEmpleados.Margin = new System.Windows.Forms.Padding(2);

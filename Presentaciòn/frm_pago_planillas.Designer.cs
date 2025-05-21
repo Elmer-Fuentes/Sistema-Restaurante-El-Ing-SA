@@ -353,7 +353,7 @@
 			// 
 			// dgvPagoPlanillas
 			// 
-			this.dgvPagoPlanillas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+			this.dgvPagoPlanillas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
 			this.dgvPagoPlanillas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvPagoPlanillas.Location = new System.Drawing.Point(15, 269);
 			this.dgvPagoPlanillas.Margin = new System.Windows.Forms.Padding(2);
