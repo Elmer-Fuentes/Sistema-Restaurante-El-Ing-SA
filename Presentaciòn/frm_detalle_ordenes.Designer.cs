@@ -84,7 +84,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1161, 566);
+            this.tabPage2.Size = new System.Drawing.Size(1124, 505);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             // 
@@ -185,7 +185,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1038, 585);
+            this.tabPage3.Size = new System.Drawing.Size(1121, 606);
             this.tabPage3.TabIndex = 1;
             this.tabPage3.Text = "Buscar";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -263,6 +263,7 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnEditar
             // 
@@ -280,6 +281,7 @@
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // tabPage4
             // 
@@ -326,7 +328,7 @@
             this.btnEliminar_usuario.IconColor = System.Drawing.Color.Black;
             this.btnEliminar_usuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEliminar_usuario.IconSize = 25;
-            this.btnEliminar_usuario.Location = new System.Drawing.Point(738, 545);
+            this.btnEliminar_usuario.Location = new System.Drawing.Point(741, 486);
             this.btnEliminar_usuario.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar_usuario.Name = "btnEliminar_usuario";
             this.btnEliminar_usuario.Size = new System.Drawing.Size(129, 31);
@@ -334,6 +336,7 @@
             this.btnEliminar_usuario.Text = "Eliminar";
             this.btnEliminar_usuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEliminar_usuario.UseVisualStyleBackColor = true;
+            this.btnEliminar_usuario.Click += new System.EventHandler(this.btnEliminar_usuario_Click);
             // 
             // label1
             // 
@@ -352,15 +355,16 @@
             this.dgvdetalleOrdenes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvdetalleOrdenes.BackgroundColor = System.Drawing.SystemColors.HighlightText;
             this.dgvdetalleOrdenes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvdetalleOrdenes.Location = new System.Drawing.Point(31, 284);
+            this.dgvdetalleOrdenes.Location = new System.Drawing.Point(31, 264);
             this.dgvdetalleOrdenes.Margin = new System.Windows.Forms.Padding(2);
             this.dgvdetalleOrdenes.Name = "dgvdetalleOrdenes";
             this.dgvdetalleOrdenes.ReadOnly = true;
             this.dgvdetalleOrdenes.RowHeadersWidth = 51;
             this.dgvdetalleOrdenes.RowTemplate.Height = 24;
             this.dgvdetalleOrdenes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvdetalleOrdenes.Size = new System.Drawing.Size(1083, 241);
+            this.dgvdetalleOrdenes.Size = new System.Drawing.Size(1083, 208);
             this.dgvdetalleOrdenes.TabIndex = 66;
+            this.dgvdetalleOrdenes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvdetalleOrdenes_CellClick);
             // 
             // btnSalir_frm_usuarios
             // 
@@ -369,7 +373,7 @@
             this.btnSalir_frm_usuarios.IconColor = System.Drawing.Color.Black;
             this.btnSalir_frm_usuarios.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSalir_frm_usuarios.IconSize = 25;
-            this.btnSalir_frm_usuarios.Location = new System.Drawing.Point(895, 545);
+            this.btnSalir_frm_usuarios.Location = new System.Drawing.Point(898, 486);
             this.btnSalir_frm_usuarios.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalir_frm_usuarios.Name = "btnSalir_frm_usuarios";
             this.btnSalir_frm_usuarios.Size = new System.Drawing.Size(129, 31);
@@ -383,7 +387,7 @@
             // 
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.Location = new System.Drawing.Point(882, 115);
+            this.lblFecha.Location = new System.Drawing.Point(882, 109);
             this.lblFecha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(100, 17);
@@ -394,7 +398,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(785, 115);
+            this.label9.Location = new System.Drawing.Point(785, 109);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(93, 17);
@@ -422,7 +426,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox1.Location = new System.Drawing.Point(27, 136);
+            this.groupBox1.Location = new System.Drawing.Point(27, 130);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
@@ -446,6 +450,7 @@
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // txt_cantidad
             // 
@@ -553,7 +558,7 @@
             this.tabControl_detall_ordenes.Location = new System.Drawing.Point(0, 0);
             this.tabControl_detall_ordenes.Name = "tabControl_detall_ordenes";
             this.tabControl_detall_ordenes.SelectedIndex = 0;
-            this.tabControl_detall_ordenes.Size = new System.Drawing.Size(1132, 592);
+            this.tabControl_detall_ordenes.Size = new System.Drawing.Size(1132, 523);
             this.tabControl_detall_ordenes.TabIndex = 1;
             // 
             // tabPage1
@@ -563,7 +568,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1124, 566);
+            this.tabPage1.Size = new System.Drawing.Size(1124, 497);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "tabPage1";
             // 
@@ -584,7 +589,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.ClientSize = new System.Drawing.Size(1132, 592);
+            this.ClientSize = new System.Drawing.Size(1132, 523);
             this.Controls.Add(this.tabControl_detall_ordenes);
             this.Name = "frm_detalle_ordenes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

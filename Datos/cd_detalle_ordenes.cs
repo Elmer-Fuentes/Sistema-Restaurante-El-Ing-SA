@@ -113,5 +113,70 @@ namespace C_Logica
             return res;
         }
         #endregion
+
+        #region = "Agregar data a tbl_detalles_ordenes";
+        public void MtdIns_detall_ordenes(int codigo_orden_enc, int codigo_menu, int cantidad, double precio_unitario, double precio_total, string usuario_sistema, DateTime fecha_sistema)
+        {
+            string query = "insert into tbl_detalles_ordenes(codigo_orden_enc,codigo_menu,cantidad,precio_unitario,precio_total,usuario_sistema,fecha_sistema) values (@codigo_orden_enc,@codigo_menu,@cantidad,@precio_unitario,@precio_total,@usuario_sistema,@fecha_sistema)";
+            using (SqlConnection connection = GetConnection())
+            {
+                connection.Open();
+                using (SqlCommand ins_Usuario = new SqlCommand(query, connection))
+                {
+                    ins_Usuario.Parameters.AddWithValue("@codigo_orden_enc", codigo_orden_enc);
+                    ins_Usuario.Parameters.AddWithValue("@codigo_menu", codigo_menu);
+                    ins_Usuario.Parameters.AddWithValue("@cantidad", cantidad);
+                    ins_Usuario.Parameters.AddWithValue("@precio_unitario", precio_unitario);
+                    ins_Usuario.Parameters.AddWithValue("@precio_total", precio_total);
+                    ins_Usuario.Parameters.AddWithValue("@usuario_sistema", usuario_sistema);
+                    ins_Usuario.Parameters.AddWithValue("@fecha_sistema", fecha_sistema);
+                    ins_Usuario.ExecuteNonQuery();
+                }
+            }
+        }
+        #endregion
+
+        #region = "Update data a tbl_detalles_ordenes";
+        public void Mtd_Update_detall_ordenes(int codigo_orden_det, int codigo_orden_enc, int codigo_menu, int cantidad, double precio_unitario, double precio_total, string usuario_sistema, DateTime fecha_sistema)
+        {
+            string query = "Update tbl_detalles_ordenes set codigo_orden_enc = @codigo_orden_enc,codigo_menu = @codigo_menu,cantidad= @cantidad,precio_unitario= @precio_unitario,precio_total= @precio_total,usuario_sistema= @usuario_sistema,fecha_sistema=@fecha_sistema where codigo_orden_det = @codigo_orden_det";
+            using (SqlConnection connection = GetConnection())
+            {
+                connection.Open();
+                using (SqlCommand update_Usuario = new SqlCommand(query, connection))
+                {
+                    update_Usuario.Parameters.AddWithValue("@codigo_orden_det", codigo_orden_det);
+                    update_Usuario.Parameters.AddWithValue("@codigo_orden_enc", codigo_orden_enc);
+                    update_Usuario.Parameters.AddWithValue("@codigo_menu", codigo_menu);
+                    update_Usuario.Parameters.AddWithValue("@cantidad", cantidad);
+                    update_Usuario.Parameters.AddWithValue("@precio_unitario", precio_unitario);
+                    update_Usuario.Parameters.AddWithValue("@precio_total", precio_total);
+                    update_Usuario.Parameters.AddWithValue("@usuario_sistema", usuario_sistema);
+                    update_Usuario.Parameters.AddWithValue("@fecha_sistema", fecha_sistema);
+                    update_Usuario.ExecuteNonQuery();
+                }
+            }
+        }
+        #endregion
+
+        #region = "Delete data a tbl_detalles_ordenes";
+        public void Mtd_Delete_detall_ordenes(int codigo_orden_det)
+        {
+            string query = "delete tbl_detalles_ordenes where codigo_orden_det = @codigo_orden_det";
+            using (SqlConnection connection = GetConnection())
+            {
+                connection.Open();
+                using (SqlCommand update_Usuario = new SqlCommand(query, connection))
+                {
+                    update_Usuario.Parameters.AddWithValue("@codigo_orden_det", codigo_orden_det);
+                    update_Usuario.ExecuteNonQuery();
+                }
+            }
+        }
+        #endregion
+
+
+
+
     }
 }
