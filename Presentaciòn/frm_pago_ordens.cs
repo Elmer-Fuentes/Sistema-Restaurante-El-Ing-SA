@@ -1,4 +1,6 @@
-﻿using Datos;
+﻿using C_Logica;
+using Datos;
+using Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +21,7 @@ namespace Presentaciòn
         }
         #region = "Instancia de las clases";
         Cd_pago_ordenes objPO = new Cd_pago_ordenes();
+        cl_MtdFechas cl_fechas = new cl_MtdFechas();
         #endregion
 
         private void frm_pago_ordens_Load(object sender, EventArgs e)
@@ -57,6 +60,58 @@ namespace Presentaciòn
             dtp_calendario.Text= dgvPagoOrdenes.CurrentRow.Cells[9].Value.ToString();
 
         }
+
         #endregion
+
+        #region = "Limpiar datos";
+        private void LimpiarDatos()
+        {
+            txt_codigo_pago_orden.Text = "";
+            cbx_Orden_encabezados.Text = "";
+            cbx_monto_orden.Text = "";
+            txt_propina.Text = "";
+            txt_impuesto.Text = "";
+            txt_descuento.Text = "";
+            txt_total.Text = "";
+            cbx_mtd_pago.Text = "";
+            cbx_estado.Text = "";
+            dtp_calendario.Text = "";
+
+        }
+        #endregion
+
+        #region="btn guardar - insertar ";
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+
+            int codigo_Orden_encabezado = int.Parse(cbx_Orden_encabezados.Text);
+            double monto_orden = Convert.ToInt32(cbx_monto_orden.Text);
+            double propina = int.Parse(txt_propina.Text);
+            double impuesto= double.Parse(txt_propina.Text);
+            double descuento = double.Parse(txt_descuento.Text);
+            double pago_total = double.Parse(txt_total.Text);
+            string mtd_pago = cbx_mtd_pago.Text;
+            string estado = cbx_estado.Text;
+            DateTime fechapago = dtp_calendario.Value;
+            string usuario_sistema = Mis_Variables.UsuarioLogueado;
+            DateTime fecha_sistemanombre = cl_fechas.MtdFecha();
+            try
+            {
+                objPO.MtdInsPagoOrden(codigo_Orden_encabezado,monto_orden,propina,impuesto,descuento,pago_total,mtd_pago,estado, fechapago, usuario_sistema, fecha_sistemanombre);
+                MessageBox.Show("Usuario creado correctamente", "Estado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MostrarDatos();
+                LimpiarDatos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex, "A ocurrido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            #endregion
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            LimpiarDatos();
+        }
     }
 }
