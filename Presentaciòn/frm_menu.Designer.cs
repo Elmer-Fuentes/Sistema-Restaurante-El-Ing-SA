@@ -145,7 +145,7 @@
             this.cbx_estado.Items.AddRange(new object[] {
             "Activo",
             "Inactivo"});
-            this.cbx_estado.Location = new System.Drawing.Point(612, 90);
+            this.cbx_estado.Location = new System.Drawing.Point(693, 92);
             this.cbx_estado.Name = "cbx_estado";
             this.cbx_estado.Size = new System.Drawing.Size(165, 24);
             this.cbx_estado.TabIndex = 6;
@@ -159,7 +159,7 @@
             "Ocasional",
             "Frecuente",
             "Exclusivo"});
-            this.cbx_categoria.Location = new System.Drawing.Point(612, 24);
+            this.cbx_categoria.Location = new System.Drawing.Point(693, 26);
             this.cbx_categoria.Name = "cbx_categoria";
             this.cbx_categoria.Size = new System.Drawing.Size(165, 24);
             this.cbx_categoria.TabIndex = 4;
@@ -179,7 +179,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1099, 585);
+            this.tabPage1.Size = new System.Drawing.Size(1124, 494);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Menu";
             // 
@@ -189,7 +189,7 @@
             this.panel2.Controls.Add(this.label8);
             this.panel2.Location = new System.Drawing.Point(0, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1099, 62);
+            this.panel2.Size = new System.Drawing.Size(1124, 62);
             this.panel2.TabIndex = 69;
             // 
             // label8
@@ -209,7 +209,7 @@
             this.btnEliminar_usuario.IconColor = System.Drawing.Color.Black;
             this.btnEliminar_usuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEliminar_usuario.IconSize = 25;
-            this.btnEliminar_usuario.Location = new System.Drawing.Point(701, 458);
+            this.btnEliminar_usuario.Location = new System.Drawing.Point(801, 456);
             this.btnEliminar_usuario.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar_usuario.Name = "btnEliminar_usuario";
             this.btnEliminar_usuario.Size = new System.Drawing.Size(129, 31);
@@ -239,7 +239,7 @@
             this.dgvMenus.RowHeadersWidth = 51;
             this.dgvMenus.RowTemplate.Height = 24;
             this.dgvMenus.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMenus.Size = new System.Drawing.Size(1025, 208);
+            this.dgvMenus.Size = new System.Drawing.Size(1077, 190);
             this.dgvMenus.TabIndex = 9;
             this.dgvMenus.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMenus_CellClick);
             // 
@@ -249,7 +249,7 @@
             this.btnSalir_frm_usuarios.IconColor = System.Drawing.Color.Black;
             this.btnSalir_frm_usuarios.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSalir_frm_usuarios.IconSize = 25;
-            this.btnSalir_frm_usuarios.Location = new System.Drawing.Point(858, 458);
+            this.btnSalir_frm_usuarios.Location = new System.Drawing.Point(958, 456);
             this.btnSalir_frm_usuarios.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalir_frm_usuarios.Name = "btnSalir_frm_usuarios";
             this.btnSalir_frm_usuarios.Size = new System.Drawing.Size(129, 31);
@@ -263,7 +263,7 @@
             // 
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.Location = new System.Drawing.Point(855, 69);
+            this.lblFecha.Location = new System.Drawing.Point(956, 67);
             this.lblFecha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(100, 17);
@@ -274,7 +274,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(758, 69);
+            this.label9.Location = new System.Drawing.Point(859, 67);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(93, 17);
@@ -302,7 +302,7 @@
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(1039, 152);
+            this.groupBox1.Size = new System.Drawing.Size(1091, 152);
             this.groupBox1.TabIndex = 65;
             this.groupBox1.TabStop = false;
             // 
@@ -312,7 +312,7 @@
             this.btnCancelar.IconColor = System.Drawing.Color.Black;
             this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCancelar.IconSize = 25;
-            this.btnCancelar.Location = new System.Drawing.Point(860, 93);
+            this.btnCancelar.Location = new System.Drawing.Point(941, 95);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(129, 31);
@@ -328,7 +328,7 @@
             this.btnEditar.IconColor = System.Drawing.Color.Black;
             this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEditar.IconSize = 25;
-            this.btnEditar.Location = new System.Drawing.Point(860, 56);
+            this.btnEditar.Location = new System.Drawing.Point(941, 58);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(129, 31);
@@ -344,7 +344,7 @@
             this.btnGuardar.IconColor = System.Drawing.Color.Black;
             this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGuardar.IconSize = 25;
-            this.btnGuardar.Location = new System.Drawing.Point(860, 21);
+            this.btnGuardar.Location = new System.Drawing.Point(941, 23);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(129, 31);
@@ -356,7 +356,7 @@
             // 
             // txt_precio
             // 
-            this.txt_precio.Location = new System.Drawing.Point(612, 57);
+            this.txt_precio.Location = new System.Drawing.Point(693, 59);
             this.txt_precio.Name = "txt_precio";
             this.txt_precio.Size = new System.Drawing.Size(165, 22);
             this.txt_precio.TabIndex = 5;
@@ -388,7 +388,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(494, 90);
+            this.label7.Location = new System.Drawing.Point(575, 92);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(52, 17);
@@ -399,7 +399,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(494, 58);
+            this.label6.Location = new System.Drawing.Point(575, 60);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(48, 17);
@@ -410,7 +410,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(494, 27);
+            this.label5.Location = new System.Drawing.Point(575, 29);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(69, 17);
@@ -454,11 +454,12 @@
             // 
             this.tabControl_Menu.Controls.Add(this.tabPage1);
             this.tabControl_Menu.Controls.Add(this.tabPage2);
+            this.tabControl_Menu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl_Menu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl_Menu.Location = new System.Drawing.Point(1, 1);
+            this.tabControl_Menu.Location = new System.Drawing.Point(0, 0);
             this.tabControl_Menu.Name = "tabControl_Menu";
             this.tabControl_Menu.SelectedIndex = 0;
-            this.tabControl_Menu.Size = new System.Drawing.Size(1107, 614);
+            this.tabControl_Menu.Size = new System.Drawing.Size(1132, 523);
             this.tabControl_Menu.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabControl_Menu.TabIndex = 1;
             // 
@@ -467,7 +468,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1105, 567);
+            this.ClientSize = new System.Drawing.Size(1132, 523);
             this.Controls.Add(this.tabControl_Menu);
             this.Name = "frm_menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
