@@ -34,20 +34,26 @@
             this.label8 = new System.Windows.Forms.Label();
             this.btnEliminar_usuario = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvdetalleOrdenes = new System.Windows.Forms.DataGridView();
+            this.dgvPagoOrdenes = new System.Windows.Forms.DataGridView();
             this.btnSalir_frm_usuarios = new FontAwesome.Sharp.IconButton();
             this.lblFecha = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cbx_precioMenu_unitario = new System.Windows.Forms.ComboBox();
-            this.txt_precio_total = new System.Windows.Forms.TextBox();
-            this.cbx_codigo_menu = new System.Windows.Forms.ComboBox();
+            this.dtp_calendario = new System.Windows.Forms.DateTimePicker();
+            this.label15 = new System.Windows.Forms.Label();
+            this.cbx_estado = new System.Windows.Forms.ComboBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.cbx_mtd_pago = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txt_total = new System.Windows.Forms.TextBox();
+            this.cbx_monto_orden = new System.Windows.Forms.ComboBox();
             this.cbx_Orden_encabezados = new System.Windows.Forms.ComboBox();
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.btnEditar = new FontAwesome.Sharp.IconButton();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
-            this.txt_cantidad = new System.Windows.Forms.TextBox();
-            this.txt_codgo_orden_detalle = new System.Windows.Forms.TextBox();
+            this.txt_impuesto = new System.Windows.Forms.TextBox();
+            this.txt_codigo_pago_orden = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -66,18 +72,12 @@
             this.tabControl_detall_ordenes = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.txt_propina = new System.Windows.Forms.TextBox();
+            this.txt_descuento = new System.Windows.Forms.TextBox();
             this.tabControl_Usuarios.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvdetalleOrdenes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPagoOrdenes)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -104,7 +104,7 @@
             this.tabPage4.Controls.Add(this.panel2);
             this.tabPage4.Controls.Add(this.btnEliminar_usuario);
             this.tabPage4.Controls.Add(this.label1);
-            this.tabPage4.Controls.Add(this.dgvdetalleOrdenes);
+            this.tabPage4.Controls.Add(this.dgvPagoOrdenes);
             this.tabPage4.Controls.Add(this.btnSalir_frm_usuarios);
             this.tabPage4.Controls.Add(this.lblFecha);
             this.tabPage4.Controls.Add(this.label9);
@@ -143,7 +143,7 @@
             this.btnEliminar_usuario.IconColor = System.Drawing.Color.Black;
             this.btnEliminar_usuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEliminar_usuario.IconSize = 25;
-            this.btnEliminar_usuario.Location = new System.Drawing.Point(741, 505);
+            this.btnEliminar_usuario.Location = new System.Drawing.Point(741, 499);
             this.btnEliminar_usuario.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar_usuario.Name = "btnEliminar_usuario";
             this.btnEliminar_usuario.Size = new System.Drawing.Size(129, 31);
@@ -160,24 +160,25 @@
             this.label1.Size = new System.Drawing.Size(0, 16);
             this.label1.TabIndex = 59;
             // 
-            // dgvdetalleOrdenes
+            // dgvPagoOrdenes
             // 
-            this.dgvdetalleOrdenes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvPagoOrdenes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvdetalleOrdenes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvdetalleOrdenes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvdetalleOrdenes.BackgroundColor = System.Drawing.SystemColors.HighlightText;
-            this.dgvdetalleOrdenes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvdetalleOrdenes.Location = new System.Drawing.Point(31, 317);
-            this.dgvdetalleOrdenes.Margin = new System.Windows.Forms.Padding(2);
-            this.dgvdetalleOrdenes.Name = "dgvdetalleOrdenes";
-            this.dgvdetalleOrdenes.ReadOnly = true;
-            this.dgvdetalleOrdenes.RowHeadersWidth = 51;
-            this.dgvdetalleOrdenes.RowTemplate.Height = 24;
-            this.dgvdetalleOrdenes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvdetalleOrdenes.Size = new System.Drawing.Size(1083, 174);
-            this.dgvdetalleOrdenes.TabIndex = 66;
+            this.dgvPagoOrdenes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvPagoOrdenes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvPagoOrdenes.BackgroundColor = System.Drawing.SystemColors.HighlightText;
+            this.dgvPagoOrdenes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPagoOrdenes.Location = new System.Drawing.Point(27, 321);
+            this.dgvPagoOrdenes.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvPagoOrdenes.Name = "dgvPagoOrdenes";
+            this.dgvPagoOrdenes.ReadOnly = true;
+            this.dgvPagoOrdenes.RowHeadersWidth = 51;
+            this.dgvPagoOrdenes.RowTemplate.Height = 24;
+            this.dgvPagoOrdenes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPagoOrdenes.Size = new System.Drawing.Size(1083, 174);
+            this.dgvPagoOrdenes.TabIndex = 66;
+            this.dgvPagoOrdenes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPagoOrdenes_CellClick);
             // 
             // btnSalir_frm_usuarios
             // 
@@ -186,7 +187,7 @@
             this.btnSalir_frm_usuarios.IconColor = System.Drawing.Color.Black;
             this.btnSalir_frm_usuarios.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSalir_frm_usuarios.IconSize = 25;
-            this.btnSalir_frm_usuarios.Location = new System.Drawing.Point(898, 505);
+            this.btnSalir_frm_usuarios.Location = new System.Drawing.Point(898, 499);
             this.btnSalir_frm_usuarios.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalir_frm_usuarios.Name = "btnSalir_frm_usuarios";
             this.btnSalir_frm_usuarios.Size = new System.Drawing.Size(129, 31);
@@ -194,6 +195,7 @@
             this.btnSalir_frm_usuarios.Text = "Salir";
             this.btnSalir_frm_usuarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSalir_frm_usuarios.UseVisualStyleBackColor = true;
+            this.btnSalir_frm_usuarios.Click += new System.EventHandler(this.btnSalir_frm_usuarios_Click);
             // 
             // lblFecha
             // 
@@ -222,23 +224,23 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.txt_descuento);
+            this.groupBox1.Controls.Add(this.txt_propina);
+            this.groupBox1.Controls.Add(this.dtp_calendario);
             this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.comboBox3);
+            this.groupBox1.Controls.Add(this.cbx_estado);
             this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.cbx_mtd_pago);
             this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.cbx_precioMenu_unitario);
-            this.groupBox1.Controls.Add(this.txt_precio_total);
-            this.groupBox1.Controls.Add(this.cbx_codigo_menu);
+            this.groupBox1.Controls.Add(this.txt_total);
+            this.groupBox1.Controls.Add(this.cbx_monto_orden);
             this.groupBox1.Controls.Add(this.cbx_Orden_encabezados);
             this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.btnEditar);
             this.groupBox1.Controls.Add(this.btnGuardar);
-            this.groupBox1.Controls.Add(this.txt_cantidad);
-            this.groupBox1.Controls.Add(this.txt_codgo_orden_detalle);
+            this.groupBox1.Controls.Add(this.txt_impuesto);
+            this.groupBox1.Controls.Add(this.txt_codigo_pago_orden);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
@@ -254,39 +256,115 @@
             this.groupBox1.TabIndex = 65;
             this.groupBox1.TabStop = false;
             // 
-            // cbx_precioMenu_unitario
+            // dtp_calendario
             // 
-            this.cbx_precioMenu_unitario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dtp_calendario.Location = new System.Drawing.Point(689, 146);
+            this.dtp_calendario.Name = "dtp_calendario";
+            this.dtp_calendario.Size = new System.Drawing.Size(161, 22);
+            this.dtp_calendario.TabIndex = 32;
+            // 
+            // label15
+            // 
+            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.cbx_precioMenu_unitario.FormattingEnabled = true;
-            this.cbx_precioMenu_unitario.ItemHeight = 16;
-            this.cbx_precioMenu_unitario.Location = new System.Drawing.Point(686, 14);
-            this.cbx_precioMenu_unitario.Name = "cbx_precioMenu_unitario";
-            this.cbx_precioMenu_unitario.Size = new System.Drawing.Size(165, 24);
-            this.cbx_precioMenu_unitario.TabIndex = 24;
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(568, 150);
+            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(84, 17);
+            this.label15.TabIndex = 31;
+            this.label15.Text = "Fecha Pago";
             // 
-            // txt_precio_total
+            // cbx_estado
             // 
-            this.txt_precio_total.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.cbx_estado.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.txt_precio_total.Location = new System.Drawing.Point(686, 47);
-            this.txt_precio_total.Name = "txt_precio_total";
-            this.txt_precio_total.Size = new System.Drawing.Size(165, 22);
-            this.txt_precio_total.TabIndex = 23;
-            // 
-            // cbx_codigo_menu
-            // 
-            this.cbx_codigo_menu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.cbx_codigo_menu.FormattingEnabled = true;
-            this.cbx_codigo_menu.ItemHeight = 16;
-            this.cbx_codigo_menu.Items.AddRange(new object[] {
+            this.cbx_estado.FormattingEnabled = true;
+            this.cbx_estado.ItemHeight = 16;
+            this.cbx_estado.Items.AddRange(new object[] {
             "Activo",
             "Inactivo"});
-            this.cbx_codigo_menu.Location = new System.Drawing.Point(258, 79);
-            this.cbx_codigo_menu.Name = "cbx_codigo_menu";
-            this.cbx_codigo_menu.Size = new System.Drawing.Size(165, 24);
-            this.cbx_codigo_menu.TabIndex = 21;
+            this.cbx_estado.Location = new System.Drawing.Point(686, 113);
+            this.cbx_estado.Name = "cbx_estado";
+            this.cbx_estado.Size = new System.Drawing.Size(165, 24);
+            this.cbx_estado.TabIndex = 30;
+            // 
+            // label14
+            // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(568, 115);
+            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(52, 17);
+            this.label14.TabIndex = 29;
+            this.label14.Text = "Estado";
+            // 
+            // cbx_mtd_pago
+            // 
+            this.cbx_mtd_pago.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.cbx_mtd_pago.FormattingEnabled = true;
+            this.cbx_mtd_pago.ItemHeight = 16;
+            this.cbx_mtd_pago.Items.AddRange(new object[] {
+            "Activo",
+            "Inactivo"});
+            this.cbx_mtd_pago.Location = new System.Drawing.Point(686, 80);
+            this.cbx_mtd_pago.Name = "cbx_mtd_pago";
+            this.cbx_mtd_pago.Size = new System.Drawing.Size(165, 24);
+            this.cbx_mtd_pago.TabIndex = 28;
+            // 
+            // label13
+            // 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(568, 82);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(92, 17);
+            this.label13.TabIndex = 27;
+            this.label13.Text = "Metodo Pago";
+            // 
+            // label12
+            // 
+            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(45, 121);
+            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(57, 17);
+            this.label12.TabIndex = 25;
+            this.label12.Text = "Propina";
+            // 
+            // txt_total
+            // 
+            this.txt_total.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.txt_total.Location = new System.Drawing.Point(686, 47);
+            this.txt_total.Name = "txt_total";
+            this.txt_total.Size = new System.Drawing.Size(165, 22);
+            this.txt_total.TabIndex = 23;
+            // 
+            // cbx_monto_orden
+            // 
+            this.cbx_monto_orden.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.cbx_monto_orden.FormattingEnabled = true;
+            this.cbx_monto_orden.ItemHeight = 16;
+            this.cbx_monto_orden.Items.AddRange(new object[] {
+            "Activo",
+            "Inactivo"});
+            this.cbx_monto_orden.Location = new System.Drawing.Point(258, 79);
+            this.cbx_monto_orden.Name = "cbx_monto_orden";
+            this.cbx_monto_orden.Size = new System.Drawing.Size(165, 24);
+            this.cbx_monto_orden.TabIndex = 21;
             // 
             // cbx_Orden_encabezados
             // 
@@ -350,24 +428,24 @@
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = true;
             // 
-            // txt_cantidad
+            // txt_impuesto
             // 
-            this.txt_cantidad.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txt_impuesto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.txt_cantidad.Location = new System.Drawing.Point(258, 150);
-            this.txt_cantidad.Name = "txt_cantidad";
-            this.txt_cantidad.Size = new System.Drawing.Size(165, 22);
-            this.txt_cantidad.TabIndex = 4;
+            this.txt_impuesto.Location = new System.Drawing.Point(258, 150);
+            this.txt_impuesto.Name = "txt_impuesto";
+            this.txt_impuesto.Size = new System.Drawing.Size(165, 22);
+            this.txt_impuesto.TabIndex = 4;
             // 
-            // txt_codgo_orden_detalle
+            // txt_codigo_pago_orden
             // 
-            this.txt_codgo_orden_detalle.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txt_codigo_pago_orden.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.txt_codgo_orden_detalle.Enabled = false;
-            this.txt_codgo_orden_detalle.Location = new System.Drawing.Point(258, 14);
-            this.txt_codgo_orden_detalle.Name = "txt_codgo_orden_detalle";
-            this.txt_codgo_orden_detalle.Size = new System.Drawing.Size(165, 22);
-            this.txt_codgo_orden_detalle.TabIndex = 1;
+            this.txt_codigo_pago_orden.Enabled = false;
+            this.txt_codigo_pago_orden.Location = new System.Drawing.Point(258, 14);
+            this.txt_codigo_pago_orden.Name = "txt_codigo_pago_orden";
+            this.txt_codigo_pago_orden.Size = new System.Drawing.Size(165, 22);
+            this.txt_codigo_pago_orden.TabIndex = 1;
             // 
             // label7
             // 
@@ -401,7 +479,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(45, 163);
+            this.label5.Location = new System.Drawing.Point(46, 155);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 17);
@@ -592,106 +670,23 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             // 
-            // comboBox1
+            // txt_propina
             // 
-            this.comboBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txt_propina.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.ItemHeight = 16;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
-            this.comboBox1.Location = new System.Drawing.Point(258, 114);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(165, 24);
-            this.comboBox1.TabIndex = 26;
+            this.txt_propina.Location = new System.Drawing.Point(258, 119);
+            this.txt_propina.Name = "txt_propina";
+            this.txt_propina.Size = new System.Drawing.Size(165, 22);
+            this.txt_propina.TabIndex = 33;
             // 
-            // label12
+            // txt_descuento
             // 
-            this.label12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.txt_descuento.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(45, 129);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(57, 17);
-            this.label12.TabIndex = 25;
-            this.label12.Text = "Propina";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.ItemHeight = 16;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
-            this.comboBox2.Location = new System.Drawing.Point(686, 85);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(165, 24);
-            this.comboBox2.TabIndex = 28;
-            // 
-            // label13
-            // 
-            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(568, 87);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(92, 17);
-            this.label13.TabIndex = 27;
-            this.label13.Text = "Metodo Pago";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.ItemHeight = 16;
-            this.comboBox3.Items.AddRange(new object[] {
-            "Activo",
-            "Inactivo"});
-            this.comboBox3.Location = new System.Drawing.Point(686, 116);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(165, 24);
-            this.comboBox3.TabIndex = 30;
-            // 
-            // label14
-            // 
-            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(568, 118);
-            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(52, 17);
-            this.label14.TabIndex = 29;
-            this.label14.Text = "Estado";
-            // 
-            // label15
-            // 
-            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(568, 150);
-            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(84, 17);
-            this.label15.TabIndex = 31;
-            this.label15.Text = "Fecha Pago";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(689, 146);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(161, 22);
-            this.dateTimePicker1.TabIndex = 32;
+            this.txt_descuento.Location = new System.Drawing.Point(685, 16);
+            this.txt_descuento.Name = "txt_descuento";
+            this.txt_descuento.Size = new System.Drawing.Size(165, 22);
+            this.txt_descuento.TabIndex = 34;
             // 
             // frm_pago_ordens
             // 
@@ -702,12 +697,13 @@
             this.Controls.Add(this.tabControl_detall_ordenes);
             this.Name = "frm_pago_ordens";
             this.Text = "frm_pago_ordens";
+            this.Load += new System.EventHandler(this.frm_pago_ordens_Load);
             this.tabControl_Usuarios.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvdetalleOrdenes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPagoOrdenes)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabPage3.ResumeLayout(false);
@@ -729,20 +725,19 @@
         private System.Windows.Forms.Label label8;
         private FontAwesome.Sharp.IconButton btnEliminar_usuario;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgvdetalleOrdenes;
+        private System.Windows.Forms.DataGridView dgvPagoOrdenes;
         private FontAwesome.Sharp.IconButton btnSalir_frm_usuarios;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox cbx_precioMenu_unitario;
-        private System.Windows.Forms.TextBox txt_precio_total;
-        private System.Windows.Forms.ComboBox cbx_codigo_menu;
+        private System.Windows.Forms.TextBox txt_total;
+        private System.Windows.Forms.ComboBox cbx_monto_orden;
         private System.Windows.Forms.ComboBox cbx_Orden_encabezados;
         private FontAwesome.Sharp.IconButton btnCancelar;
         private FontAwesome.Sharp.IconButton btnEditar;
         private FontAwesome.Sharp.IconButton btnGuardar;
-        private System.Windows.Forms.TextBox txt_cantidad;
-        private System.Windows.Forms.TextBox txt_codgo_orden_detalle;
+        private System.Windows.Forms.TextBox txt_impuesto;
+        private System.Windows.Forms.TextBox txt_codigo_pago_orden;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -761,13 +756,14 @@
         private System.Windows.Forms.TabControl tabControl_detall_ordenes;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbx_mtd_pago;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtp_calendario;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cbx_estado;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txt_propina;
+        private System.Windows.Forms.TextBox txt_descuento;
     }
 }

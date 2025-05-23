@@ -87,6 +87,7 @@
     <Compile Include="cd_Login.cs" />
     <Compile Include="cd_Menus.cs" />
     <Compile Include="cd_mesas.cs" />
+    <Compile Include="Cd_pago_ordenes.cs" />
     <Compile Include="cd_pago_planillas.cs" />
     <Compile Include="cd_Usuarios.cs" />
     <Compile Include="Conexion.cs" />
