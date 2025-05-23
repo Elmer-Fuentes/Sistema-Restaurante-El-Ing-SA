@@ -82,6 +82,7 @@
     <Compile Include="Cl_Detalle_Ordenes.cs" />
     <Compile Include="cl_empleados.cs" />
     <Compile Include="cl_encabezado_ordenes.cs" />
+    <Compile Include="CL_Inventario.cs" />
     <Compile Include="Cl_Menu.cs" />
     <Compile Include="cl_MtdFechas.cs" />
     <Compile Include="cl_pago_planillas.cs" />
