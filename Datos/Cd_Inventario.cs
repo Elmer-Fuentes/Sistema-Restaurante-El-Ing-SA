@@ -77,5 +77,19 @@ namespace Datos
                 }
             }
         }
+
+        public void MtdEliminardatos(int codigo_inventario)
+        {
+            string query = "delete from tbl_inventarios where codigo_inventario = @codigo_inventario ";
+            using (SqlConnection connection = GetConnection())
+            {
+                connection.Open();
+                using (SqlCommand eliminar = new SqlCommand(query, connection))
+                {
+                    eliminar.Parameters.AddWithValue("@codigo_inventario", codigo_inventario);
+                    eliminar.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }

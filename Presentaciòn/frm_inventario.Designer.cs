@@ -41,7 +41,7 @@
             this.btnEditar = new FontAwesome.Sharp.IconButton();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
             this.txt_Cantidad = new System.Windows.Forms.TextBox();
-            this.txt_Categoria = new System.Windows.Forms.TextBox();
+            this.cbos_categorias = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -220,12 +220,12 @@
             this.txt_Cantidad.Size = new System.Drawing.Size(165, 20);
             this.txt_Cantidad.TabIndex = 17;
             // 
-            // txt_Categoria
+            // cbos_categorias
             // 
-            this.txt_Categoria.Location = new System.Drawing.Point(214, 85);
-            this.txt_Categoria.Name = "txt_Categoria";
-            this.txt_Categoria.Size = new System.Drawing.Size(165, 20);
-            this.txt_Categoria.TabIndex = 16;
+            this.cbos_categorias.Location = new System.Drawing.Point(214, 85);
+            this.cbos_categorias.Name = "cbos_categorias";
+            this.cbos_categorias.Size = new System.Drawing.Size(165, 20);
+            this.cbos_categorias.TabIndex = 16;
             // 
             // tabControl1
             // 
@@ -354,7 +354,7 @@
             this.groupBox1.Controls.Add(this.btnEditar);
             this.groupBox1.Controls.Add(this.btnGuardar);
             this.groupBox1.Controls.Add(this.txt_Cantidad);
-            this.groupBox1.Controls.Add(this.txt_Categoria);
+            this.groupBox1.Controls.Add(this.cbos_categorias);
             this.groupBox1.Controls.Add(this.txt_codigoInventario);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
@@ -509,7 +509,7 @@
         private FontAwesome.Sharp.IconButton btnEditar;
         private FontAwesome.Sharp.IconButton btnGuardar;
         private System.Windows.Forms.TextBox txt_Cantidad;
-        private System.Windows.Forms.TextBox txt_Categoria;
+        private System.Windows.Forms.TextBox cbos_categorias;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Panel panel1;

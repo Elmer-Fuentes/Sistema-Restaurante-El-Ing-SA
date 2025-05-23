@@ -75,7 +75,7 @@ namespace Presentaciòn
         {
             txt_Cantidad.Text = "";
             txt_codigoInventario.Text = "";
-            txt_Categoria.Text = "";
+            cbos_categorias.Text = "";
             cbox_codigomenu.Text = "";
             dtm_fechaentrada.Text = DateTime.Today.ToString("d");
             dtm_fechavencimiento.Text = DateTime.Today.ToString("d");
@@ -98,13 +98,13 @@ namespace Presentaciòn
             {
                 txt_Cantidad.BackColor = Color.White;
             }
-            if (string.IsNullOrWhiteSpace(txt_Categoria.Text))
+            if (string.IsNullOrWhiteSpace(cbos_categorias.Text))
             {
-                txt_Categoria.BackColor = Color.Red;
+                cbos_categorias.BackColor = Color.Red;
             }
-            else if (!string.IsNullOrWhiteSpace(txt_Categoria.Text))
+            else if (!string.IsNullOrWhiteSpace(cbos_categorias.Text))
             {
-                txt_Categoria.BackColor = Color.White;
+                cbos_categorias.BackColor = Color.White;
             }
             if (string.IsNullOrWhiteSpace(cbox_codigomenu.Text))
             {
@@ -132,13 +132,13 @@ namespace Presentaciòn
             Mtdverificarentrada();
             //para realizar una comparacion y evitar que en fecha de entrada se ingrese una fecha mayor a la de el dia actual
             DateTime f = dtm_fechaentrada.Value;
-            if (!string.IsNullOrWhiteSpace(txt_Categoria.Text) && !string.IsNullOrWhiteSpace(txt_Cantidad.Text) && !string.IsNullOrWhiteSpace(cbox_codigomenu.Text))
+            if (!string.IsNullOrWhiteSpace(cbos_categorias.Text) && !string.IsNullOrWhiteSpace(txt_Cantidad.Text) && !string.IsNullOrWhiteSpace(cbox_codigomenu.Text))
             {
                 if (f < fecha.MtdFecha())
                 {
                     try
                     {
-                        categoria = txt_Categoria.Text;
+                        categoria = cbos_categorias.Text;
                         //para obtener solo el numero
                         codigo_menu = int.Parse(cbox_codigomenu.Text.Split('-')[0].Trim());
                         cantidad = int.Parse(txt_Cantidad.Text);
