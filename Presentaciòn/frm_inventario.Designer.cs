@@ -54,7 +54,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtm_fechavencimiento = new System.Windows.Forms.DateTimePicker();
             this.dtm_fechaentrada = new System.Windows.Forms.DateTimePicker();
-            this.txt_codigomenu = new System.Windows.Forms.TextBox();
             this.txt_codigoInventario = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -62,6 +61,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.cbox_codigomenu = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_buscarclientes)).BeginInit();
@@ -180,6 +180,7 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnEditar
             // 
@@ -345,6 +346,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbox_codigomenu);
             this.groupBox1.Controls.Add(this.dtm_fechavencimiento);
             this.groupBox1.Controls.Add(this.dtm_fechaentrada);
             this.groupBox1.Controls.Add(this.btnCancelar);
@@ -352,7 +354,6 @@
             this.groupBox1.Controls.Add(this.btnGuardar);
             this.groupBox1.Controls.Add(this.txt_Cantidad);
             this.groupBox1.Controls.Add(this.txt_Categoria);
-            this.groupBox1.Controls.Add(this.txt_codigomenu);
             this.groupBox1.Controls.Add(this.txt_codigoInventario);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
@@ -381,13 +382,6 @@
             this.dtm_fechaentrada.Name = "dtm_fechaentrada";
             this.dtm_fechaentrada.Size = new System.Drawing.Size(198, 20);
             this.dtm_fechaentrada.TabIndex = 27;
-            // 
-            // txt_codigomenu
-            // 
-            this.txt_codigomenu.Location = new System.Drawing.Point(214, 49);
-            this.txt_codigomenu.Name = "txt_codigomenu";
-            this.txt_codigomenu.Size = new System.Drawing.Size(165, 20);
-            this.txt_codigomenu.TabIndex = 15;
             // 
             // txt_codigoInventario
             // 
@@ -463,6 +457,14 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Codigo Inventario:";
             // 
+            // cbox_codigomenu
+            // 
+            this.cbox_codigomenu.FormattingEnabled = true;
+            this.cbox_codigomenu.Location = new System.Drawing.Point(214, 54);
+            this.cbox_codigomenu.Name = "cbox_codigomenu";
+            this.cbox_codigomenu.Size = new System.Drawing.Size(165, 21);
+            this.cbox_codigomenu.TabIndex = 29;
+            // 
             // frm_inventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -517,7 +519,6 @@
         private System.Windows.Forms.Label label8;
         private FontAwesome.Sharp.IconButton btnSalir;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txt_codigomenu;
         private System.Windows.Forms.TextBox txt_codigoInventario;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -527,5 +528,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker dtm_fechavencimiento;
         private System.Windows.Forms.DateTimePicker dtm_fechaentrada;
+        private System.Windows.Forms.ComboBox cbox_codigomenu;
     }
 }

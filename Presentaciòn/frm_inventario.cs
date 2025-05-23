@@ -20,6 +20,7 @@ namespace Presentaciòn
             InitializeComponent();
             style();
             MtdMostrardatos();
+            MtdMostrarmenus();
         }
 
         private void style()
@@ -52,5 +53,63 @@ namespace Presentaciòn
         private void tabPage1_Click(object sender, EventArgs e)
         {
         }
+
+        private void MtdMostrarmenus()
+        {
+            var lista = cd_inventario.MtdRetornarMenus();
+            foreach (var items in lista)
+            {
+                cbox_codigomenu.Items.Add(items);
+            }
+            cbox_codigomenu.DisplayMember = "Text";
+            cbox_codigomenu.ValueMember = "Value";
+        }
+
+        private void MtdBorrarcampos()
+        {
+            txt_Cantidad.Text = "";
+            txt_codigoInventario.Text = "";
+            txt_Categoria.Text = "";
+            cbox_codigomenu.Text = "";
+            dtm_fechaentrada.Text = DateTime.Today.ToString("d");
+            dtm_fechavencimiento.Text = DateTime.Today.ToString("d");
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            MtdBorrarcampos();
+        }
+
+        #region cambiar color a rojo si se intenta agregar con campos en blanco
+
+        private void Mtdverificarentrada()
+        {
+            if (string.IsNullOrWhiteSpace(txt_Cantidad.Text))
+            {
+                txt_Cantidad.BackColor = Color.Red;
+            }
+            else if (!string.IsNullOrWhiteSpace(txt_Cantidad.Text))
+            {
+                txt_Cantidad.BackColor = Color.White;
+            }
+            if (string.IsNullOrWhiteSpace(txt_Categoria.Text))
+            {
+                txt_Categoria.BackColor = Color.Red;
+            }
+            else if (!string.IsNullOrWhiteSpace(txt_Categoria.Text))
+            {
+                txt_Categoria.BackColor = Color.White;
+            }
+            if (string.IsNullOrWhiteSpace(cbox_codigomenu.Text))
+            {
+                cbox_codigomenu.BackColor = Color.Red;
+            }
+            else if (!string.IsNullOrWhiteSpace(cbox_codigomenu.Text))
+            {
+                cbox_codigomenu.BackColor = Color.White;
+            }
+        }
+
+        #endregion cambiar color a rojo si se intenta agregar con campos en blanco
     }
 }
