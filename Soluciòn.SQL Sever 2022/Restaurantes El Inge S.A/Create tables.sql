@@ -28,7 +28,7 @@ create table tbl_empleados(
 --3. tabla usuarios
 create table tbl_usuarios (
 			codigo_usuario int primary key identity (1,1) not null,
-			codigo_empleado int not null,
+			codigo_empleado int not null unique,
 			nombre_usuario varchar(50) not null,
 			contrasena varchar(50) not null,
 			rol varchar(50) not null,

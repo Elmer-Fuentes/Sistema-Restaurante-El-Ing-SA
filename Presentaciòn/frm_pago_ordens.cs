@@ -146,6 +146,7 @@ namespace Presentaciòn
         }
         #endregion
 
+        #region = "btn editar";
         private void btnEliminar_usuario_Click(object sender, EventArgs e)
         {
 
@@ -164,5 +165,6 @@ namespace Presentaciòn
             }
 
         }
+        #endregion
     }
 }
