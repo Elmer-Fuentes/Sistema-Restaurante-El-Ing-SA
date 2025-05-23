@@ -51,6 +51,52 @@ namespace Datos
             }
         }
         #endregion
+        
+        #region = "Met_Actualizar_pago_ordeb";
+        public void MtdUpdPagoOrden(int codigo_pago,int codigo_orden_enc, double monto_orden, double propina, double impuesto, double descuento, double total_pago, string metodo_pago, string estado, DateTime fecha_pago, string usuario_sistema, DateTime fecha_sistema)
+        {
+            string query = "update tbl_pago_ordenes set codigo_orden_enc = @codigo_orden_enc, monto_orden = @monto_orden, propina = @propina, impuesto = @impuesto, descuento = @descuento, total_pago = @total_pago, metodo_pago = @metodo_pago, estado = @estado, fecha_pago = @fecha_pago, usuario_sistema = @usuario_sistema, fecha_sistema = @fecha_sistema WHERE codigo_pago = @codigo_pago";
 
+            using (SqlConnection connection = GetConnection())
+            {
+                connection.Open();
+                using (SqlCommand cmd = new SqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@codigo_pago", codigo_pago);
+                    cmd.Parameters.AddWithValue("@codigo_orden_enc", codigo_orden_enc);
+                    cmd.Parameters.AddWithValue("@monto_orden", monto_orden);
+                    cmd.Parameters.AddWithValue("@propina", propina);
+                    cmd.Parameters.AddWithValue("@impuesto", impuesto);
+                    cmd.Parameters.AddWithValue("@descuento", descuento);
+                    cmd.Parameters.AddWithValue("@total_pago", total_pago);
+                    cmd.Parameters.AddWithValue("@metodo_pago", metodo_pago);
+                    cmd.Parameters.AddWithValue("@estado", estado);
+                    cmd.Parameters.AddWithValue("@fecha_pago", fecha_pago);
+                    cmd.Parameters.AddWithValue("@usuario_sistema", usuario_sistema);
+                    cmd.Parameters.AddWithValue("@fecha_sistema", fecha_sistema);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+        #endregion
+
+
+
+        #region = "Met_Actualizar_pago_ordeb";
+        public void MtdDelPagoOrden(int codigo_pago)
+        {
+            string query = "Delete tbl_pago_ordenes WHERE codigo_pago = @codigo_pago";
+
+            using (SqlConnection connection = GetConnection())
+            {
+                connection.Open();
+                using (SqlCommand cmd = new SqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@codigo_pago", codigo_pago);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+        #endregion
     }
 }

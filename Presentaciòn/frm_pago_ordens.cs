@@ -27,6 +27,7 @@ namespace Presentaciòn
         private void frm_pago_ordens_Load(object sender, EventArgs e)
         {
             MostrarDatos();
+            lblFecha.Text = cl_fechas.MtdFecha().ToString("dd/MM/yyyy");
         }
 
         #region = "Btn_salir";
@@ -85,8 +86,8 @@ namespace Presentaciòn
         {
 
             int codigo_Orden_encabezado = int.Parse(cbx_Orden_encabezados.Text);
-            double monto_orden = Convert.ToInt32(cbx_monto_orden.Text);
-            double propina = int.Parse(txt_propina.Text);
+            double monto_orden = Convert.ToDouble(cbx_monto_orden.Text);
+            double propina = double.Parse(txt_propina.Text);
             double impuesto= double.Parse(txt_propina.Text);
             double descuento = double.Parse(txt_descuento.Text);
             double pago_total = double.Parse(txt_total.Text);
@@ -108,10 +109,60 @@ namespace Presentaciòn
             }
             #endregion
         }
-
+        #region = "btn cancelar";
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             LimpiarDatos();
+        }
+        #endregion
+
+        #region = "btn_update";
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            int codigo_pago = int.Parse(txt_codigo_pago_orden.Text);
+            int codigo_Orden_encabezado = int.Parse(cbx_Orden_encabezados.Text);
+            double monto_orden = Convert.ToDouble(cbx_monto_orden.Text);
+            double propina = double.Parse(txt_propina.Text);
+            double impuesto = double.Parse(txt_propina.Text);
+            double descuento = double.Parse(txt_descuento.Text);
+            double pago_total = double.Parse(txt_total.Text);
+            string mtd_pago = cbx_mtd_pago.Text;
+            string estado = cbx_estado.Text;
+            DateTime fechapago = dtp_calendario.Value;
+            string usuario_sistema = Mis_Variables.UsuarioLogueado;
+            DateTime fecha_sistemanombre = cl_fechas.MtdFecha();
+            try
+            {
+                objPO.MtdUpdPagoOrden(codigo_pago,codigo_Orden_encabezado, monto_orden, propina, impuesto, descuento, pago_total, mtd_pago, estado, fechapago, usuario_sistema, fecha_sistemanombre);
+                MessageBox.Show("Usuario actulizado correctamente", "Estado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MostrarDatos();
+                LimpiarDatos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex, "A ocurrido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+           
+        }
+        #endregion
+
+        private void btnEliminar_usuario_Click(object sender, EventArgs e)
+        {
+
+            int codigo_pago = int.Parse(txt_codigo_pago_orden.Text);
+            
+            try
+            {
+                objPO.MtdDelPagoOrden(codigo_pago);
+                MessageBox.Show("Usuario eliminado correctamente", "Estado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MostrarDatos();
+                LimpiarDatos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex, "A ocurrido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
     }
 }

@@ -39,6 +39,8 @@
             this.lblFecha = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txt_descuento = new System.Windows.Forms.TextBox();
+            this.txt_propina = new System.Windows.Forms.TextBox();
             this.dtp_calendario = new System.Windows.Forms.DateTimePicker();
             this.label15 = new System.Windows.Forms.Label();
             this.cbx_estado = new System.Windows.Forms.ComboBox();
@@ -72,8 +74,6 @@
             this.tabControl_detall_ordenes = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.txt_propina = new System.Windows.Forms.TextBox();
-            this.txt_descuento = new System.Windows.Forms.TextBox();
             this.tabControl_Usuarios.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -122,14 +122,14 @@
             this.panel2.Controls.Add(this.label8);
             this.panel2.Location = new System.Drawing.Point(2, 40);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1119, 62);
+            this.panel2.Size = new System.Drawing.Size(1119, 58);
             this.panel2.TabIndex = 70;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(487, 22);
+            this.label8.Location = new System.Drawing.Point(487, 17);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(164, 26);
@@ -151,6 +151,7 @@
             this.btnEliminar_usuario.Text = "Eliminar";
             this.btnEliminar_usuario.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEliminar_usuario.UseVisualStyleBackColor = true;
+            this.btnEliminar_usuario.Click += new System.EventHandler(this.btnEliminar_usuario_Click);
             // 
             // label1
             // 
@@ -169,14 +170,14 @@
             this.dgvPagoOrdenes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvPagoOrdenes.BackgroundColor = System.Drawing.SystemColors.HighlightText;
             this.dgvPagoOrdenes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPagoOrdenes.Location = new System.Drawing.Point(27, 321);
+            this.dgvPagoOrdenes.Location = new System.Drawing.Point(27, 306);
             this.dgvPagoOrdenes.Margin = new System.Windows.Forms.Padding(2);
             this.dgvPagoOrdenes.Name = "dgvPagoOrdenes";
             this.dgvPagoOrdenes.ReadOnly = true;
             this.dgvPagoOrdenes.RowHeadersWidth = 51;
             this.dgvPagoOrdenes.RowTemplate.Height = 24;
             this.dgvPagoOrdenes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvPagoOrdenes.Size = new System.Drawing.Size(1083, 174);
+            this.dgvPagoOrdenes.Size = new System.Drawing.Size(1083, 189);
             this.dgvPagoOrdenes.TabIndex = 66;
             this.dgvPagoOrdenes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPagoOrdenes_CellClick);
             // 
@@ -201,7 +202,7 @@
             // 
             this.lblFecha.AutoSize = true;
             this.lblFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFecha.Location = new System.Drawing.Point(882, 109);
+            this.lblFecha.Location = new System.Drawing.Point(882, 102);
             this.lblFecha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(100, 17);
@@ -212,7 +213,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(785, 109);
+            this.label9.Location = new System.Drawing.Point(785, 102);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(93, 17);
@@ -248,13 +249,31 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.groupBox1.Location = new System.Drawing.Point(27, 130);
+            this.groupBox1.Location = new System.Drawing.Point(27, 119);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(1087, 183);
             this.groupBox1.TabIndex = 65;
             this.groupBox1.TabStop = false;
+            // 
+            // txt_descuento
+            // 
+            this.txt_descuento.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.txt_descuento.Location = new System.Drawing.Point(685, 16);
+            this.txt_descuento.Name = "txt_descuento";
+            this.txt_descuento.Size = new System.Drawing.Size(165, 22);
+            this.txt_descuento.TabIndex = 34;
+            // 
+            // txt_propina
+            // 
+            this.txt_propina.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.txt_propina.Location = new System.Drawing.Point(258, 119);
+            this.txt_propina.Name = "txt_propina";
+            this.txt_propina.Size = new System.Drawing.Size(165, 22);
+            this.txt_propina.TabIndex = 33;
             // 
             // dtp_calendario
             // 
@@ -411,6 +430,7 @@
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnGuardar
             // 
@@ -671,24 +691,6 @@
             this.tabPage2.Size = new System.Drawing.Size(1124, 497);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
-            // 
-            // txt_propina
-            // 
-            this.txt_propina.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.txt_propina.Location = new System.Drawing.Point(258, 119);
-            this.txt_propina.Name = "txt_propina";
-            this.txt_propina.Size = new System.Drawing.Size(165, 22);
-            this.txt_propina.TabIndex = 33;
-            // 
-            // txt_descuento
-            // 
-            this.txt_descuento.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.txt_descuento.Location = new System.Drawing.Point(685, 16);
-            this.txt_descuento.Name = "txt_descuento";
-            this.txt_descuento.Size = new System.Drawing.Size(165, 22);
-            this.txt_descuento.TabIndex = 34;
             // 
             // frm_pago_ordens
             // 
