@@ -251,6 +251,7 @@
             this.btn_pago_Orden.TabIndex = 11;
             this.btn_pago_Orden.Text = "Pago de Órdenes\n";
             this.btn_pago_Orden.UseVisualStyleBackColor = false;
+            this.btn_pago_Orden.Click += new System.EventHandler(this.btn_pago_Orden_Click);
             // 
             // btn_det_ordenen
             // 

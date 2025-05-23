@@ -227,5 +227,9 @@ namespace Presentaciòn
         }
         #endregion;
 
+        private void btn_pago_Orden_Click(object sender, EventArgs e)
+        {
+            openChildForm (new frm_pago_ordens());
+        }
     }
 }
