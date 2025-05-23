@@ -73,6 +73,7 @@
             // dvg_empleados_sin_Usuarios
             // 
             this.dvg_empleados_sin_Usuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dvg_empleados_sin_Usuarios.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dvg_empleados_sin_Usuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvg_empleados_sin_Usuarios.Location = new System.Drawing.Point(46, 180);
             this.dvg_empleados_sin_Usuarios.Margin = new System.Windows.Forms.Padding(2);
@@ -116,6 +117,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.tabPage2.Controls.Add(this.panel1);
             this.tabPage2.Controls.Add(this.dvg_empleados_sin_Usuarios);
             this.tabPage2.Controls.Add(this.txt_buscar_empleado);
@@ -123,13 +125,13 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1026, 585);
+            this.tabPage2.Size = new System.Drawing.Size(1099, 585);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Especialidades";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // txt_buscar_empleado
             // 
+            this.txt_buscar_empleado.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.txt_buscar_empleado.Location = new System.Drawing.Point(265, 110);
             this.txt_buscar_empleado.Name = "txt_buscar_empleado";
             this.txt_buscar_empleado.Size = new System.Drawing.Size(522, 22);
@@ -165,7 +167,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.White;
+            this.tabPage1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.tabPage1.Controls.Add(this.panel2);
             this.tabPage1.Controls.Add(this.btnEliminar_usuario);
             this.tabPage1.Controls.Add(this.label1);
@@ -177,7 +179,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1026, 585);
+            this.tabPage1.Size = new System.Drawing.Size(1099, 585);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Menu";
             // 
@@ -187,7 +189,7 @@
             this.panel2.Controls.Add(this.label8);
             this.panel2.Location = new System.Drawing.Point(0, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1031, 62);
+            this.panel2.Size = new System.Drawing.Size(1099, 62);
             this.panel2.TabIndex = 69;
             // 
             // label8
@@ -207,7 +209,7 @@
             this.btnEliminar_usuario.IconColor = System.Drawing.Color.Black;
             this.btnEliminar_usuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEliminar_usuario.IconSize = 25;
-            this.btnEliminar_usuario.Location = new System.Drawing.Point(655, 524);
+            this.btnEliminar_usuario.Location = new System.Drawing.Point(701, 458);
             this.btnEliminar_usuario.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar_usuario.Name = "btnEliminar_usuario";
             this.btnEliminar_usuario.Size = new System.Drawing.Size(129, 31);
@@ -228,15 +230,16 @@
             // dgvMenus
             // 
             this.dgvMenus.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvMenus.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvMenus.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMenus.Location = new System.Drawing.Point(31, 276);
+            this.dgvMenus.Location = new System.Drawing.Point(31, 244);
             this.dgvMenus.Margin = new System.Windows.Forms.Padding(2);
             this.dgvMenus.Name = "dgvMenus";
             this.dgvMenus.ReadOnly = true;
             this.dgvMenus.RowHeadersWidth = 51;
             this.dgvMenus.RowTemplate.Height = 24;
             this.dgvMenus.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMenus.Size = new System.Drawing.Size(956, 228);
+            this.dgvMenus.Size = new System.Drawing.Size(1025, 208);
             this.dgvMenus.TabIndex = 9;
             this.dgvMenus.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMenus_CellClick);
             // 
@@ -246,7 +249,7 @@
             this.btnSalir_frm_usuarios.IconColor = System.Drawing.Color.Black;
             this.btnSalir_frm_usuarios.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSalir_frm_usuarios.IconSize = 25;
-            this.btnSalir_frm_usuarios.Location = new System.Drawing.Point(812, 524);
+            this.btnSalir_frm_usuarios.Location = new System.Drawing.Point(858, 458);
             this.btnSalir_frm_usuarios.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalir_frm_usuarios.Name = "btnSalir_frm_usuarios";
             this.btnSalir_frm_usuarios.Size = new System.Drawing.Size(129, 31);
@@ -295,11 +298,11 @@
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(17, 105);
+            this.groupBox1.Location = new System.Drawing.Point(17, 81);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(1004, 152);
+            this.groupBox1.Size = new System.Drawing.Size(1039, 152);
             this.groupBox1.TabIndex = 65;
             this.groupBox1.TabStop = false;
             // 
@@ -455,7 +458,7 @@
             this.tabControl_Menu.Location = new System.Drawing.Point(1, 1);
             this.tabControl_Menu.Name = "tabControl_Menu";
             this.tabControl_Menu.SelectedIndex = 0;
-            this.tabControl_Menu.Size = new System.Drawing.Size(1034, 614);
+            this.tabControl_Menu.Size = new System.Drawing.Size(1107, 614);
             this.tabControl_Menu.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
             this.tabControl_Menu.TabIndex = 1;
             // 
@@ -463,7 +466,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1034, 598);
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.ClientSize = new System.Drawing.Size(1105, 567);
             this.Controls.Add(this.tabControl_Menu);
             this.Name = "frm_menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
