@@ -52,6 +52,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.btnSalir = new FontAwesome.Sharp.IconButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dtm_fechavencimiento = new System.Windows.Forms.DateTimePicker();
+            this.dtm_fechaentrada = new System.Windows.Forms.DateTimePicker();
             this.txt_codigomenu = new System.Windows.Forms.TextBox();
             this.txt_codigoInventario = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -60,8 +62,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dtm_fechaentrada = new System.Windows.Forms.DateTimePicker();
-            this.dtm_fechavencimiento = new System.Windows.Forms.DateTimePicker();
             this.panel2.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_buscarclientes)).BeginInit();
@@ -363,6 +363,20 @@
             this.groupBox1.TabIndex = 53;
             this.groupBox1.TabStop = false;
             // 
+            // dtm_fechavencimiento
+            // 
+            this.dtm_fechavencimiento.Location = new System.Drawing.Point(603, 82);
+            this.dtm_fechavencimiento.Name = "dtm_fechavencimiento";
+            this.dtm_fechavencimiento.Size = new System.Drawing.Size(198, 20);
+            this.dtm_fechavencimiento.TabIndex = 28;
+            // 
+            // dtm_fechaentrada
+            // 
+            this.dtm_fechaentrada.Location = new System.Drawing.Point(603, 51);
+            this.dtm_fechaentrada.Name = "dtm_fechaentrada";
+            this.dtm_fechaentrada.Size = new System.Drawing.Size(198, 20);
+            this.dtm_fechaentrada.TabIndex = 27;
+            // 
             // txt_codigomenu
             // 
             this.txt_codigomenu.Location = new System.Drawing.Point(214, 49);
@@ -444,25 +458,11 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Codigo Inventario:";
             // 
-            // dtm_fechaentrada
-            // 
-            this.dtm_fechaentrada.Location = new System.Drawing.Point(603, 51);
-            this.dtm_fechaentrada.Name = "dtm_fechaentrada";
-            this.dtm_fechaentrada.Size = new System.Drawing.Size(198, 20);
-            this.dtm_fechaentrada.TabIndex = 27;
-            // 
-            // dtm_fechavencimiento
-            // 
-            this.dtm_fechavencimiento.Location = new System.Drawing.Point(603, 82);
-            this.dtm_fechavencimiento.Name = "dtm_fechavencimiento";
-            this.dtm_fechavencimiento.Size = new System.Drawing.Size(198, 20);
-            this.dtm_fechavencimiento.TabIndex = 28;
-            // 
             // frm_inventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1179, 731);
+            this.ClientSize = new System.Drawing.Size(1105, 567);
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frm_inventario";
