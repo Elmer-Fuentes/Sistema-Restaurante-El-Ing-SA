@@ -43,6 +43,8 @@
             this.DataAnalitycsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dashboardEmpleadosUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirDelSistemaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.cerrarSeciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.salirDelSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_Menu = new System.Windows.Forms.Panel();
             this.pnl_operaciones = new System.Windows.Forms.Panel();
             this.btn_pago_Orden = new FontAwesome.Sharp.IconButton();
@@ -202,10 +204,26 @@
             // 
             // salirDelSistemaToolStripMenuItem2
             // 
+            this.salirDelSistemaToolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cerrarSeciónToolStripMenuItem,
+            this.salirDelSistemaToolStripMenuItem});
             this.salirDelSistemaToolStripMenuItem2.Name = "salirDelSistemaToolStripMenuItem2";
-            this.salirDelSistemaToolStripMenuItem2.Size = new System.Drawing.Size(105, 22);
-            this.salirDelSistemaToolStripMenuItem2.Text = "Salir Del Sistema";
-            this.salirDelSistemaToolStripMenuItem2.Click += new System.EventHandler(this.salirDelSistemaToolStripMenuItem2_Click);
+            this.salirDelSistemaToolStripMenuItem2.Size = new System.Drawing.Size(41, 22);
+            this.salirDelSistemaToolStripMenuItem2.Text = "Salir";
+            // 
+            // cerrarSeciónToolStripMenuItem
+            // 
+            this.cerrarSeciónToolStripMenuItem.Name = "cerrarSeciónToolStripMenuItem";
+            this.cerrarSeciónToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cerrarSeciónToolStripMenuItem.Text = "Cambiar de Usuario";
+            this.cerrarSeciónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSeciónToolStripMenuItem_Click);
+            // 
+            // salirDelSistemaToolStripMenuItem
+            // 
+            this.salirDelSistemaToolStripMenuItem.Name = "salirDelSistemaToolStripMenuItem";
+            this.salirDelSistemaToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.salirDelSistemaToolStripMenuItem.Text = "Salir Del Sistema";
+            this.salirDelSistemaToolStripMenuItem.Click += new System.EventHandler(this.salirDelSistemaToolStripMenuItem_Click);
             // 
             // pnl_Menu
             // 
@@ -835,5 +853,7 @@
         private System.Windows.Forms.Panel pnl_titulo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel pnl_body;
+        private System.Windows.Forms.ToolStripMenuItem cerrarSeciónToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem salirDelSistemaToolStripMenuItem;
     }
 }

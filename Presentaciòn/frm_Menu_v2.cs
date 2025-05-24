@@ -9,6 +9,7 @@ using System.Linq;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Forms;
 
 namespace Presentaciòn
@@ -102,19 +103,35 @@ namespace Presentaciòn
             sub_pnl_opeccion();
         }
 
-        private void salirDelSistemaToolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
+        #region = "Mtd para controlar Salir del sistema y Cambiar Sección"
         #region = "Evento fromclosing desde propiedades para controlar el btn_cerrar del MDI";
 
-        private void frm_Menu_v2_FormClosing(object sender, FormClosingEventArgs e)
+
+
+        #endregion;
+        private void salirDelSistemaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            System.Windows.Forms.Application.Exit();
         }
 
-        #endregion = "Evento fromclosing desde propiedades para controlar el btn_cerrar del MDI";
+        #region = "Cambiar Inicio seción";
+                private void cerrarSeciónToolStripMenuItem_Click(object sender, EventArgs e)
+                {
+                    this.Hide();
+                    frm_login login = new frm_login();
+                    login.Show();
+                }
+                //controlar btn principal del mdi cerrar    
+                private void frm_Menu_v2_FormClosing(object sender, FormClosingEventArgs e)
+                {
+                    System.Windows.Forms.Application.Exit();
+                }
+                #endregion
+
+        #endregion
+
+
+
 
         #region "Mis Variables Form Secundario (hijo)";
 
@@ -231,5 +248,7 @@ namespace Presentaciòn
         {
             openChildForm (new frm_pago_ordens());
         }
+
+     
     }
 }
