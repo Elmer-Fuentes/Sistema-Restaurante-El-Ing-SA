@@ -11,7 +11,7 @@ namespace Datos
 {
 	public class cd_encabezado_ordenes : Conexion
 	{
-		#region = "Metodo para vista del select o mostrar en el dgv";
+		#region Metodo para vista del select o mostrar en el dgv;
 		public DataTable MtdConsultarEncabezadoOrdenes()
 		{
 			string query = "SELECT codigo_orden_enc AS 'Código Orden Enc', codigo_cliente AS 'Código de Cliente', codigo_mesa AS 'Código Mesa', codigo_empleado AS 'Código Empleado', fecha_orden AS 'Fecha Órden', monto_total_orden AS 'Monto Total Orden', estado AS 'Estado', usuario_sistema AS 'Usuario Sistema', fecha_sistema AS 'Fecha del Sistema' FROM tbl_encabezado_ordenes;";
@@ -22,6 +22,63 @@ namespace Datos
 				retornar.Fill(datosOrdenes);
 				return datosOrdenes;
 			}
+		}
+		#endregion
+
+		#region Lista Orden Encabezado
+		public List<dynamic> MtdListaOrdenEncabezado()
+		{
+			string QueryListaOrdenEncabezado= "SELECT codigo_orden_enc FROM tbl_detalles_ordenes";
+			List<dynamic> ListaOrdenEncabezado = new List<dynamic>();
+
+			using (SqlConnection connection = GetConnection())
+			{
+				connection.Open();
+				using (SqlCommand cmd = new SqlCommand(QueryListaOrdenEncabezado, connection))
+				{
+					using (SqlDataReader reader = cmd.ExecuteReader())
+					{
+						while (reader.Read())
+						{
+							ListaOrdenEncabezado.Add(new
+							{
+								Value = reader["codigo_orden_enc"],
+								Text = $"{reader["codigo_orden_enc"]}"
+							});
+						}
+					}
+				}
+			}
+
+			return ListaOrdenEncabezado;
+		}
+
+
+
+		public string MtdListaOrdenEncabezadoDgv(int codigo_orden_enc)
+		{
+			string resultado = string.Empty;
+			string QueryListaOrdenEncabezado = "SELECT codigo_orden_enc FROM tbl_detalles_ordenes WHERE codigo_orden_enc = @codigo_orden_enc";
+
+			using (SqlConnection connection = GetConnection())
+			{
+				connection.Open();
+				using (SqlCommand cmd = new SqlCommand(QueryListaOrdenEncabezado, connection))
+				{
+					cmd.Parameters.AddWithValue("@codigo_orden_enc", codigo_orden_enc);
+					using (SqlDataReader reader = cmd.ExecuteReader())
+					{
+						if (reader.Read())
+						{
+							string codigo = reader["codigo_orden_enc"].ToString();
+							
+							resultado = $"{codigo} ";
+						}
+					}
+				}
+			}
+
+			return resultado;
 		}
 		#endregion
 
@@ -196,5 +253,78 @@ namespace Datos
 		}
 		#endregion
 
+		#region Metodo Insertar Orden Encabezado
+		public void MtdInsertarOrdenEncabezado(int codigo_cliente,int codigo_mesa,int codigo_empleado,DateTime fecha_orden,decimal monto_total_orden,string estado,string usuario_sistema,DateTime fecha_sistema)
+		{
+			string query = @"INSERT INTO tbl_encabezado_ordenes (codigo_cliente, codigo_mesa, codigo_empleado, fecha_orden, monto_total_orden, estado, usuario_sistema, fecha_sistema) VALUES (@codigo_cliente, @codigo_mesa, @codigo_empleado, @fecha_orden, @monto_total_orden, @estado, @usuario_sistema, @fecha_sistema)";
+
+			using (SqlConnection connection = GetConnection())
+			{
+				connection.Open();
+				using (SqlCommand cmd = new SqlCommand(query, connection))
+				{
+					cmd.Parameters.AddWithValue("@codigo_cliente", codigo_cliente);
+					cmd.Parameters.AddWithValue("@codigo_mesa", codigo_mesa);
+					cmd.Parameters.AddWithValue("@codigo_empleado", codigo_empleado);
+					cmd.Parameters.AddWithValue("@fecha_orden", fecha_orden);
+					cmd.Parameters.AddWithValue("@monto_total_orden", monto_total_orden);
+					cmd.Parameters.AddWithValue("@estado", estado);
+					cmd.Parameters.AddWithValue("@usuario_sistema", usuario_sistema);
+					cmd.Parameters.AddWithValue("@fecha_sistema", fecha_sistema);
+
+					cmd.ExecuteNonQuery();
+				}
+			}
+		}
+		#endregion
+
+		#region Metodo Editar Orden Encabezado
+		public void MtdEditarOrdenEncabezado(int codigo_orden_enc, int codigo_cliente, int codigo_mesa, int codigo_empleado, DateTime fecha_orden, decimal monto_total_orden, string estado, string usuario_sistema, DateTime fecha_sistema)
+		{
+			string query = @"UPDATE tbl_encabezado_ordenes SET codigo_cliente = @codigo_cliente, codigo_mesa = @codigo_mesa, codigo_empleado = @codigo_empleado, fecha_orden = @fecha_orden, monto_total_orden = @monto_total_orden, estado = @estado, usuario_sistema = @usuario_sistema, fecha_sistema = @fecha_sistema WHERE codigo_orden_enc = @codigo_orden_enc";
+
+			using (SqlConnection connection = GetConnection())
+			{
+				connection.Open();
+				using (SqlCommand cmd = new SqlCommand(query, connection))
+				{
+					cmd.Parameters.AddWithValue("@codigo_orden_enc", codigo_orden_enc);
+					cmd.Parameters.AddWithValue("@codigo_cliente", codigo_cliente);
+					cmd.Parameters.AddWithValue("@codigo_mesa", codigo_mesa);
+					cmd.Parameters.AddWithValue("@codigo_empleado", codigo_empleado);
+					cmd.Parameters.AddWithValue("@fecha_orden", fecha_orden);
+					cmd.Parameters.AddWithValue("@monto_total_orden", monto_total_orden);
+					cmd.Parameters.AddWithValue("@estado", estado);
+					cmd.Parameters.AddWithValue("@usuario_sistema", usuario_sistema);
+					cmd.Parameters.AddWithValue("@fecha_sistema", fecha_sistema);
+
+					cmd.ExecuteNonQuery();
+				}
+			}
+		}
+		#endregion
+
+		#region Metodo Eliminar Orden Encabezado
+		public void MtdEliminarOrdenEncabezado(int codigo_orden_enc)
+		{
+			string query = @"DELETE FROM tbl_encabezado_ordenes WHERE codigo_orden_enc = @codigo_orden_enc";
+
+			using (SqlConnection connection = GetConnection())
+			{
+				connection.Open();
+				using (SqlCommand cmd = new SqlCommand(query, connection))
+				{
+					cmd.Parameters.AddWithValue("@codigo_orden_enc", codigo_orden_enc);
+
+					cmd.ExecuteNonQuery();
+				}
+			}
+		}
+		#endregion
 	}
+
 }
+
+
+
+

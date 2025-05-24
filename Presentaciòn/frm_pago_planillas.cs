@@ -78,12 +78,7 @@ namespace Presentaciòn
 				lbl_bono.Text = logicaPlanillas.MtdSalarioBono(cbox_codigoempleado.Text).ToString("F2");
 			}
 			
-		
-
-		private void txtHorasExtras_TextChanged(object sender, EventArgs e)
-		{
-
-		}
+	
 
 		private void textBox1_TextChanged(object sender, EventArgs e)
 		{
@@ -128,10 +123,7 @@ namespace Presentaciòn
 		private void btnGuardar_Click_1(object sender, EventArgs e)
 		{
 			
-			if (string.IsNullOrWhiteSpace(cbox_codigoempleado.Text) ||
-					string.IsNullOrWhiteSpace(lbl_salario.Text) ||
-					string.IsNullOrWhiteSpace(lbl_bono.Text) ||
-					string.IsNullOrWhiteSpace(lbl_montototal.Text))
+			if (string.IsNullOrWhiteSpace(cbox_codigoempleado.Text) ||string.IsNullOrWhiteSpace(lbl_salario.Text) ||string.IsNullOrWhiteSpace(lbl_bono.Text) ||string.IsNullOrWhiteSpace(lbl_montototal.Text))
 			{
 				MessageBox.Show("Complete todos los datos antes de guardar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				return;
@@ -210,59 +202,13 @@ namespace Presentaciòn
 
 			}
 		}
-		private void btnEditar_Click(object sender, EventArgs e)
-		{
-		}
-			
-		
 
 
 
-		private void cbox_codigoempleado_SelectedIndexChanged(object sender, EventArgs e)
-		{
-
-
-
-
-		}
-
-		private void btnEliminar_usuario_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void dgvUsuarios_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void btnSalir_frm_usuarios_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void btnCancelar_Click(object sender, EventArgs e)
-		{
-
-		}
-
-
-		private void btnGuardar_Click(object sender, EventArgs e)
-		{
-
-		}
-
-		private void lbl_salario_Click(object sender, EventArgs e)
-		{
-
-		}
 
 		private void btnEditar_Click_1(object sender, EventArgs e)
 		{
-			if (string.IsNullOrWhiteSpace(cbox_codigoempleado.Text) ||
-		string.IsNullOrWhiteSpace(lbl_salario.Text) ||
-		string.IsNullOrWhiteSpace(lbl_bono.Text) ||
-		string.IsNullOrWhiteSpace(lbl_montototal.Text))
+			if (string.IsNullOrWhiteSpace(cbox_codigoempleado.Text) ||string.IsNullOrWhiteSpace(lbl_salario.Text) ||string.IsNullOrWhiteSpace(lbl_bono.Text) ||string.IsNullOrWhiteSpace(lbl_montototal.Text))
 			{
 				MessageBox.Show("Complete todos los datos antes de editar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				return;
@@ -321,12 +267,66 @@ namespace Presentaciòn
 				MessageBox.Show("Ocurrió un error al eliminar el pago: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
-	}
-	}
 	
+#region Inecesario
+
+private void btnEditar_Click(object sender, EventArgs e)
+{
+}
 
 
 
+
+
+private void cbox_codigoempleado_SelectedIndexChanged(object sender, EventArgs e)
+{
+
+
+
+
+}
+
+private void btnEliminar_usuario_Click(object sender, EventArgs e)
+{
+
+}
+
+private void dgvUsuarios_Click(object sender, EventArgs e)
+{
+
+}
+
+private void btnSalir_frm_usuarios_Click(object sender, EventArgs e)
+{
+
+}
+
+private void btnCancelar_Click(object sender, EventArgs e)
+{
+
+}
+
+
+private void btnGuardar_Click(object sender, EventArgs e)
+{
+
+}
+
+private void lbl_salario_Click(object sender, EventArgs e)
+{
+
+}
+
+private void txtHorasExtras_TextChanged(object sender, EventArgs e)
+{
+
+}
+
+
+
+	}
+}
+#endregion
 
 
 

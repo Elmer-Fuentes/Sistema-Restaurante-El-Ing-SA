@@ -15,12 +15,12 @@ namespace C_Logica
 		{
 			decimal salario = 0;
 
-			string[] partes = codigo_orden_enc.Split('-');
+			string[] partes = codigo_orden_enc .Split(',');
 			if (partes.Length > 0 && decimal.TryParse(partes[0].Trim(), out decimal codigoNumerico))
 			{
 				using (SqlConnection conn = GetConnection())
 				{
-					string query = "SELECT salario FROM tbl_detalle_ordenes WHERE codigo_orden_enc = @codigo_orden_enc";
+					string query = "SELECT precio_total FROM tbl_detalles_ordenes WHERE codigo_orden_enc = @codigo_orden_enc";
 					using (SqlCommand cmd = new SqlCommand(query, conn))
 					{
 						cmd.Parameters.AddWithValue("@codigo_orden_enc", codigoNumerico);

@@ -19,7 +19,7 @@ namespace capa_datos
         {
             using (var connection = GetConnection())
             {
-                connection.Open();
+                    connection.Open();
                 using (var command = new SqlCommand())
                 {
                     command.Connection = connection;
