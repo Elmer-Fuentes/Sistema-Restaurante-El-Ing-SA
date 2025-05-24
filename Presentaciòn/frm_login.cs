@@ -64,7 +64,7 @@ namespace Presentaciòn
                     {
                         MessageBox.Show("Nombre de usuario o contraseña ingresados ​​incorrectos. \n Por favor, inténtelo de nuevo.");
                         txt_usuario.Text = "Usarios";
-                        txt_contrasena.Focus();
+                        txt_usuario.Focus();
                         Limpiardatos();
                     }
                 }
