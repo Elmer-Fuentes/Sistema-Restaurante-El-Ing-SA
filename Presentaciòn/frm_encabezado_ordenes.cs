@@ -120,7 +120,7 @@ namespace Presentaciòn
 			cbox_CodigoMesa.Text = "";       
 			cbox_CodigoEmpleado.Text = "";    
 			DtpFechaOrden.Value = DateTime.Now; 
-			lbl_MontoTotal.Text = "0";       
+			lbl_MontoTotal.Text = "0.00";       
 			cbox_estado.Text = "";   
 		}
 

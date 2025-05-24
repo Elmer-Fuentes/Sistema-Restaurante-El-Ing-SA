@@ -112,10 +112,10 @@ namespace Presentaciòn
 			txt_codigo_pago_planilla.Text = "";
 			cbox_codigoempleado.Text = "";
 			DtpFechaPago.Value = DateTime.Now;   
-			lbl_salario.Text = "";          
-			lbl_bono.Text = "";              
-			txtHorasExtras.Text = "";          
-			lbl_montototal.Text = "";
+			lbl_salario.Text = "0.00";          
+			lbl_bono.Text = "0.00";              
+			txtHorasExtras.Text = "0";          
+			lbl_montototal.Text = "0.00";
 			cbox_estado.Text = "";
 		}
 

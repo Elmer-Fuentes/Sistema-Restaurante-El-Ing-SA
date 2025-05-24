@@ -55,7 +55,7 @@ namespace Presentaciòn
 			txt_codigo_empleado.Text = "";
 			txt_Nombre.Text = "";
 			cboxcargo.Text = "";
-			lbl_salario.Text = "";
+			lbl_salario.Text = "0.00";
 			DtpFechaContratacion.Value = DateTime.Now;
 			cbox_estado.Text = "";
 		}

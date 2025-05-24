@@ -67,9 +67,9 @@
 			this.lbl_MontoTotal.Location = new System.Drawing.Point(708, 48);
 			this.lbl_MontoTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
 			this.lbl_MontoTotal.Name = "lbl_MontoTotal";
-			this.lbl_MontoTotal.Size = new System.Drawing.Size(16, 17);
+			this.lbl_MontoTotal.Size = new System.Drawing.Size(36, 17);
 			this.lbl_MontoTotal.TabIndex = 58;
-			this.lbl_MontoTotal.Text = "0";
+			this.lbl_MontoTotal.Text = "0.00";
 			// 
 			// cbox_estado
 			// 
