@@ -124,6 +124,11 @@ create table tbl_detalles_ordenes(
 			foreign key (codigo_menu) references tbl_menus (codigo_menu)
 );
 
+
+--akterar campo codigo_orden_encabezados para que reciba valores unicos
+ALTER TABLE [dbo].[tbl_detalles_ordenes]
+ADD CONSTRAINT UQ_tbl_detalles_ordenes_codigo_orden_enc UNIQUE ([codigo_orden_enc]);
+
 --10. tabla_inventarios
 create table tbl_inventarios(
 			codigo_inventario int primary key identity (1,1) not null,
