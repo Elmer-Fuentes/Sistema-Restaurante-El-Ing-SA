@@ -120,12 +120,14 @@ namespace Presentaciòn
 			cbox_CodigoMesa.Text = "";       
 			cbox_CodigoEmpleado.Text = "";    
 			DtpFechaOrden.Value = DateTime.Now; 
-			lbl_MontoTotal.Text = "";       
+			lbl_MontoTotal.Text = "0";       
 			cbox_estado.Text = "";   
 		}
 
 		private void cbox_CodigoOrdenEnc_SelectedIndexChanged(object sender, EventArgs e)
 		{
+			
+			
 			lbl_MontoTotal.Text = logicaEncabezadoOrdenes.MtdTotalOrd(cbox_CodigoOrdenEnc.Text).ToString();
 		}
 
