@@ -21,17 +21,7 @@ namespace Presentaciòn
             InitializeComponent();
         }
 
-        private void lbl_usuario_logo_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void sub_pnl_opeccion()
-        {
-            this.pnl_administracion.Visible = false;
-            this.pnl_catalogos.Visible = false;
-            this.pnl_operaciones.Visible = false;
-        }
-
+        #region = "mtd load capturar usuario y roll"
         private void frm_Menu_v2_Load(object sender, EventArgs e)
         {
             sub_pnl_opeccion();
@@ -39,13 +29,26 @@ namespace Presentaciòn
             lbl_usuario_logo.Text = Mis_Variables.UsuarioLogueado; //muestra el nombre del usuario en el label
             lbl_rol_usuario.Text = Mis_Variables.rolusuario; //muestra el rol del usuario en el label
         }
+        #endregion
 
+        #region = "Ocultar subpanel";
+        private void sub_pnl_opeccion()
+        {
+            this.pnl_administracion.Visible = false;
+            this.pnl_catalogos.Visible = false;
+            this.pnl_operaciones.Visible = false;
+        }
+        #endregion
+
+        #region = "Programación en Timer pie MTI v2"
         private void timer1_Tick(object sender, EventArgs e)
         {
             lbl_fecha_so_v2.Text = DateTime.Now.ToLongDateString(); //muestra la fecha en el label
             lbl_hora_so_v2.Text = DateTime.Now.ToLongTimeString(); //muestra la hora en el label
         }
+        #endregion
 
+        #region = "Accion de los btn acceos principal en panel tipo dashbaord";
         private void btn_administracion_Click(object sender, EventArgs e)
         {
             if (this.pnl_administracion.Visible == false)
@@ -59,6 +62,7 @@ namespace Presentaciòn
             this.pnl_catalogos.Visible = false;
             this.pnl_operaciones.Visible = false;
         }
+
 
         private void btn_catalogos_Click(object sender, EventArgs e)
         {
@@ -87,7 +91,9 @@ namespace Presentaciòn
             this.pnl_administracion.Visible = false;
             this.pnl_catalogos.Visible = false;
         }
+        #endregion
 
+        #region = "btn ocultar- mostrar_asignar.icono panel menu MDI v2";
         private void btn_ocultar_Menu_Click(object sender, EventArgs e)
         {
             if (this.pnl_Menu.Visible == false)
@@ -102,42 +108,37 @@ namespace Presentaciòn
             }
             sub_pnl_opeccion();
         }
+        #endregion
 
-        #region = "Mtd para controlar Salir del sistema y Cambiar Sección"
-        #region = "Evento fromclosing desde propiedades para controlar el btn_cerrar del MDI";
-
-
-
+        #region = "Mtd para controlar Salir del sistema";
+        //controlar btn principal del mdi cerrar    
+        private void frm_Menu_v2_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
         #endregion;
+
+        #region = "bnt_salir MDI";
         private void salirDelSistemaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.Application.Exit();
         }
+        #endregion
 
         #region = "Cambiar Inicio seción";
-                private void cerrarSeciónToolStripMenuItem_Click(object sender, EventArgs e)
+        private void cerrarSeciónToolStripMenuItem_Click(object sender, EventArgs e)
                 {
                     this.Hide();
                     frm_login login = new frm_login();
                     login.Show();
                 }
-                //controlar btn principal del mdi cerrar    
-                private void frm_Menu_v2_FormClosing(object sender, FormClosingEventArgs e)
-                {
-                    System.Windows.Forms.Application.Exit();
-                }
-                #endregion
-
         #endregion
-
-
-
 
         #region "Mis Variables Form Secundario (hijo)";
 
         private Form activeForm = null;
 
-        #endregion "Mis Variables Form Secundario (hijo)";
+        #endregion
 
         #region "Mtd Abrir y Mostrar form";
 
@@ -153,7 +154,7 @@ namespace Presentaciòn
             childForm.Show();// llama al form hijo
         }
 
-        #endregion "Mtd Abrir y Mostrar form";
+        #endregion;
 
         #region = "Instancia de form hijos";
 
@@ -242,13 +243,14 @@ namespace Presentaciòn
         {
             openChildForm (new frm_detalle_ordenes());
         }
-        #endregion;
 
         private void btn_pago_Orden_Click(object sender, EventArgs e)
         {
-            openChildForm (new frm_pago_ordens());
+            openChildForm(new frm_pago_ordens());
         }
+        #endregion;
 
-     
+
+
     }
 }
