@@ -44,7 +44,7 @@ namespace Datos
 
         public DataTable MtdRetornarDatos()
         {
-            string query = "select codigo_inventario as 'Codigo Inventario',\r\ncodigo_menu as 'Codigo Menu',\r\ncategoria as 'Categoria',\r\ncantidad as 'Cantidad',\r\nfecha_entrada as 'Fecha de entrada',\r\nfecha_vencimiento as 'Fecha de Vencimiento',\r\ndias_vigencia as 'Dias de Vigencia',\r\nusuario_sistema as 'Usuario Sstema',\r\nfecha_sistema as 'Fecha Sistema'\r\nfrom tbl_inventarios";
+            string query = "select Codigo_Inventario,Codigo_Menu,Categoria,Cantidad,Fecha_entrada,Fecha_vencimiento,Dias_vigencia,Usuario_sistema,Fecha_sistema,datediff(DAY,fecha_entrada,DateAdd(hour,-6,Getdate())) as DiasTranscurridos from tbl_inventarios";
             DataTable datos = new DataTable();
             using (SqlConnection connection = GetConnection())
             {
