@@ -78,6 +78,28 @@ namespace Datos
             }
         }
 
+        public void Mtdeditar(int codigo_inventario, int codigo_menu, string categoria, int cantidad, DateTime fecha_entrada, DateTime fecha_vencimiento, int dias_vigencia, string usuario_sistema, DateTime fecha_sistema)
+        {
+            string query = "";
+            using (SqlConnection connection = GetConnection())
+            {
+                connection.Open();
+                using (SqlCommand editar = new SqlCommand(query, connection))
+                {
+                    editar.Parameters.AddWithValue("@codigo_inventario", codigo_inventario);
+                    editar.Parameters.AddWithValue("@codigo_menu", codigo_menu);
+                    editar.Parameters.AddWithValue("@categoria", categoria);
+                    editar.Parameters.AddWithValue("@cantidad", cantidad);
+                    editar.Parameters.AddWithValue("@fecha_entrada", fecha_entrada);
+                    editar.Parameters.AddWithValue("@fecha_vencimiento", fecha_vencimiento);
+                    editar.Parameters.AddWithValue("@dias_vigencia", dias_vigencia);
+                    editar.Parameters.AddWithValue("@fecha_sistema", fecha_sistema);
+                    editar.Parameters.AddWithValue("@usuario_sistema", usuario_sistema);
+                    editar.ExecuteNonQuery();
+                }
+            }
+        }
+
         public void MtdEliminardatos(int codigo_inventario)
         {
             string query = "delete from tbl_inventarios where codigo_inventario = @codigo_inventario ";
@@ -90,6 +112,34 @@ namespace Datos
                     eliminar.ExecuteNonQuery();
                 }
             }
+        }
+
+        public List<dynamic> MtdCategoria()
+        {
+            List<dynamic> lista = new List<dynamic>();
+            string query = "";
+            using (SqlConnection connection = GetConnection())
+            {
+                connection.Open();
+                using (SqlCommand cmd = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            lista.Add(new
+                            {
+                                value = reader[""],
+                                text = $"{reader[""]} - {reader[""]}"
+                            }
+
+                                );
+                        }
+                    }
+                }
+            }
+
+            return lista;
         }
     }
 }
