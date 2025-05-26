@@ -49,8 +49,6 @@ namespace C_Logica
 		{
 			
 
-
-
 			decimal  salario = MtdSalarioPlanilla(codigo_empleado);
 
 			decimal bono = salario * 0.10m;

@@ -14,19 +14,75 @@ namespace Datos
         #region = "Metodo para vista del select o mostrar en el dgv";
         public DataTable MtdConsultarPagoOrden()
         {
-            string query = "select * from tbl_pago_ordenes";
-            using (SqlConnection connection = GetConnection())
-            {
-                SqlDataAdapter retornar = new SqlDataAdapter(query, connection);
-                DataTable datospagoplanillas = new DataTable();
-                retornar.Fill(datospagoplanillas);
-                return datospagoplanillas;
-            }
-        }
-        #endregion
+			string query = @"SELECT codigo_pago AS 'Código Pago', codigo_orden_enc AS 'Código Orden Enc', monto_orden AS 'Monto Orden',propina AS 'Propina', impuesto AS 'Impuesto', descuento AS 'Descuento',total_pago AS 'Total Pago',metodo_pago AS 'Método Pago',estado AS 'Estado',fecha_pago AS 'Fecha Pago',usuario_sistema AS 'Usuario Sistema',fecha_sistema AS 'Fecha Sistema'FROM tbl_pago_ordenes";
 
-        #region = "Met_Insert_pago_ordeb";
-        public void MtdInsPagoOrden(int codigo_orden_enc, double monto_orden, double propina, double impuesto, double descuento, double total_pago, string metodo_pago, string estado, DateTime fecha_pago, string usuario_sistema, DateTime fecha_sistema)
+			using (SqlConnection connection = GetConnection())
+			{
+				SqlDataAdapter retornar = new SqlDataAdapter(query, connection);
+				DataTable datospagoordenes = new DataTable();
+				retornar.Fill(datospagoordenes);
+				return datospagoordenes;
+			}
+        }
+		#endregion
+
+		#region Metodo para Mostrar Lista
+		public List<dynamic> MtdListaEncabezados()
+		{
+			string QueryListaEncabezados = "SELECT codigo_orden_enc FROM tbl_encabezado_ordenes";
+            List<dynamic> ListaEncabezados = new List<dynamic>();
+			using (SqlConnection connection = GetConnection())
+			{
+				connection.Open();
+				using (SqlCommand cmd = new SqlCommand(QueryListaEncabezados, connection))
+				{
+					using (SqlDataReader reader = cmd.ExecuteReader())
+					{
+						while (reader.Read())
+						{
+							ListaEncabezados.Add(new
+                            {
+                                Value = reader["codigo_orden_enc"],
+                                Text = $"{reader["codigo_orden_enc"]}"
+                            });
+						}
+					}
+				}
+			}
+
+			return ListaEncabezados;
+		}
+
+		
+
+		public string MtdListaEncabezadosDgv(int codigo_orden_enc)
+		{
+			string resultado = string.Empty;
+			string QueryListaEncabezados = "SELECT codigo_orden_enc FROM tbl_encabezado_ordenes WHERE codigo_orden_enc = @codigo_orden_enc";
+
+			using (SqlConnection connection = GetConnection())
+			{
+				connection.Open();
+				using (SqlCommand cmd = new SqlCommand(QueryListaEncabezados, connection))
+				{
+					cmd.Parameters.AddWithValue("@codigo_orden_enc", codigo_orden_enc);
+					using (SqlDataReader reader = cmd.ExecuteReader())
+					{
+						if (reader.Read())
+						{
+							string codigo = reader["codigo_orden_enc"].ToString();
+							resultado = $"{codigo}";
+						}
+					}
+				}
+			}
+
+			return resultado;
+		}
+#endregion
+
+		#region = "Met_Insert_pago_ordeb";
+		public void MtdInsPagoOrden(int codigo_orden_enc, double monto_orden, double propina, double impuesto, double descuento, double total_pago, string metodo_pago, string estado, DateTime fecha_pago, string usuario_sistema, DateTime fecha_sistema)
         {
             string query = "Insert into tbl_pago_ordenes (codigo_orden_enc,monto_orden,propina,impuesto,descuento,total_pago,metodo_pago,estado,fecha_pago,usuario_sistema,fecha_sistema) values (@codigo_orden_enc,@monto_orden,@propina,@impuesto,@descuento,@total_pago,@metodo_pago,@estado,@fecha_pago,@usuario_sistema,@fecha_sistema)";
 
