@@ -74,7 +74,8 @@ namespace Presentaciòn
 		{
 			if (string.IsNullOrEmpty(txt_Nombre.Text) ||string.IsNullOrEmpty(cboxcargo.Text) ||string.IsNullOrEmpty(lbl_salario.Text) ||string.IsNullOrEmpty(cbox_estado.Text))
 			{
-				MessageBox.Show("Favor completar todos los campos del formulario", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("Complete todos los datos antes de guardar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				return;
 			}
 			else
 			{
