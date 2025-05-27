@@ -27,6 +27,7 @@ namespace Presentaciòn
             style();
             MtdMostrardatos();
             MtdMostrarmenus();
+            Mtdmostrarcategoria();
         }
 
         private void style()
@@ -75,10 +76,21 @@ namespace Presentaciòn
         {
             txt_Cantidad.Text = "";
             txt_codigoInventario.Text = "";
-            cbos_categorias.Text = "";
+            cbox_categorias.Text = "";
             cbox_codigomenu.Text = "";
             dtm_fechaentrada.Text = DateTime.Today.ToString("d");
             dtm_fechavencimiento.Text = DateTime.Today.ToString("d");
+        }
+
+        private void Mtdmostrarcategoria()
+        {
+            var lista = cd_inventario.Mtdcategoria();
+            foreach (var items in lista)
+            {
+                cbox_categorias.Items.Add(items);
+            }
+            cbox_categorias.ValueMember = "Value";
+            cbox_categorias.DisplayMember = "Text";
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -98,13 +110,13 @@ namespace Presentaciòn
             {
                 txt_Cantidad.BackColor = Color.White;
             }
-            if (string.IsNullOrWhiteSpace(cbos_categorias.Text))
+            if (string.IsNullOrWhiteSpace(cbox_categorias.Text))
             {
-                cbos_categorias.BackColor = Color.Red;
+                cbox_categorias.BackColor = Color.Red;
             }
-            else if (!string.IsNullOrWhiteSpace(cbos_categorias.Text))
+            else if (!string.IsNullOrWhiteSpace(cbox_categorias.Text))
             {
-                cbos_categorias.BackColor = Color.White;
+                cbox_categorias.BackColor = Color.White;
             }
             if (string.IsNullOrWhiteSpace(cbox_codigomenu.Text))
             {
@@ -132,13 +144,13 @@ namespace Presentaciòn
             Mtdverificarentrada();
             //para realizar una comparacion y evitar que en fecha de entrada se ingrese una fecha mayor a la de el dia actual
             DateTime f = dtm_fechaentrada.Value;
-            if (!string.IsNullOrWhiteSpace(cbos_categorias.Text) && !string.IsNullOrWhiteSpace(txt_Cantidad.Text) && !string.IsNullOrWhiteSpace(cbox_codigomenu.Text))
+            if (!string.IsNullOrWhiteSpace(cbox_categorias.Text) && !string.IsNullOrWhiteSpace(txt_Cantidad.Text) && !string.IsNullOrWhiteSpace(cbox_codigomenu.Text))
             {
                 if (f < fecha.MtdFecha())
                 {
                     try
                     {
-                        categoria = cbos_categorias.Text;
+                        categoria = cbox_categorias.Text;
                         //para obtener solo el numero
                         codigo_menu = int.Parse(cbox_codigomenu.Text.Split('-')[0].Trim());
                         cantidad = int.Parse(txt_Cantidad.Text);
@@ -185,6 +197,60 @@ namespace Presentaciòn
             else
             {
                 MessageBox.Show("Debe de llenar los campos marcados en rojo", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void dgvDatosPlanilla_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txt_codigoInventario.Text = dgvDatosPlanilla.SelectedCells[0].Value.ToString();
+            cbox_categorias.Text = dgvDatosPlanilla.SelectedCells[2].Value.ToString();
+            cbox_codigomenu.Text = dgvDatosPlanilla.SelectedCells[1].Value.ToString();
+            txt_Cantidad.Text = dgvDatosPlanilla.SelectedCells[3].Value.ToString();
+            dtm_fechaentrada.Text = dgvDatosPlanilla.SelectedCells[4].Value.ToString();
+            dtm_fechavencimiento.Text = dgvDatosPlanilla.SelectedCells[5].Value.ToString();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            int codigo_inventario = int.Parse(txt_codigoInventario.Text);
+            int codigo_menu;
+            string categoria;
+            int cantidad;
+            //se le da formato de fecha corta
+            string fechaentrada = dtm_fechaentrada.Value.ToString("d");
+            string fechavencimiento = dtm_fechavencimiento.Value.ToString("d");
+            int dias_vigencia;
+            string usuario_sistema;
+            string Fecha = fecha.MtdFecha().ToString("d");
+            if (!string.IsNullOrWhiteSpace(cbox_codigomenu.Text) && !string.IsNullOrWhiteSpace(cbox_categorias.Text) && !string.IsNullOrWhiteSpace(txt_Cantidad.Text))
+            {
+                categoria = cbox_categorias.Text;
+                //para obtener solo el numero
+                codigo_menu = int.Parse(cbox_codigomenu.Text.Split('-')[0].Trim());
+                cantidad = int.Parse(txt_Cantidad.Text);
+                DateTime fecha_entrada = DateTime.Parse(fechaentrada);
+                DateTime fecha_vencimiento = DateTime.Parse(fechavencimiento);
+                dias_vigencia = cl_inventario.MtdDiasVigencia(fecha_entrada, fecha_vencimiento);
+                usuario_sistema = Mis_Variables.UsuarioLogueado.ToString();
+                DateTime fecha_sistema = DateTime.Parse(Fecha);
+                if (fecha_entrada <= fecha_sistema)
+                {
+                    Mtdverificarentrada();
+                    cd_inventario.Mtdeditar(codigo_inventario, codigo_menu, categoria, cantidad, fecha_entrada, fecha_vencimiento, dias_vigencia, usuario_sistema, fecha_sistema);
+                    MtdBorrarcampos();
+                    MessageBox.Show("Se a modificado el inventario exitosamente", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MtdBorrarcampos();
+                }
+                else
+                {
+                    MessageBox.Show("La fecha de entrada no puede ser mayor a la fecha actual", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    dtm_fechaentrada.Focus();
+                }
+            }
+            else
+            {
+                Mtdverificarentrada();
+                MessageBox.Show("Debe de ingresar datos en los campos marcados de rojo", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

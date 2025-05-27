@@ -1,0 +1,1 @@
+select categoria from tbl_clientes 

@@ -41,7 +41,6 @@
             this.btnEditar = new FontAwesome.Sharp.IconButton();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
             this.txt_Cantidad = new System.Windows.Forms.TextBox();
-            this.cbos_categorias = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -52,6 +51,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.btnSalir = new FontAwesome.Sharp.IconButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbox_codigomenu = new System.Windows.Forms.ComboBox();
             this.dtm_fechavencimiento = new System.Windows.Forms.DateTimePicker();
             this.dtm_fechaentrada = new System.Windows.Forms.DateTimePicker();
             this.txt_codigoInventario = new System.Windows.Forms.TextBox();
@@ -61,7 +61,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.cbox_codigomenu = new System.Windows.Forms.ComboBox();
+            this.cbox_categorias = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_buscarclientes)).BeginInit();
@@ -196,6 +196,7 @@
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnGuardar
             // 
@@ -219,13 +220,6 @@
             this.txt_Cantidad.Name = "txt_Cantidad";
             this.txt_Cantidad.Size = new System.Drawing.Size(165, 20);
             this.txt_Cantidad.TabIndex = 17;
-            // 
-            // cbos_categorias
-            // 
-            this.cbos_categorias.Location = new System.Drawing.Point(214, 85);
-            this.cbos_categorias.Name = "cbos_categorias";
-            this.cbos_categorias.Size = new System.Drawing.Size(165, 20);
-            this.cbos_categorias.TabIndex = 16;
             // 
             // tabControl1
             // 
@@ -318,6 +312,7 @@
             this.dgvDatosPlanilla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDatosPlanilla.Size = new System.Drawing.Size(1099, 188);
             this.dgvDatosPlanilla.TabIndex = 54;
+            this.dgvDatosPlanilla.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatosPlanilla_CellClick);
             // 
             // label8
             // 
@@ -347,6 +342,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cbox_categorias);
             this.groupBox1.Controls.Add(this.cbox_codigomenu);
             this.groupBox1.Controls.Add(this.dtm_fechavencimiento);
             this.groupBox1.Controls.Add(this.dtm_fechaentrada);
@@ -354,7 +350,6 @@
             this.groupBox1.Controls.Add(this.btnEditar);
             this.groupBox1.Controls.Add(this.btnGuardar);
             this.groupBox1.Controls.Add(this.txt_Cantidad);
-            this.groupBox1.Controls.Add(this.cbos_categorias);
             this.groupBox1.Controls.Add(this.txt_codigoInventario);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
@@ -369,6 +364,14 @@
             this.groupBox1.Size = new System.Drawing.Size(1089, 135);
             this.groupBox1.TabIndex = 53;
             this.groupBox1.TabStop = false;
+            // 
+            // cbox_codigomenu
+            // 
+            this.cbox_codigomenu.FormattingEnabled = true;
+            this.cbox_codigomenu.Location = new System.Drawing.Point(214, 54);
+            this.cbox_codigomenu.Name = "cbox_codigomenu";
+            this.cbox_codigomenu.Size = new System.Drawing.Size(165, 21);
+            this.cbox_codigomenu.TabIndex = 29;
             // 
             // dtm_fechavencimiento
             // 
@@ -458,13 +461,13 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Codigo Inventario:";
             // 
-            // cbox_codigomenu
+            // cbox_categorias
             // 
-            this.cbox_codigomenu.FormattingEnabled = true;
-            this.cbox_codigomenu.Location = new System.Drawing.Point(214, 54);
-            this.cbox_codigomenu.Name = "cbox_codigomenu";
-            this.cbox_codigomenu.Size = new System.Drawing.Size(165, 21);
-            this.cbox_codigomenu.TabIndex = 29;
+            this.cbox_categorias.FormattingEnabled = true;
+            this.cbox_categorias.Location = new System.Drawing.Point(214, 102);
+            this.cbox_categorias.Name = "cbox_categorias";
+            this.cbox_categorias.Size = new System.Drawing.Size(165, 21);
+            this.cbox_categorias.TabIndex = 30;
             // 
             // frm_inventario
             // 
@@ -509,7 +512,6 @@
         private FontAwesome.Sharp.IconButton btnEditar;
         private FontAwesome.Sharp.IconButton btnGuardar;
         private System.Windows.Forms.TextBox txt_Cantidad;
-        private System.Windows.Forms.TextBox cbos_categorias;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Panel panel1;
@@ -530,5 +532,6 @@
         private System.Windows.Forms.DateTimePicker dtm_fechavencimiento;
         private System.Windows.Forms.DateTimePicker dtm_fechaentrada;
         private System.Windows.Forms.ComboBox cbox_codigomenu;
+        private System.Windows.Forms.ComboBox cbox_categorias;
     }
 }

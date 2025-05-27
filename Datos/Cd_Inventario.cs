@@ -80,7 +80,7 @@ namespace Datos
 
         public void Mtdeditar(int codigo_inventario, int codigo_menu, string categoria, int cantidad, DateTime fecha_entrada, DateTime fecha_vencimiento, int dias_vigencia, string usuario_sistema, DateTime fecha_sistema)
         {
-            string query = "";
+            string query = "update tbl_inventarios set codigo_menu = @codigo_menu, categoria = @categoria, cantidad = @cantidad, fecha_entrada = @fecha_entrada, fecha_vencimiento = @fecha_vencimiento, dias_vigencia = @dias_vigencia, usuario_sistema = @usuario_sistema, fecha_sistema = @fecha_sistema where codigo_inventario = @codigo_inventario";
             using (SqlConnection connection = GetConnection())
             {
                 connection.Open();
@@ -114,10 +114,10 @@ namespace Datos
             }
         }
 
-        public List<dynamic> MtdCategoria()
+        public List<dynamic> Mtdcategoria()
         {
+            string query = "select categoria from tbl_clientes ";
             List<dynamic> lista = new List<dynamic>();
-            string query = "";
             using (SqlConnection connection = GetConnection())
             {
                 connection.Open();
@@ -129,16 +129,15 @@ namespace Datos
                         {
                             lista.Add(new
                             {
-                                value = reader[""],
-                                text = $"{reader[""]} - {reader[""]}"
+                                value = reader["categoria"],
+                                text = $"{reader["categoria"]} "
                             }
 
-                                );
+                             );
                         }
                     }
                 }
             }
-
             return lista;
         }
     }
