@@ -40,7 +40,6 @@
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.btnEditar = new FontAwesome.Sharp.IconButton();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
-            this.txt_Cantidad = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -62,6 +61,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cbox_categorias = new System.Windows.Forms.ComboBox();
+            this.nud_Cantidad = new System.Windows.Forms.NumericUpDown();
             this.panel2.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_buscarclientes)).BeginInit();
@@ -70,6 +70,7 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosPlanilla)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_Cantidad)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_buscar
@@ -214,13 +215,6 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // txt_Cantidad
-            // 
-            this.txt_Cantidad.Location = new System.Drawing.Point(685, 20);
-            this.txt_Cantidad.Name = "txt_Cantidad";
-            this.txt_Cantidad.Size = new System.Drawing.Size(165, 20);
-            this.txt_Cantidad.TabIndex = 17;
-            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
@@ -339,9 +333,11 @@
             this.btnSalir.Text = "Salir";
             this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.nud_Cantidad);
             this.groupBox1.Controls.Add(this.cbox_categorias);
             this.groupBox1.Controls.Add(this.cbox_codigomenu);
             this.groupBox1.Controls.Add(this.dtm_fechavencimiento);
@@ -349,7 +345,6 @@
             this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.btnEditar);
             this.groupBox1.Controls.Add(this.btnGuardar);
-            this.groupBox1.Controls.Add(this.txt_Cantidad);
             this.groupBox1.Controls.Add(this.txt_codigoInventario);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
@@ -469,6 +464,13 @@
             this.cbox_categorias.Size = new System.Drawing.Size(165, 21);
             this.cbox_categorias.TabIndex = 30;
             // 
+            // nud_Cantidad
+            // 
+            this.nud_Cantidad.Location = new System.Drawing.Point(685, 18);
+            this.nud_Cantidad.Name = "nud_Cantidad";
+            this.nud_Cantidad.Size = new System.Drawing.Size(39, 20);
+            this.nud_Cantidad.TabIndex = 31;
+            // 
             // frm_inventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -493,6 +495,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosPlanilla)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_Cantidad)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -511,7 +514,6 @@
         private FontAwesome.Sharp.IconButton btnCancelar;
         private FontAwesome.Sharp.IconButton btnEditar;
         private FontAwesome.Sharp.IconButton btnGuardar;
-        private System.Windows.Forms.TextBox txt_Cantidad;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Panel panel1;
@@ -533,5 +535,6 @@
         private System.Windows.Forms.DateTimePicker dtm_fechaentrada;
         private System.Windows.Forms.ComboBox cbox_codigomenu;
         private System.Windows.Forms.ComboBox cbox_categorias;
+        private System.Windows.Forms.NumericUpDown nud_Cantidad;
     }
 }

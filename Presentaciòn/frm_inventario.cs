@@ -74,7 +74,7 @@ namespace Presentaciòn
 
         private void MtdBorrarcampos()
         {
-            txt_Cantidad.Text = "";
+            nud_Cantidad.Text = "";
             txt_codigoInventario.Text = "";
             cbox_categorias.Text = "";
             cbox_codigomenu.Text = "";
@@ -102,13 +102,13 @@ namespace Presentaciòn
 
         private void Mtdverificarentrada()
         {
-            if (string.IsNullOrWhiteSpace(txt_Cantidad.Text))
+            if (string.IsNullOrWhiteSpace(nud_Cantidad.Text))
             {
-                txt_Cantidad.BackColor = Color.Red;
+                nud_Cantidad.BackColor = Color.Red;
             }
-            else if (!string.IsNullOrWhiteSpace(txt_Cantidad.Text))
+            else if (!string.IsNullOrWhiteSpace(nud_Cantidad.Text))
             {
-                txt_Cantidad.BackColor = Color.White;
+                nud_Cantidad.BackColor = Color.White;
             }
             if (string.IsNullOrWhiteSpace(cbox_categorias.Text))
             {
@@ -144,7 +144,7 @@ namespace Presentaciòn
             Mtdverificarentrada();
             //para realizar una comparacion y evitar que en fecha de entrada se ingrese una fecha mayor a la de el dia actual
             DateTime f = dtm_fechaentrada.Value;
-            if (!string.IsNullOrWhiteSpace(cbox_categorias.Text) && !string.IsNullOrWhiteSpace(txt_Cantidad.Text) && !string.IsNullOrWhiteSpace(cbox_codigomenu.Text))
+            if (!string.IsNullOrWhiteSpace(cbox_categorias.Text) && !string.IsNullOrWhiteSpace(nud_Cantidad.Text) && !string.IsNullOrWhiteSpace(cbox_codigomenu.Text))
             {
                 if (f < fecha.MtdFecha())
                 {
@@ -153,7 +153,7 @@ namespace Presentaciòn
                         categoria = cbox_categorias.Text;
                         //para obtener solo el numero
                         codigo_menu = int.Parse(cbox_codigomenu.Text.Split('-')[0].Trim());
-                        cantidad = int.Parse(txt_Cantidad.Text);
+                        cantidad = int.Parse(nud_Cantidad.Text);
                         DateTime fecha_entrada = DateTime.Parse(fechaentrada);
                         DateTime fecha_vencimiento = DateTime.Parse(fechavencimiento);
                         dias_vigencia = cl_inventario.MtdDiasVigencia(fecha_entrada, fecha_vencimiento);
@@ -205,7 +205,7 @@ namespace Presentaciòn
             txt_codigoInventario.Text = dgvDatosPlanilla.SelectedCells[0].Value.ToString();
             cbox_categorias.Text = dgvDatosPlanilla.SelectedCells[2].Value.ToString();
             cbox_codigomenu.Text = dgvDatosPlanilla.SelectedCells[1].Value.ToString();
-            txt_Cantidad.Text = dgvDatosPlanilla.SelectedCells[3].Value.ToString();
+            nud_Cantidad.Text = dgvDatosPlanilla.SelectedCells[3].Value.ToString();
             dtm_fechaentrada.Text = dgvDatosPlanilla.SelectedCells[4].Value.ToString();
             dtm_fechavencimiento.Text = dgvDatosPlanilla.SelectedCells[5].Value.ToString();
         }
@@ -222,12 +222,12 @@ namespace Presentaciòn
             int dias_vigencia;
             string usuario_sistema;
             string Fecha = fecha.MtdFecha().ToString("d");
-            if (!string.IsNullOrWhiteSpace(cbox_codigomenu.Text) && !string.IsNullOrWhiteSpace(cbox_categorias.Text) && !string.IsNullOrWhiteSpace(txt_Cantidad.Text))
+            if (!string.IsNullOrWhiteSpace(cbox_codigomenu.Text) && !string.IsNullOrWhiteSpace(cbox_categorias.Text) && !string.IsNullOrWhiteSpace(nud_Cantidad.Text))
             {
                 categoria = cbox_categorias.Text;
                 //para obtener solo el numero
                 codigo_menu = int.Parse(cbox_codigomenu.Text.Split('-')[0].Trim());
-                cantidad = int.Parse(txt_Cantidad.Text);
+                cantidad = int.Parse(nud_Cantidad.Text);
                 DateTime fecha_entrada = DateTime.Parse(fechaentrada);
                 DateTime fecha_vencimiento = DateTime.Parse(fechavencimiento);
                 dias_vigencia = cl_inventario.MtdDiasVigencia(fecha_entrada, fecha_vencimiento);
@@ -235,11 +235,38 @@ namespace Presentaciòn
                 DateTime fecha_sistema = DateTime.Parse(Fecha);
                 if (fecha_entrada <= fecha_sistema)
                 {
-                    Mtdverificarentrada();
-                    cd_inventario.Mtdeditar(codigo_inventario, codigo_menu, categoria, cantidad, fecha_entrada, fecha_vencimiento, dias_vigencia, usuario_sistema, fecha_sistema);
-                    MtdBorrarcampos();
-                    MessageBox.Show("Se a modificado el inventario exitosamente", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    MtdBorrarcampos();
+                    try
+                    {
+                        DialogResult r;
+                        if (dias_vigencia <= 0)
+                        {
+                            r = MessageBox.Show("El producto esta por vencer, esta seguro de ingresarlo?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            if (r == DialogResult.No)
+                            {
+                                MtdBorrarcampos();
+                            }
+                            else if (r == DialogResult.Yes)
+                            {
+                                Mtdverificarentrada();
+                                cd_inventario.Mtdeditar(codigo_inventario, codigo_menu, categoria, cantidad, fecha_entrada, fecha_vencimiento, dias_vigencia, usuario_sistema, fecha_sistema);
+                                MtdMostrardatos();
+                                MessageBox.Show("Se a modificado el inventario exitosamente", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MtdBorrarcampos();
+                            }
+                        }
+                        else
+                        {
+                            Mtdverificarentrada();
+                            cd_inventario.Mtdeditar(codigo_inventario, codigo_menu, categoria, cantidad, fecha_entrada, fecha_vencimiento, dias_vigencia, usuario_sistema, fecha_sistema);
+                            MtdMostrardatos();
+                            MessageBox.Show("Se a modificado el inventario exitosamente", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MtdBorrarcampos();
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("A ocurrido un error" + ex, "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
@@ -252,6 +279,11 @@ namespace Presentaciòn
                 Mtdverificarentrada();
                 MessageBox.Show("Debe de ingresar datos en los campos marcados de rojo", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
