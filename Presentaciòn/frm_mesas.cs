@@ -51,8 +51,8 @@ namespace Presentaciòn
         private void dgv_Mesas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txt_codigoMesa.Text = dgv_Mesas.SelectedCells[0].Value.ToString();
-            txt_NumeroMesa.Text = dgv_Mesas.SelectedCells[1].Value.ToString();
-            txt_CantidadSillas.Text = dgv_Mesas.SelectedCells[2].Value.ToString();
+            nud_numeromesa.Text = dgv_Mesas.SelectedCells[1].Value.ToString();
+            nud_cantidadsillas.Text = dgv_Mesas.SelectedCells[2].Value.ToString();
             txt_Ubicacion.Text = dgv_Mesas.SelectedCells[3].Value.ToString();
             cbox_tipomesa.Text = dgv_Mesas.SelectedCells[4].Value.ToString();
             txt_estado.Text = dgv_Mesas.SelectedCells[5].Value.ToString();
@@ -77,11 +77,11 @@ namespace Presentaciòn
             string estado;
             string usuario_sistema;
             DateTime FechaSistema;
-            if (txt_NumeroMesa.Text != "" && txt_CantidadSillas.Text != "") // si los texbox tienen datos las variables tomaran los datos ingresados
+            if (nud_numeromesa.Text != "" && nud_cantidadsillas.Text != "") // si los texbox tienen datos las variables tomaran los datos ingresados
             {
                 fecha = cl_fechas.MtdFecha().ToString("d"); // para que se guarde con formato de fecha corta
-                numero_mesa = int.Parse(txt_NumeroMesa.Text);
-                cantidad_sillas = int.Parse(txt_CantidadSillas.Text);
+                numero_mesa = int.Parse(nud_numeromesa.Text);
+                cantidad_sillas = int.Parse(nud_cantidadsillas.Text);
                 ubicacion = txt_Ubicacion.Text;
                 tipo_mesa = cbox_tipomesa.Text;
                 estado = txt_estado.Text;
@@ -100,7 +100,7 @@ namespace Presentaciòn
                 FechaSistema = DateTime.Parse(fecha);
             }
 
-            if (!string.IsNullOrWhiteSpace(txt_NumeroMesa.Text) && !string.IsNullOrWhiteSpace(txt_CantidadSillas.Text) && !string.IsNullOrWhiteSpace(txt_Ubicacion.Text) && !string.IsNullOrWhiteSpace(txt_estado.Text) && !string.IsNullOrWhiteSpace(cbox_tipomesa.Text))
+            if (!string.IsNullOrWhiteSpace(nud_numeromesa.Text) && !string.IsNullOrWhiteSpace(nud_cantidadsillas.Text) && !string.IsNullOrWhiteSpace(txt_Ubicacion.Text) && !string.IsNullOrWhiteSpace(txt_estado.Text) && !string.IsNullOrWhiteSpace(cbox_tipomesa.Text))
             {
                 MtdRevisarcamposllenados();
 
@@ -111,7 +111,7 @@ namespace Presentaciòn
                     MtdMostrardatos();
                     MtdLimpiarcampos();
                     MessageBox.Show("Se a registrado correctamente en la base de datos", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txt_NumeroMesa.Focus();
+                    nud_numeromesa.Focus();
                 }
                 catch (Exception ex)
                 {
@@ -129,21 +129,21 @@ namespace Presentaciòn
 
         private void MtdRevisarcamposllenados()
         {
-            if (txt_NumeroMesa.Text == "" || txt_NumeroMesa.Text.Contains(" "))
+            if (nud_numeromesa.Text == "" || nud_numeromesa.Text.Contains(" "))
             {
-                txt_NumeroMesa.BackColor = Color.Coral;
+                nud_numeromesa.BackColor = Color.Coral;
             }
-            else if (txt_NumeroMesa.Text != "" || !txt_NumeroMesa.Text.Contains(" "))
+            else if (nud_numeromesa.Text != "" || !nud_numeromesa.Text.Contains(" "))
             {
-                txt_NumeroMesa.BackColor = Color.White;
+                nud_numeromesa.BackColor = Color.White;
             }
-            if (txt_CantidadSillas.Text == "" || txt_CantidadSillas.Text.Contains(" "))
+            if (nud_cantidadsillas.Text == "" || nud_cantidadsillas.Text.Contains(" "))
             {
-                txt_CantidadSillas.BackColor = Color.Coral;
+                nud_cantidadsillas.BackColor = Color.Coral;
             }
-            else if (txt_CantidadSillas.Text != "" || !txt_CantidadSillas.Text.Contains(" "))
+            else if (nud_cantidadsillas.Text != "" || !nud_cantidadsillas.Text.Contains(" "))
             {
-                txt_CantidadSillas.BackColor = Color.White;
+                nud_cantidadsillas.BackColor = Color.White;
             }
             if (txt_Ubicacion.Text == "" || txt_Ubicacion.Text.Trim().Length == 0)
             {
@@ -184,12 +184,12 @@ namespace Presentaciòn
             string estado;
             string usuario_sistema;
             DateTime FechaSistema;
-            if (txt_NumeroMesa.Text != "" && txt_CantidadSillas.Text != "") // si los texbox tienen datos las variables tomaran los datos ingresados
+            if (nud_numeromesa.Text != "" && nud_cantidadsillas.Text != "") // si los texbox tienen datos las variables tomaran los datos ingresados
             {
                 codigo = int.Parse(txt_codigoMesa.Text);
                 fecha = cl_fechas.MtdFecha().ToString("d"); // para que se guarde con formato de fecha corta
-                numero_mesa = int.Parse(txt_NumeroMesa.Text);
-                cantidad_sillas = int.Parse(txt_CantidadSillas.Text);
+                numero_mesa = int.Parse(nud_numeromesa.Text);
+                cantidad_sillas = int.Parse(nud_cantidadsillas.Text);
                 ubicacion = txt_Ubicacion.Text;
                 tipo_mesa = cbox_tipomesa.Text;
                 estado = txt_estado.Text;
@@ -208,7 +208,7 @@ namespace Presentaciòn
                 usuario_sistema = Mis_Variables.UsuarioLogueado;
                 FechaSistema = DateTime.Parse(fecha);
             }
-            if (!string.IsNullOrWhiteSpace(txt_NumeroMesa.Text) && !string.IsNullOrWhiteSpace(txt_CantidadSillas.Text) && !string.IsNullOrWhiteSpace(txt_Ubicacion.Text) && !string.IsNullOrWhiteSpace(txt_estado.Text) && !string.IsNullOrWhiteSpace(cbox_tipomesa.Text))
+            if (!string.IsNullOrWhiteSpace(nud_numeromesa.Text) && !string.IsNullOrWhiteSpace(nud_cantidadsillas.Text) && !string.IsNullOrWhiteSpace(txt_Ubicacion.Text) && !string.IsNullOrWhiteSpace(txt_estado.Text) && !string.IsNullOrWhiteSpace(cbox_tipomesa.Text))
             {
                 MtdRevisarcamposllenados();
 
@@ -238,8 +238,8 @@ namespace Presentaciòn
 
         private void MtdLimpiarcampos()
         {
-            txt_NumeroMesa.Text = "";
-            txt_CantidadSillas.Text = "";
+            nud_numeromesa.Text = "";
+            nud_cantidadsillas.Text = "";
             txt_codigoMesa.Text = "";
             txt_Ubicacion.Text = "";
             txt_estado.Text = "";
@@ -258,7 +258,7 @@ namespace Presentaciòn
                     MtdMostrardatos();
                     MtdLimpiarcampos();
                     MessageBox.Show("Se elimino correctamente de la base de datos", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txt_NumeroMesa.Focus();
+                    nud_numeromesa.Focus();
                 }
             }
             catch (Exception ex)
@@ -301,8 +301,8 @@ namespace Presentaciòn
         private void dgv_buscarMesas_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             txt_codigoMesa.Text = dgv_buscarMesas.SelectedCells[0].Value.ToString();
-            txt_NumeroMesa.Text = dgv_buscarMesas.SelectedCells[1].Value.ToString();
-            txt_CantidadSillas.Text = dgv_buscarMesas.SelectedCells[2].Value.ToString();
+            nud_numeromesa.Text = dgv_buscarMesas.SelectedCells[1].Value.ToString();
+            nud_cantidadsillas.Text = dgv_buscarMesas.SelectedCells[2].Value.ToString();
             txt_Ubicacion.Text = dgv_buscarMesas.SelectedCells[3].Value.ToString();
             txt_estado.Text = dgv_buscarMesas.SelectedCells[4].Value.ToString();
             cbox_tipomesa.Text = dgv_buscarMesas.SelectedCells[5].Value.ToString();

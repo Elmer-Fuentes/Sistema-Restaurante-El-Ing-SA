@@ -73,7 +73,7 @@ namespace Presentaciòn
             txt_nombre.Text = "";
             txt_nit.Text = "";
             txt_telefono.Text = "";
-            txt_categoria.Text = "";
+            cbox_categoria.Text = "";
             txt_estado.Text = "";
         }
 
@@ -89,11 +89,11 @@ namespace Presentaciòn
             string nombre = txt_nombre.Text;
             string nit = txt_nit.Text;
             string telefono = txt_telefono.Text;
-            string categoria = txt_categoria.Text;
+            string categoria = cbox_categoria.Text;
             string estado = txt_estado.Text;
             string usuario_sistema = Mis_Variables.UsuarioLogueado;
             DateTime fecha_sistemanombre = DateTime.Parse(fecha);
-            if (txt_categoria.Text == "" || txt_nombre.Text == "" || txt_nit.Text == "" || txt_telefono.Text == "" || txt_estado.Text == "")
+            if (cbox_categoria.Text == "" || txt_nombre.Text == "" || txt_nit.Text == "" || txt_telefono.Text == "" || txt_estado.Text == "")
 
             {
                 MessageBox.Show("Debes de ingresar datos en todos los campos", "Sistema Hotel", MessageBoxButtons.OK, MessageBoxIcon.Stop);
@@ -123,12 +123,12 @@ namespace Presentaciòn
             string nombre = txt_nombre.Text;
             string nit = txt_nit.Text;
             string telefono = txt_telefono.Text;
-            string categoria = txt_categoria.Text;
+            string categoria = cbox_categoria.Text;
             string estado = txt_estado.Text;
             string usuario_sistema = Mis_Variables.UsuarioLogueado;
             DateTime fecha_sistemanombre = DateTime.Parse(fecha);
 
-            if (txt_categoria.Text == "" || txt_nombre.Text == "" || txt_nit.Text == "" || txt_telefono.Text == "" || txt_estado.Text == "")
+            if (cbox_categoria.Text == "" || txt_nombre.Text == "" || txt_nit.Text == "" || txt_telefono.Text == "" || txt_estado.Text == "")
 
             {
                 Mtdvalidarentrada();
@@ -156,13 +156,13 @@ namespace Presentaciòn
 
         public void Mtdvalidarentrada()
         {
-            if (txt_categoria.Text == "")
+            if (cbox_categoria.Text == "")
             {
-                txt_categoria.BackColor = Color.LightCoral;
+                cbox_categoria.BackColor = Color.LightCoral;
             }
-            else if (txt_categoria.Text != "")
+            else if (cbox_categoria.Text != "")
             {
-                txt_categoria.BackColor = Color.White;
+                cbox_categoria.BackColor = Color.White;
             }
             if (txt_nombre.Text == "")
             {
@@ -196,20 +196,20 @@ namespace Presentaciòn
             {
                 txt_estado.BackColor = Color.White;
             }
-            if (txt_nombre.Text == "" && txt_nit.Text == "" && txt_telefono.Text == "" && txt_categoria.Text == "" && txt_estado.Text == "")
+            if (txt_nombre.Text == "" && txt_nit.Text == "" && txt_telefono.Text == "" && cbox_categoria.Text == "" && txt_estado.Text == "")
             {
                 txt_nombre.BackColor = Color.LightCoral;
                 txt_nit.BackColor = Color.LightCoral;
                 txt_telefono.BackColor = Color.LightCoral;
-                txt_categoria.BackColor = Color.LightCoral;
+                cbox_categoria.BackColor = Color.LightCoral;
                 txt_estado.BackColor = Color.LightCoral;
             }
-            else if (txt_nombre.Text != "" && txt_nit.Text != "" && txt_telefono.Text != "" && txt_categoria.Text != "" && txt_estado.Text != "")
+            else if (txt_nombre.Text != "" && txt_nit.Text != "" && txt_telefono.Text != "" && cbox_categoria.Text != "" && txt_estado.Text != "")
             {
                 txt_nombre.BackColor = Color.White;
                 txt_nit.BackColor = Color.White;
                 txt_telefono.BackColor = Color.White;
-                txt_categoria.BackColor = Color.White;
+                cbox_categoria.BackColor = Color.White;
                 txt_estado.BackColor = Color.White;
             }
         }
@@ -221,7 +221,7 @@ namespace Presentaciòn
             txt_nombre.BackColor = Color.White;
             txt_nit.BackColor = Color.White;
             txt_telefono.BackColor = Color.White;
-            txt_categoria.BackColor = Color.White;
+            cbox_categoria.BackColor = Color.White;
             txt_estado.BackColor = Color.White;
         }
 
@@ -233,7 +233,7 @@ namespace Presentaciòn
                 txt_nit.Text = dgvDatosPlanilla.SelectedCells[2].Value.ToString();
                 txt_nombre.Text = dgvDatosPlanilla.SelectedCells[1].Value.ToString();
                 txt_telefono.Text = dgvDatosPlanilla.SelectedCells[3].Value.ToString();
-                txt_categoria.Text = dgvDatosPlanilla.SelectedCells[4].Value.ToString();
+                cbox_categoria.Text = dgvDatosPlanilla.SelectedCells[4].Value.ToString();
                 txt_estado.Text = dgvDatosPlanilla.SelectedCells[5].Value.ToString();
             }
             catch (Exception)
@@ -376,7 +376,7 @@ namespace Presentaciòn
                 txt_nit.Text = dgv_buscarclientes.SelectedCells[2].Value.ToString();
                 txt_nombre.Text = dgv_buscarclientes.SelectedCells[1].Value.ToString();
                 txt_telefono.Text = dgv_buscarclientes.SelectedCells[3].Value.ToString();
-                txt_categoria.Text = dgv_buscarclientes.SelectedCells[4].Value.ToString();
+                cbox_categoria.Text = dgv_buscarclientes.SelectedCells[4].Value.ToString();
                 txt_estado.Text = dgv_buscarclientes.SelectedCells[5].Value.ToString();
                 tabControl1.SelectedIndex = 0;
             }

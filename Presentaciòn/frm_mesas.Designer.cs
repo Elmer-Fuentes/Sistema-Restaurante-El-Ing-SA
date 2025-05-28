@@ -32,7 +32,6 @@
             this.btnEditar = new FontAwesome.Sharp.IconButton();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
             this.txt_estado = new System.Windows.Forms.ComboBox();
-            this.txt_CantidadSillas = new System.Windows.Forms.TextBox();
             this.dgv_buscarMesas = new System.Windows.Forms.DataGridView();
             this.txt_Ubicacion = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -43,8 +42,6 @@
             this.btn_buscar = new FontAwesome.Sharp.IconButton();
             this.lst_historial = new System.Windows.Forms.ListBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.txt_NumeroMesa = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -62,6 +59,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.usP_BusClienteTableAdapter1 = new Presentaciòn.Reportes.DS_ReportesTableAdapters.USP_BusClienteTableAdapter();
+            this.iconMenuItem1 = new FontAwesome.Sharp.IconMenuItem();
+            this.nud_cantidadsillas = new System.Windows.Forms.NumericUpDown();
+            this.nud_numeromesa = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_buscarMesas)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -70,6 +71,8 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Mesas)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_cantidadsillas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_numeromesa)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -79,7 +82,7 @@
             this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCancelar.IconSize = 25;
             this.btnCancelar.Location = new System.Drawing.Point(920, 83);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(129, 31);
             this.btnCancelar.TabIndex = 26;
@@ -95,7 +98,7 @@
             this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEditar.IconSize = 25;
             this.btnEditar.Location = new System.Drawing.Point(920, 46);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(129, 31);
             this.btnEditar.TabIndex = 25;
@@ -111,7 +114,7 @@
             this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGuardar.IconSize = 25;
             this.btnGuardar.Location = new System.Drawing.Point(920, 11);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(129, 31);
             this.btnGuardar.TabIndex = 24;
@@ -131,19 +134,12 @@
             this.txt_estado.Size = new System.Drawing.Size(164, 21);
             this.txt_estado.TabIndex = 23;
             // 
-            // txt_CantidadSillas
-            // 
-            this.txt_CantidadSillas.Location = new System.Drawing.Point(240, 86);
-            this.txt_CantidadSillas.Name = "txt_CantidadSillas";
-            this.txt_CantidadSillas.Size = new System.Drawing.Size(165, 20);
-            this.txt_CantidadSillas.TabIndex = 16;
-            // 
             // dgv_buscarMesas
             // 
             this.dgv_buscarMesas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_buscarMesas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_buscarMesas.Location = new System.Drawing.Point(4, 236);
-            this.dgv_buscarMesas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgv_buscarMesas.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_buscarMesas.Name = "dgv_buscarMesas";
             this.dgv_buscarMesas.ReadOnly = true;
             this.dgv_buscarMesas.RowHeadersWidth = 51;
@@ -170,10 +166,10 @@
             this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Controls.Add(this.dgv_buscarMesas);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage2.Size = new System.Drawing.Size(1072, 590);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage2.Size = new System.Drawing.Size(1124, 497);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Buscar Mesas";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -188,7 +184,7 @@
             "Juegos",
             "Privadas"});
             this.cbox_buscarMesas.Location = new System.Drawing.Point(329, 107);
-            this.cbox_buscarMesas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbox_buscarMesas.Margin = new System.Windows.Forms.Padding(2);
             this.cbox_buscarMesas.Name = "cbox_buscarMesas";
             this.cbox_buscarMesas.Size = new System.Drawing.Size(178, 21);
             this.cbox_buscarMesas.TabIndex = 71;
@@ -231,7 +227,7 @@
             this.btn_buscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_buscar.IconSize = 25;
             this.btn_buscar.Location = new System.Drawing.Point(607, 115);
-            this.btn_buscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_buscar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_buscar.Name = "btn_buscar";
             this.btn_buscar.Size = new System.Drawing.Size(55, 31);
             this.btn_buscar.TabIndex = 62;
@@ -243,7 +239,7 @@
             // 
             this.lst_historial.FormattingEnabled = true;
             this.lst_historial.Location = new System.Drawing.Point(329, 154);
-            this.lst_historial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lst_historial.Margin = new System.Windows.Forms.Padding(2);
             this.lst_historial.Name = "lst_historial";
             this.lst_historial.Size = new System.Drawing.Size(213, 69);
             this.lst_historial.TabIndex = 59;
@@ -260,20 +256,13 @@
             this.label10.TabIndex = 58;
             this.label10.Text = "Tipo de mesa:";
             // 
-            // txt_NumeroMesa
-            // 
-            this.txt_NumeroMesa.Location = new System.Drawing.Point(240, 53);
-            this.txt_NumeroMesa.Name = "txt_NumeroMesa";
-            this.txt_NumeroMesa.Size = new System.Drawing.Size(165, 20);
-            this.txt_NumeroMesa.TabIndex = 15;
-            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1132, 523);
@@ -290,9 +279,9 @@
             this.tabPage1.Controls.Add(this.btnSalir);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage1.Size = new System.Drawing.Size(1124, 497);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Mesas";
@@ -325,7 +314,7 @@
             this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEliminar.IconSize = 25;
             this.btnEliminar.Location = new System.Drawing.Point(789, 433);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(129, 31);
             this.btnEliminar.TabIndex = 50;
@@ -351,7 +340,7 @@
             this.dgv_Mesas.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgv_Mesas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Mesas.Location = new System.Drawing.Point(13, 235);
-            this.dgv_Mesas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgv_Mesas.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_Mesas.Name = "dgv_Mesas";
             this.dgv_Mesas.ReadOnly = true;
             this.dgv_Mesas.RowHeadersWidth = 51;
@@ -368,7 +357,7 @@
             this.btnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSalir.IconSize = 25;
             this.btnSalir.Location = new System.Drawing.Point(945, 433);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(129, 31);
             this.btnSalir.TabIndex = 52;
@@ -379,14 +368,14 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.nud_numeromesa);
+            this.groupBox1.Controls.Add(this.nud_cantidadsillas);
             this.groupBox1.Controls.Add(this.cbox_tipomesa);
             this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.btnEditar);
             this.groupBox1.Controls.Add(this.btnGuardar);
             this.groupBox1.Controls.Add(this.txt_estado);
             this.groupBox1.Controls.Add(this.txt_Ubicacion);
-            this.groupBox1.Controls.Add(this.txt_CantidadSillas);
-            this.groupBox1.Controls.Add(this.txt_NumeroMesa);
             this.groupBox1.Controls.Add(this.txt_codigoMesa);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
@@ -395,9 +384,9 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(13, 113);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(1086, 118);
             this.groupBox1.TabIndex = 53;
             this.groupBox1.TabStop = false;
@@ -489,6 +478,33 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Codigo Mesas:";
             // 
+            // usP_BusClienteTableAdapter1
+            // 
+            this.usP_BusClienteTableAdapter1.ClearBeforeFill = true;
+            // 
+            // iconMenuItem1
+            // 
+            this.iconMenuItem1.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconMenuItem1.IconColor = System.Drawing.Color.Black;
+            this.iconMenuItem1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconMenuItem1.Name = "iconMenuItem1";
+            this.iconMenuItem1.Size = new System.Drawing.Size(32, 19);
+            this.iconMenuItem1.Text = "iconMenuItem1";
+            // 
+            // nud_cantidadsillas
+            // 
+            this.nud_cantidadsillas.Location = new System.Drawing.Point(240, 86);
+            this.nud_cantidadsillas.Name = "nud_cantidadsillas";
+            this.nud_cantidadsillas.Size = new System.Drawing.Size(65, 20);
+            this.nud_cantidadsillas.TabIndex = 28;
+            // 
+            // nud_numeromesa
+            // 
+            this.nud_numeromesa.Location = new System.Drawing.Point(240, 53);
+            this.nud_numeromesa.Name = "nud_numeromesa";
+            this.nud_numeromesa.Size = new System.Drawing.Size(65, 20);
+            this.nud_numeromesa.TabIndex = 29;
+            // 
             // frm_mesas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -496,7 +512,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1132, 523);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frm_mesas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_mesas";
@@ -514,6 +530,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Mesas)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_cantidadsillas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_numeromesa)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -524,7 +542,6 @@
         private FontAwesome.Sharp.IconButton btnEditar;
         private FontAwesome.Sharp.IconButton btnGuardar;
         private System.Windows.Forms.ComboBox txt_estado;
-        private System.Windows.Forms.TextBox txt_CantidadSillas;
         private System.Windows.Forms.DataGridView dgv_buscarMesas;
         private System.Windows.Forms.TextBox txt_Ubicacion;
         private System.Windows.Forms.TabPage tabPage2;
@@ -534,8 +551,6 @@
         private FontAwesome.Sharp.IconButton btn_buscar;
         private System.Windows.Forms.ListBox lst_historial;
         private System.Windows.Forms.Label label10;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private System.Windows.Forms.TextBox txt_NumeroMesa;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Panel panel1;
@@ -554,5 +569,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbox_tipomesa;
         private System.Windows.Forms.ComboBox cbox_buscarMesas;
+        private Reportes.DS_ReportesTableAdapters.USP_BusClienteTableAdapter usP_BusClienteTableAdapter1;
+        private FontAwesome.Sharp.IconMenuItem iconMenuItem1;
+        private System.Windows.Forms.NumericUpDown nud_cantidadsillas;
+        private System.Windows.Forms.NumericUpDown nud_numeromesa;
     }
 }

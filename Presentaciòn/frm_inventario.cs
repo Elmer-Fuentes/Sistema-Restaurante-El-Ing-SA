@@ -342,5 +342,16 @@ namespace Presentaciòn
                 MessageBox.Show("No se encontraron coinsidencias en la base de datos", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void dgv_buscarclientes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txt_codigoInventario.Text = dgv_buscarclientes.SelectedCells[0].Value.ToString();
+            cbox_categorias.Text = dgv_buscarclientes.SelectedCells[2].Value.ToString();
+            cbox_codigomenu.Text = dgv_buscarclientes.SelectedCells[1].Value.ToString();
+            nud_Cantidad.Text = dgv_buscarclientes.SelectedCells[3].Value.ToString();
+            dtm_fechaentrada.Text = dgv_buscarclientes.SelectedCells[4].Value.ToString();
+            dtm_fechavencimiento.Text = dgv_buscarclientes.SelectedCells[5].Value.ToString();
+            tabControl1.SelectedIndex = 0;
+        }
     }
 }

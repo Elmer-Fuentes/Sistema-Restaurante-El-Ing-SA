@@ -178,6 +178,12 @@
           <AssociatedConnUserName>Administrador</AssociatedConnUserName>
           <FullPath>7.3 Upd tbl_encabezado_ordenes.sql</FullPath>
         </FileNode>
+        <FileNode Name="buscador por fecha de entrada.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:sources.database.windows.net:False:Administrador</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>sources.database.windows.net</AssociatedConnSrvName>
+          <AssociatedConnUserName>Administrador</AssociatedConnUserName>
+          <FullPath>buscador por fecha de entrada.sql</FullPath>
+        </FileNode>
         <FileNode Name="Create database.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:sources.database.windows.net:False:Administrador</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>sources.database.windows.net</AssociatedConnSrvName>
@@ -189,6 +195,12 @@
           <AssociatedConnSrvName>sources.database.windows.net</AssociatedConnSrvName>
           <AssociatedConnUserName>Administrador</AssociatedConnUserName>
           <FullPath>Create tables.sql</FullPath>
+        </FileNode>
+        <FileNode Name="dlt_inventario.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:sources.database.windows.net:False:Administrador</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>sources.database.windows.net</AssociatedConnSrvName>
+          <AssociatedConnUserName>Administrador</AssociatedConnUserName>
+          <FullPath>dlt_inventario.sql</FullPath>
         </FileNode>
         <FileNode Name="Mod_G.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:FUENTES-ELMER:True</AssociatedConnectionMoniker>
@@ -231,6 +243,12 @@
           <AssociatedConnSrvName>FUENTES-ELMER</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>Select_empleados.sql</FullPath>
+        </FileNode>
+        <FileNode Name="SQLQuery6.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:sources.database.windows.net:False:Administrador</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>sources.database.windows.net</AssociatedConnSrvName>
+          <AssociatedConnUserName>Administrador</AssociatedConnUserName>
+          <FullPath>SQLQuery6.sql</FullPath>
         </FileNode>
         <FileNode Name="Upt_inventarios.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:sources.database.windows.net:False:Administrador</AssociatedConnectionMoniker>

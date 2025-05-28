@@ -149,6 +149,7 @@
             this.dgv_buscarclientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_buscarclientes.Size = new System.Drawing.Size(1118, 228);
             this.dgv_buscarclientes.TabIndex = 55;
+            this.dgv_buscarclientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_buscarclientes_CellClick);
             // 
             // btnCancelar
             // 

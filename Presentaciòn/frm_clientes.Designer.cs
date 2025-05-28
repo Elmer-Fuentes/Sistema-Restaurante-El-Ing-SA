@@ -42,7 +42,6 @@
             this.btnEditar = new FontAwesome.Sharp.IconButton();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
             this.txt_estado = new System.Windows.Forms.ComboBox();
-            this.txt_categoria = new System.Windows.Forms.TextBox();
             this.txt_telefono = new System.Windows.Forms.TextBox();
             this.txt_nit = new System.Windows.Forms.TextBox();
             this.txt_nombre = new System.Windows.Forms.TextBox();
@@ -62,6 +61,7 @@
             this.label10 = new System.Windows.Forms.Label();
             this.dgv_buscarclientes = new System.Windows.Forms.DataGridView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.cbox_categoria = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -78,7 +78,7 @@
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1132, 523);
@@ -96,9 +96,9 @@
             this.tabPage1.Controls.Add(this.btnSalir);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage1.Size = new System.Drawing.Size(1124, 497);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Clientes";
@@ -131,7 +131,7 @@
             this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEliminar.IconSize = 25;
             this.btnEliminar.Location = new System.Drawing.Point(815, 459);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(129, 31);
             this.btnEliminar.TabIndex = 50;
@@ -157,7 +157,7 @@
             this.dgvDatosPlanilla.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvDatosPlanilla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDatosPlanilla.Location = new System.Drawing.Point(13, 251);
-            this.dgvDatosPlanilla.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvDatosPlanilla.Margin = new System.Windows.Forms.Padding(2);
             this.dgvDatosPlanilla.Name = "dgvDatosPlanilla";
             this.dgvDatosPlanilla.ReadOnly = true;
             this.dgvDatosPlanilla.RowHeadersWidth = 51;
@@ -186,7 +186,7 @@
             this.btnSalir.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnSalir.IconSize = 25;
             this.btnSalir.Location = new System.Drawing.Point(971, 459);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(129, 31);
             this.btnSalir.TabIndex = 52;
@@ -198,11 +198,11 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox1.Controls.Add(this.cbox_categoria);
             this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.btnEditar);
             this.groupBox1.Controls.Add(this.btnGuardar);
             this.groupBox1.Controls.Add(this.txt_estado);
-            this.groupBox1.Controls.Add(this.txt_categoria);
             this.groupBox1.Controls.Add(this.txt_telefono);
             this.groupBox1.Controls.Add(this.txt_nit);
             this.groupBox1.Controls.Add(this.txt_nombre);
@@ -214,9 +214,9 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(13, 103);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox1.Size = new System.Drawing.Size(1087, 135);
             this.groupBox1.TabIndex = 53;
             this.groupBox1.TabStop = false;
@@ -228,7 +228,7 @@
             this.btnCancelar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCancelar.IconSize = 25;
             this.btnCancelar.Location = new System.Drawing.Point(933, 86);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(129, 31);
             this.btnCancelar.TabIndex = 26;
@@ -244,7 +244,7 @@
             this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEditar.IconSize = 25;
             this.btnEditar.Location = new System.Drawing.Point(933, 49);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(129, 31);
             this.btnEditar.TabIndex = 25;
@@ -260,7 +260,7 @@
             this.btnGuardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGuardar.IconSize = 25;
             this.btnGuardar.Location = new System.Drawing.Point(933, 14);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(129, 31);
             this.btnGuardar.TabIndex = 24;
@@ -280,14 +280,6 @@
             this.txt_estado.Size = new System.Drawing.Size(164, 21);
             this.txt_estado.TabIndex = 23;
             this.txt_estado.SelectedIndexChanged += new System.EventHandler(this.txt_estado_SelectedIndexChanged);
-            // 
-            // txt_categoria
-            // 
-            this.txt_categoria.Location = new System.Drawing.Point(686, 51);
-            this.txt_categoria.Name = "txt_categoria";
-            this.txt_categoria.Size = new System.Drawing.Size(165, 20);
-            this.txt_categoria.TabIndex = 18;
-            this.txt_categoria.TextChanged += new System.EventHandler(this.txt_categoria_TextChanged);
             // 
             // txt_telefono
             // 
@@ -398,10 +390,10 @@
             this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Controls.Add(this.dgv_buscarclientes);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(2);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPage2.Size = new System.Drawing.Size(1075, 488);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPage2.Size = new System.Drawing.Size(1124, 497);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Buscar Cliente";
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
@@ -433,7 +425,7 @@
             this.btn_buscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_buscar.IconSize = 25;
             this.btn_buscar.Location = new System.Drawing.Point(577, 115);
-            this.btn_buscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_buscar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_buscar.Name = "btn_buscar";
             this.btn_buscar.Size = new System.Drawing.Size(55, 31);
             this.btn_buscar.TabIndex = 62;
@@ -454,7 +446,7 @@
             // 
             this.lst_historial.FormattingEnabled = true;
             this.lst_historial.Location = new System.Drawing.Point(337, 124);
-            this.lst_historial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lst_historial.Margin = new System.Windows.Forms.Padding(2);
             this.lst_historial.Name = "lst_historial";
             this.lst_historial.Size = new System.Drawing.Size(213, 69);
             this.lst_historial.TabIndex = 59;
@@ -478,7 +470,7 @@
             this.dgv_buscarclientes.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgv_buscarclientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_buscarclientes.Location = new System.Drawing.Point(4, 236);
-            this.dgv_buscarclientes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgv_buscarclientes.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_buscarclientes.Name = "dgv_buscarclientes";
             this.dgv_buscarclientes.ReadOnly = true;
             this.dgv_buscarclientes.RowHeadersWidth = 51;
@@ -488,6 +480,19 @@
             this.dgv_buscarclientes.TabIndex = 55;
             this.dgv_buscarclientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_buscarclientes_CellClick);
             // 
+            // cbox_categoria
+            // 
+            this.cbox_categoria.FormattingEnabled = true;
+            this.cbox_categoria.Items.AddRange(new object[] {
+            "Nuevo",
+            "Ocasional",
+            "Frecuente",
+            "Exclusivo"});
+            this.cbox_categoria.Location = new System.Drawing.Point(686, 50);
+            this.cbox_categoria.Name = "cbox_categoria";
+            this.cbox_categoria.Size = new System.Drawing.Size(164, 21);
+            this.cbox_categoria.TabIndex = 27;
+            // 
             // frm_clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -495,7 +500,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(1132, 523);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frm_clientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frm_clientes";
@@ -531,7 +536,6 @@
         private FontAwesome.Sharp.IconButton btnEditar;
         private FontAwesome.Sharp.IconButton btnGuardar;
         private System.Windows.Forms.ComboBox txt_estado;
-        private System.Windows.Forms.TextBox txt_categoria;
         private System.Windows.Forms.TextBox txt_telefono;
         private System.Windows.Forms.TextBox txt_nit;
         private System.Windows.Forms.TextBox txt_nombre;
@@ -553,5 +557,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox cbox_categoria;
     }
 }
