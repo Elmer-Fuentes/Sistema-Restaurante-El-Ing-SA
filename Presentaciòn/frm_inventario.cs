@@ -285,5 +285,25 @@ namespace Presentaciòn
         {
             this.Close();
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            int codigo = int.Parse(txt_codigoInventario.Text);
+            try
+            {
+                DialogResult r = MessageBox.Show($"Seguro que desea eliminar el registro con codigo: {codigo} de la base de datos", "Sistema Restaurante", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (r == DialogResult.Yes)
+                {
+                    cd_inventario.MtdEliminar(codigo);
+                    MtdBorrarcampos();
+                    MtdMostrardatos();
+                    MessageBox.Show("Se a eliminado de la base de datos satisfactoriamente", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error" + ex, "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

@@ -50,6 +50,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.btnSalir = new FontAwesome.Sharp.IconButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.nud_Cantidad = new System.Windows.Forms.NumericUpDown();
+            this.cbox_categorias = new System.Windows.Forms.ComboBox();
             this.cbox_codigomenu = new System.Windows.Forms.ComboBox();
             this.dtm_fechavencimiento = new System.Windows.Forms.DateTimePicker();
             this.dtm_fechaentrada = new System.Windows.Forms.DateTimePicker();
@@ -60,8 +62,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.cbox_categorias = new System.Windows.Forms.ComboBox();
-            this.nud_Cantidad = new System.Windows.Forms.NumericUpDown();
             this.panel2.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_buscarclientes)).BeginInit();
@@ -280,6 +280,7 @@
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // lblFecha
             // 
@@ -359,6 +360,21 @@
             this.groupBox1.Size = new System.Drawing.Size(1089, 135);
             this.groupBox1.TabIndex = 53;
             this.groupBox1.TabStop = false;
+            // 
+            // nud_Cantidad
+            // 
+            this.nud_Cantidad.Location = new System.Drawing.Point(685, 18);
+            this.nud_Cantidad.Name = "nud_Cantidad";
+            this.nud_Cantidad.Size = new System.Drawing.Size(39, 20);
+            this.nud_Cantidad.TabIndex = 31;
+            // 
+            // cbox_categorias
+            // 
+            this.cbox_categorias.FormattingEnabled = true;
+            this.cbox_categorias.Location = new System.Drawing.Point(214, 102);
+            this.cbox_categorias.Name = "cbox_categorias";
+            this.cbox_categorias.Size = new System.Drawing.Size(165, 21);
+            this.cbox_categorias.TabIndex = 30;
             // 
             // cbox_codigomenu
             // 
@@ -455,21 +471,6 @@
             this.label2.Size = new System.Drawing.Size(122, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Codigo Inventario:";
-            // 
-            // cbox_categorias
-            // 
-            this.cbox_categorias.FormattingEnabled = true;
-            this.cbox_categorias.Location = new System.Drawing.Point(214, 102);
-            this.cbox_categorias.Name = "cbox_categorias";
-            this.cbox_categorias.Size = new System.Drawing.Size(165, 21);
-            this.cbox_categorias.TabIndex = 30;
-            // 
-            // nud_Cantidad
-            // 
-            this.nud_Cantidad.Location = new System.Drawing.Point(685, 18);
-            this.nud_Cantidad.Name = "nud_Cantidad";
-            this.nud_Cantidad.Size = new System.Drawing.Size(39, 20);
-            this.nud_Cantidad.TabIndex = 31;
             // 
             // frm_inventario
             // 

@@ -143,7 +143,7 @@ namespace Datos
 
         public void MtdEliminar(int codigo_inventario)
         {
-            string query = "delete from tbl_inventarios where codigo_cliente";
+            string query = "delete from tbl_inventarios where codigo_inventario = @codigo_inventario";
             using (SqlConnection connection = GetConnection())
             {
                 connection.Open();

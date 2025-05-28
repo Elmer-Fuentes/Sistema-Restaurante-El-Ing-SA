@@ -220,11 +220,23 @@
           <AssociatedConnUserName>Administrador</AssociatedConnUserName>
           <FullPath>proc user_empleado.sql</FullPath>
         </FileNode>
+        <FileNode Name="select_categoria.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:sources.database.windows.net:False:Administrador</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>sources.database.windows.net</AssociatedConnSrvName>
+          <AssociatedConnUserName>Administrador</AssociatedConnUserName>
+          <FullPath>select_categoria.sql</FullPath>
+        </FileNode>
         <FileNode Name="Select_empleados.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:FUENTES-ELMER:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>FUENTES-ELMER</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>Select_empleados.sql</FullPath>
+        </FileNode>
+        <FileNode Name="Upt_inventarios.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:sources.database.windows.net:False:Administrador</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>sources.database.windows.net</AssociatedConnSrvName>
+          <AssociatedConnUserName>Administrador</AssociatedConnUserName>
+          <FullPath>Upt_inventarios.sql</FullPath>
         </FileNode>
       </Items>
     </LogicalFolder>
