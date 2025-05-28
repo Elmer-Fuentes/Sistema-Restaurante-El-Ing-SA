@@ -30,8 +30,6 @@
         {
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.btn_buscar = new FontAwesome.Sharp.IconButton();
-            this.txt_buscarclientes = new System.Windows.Forms.TextBox();
-            this.lst_historial = new System.Windows.Forms.ListBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -62,6 +60,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.dtp_buscarporfechaentrada = new System.Windows.Forms.DateTimePicker();
             this.panel2.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_buscarclientes)).BeginInit();
@@ -79,30 +78,14 @@
             this.btn_buscar.IconColor = System.Drawing.Color.Black;
             this.btn_buscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_buscar.IconSize = 25;
-            this.btn_buscar.Location = new System.Drawing.Point(697, 119);
+            this.btn_buscar.Location = new System.Drawing.Point(649, 134);
             this.btn_buscar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_buscar.Name = "btn_buscar";
             this.btn_buscar.Size = new System.Drawing.Size(55, 31);
             this.btn_buscar.TabIndex = 62;
             this.btn_buscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_buscar.UseVisualStyleBackColor = true;
-            // 
-            // txt_buscarclientes
-            // 
-            this.txt_buscarclientes.Location = new System.Drawing.Point(457, 106);
-            this.txt_buscarclientes.Name = "txt_buscarclientes";
-            this.txt_buscarclientes.Size = new System.Drawing.Size(213, 20);
-            this.txt_buscarclientes.TabIndex = 61;
-            // 
-            // lst_historial
-            // 
-            this.lst_historial.FormattingEnabled = true;
-            this.lst_historial.Location = new System.Drawing.Point(457, 128);
-            this.lst_historial.Margin = new System.Windows.Forms.Padding(2);
-            this.lst_historial.Name = "lst_historial";
-            this.lst_historial.Size = new System.Drawing.Size(213, 69);
-            this.lst_historial.TabIndex = 59;
-            this.lst_historial.Visible = false;
+            this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
             // 
             // label10
             // 
@@ -111,9 +94,9 @@
             this.label10.Location = new System.Drawing.Point(251, 107);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(142, 17);
+            this.label10.Size = new System.Drawing.Size(120, 17);
             this.label10.TabIndex = 58;
-            this.label10.Text = "Nombre de el cliente:";
+            this.label10.Text = "Fecha de entrada";
             // 
             // label9
             // 
@@ -122,9 +105,9 @@
             this.label9.Location = new System.Drawing.Point(428, 18);
             this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(180, 26);
+            this.label9.Size = new System.Drawing.Size(198, 26);
             this.label9.TabIndex = 58;
-            this.label9.Text = "Buscar Clientes";
+            this.label9.Text = "Buscar Inventario";
             // 
             // panel2
             // 
@@ -138,10 +121,9 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tabPage2.Controls.Add(this.dtp_buscarporfechaentrada);
             this.tabPage2.Controls.Add(this.panel2);
             this.tabPage2.Controls.Add(this.btn_buscar);
-            this.tabPage2.Controls.Add(this.txt_buscarclientes);
-            this.tabPage2.Controls.Add(this.lst_historial);
             this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Controls.Add(this.dgv_buscarclientes);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -151,6 +133,7 @@
             this.tabPage2.Size = new System.Drawing.Size(1124, 497);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Buscar Producto";
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // dgv_buscarclientes
             // 
@@ -277,7 +260,6 @@
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(129, 31);
             this.btnEliminar.TabIndex = 50;
-            this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -331,7 +313,6 @@
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(129, 31);
             this.btnSalir.TabIndex = 52;
-            this.btnSalir.Text = "Salir";
             this.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -472,6 +453,13 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Codigo Inventario:";
             // 
+            // dtp_buscarporfechaentrada
+            // 
+            this.dtp_buscarporfechaentrada.Location = new System.Drawing.Point(426, 104);
+            this.dtp_buscarporfechaentrada.Name = "dtp_buscarporfechaentrada";
+            this.dtp_buscarporfechaentrada.Size = new System.Drawing.Size(200, 20);
+            this.dtp_buscarporfechaentrada.TabIndex = 71;
+            // 
             // frm_inventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -505,8 +493,6 @@
 
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private FontAwesome.Sharp.IconButton btn_buscar;
-        private System.Windows.Forms.TextBox txt_buscarclientes;
-        private System.Windows.Forms.ListBox lst_historial;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Panel panel2;
@@ -537,5 +523,6 @@
         private System.Windows.Forms.ComboBox cbox_codigomenu;
         private System.Windows.Forms.ComboBox cbox_categorias;
         private System.Windows.Forms.NumericUpDown nud_Cantidad;
+        private System.Windows.Forms.DateTimePicker dtp_buscarporfechaentrada;
     }
 }

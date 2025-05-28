@@ -28,6 +28,11 @@ namespace Presentaciòn
             MtdMostrardatos();
             MtdMostrarmenus();
             Mtdmostrarcategoria();
+
+            ToolTip mensaje = new ToolTip();
+            mensaje.SetToolTip(btnEliminar, "Eliminar");
+            mensaje.SetToolTip(btnSalir, "Cerrar Ventana");
+            mensaje.SetToolTip(btn_buscar, "Buscar");
         }
 
         private void style()
@@ -303,6 +308,38 @@ namespace Presentaciòn
             catch (Exception ex)
             {
                 MessageBox.Show("Error" + ex, "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void tabPage2_Click(object sender, EventArgs e)
+        {
+        }
+
+        private bool Mtdmostrarbusqueda()
+        {
+            bool r;
+            DataTable dt = new DataTable();
+            string f = dtp_buscarporfechaentrada.Value.ToString("d");
+            DateTime fecha = DateTime.Parse(f);
+            dt = cd_inventario.MtdBuscarporFentrada(fecha);
+            dgv_buscarclientes.DataSource = dt;
+            if (dt.Rows.Count > 0)
+            {
+                r = true;
+            }
+            else
+            {
+                r = false;
+            }
+            return r;
+        }
+
+        private void btn_buscar_Click(object sender, EventArgs e)
+        {
+            bool r = Mtdmostrarbusqueda();
+            if (r == false)
+            {
+                MessageBox.Show("No se encontraron coinsidencias en la base de datos", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
     }
