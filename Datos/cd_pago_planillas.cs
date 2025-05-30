@@ -14,7 +14,7 @@ namespace Datos
 {
 	public class cd_pago_planillas : Conexion
 	{
-		#region = "Metodo para vista del select o mostrar en el dgv";
+		#region MtdConsultarPagoPlanillas
 		public DataTable MtdConsultarPagoPlanillas()
 		{
 			string query = "SELECT codigo_pago_planilla AS 'Código Pago Planilla', codigo_empleado AS 'Código de Empleado', fecha_pago AS 'Fecha de Pago', salario AS 'Salario', bono AS 'Bono', horas_extras AS 'Horas Extras', monto_total AS 'Monto Total', estado AS 'Estado', usuario_sistema AS 'Usuario Sistema', fecha_sistema AS 'Fecha del Sistema' FROM tbl_pago_planillas;";
@@ -28,8 +28,7 @@ namespace Datos
 		}
 		#endregion
 
-
-		#region = "Metodo para Recuperar codigo empleado en frm_pago_planillas";
+		#region MtdListaEmpleados
 
 		public List<dynamic> MtdListaEmpleados()
 		{
@@ -60,6 +59,7 @@ namespace Datos
 
 		#endregion
 
+		#region MtdListaEmpleadosDgv
 		public string MtdListaEmpleadosDgv(int codigo_empleado)
 		{
 			string resultado = string.Empty;
@@ -85,11 +85,9 @@ namespace Datos
 
 			return resultado;
 		}
+		#endregion
 
-
-
-
-
+		#region MtdInsPagoPlanillas
 
 		public void MtdInsPagoPlanillas(int codigo_empleado, DateTime fecha_pago, decimal salario, decimal bono, int horas_extras, decimal monto_total, string estado, string usuario_sistema, DateTime fecha_sistema)
 		{
@@ -114,7 +112,9 @@ namespace Datos
 				}
 			}
 		}
+		#endregion
 
+		#region MtdEditarPagoPlanillas
 		public void MtdEditarPagoPlanillas(int codigo_pago_planilla, int codigo_empleado, DateTime fecha_pago, decimal salario, decimal bono, int horas_extras, decimal monto_total, string estado, string usuario_sistema, DateTime fecha_sistema)
 		{
 			string query = @"UPDATE tbl_pago_planillas  SET codigo_empleado = @codigo_empleado, fecha_pago = @fecha_pago, salario = @salario, bono = @bono, horas_extras = @horas_extras, monto_total = @monto_total, estado = @estado, usuario_sistema = @usuario_sistema, fecha_sistema = @fecha_sistema WHERE codigo_pago_planilla = @codigo_pago_planilla";
@@ -139,7 +139,10 @@ namespace Datos
 				}
 			}
 		}
-				public void MtdEliminarPagoPlanilla(int codigo_pago_planilla)
+		#endregion
+
+		#region MtdEliminarPagoPlanilla
+		public void MtdEliminarPagoPlanilla(int codigo_pago_planilla)
 		{
 			string query = "DELETE FROM tbl_pago_planillas WHERE codigo_pago_planilla = @codigo_pago_planilla";
 
@@ -155,8 +158,9 @@ namespace Datos
 		}
 	}
 		}
+#endregion
 
-	
+
 
 
 

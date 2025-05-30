@@ -12,6 +12,7 @@ namespace Datos
 {
 	public class cd_Empleados : Conexion
 	{
+		#region MtdConsultarEmpleados
 		public DataTable MtdConsultarEmpleados()
 		{
 			string query = "SELECT codigo_empleado AS 'Código De Empleados', nombre AS 'Nombre', cargo AS 'Cargo', salario AS 'Salario', fecha_contratacion AS 'Fecha Contratacion', estado AS 'Estado',usuario_sistema AS 'Usuario Sistema', fecha_sistema AS 'Fecha del Sistema' FROM tbl_empleados;";
@@ -23,6 +24,9 @@ namespace Datos
 				return datosEmpleados;
 			}
 		}
+		#endregion
+
+		#region MtdInsEmpleado
 		public void MtdInsEmpleado(string nombre, string cargo, decimal salario, DateTime fecha_contratacion, string estado,string usuario_sistema, DateTime fecha_sistema)
 		{
 			string query = "INSERT INTO tbl_empleados (nombre, cargo, salario, fecha_contratacion, estado, usuario_sistema, fecha_sistema ) " + "VALUES (@nombre, @cargo, @salario, @fecha_contratacion, @estado,@usuario_sistema,@fecha_sistema)";
@@ -45,7 +49,9 @@ namespace Datos
 				}
 			}
 		}
+		#endregion
 
+		#region MtdEditarEmpleado
 		public void MtdEditarEmpleado(int codigo_empleado, string nombre, string cargo, decimal salario, DateTime fecha_contratacion, string estado, string usuario_sistema, DateTime fecha_sistema)
 		{
 			string query = "UPDATE tbl_empleados SET nombre = @nombre, cargo = @cargo, salario = @salario, fecha_contratacion = @fecha_contratacion, estado = @estado, usuario_sistema = @usuario_sistema, fecha_sistema = @fecha_sistema WHERE codigo_empleado = @codigo_empleado";
@@ -68,6 +74,9 @@ namespace Datos
 				}
 			}
 		}
+		#endregion
+
+		#region MtdEliminarEmpleado
 		public void MtdEliminarEmpleado(int codigo_empleado)
 		{
 			string query = "DELETE FROM tbl_empleados WHERE codigo_empleado = @codigo_empleado";
@@ -82,12 +91,14 @@ namespace Datos
 				}
 			}
 		}
-
-
-	}
 		
 
-
-
 	}
+}
+#endregion
+
+
+
+
+
 

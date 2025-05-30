@@ -16,9 +16,11 @@ namespace Presentaciòn
 {
 	public partial class frm_pago_planillas : Form
 	{
-
+		#region Instancias 
 		cl_pago_planillas logicaPlanillas = new cl_pago_planillas(); 
-		cd_pago_planillas datosPlanillas = new cd_pago_planillas(); 
+		cd_pago_planillas datosPlanillas = new cd_pago_planillas();
+		cl_MtdFechas cl_MtdFechas = new cl_MtdFechas();
+		#endregion
 		public frm_pago_planillas()
 		{
 			InitializeComponent();
@@ -30,13 +32,13 @@ namespace Presentaciòn
 
 			MtdConsultarPagoPlanillas();
 
-			lblFecha.Text = logicaPlanillas.MtdFechaHoy().ToString();
+			lblFecha.Text = cl_MtdFechas.MtdFecha().ToString();
 		
 			MtdMostrarListaEmpleados();
 			MtdConsultarPagoPlanillas();
 		
 		}
-
+		#region MtdConsultarPagoPlanillas
 		public void MtdConsultarPagoPlanillas()
 		{
 			cd_pago_planillas CD_Pago_planillas = new cd_pago_planillas();
@@ -44,11 +46,17 @@ namespace Presentaciòn
 			DataTable dtpagoplanillas = CD_Pago_planillas.MtdConsultarPagoPlanillas();
 			dgvPagoPlanillas.DataSource = dtpagoplanillas;
 		}
+		#endregion
+
+		#region Mtdstyle
 		public void style()
 		{
 			this.ControlBox = false; // Oculta los botones de la barra de título
 			this.FormBorderStyle = FormBorderStyle.None; // Quita los bordes
 		}
+		#endregion
+
+		#region MtdMostrarListaEmpleados
 		private void MtdMostrarListaEmpleados()
 		{
 			
@@ -63,8 +71,9 @@ namespace Presentaciòn
 			cbox_codigoempleado.DisplayMember = "Text";
 			cbox_codigoempleado.ValueMember = "Value";
 		}
+		#endregion
 
-		
+		#region Logica cbox_codigoempleado
 		private void cbox_codigoempleado_SelectedIndexChanged_1(object sender, EventArgs e)
 		{
 			if (string.IsNullOrEmpty(cbox_codigoempleado.Text))
@@ -77,9 +86,11 @@ namespace Presentaciòn
 			}
 				lbl_bono.Text = logicaPlanillas.MtdSalarioBono(cbox_codigoempleado.Text).ToString("F2");
 			}
-			
-	
 
+
+		#endregion
+
+		#region Logica txtHorasExtras
 		private void textBox1_TextChanged(object sender, EventArgs e)
 		{
 
@@ -107,6 +118,9 @@ namespace Presentaciòn
 			}
 
 		}
+		#endregion
+
+		#region MtdLimpiarCampos
 		public void  MtdLimpiarCampos()
 		{
 			txt_codigo_pago_planilla.Text = "";
@@ -118,7 +132,9 @@ namespace Presentaciòn
 			lbl_montototal.Text = "0.00";
 			cbox_estado.Text = "";
 		}
+		#endregion
 
+		#region btnGuardar
 
 		private void btnGuardar_Click_1(object sender, EventArgs e)
 		{
@@ -139,7 +155,7 @@ namespace Presentaciòn
 				decimal montoTotal = decimal.Parse(lbl_montototal.Text);
 				string estado = cbox_estado.Text;
 				string usuario_sistema = Mis_Variables.UsuarioLogueado;
-				DateTime fechaSistema = logicaPlanillas.MtdFechaHoy();
+				DateTime fechaSistema = cl_MtdFechas.MtdFecha();
 
 				datosPlanillas.MtdInsPagoPlanillas(codigoEmpleado, fechaPago, salario, bono, horasExtras, montoTotal, estado, usuario_sistema, fechaSistema);
 
@@ -155,21 +171,9 @@ namespace Presentaciòn
 
 			
 		}
+		#endregion
 
-		private void btnSalir_Click(object sender, EventArgs e)
-		{
-			this.Close();
-		}
-
-		private void btnCancelar_Click_1(object sender, EventArgs e)
-		{
-			MtdLimpiarCampos();
-		
-		}
-
-
-		
-
+		#region dgvPagoPlanillas_CellClick
 		private void dgvPagoPlanillas_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
 
@@ -203,12 +207,12 @@ namespace Presentaciòn
 			}
 		}
 
+		#endregion
 
-
-
+		#region btnEditar
 		private void btnEditar_Click_1(object sender, EventArgs e)
 		{
-			if (string.IsNullOrWhiteSpace(cbox_codigoempleado.Text) ||string.IsNullOrWhiteSpace(lbl_salario.Text) ||string.IsNullOrWhiteSpace(lbl_bono.Text) ||string.IsNullOrWhiteSpace(lbl_montototal.Text))
+			if (string.IsNullOrWhiteSpace(cbox_codigoempleado.Text) || string.IsNullOrWhiteSpace(lbl_salario.Text) || string.IsNullOrWhiteSpace(lbl_bono.Text) || string.IsNullOrWhiteSpace(lbl_montototal.Text))
 			{
 				MessageBox.Show("Complete todos los datos antes de editar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				return;
@@ -225,7 +229,7 @@ namespace Presentaciòn
 				decimal montoTotal = decimal.Parse(lbl_montototal.Text);
 				string estado = cbox_estado.Text;
 				string usuario_sistema = Mis_Variables.UsuarioLogueado;
-				DateTime fechaSistema = logicaPlanillas.MtdFechaHoy();
+				DateTime fechaSistema = cl_MtdFechas.MtdFecha();
 
 				datosPlanillas.MtdEditarPagoPlanillas(codigo_pago_planilla, codigoEmpleado, fechaPago, salario, bono, horasExtras, montoTotal, estado, usuario_sistema, fechaSistema);
 
@@ -238,6 +242,24 @@ namespace Presentaciòn
 				MessageBox.Show("Ocurrió un error al actualizar el pago: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
+		#endregion
+
+		#region btnCancelar
+		private void btnCancelar_Click_1(object sender, EventArgs e)
+		{
+			MtdLimpiarCampos();
+
+		}
+		#endregion
+
+		#region btnSalir
+		private void btnSalir_Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
+		#endregion
+
+		#region btnEliminar
 
 		private void btnEliminar_Click(object sender, EventArgs e)
 		{
@@ -267,10 +289,11 @@ namespace Presentaciòn
 				MessageBox.Show("Ocurrió un error al eliminar el pago: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 		}
-	
-#region Inecesario
+		#endregion
 
-private void btnEditar_Click(object sender, EventArgs e)
+		#region .
+
+		private void btnEditar_Click(object sender, EventArgs e)
 {
 }
 

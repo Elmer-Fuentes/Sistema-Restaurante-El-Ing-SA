@@ -18,9 +18,11 @@ namespace Presentaciòn
 
 	public partial class frm_empleados : Form
 	{
+		#region Instancias 
 		cd_Empleados datosEmpleados = new cd_Empleados();
 		cl_empleados logicaEmpleados = new cl_empleados();
-		
+		cl_MtdFechas cl_MtdFechas = new cl_MtdFechas();
+		#endregion
 		public frm_empleados()
 		{
 			InitializeComponent();
@@ -30,8 +32,9 @@ namespace Presentaciòn
 		{
 			style();
 			MtdConsultarEmpleados();
-			lblFecha.Text = logicaEmpleados.MtdFechaHoy().ToString();
+			lblFecha.Text = cl_MtdFechas.MtdFecha().ToString();
 		}
+		#region MtdConsultarEmpleados()
 		public void MtdConsultarEmpleados()
 		{
 		
@@ -39,17 +42,24 @@ namespace Presentaciòn
 			DataTable dtEmpleados = datosEmpleados.MtdConsultarEmpleados();
 			dgvEmpleados.DataSource = dtEmpleados;
 		}
+		#endregion
 
+		#region Mdtstyle
 		public void style()
 		{
 			this.ControlBox = false; // Oculta los botones de la barra de título
 			this.FormBorderStyle = FormBorderStyle.None; // Quita los bordes
 		}
+		#endregion
 
+		#region  Logicacboxcargo
 		private void cboxcargo_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			lbl_salario.Text = logicaEmpleados.MtdSalarioEmpleado(cboxcargo.Text).ToString();
 		}
+		#endregion
+
+		#region MtdLimpiarCampos
 		public void MtdLimpiarCampos()
 		{
 			txt_codigo_empleado.Text = "";
@@ -59,20 +69,12 @@ namespace Presentaciòn
 			DtpFechaContratacion.Value = DateTime.Now;
 			cbox_estado.Text = "";
 		}
+		#endregion
 
-		private void btnSalir_Click(object sender, EventArgs e)
-		{
-			this.Close();
-		}
-
-		private void btnCancelar_Click(object sender, EventArgs e)
-		{
-			MtdLimpiarCampos();	
-		}
-
+		#region btnGuardar
 		private void btnGuardar_Click(object sender, EventArgs e)
 		{
-			if (string.IsNullOrEmpty(txt_Nombre.Text) ||string.IsNullOrEmpty(cboxcargo.Text) ||string.IsNullOrEmpty(lbl_salario.Text) ||string.IsNullOrEmpty(cbox_estado.Text))
+			if (string.IsNullOrEmpty(txt_Nombre.Text) || string.IsNullOrEmpty(cboxcargo.Text) || string.IsNullOrEmpty(lbl_salario.Text) || string.IsNullOrEmpty(cbox_estado.Text))
 			{
 				MessageBox.Show("Complete todos los datos antes de guardar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 				return;
@@ -81,14 +83,14 @@ namespace Presentaciòn
 			{
 				try
 				{
-					
-				
+
+
 					string nombre = txt_Nombre.Text;
 					string cargo = cboxcargo.Text;
 					decimal salario = decimal.Parse(lbl_salario.Text);
 					DateTime fechaContratacion = DtpFechaContratacion.Value;
 					string estado = cbox_estado.Text;
-					DateTime fecha_sistema = logicaEmpleados.MtdFechaHoy();
+					DateTime fecha_sistema = cl_MtdFechas.MtdFecha();
 					string usuario_sistema = Mis_Variables.UsuarioLogueado;
 
 
@@ -98,7 +100,7 @@ namespace Presentaciòn
 
 					MessageBox.Show("Empleado agregado correctamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-					
+
 					MtdConsultarEmpleados();
 					MtdLimpiarCampos();
 				}
@@ -108,29 +110,32 @@ namespace Presentaciòn
 				}
 			}
 		}
+		#endregion
 
+		#region dgvEmpleados_CellClick
 		private void dgvEmpleados_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
-				var FilaSeleccionada = dgvEmpleados.SelectedRows[0];
+			var FilaSeleccionada = dgvEmpleados.SelectedRows[0];
 
-				
-				if (FilaSeleccionada.Index == dgvEmpleados.Rows.Count - 1)
-				{
-					MessageBox.Show("Seleccione una fila con datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-				}
-				else
-				{
-					txt_codigo_empleado.Text = dgvEmpleados.SelectedCells[0].Value.ToString();
-					txt_Nombre.Text = dgvEmpleados.SelectedCells[1].Value.ToString();
-					cboxcargo.Text = dgvEmpleados.SelectedCells[2].Value.ToString();
-					lbl_salario.Text = dgvEmpleados.SelectedCells[3].Value.ToString();
-					DtpFechaContratacion.Text = dgvEmpleados.SelectedCells[4].Value.ToString();
-					cbox_estado.Text = dgvEmpleados.SelectedCells[5].Value.ToString();
-				}
-			
+
+			if (FilaSeleccionada.Index == dgvEmpleados.Rows.Count - 1)
+			{
+				MessageBox.Show("Seleccione una fila con datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
-		
+			else
+			{
+				txt_codigo_empleado.Text = dgvEmpleados.SelectedCells[0].Value.ToString();
+				txt_Nombre.Text = dgvEmpleados.SelectedCells[1].Value.ToString();
+				cboxcargo.Text = dgvEmpleados.SelectedCells[2].Value.ToString();
+				lbl_salario.Text = dgvEmpleados.SelectedCells[3].Value.ToString();
+				DtpFechaContratacion.Text = dgvEmpleados.SelectedCells[4].Value.ToString();
+				cbox_estado.Text = dgvEmpleados.SelectedCells[5].Value.ToString();
+			}
 
+		}
+		#endregion
+
+		#region btnEditar
 		private void btnEditar_Click(object sender, EventArgs e)
 
 		{
@@ -148,7 +153,7 @@ namespace Presentaciòn
 					decimal salario = decimal.Parse(lbl_salario.Text);
 					DateTime fechaContratacion = DtpFechaContratacion.Value;
 					string estado = cbox_estado.Text;
-					DateTime fecha_sistema = logicaEmpleados.MtdFechaHoy();
+					DateTime fecha_sistema = cl_MtdFechas.MtdFecha();
 					string usuario_sistema = Mis_Variables.UsuarioLogueado;
 
 					datosEmpleados.MtdEditarEmpleado(codigoEmpleado, nombre, cargo, salario, fechaContratacion, estado, usuario_sistema, fecha_sistema);
@@ -164,7 +169,23 @@ namespace Presentaciòn
 				}
 			}
 		}
+		#endregion
 
+		#region btnCancelar
+		private void btnCancelar_Click(object sender, EventArgs e)
+		{
+			MtdLimpiarCampos();
+		}
+		#endregion
+
+		#region btnSalir
+		private void btnSalir_Click(object sender, EventArgs e)
+		{
+			this.Close();
+		}
+		#endregion
+
+		#region btnEliminar
 		private void btnEliminar_Click(object sender, EventArgs e)
 		{
 			if (string.IsNullOrEmpty(txt_codigo_empleado.Text))
@@ -193,5 +214,11 @@ namespace Presentaciòn
 	}
 }
 
+#endregion
 
 
+
+
+		
+
+		

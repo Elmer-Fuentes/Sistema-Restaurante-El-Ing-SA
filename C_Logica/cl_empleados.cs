@@ -10,6 +10,7 @@ namespace C_Logica
 	public class cl_empleados
 	{
 
+		#region MtdSalarioEmpleado
 		public decimal MtdSalarioEmpleado(string Cargo)
 		{
 			decimal salario = 0.00m;
@@ -37,11 +38,10 @@ namespace C_Logica
 
 			return salario;
 		}
-		public DateTime MtdFechaHoy()
-		{
-			return DateTime.Now;
-		}
-
-
 	}
 }
+
+#endregion
+
+
+

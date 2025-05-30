@@ -11,6 +11,8 @@ namespace C_Logica
 {
 	public class cl_encabezado_ordenes: Conexion
 	{
+
+		#region MtdTotalOrd
 		public decimal MtdTotalOrd(string codigo_orden_enc)
 		{
 			decimal salario = 0;
@@ -41,18 +43,8 @@ namespace C_Logica
 			return salario;
 		}
 
-
-
-
-
-
-
-
-		public DateTime MtdFechaHoy()
-		{
-			return DateTime.Now;
-		}
 	}
 
 }
+#endregion
 

@@ -12,7 +12,7 @@ namespace C_Logica
 {
 	public class cl_pago_planillas : Conexion
 	{
-		#region = "Metodos necesarios para frm_pago_planillas";
+		#region MtdSalarioPlanilla
 
 		public decimal MtdSalarioPlanilla(string codigo_empleado)
 		{
@@ -43,8 +43,9 @@ namespace C_Logica
 
 			return salario;
 		}
+		#endregion
 
-
+		#region MtdSalarioBono
 		public decimal MtdSalarioBono(string codigo_empleado)
 		{
 			
@@ -56,25 +57,20 @@ namespace C_Logica
 			return bono;
 		}
 
+		#endregion
 
+		#region MtdMontoTotal
 		public decimal MtdMontoTotal(decimal salario, decimal bono, int horasExtras)
 		{
 			decimal montoHoras = horasExtras * 15;
 			decimal montoTotal = salario + bono + montoHoras;
 			return montoTotal;
 		}
-		public DateTime MtdFechaHoy()
-		{
-			return DateTime.Now;
-		}
+
+
 	}
+
 }
-
-
-
-
-
-
 
 #endregion
 
