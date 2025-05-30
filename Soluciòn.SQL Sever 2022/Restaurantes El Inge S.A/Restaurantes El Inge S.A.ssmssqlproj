@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <SqlWorkbenchSqlProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="Restaurantes El Inge S.A">
   <Items>
-    <LogicalFolder Name="Connections" Type="2" Sorted="true">
+    <LogicalFolder Name="Conexiones" Type="2" Sorted="true">
       <Items>
         <ConnectionNode Name="sources.database.windows.net:Administrador">
           <Created>2025-05-01T15:04:10.1426706-06:00</Created>
@@ -20,7 +20,7 @@
         </ConnectionNode>
       </Items>
     </LogicalFolder>
-    <LogicalFolder Name="Queries" Type="0" Sorted="true">
+    <LogicalFolder Name="Consultas" Type="0" Sorted="true">
       <Items>
         <FileNode Name="1.1 Select_empleados.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:sources.database.windows.net:False:Administrador</AssociatedConnectionMoniker>
@@ -250,6 +250,12 @@
           <AssociatedConnUserName>Administrador</AssociatedConnUserName>
           <FullPath>SQLQuery6.sql</FullPath>
         </FileNode>
+        <FileNode Name="SQLQuery7.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>SQLQuery7.sql</FullPath>
+        </FileNode>
         <FileNode Name="Upt_inventarios.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:sources.database.windows.net:False:Administrador</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>sources.database.windows.net</AssociatedConnSrvName>
@@ -258,7 +264,7 @@
         </FileNode>
       </Items>
     </LogicalFolder>
-    <LogicalFolder Name="Miscellaneous" Type="3" Sorted="true">
+    <LogicalFolder Name="Varios" Type="3" Sorted="true">
       <Items>
         <FileNode Name="Restaurantes El Inge S.A.ssmssqlproj">
           <AssociatedConnectionMoniker />

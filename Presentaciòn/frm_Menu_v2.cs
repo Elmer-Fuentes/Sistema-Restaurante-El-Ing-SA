@@ -127,11 +127,11 @@ namespace Presentaciòn
 
         #region = "Cambiar Inicio seción";
         private void cerrarSeciónToolStripMenuItem_Click(object sender, EventArgs e)
-                {
-                    this.Hide();
-                    frm_login login = new frm_login();
-                    login.Show();
-                }
+        {
+            this.Hide();
+            frm_login login = new frm_login();
+            login.Show();
+        }
         #endregion
 
         #region "Mis Variables Form Secundario (hijo)";
@@ -241,16 +241,30 @@ namespace Presentaciòn
 
         private void btn_det_ordenen_Click(object sender, EventArgs e)
         {
-            openChildForm (new frm_detalle_ordenes());
+            openChildForm(new frm_detalle_ordenes());
         }
 
         private void btn_pago_Orden_Click(object sender, EventArgs e)
         {
             openChildForm(new frm_pago_ordens());
         }
+
+
         #endregion;
 
+        private void mesasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frm_Report_mesas());
+        }
 
+        private void encabezadoOrdenesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frm_Report_Encabezado_Ordenes());
+        }
 
+        private void detallesOrdenesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Form_Report_detalles_ordenes());
+        }
     }
 }

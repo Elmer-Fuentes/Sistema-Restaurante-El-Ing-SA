@@ -1,6 +1,6 @@
 ﻿namespace Presentaciòn.Reportes
 {
-    partial class frm_data_dash_emp_user
+    partial class frm_Report_Encabezado_Ordenes
     {
         /// <summary>
         /// Required designer variable.
@@ -30,65 +30,64 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.upsDataDashEmpuserBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dS_Reportes = new Presentaciòn.Reportes.DS_Reportes();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.ups_Data_Dash_Emp_userTableAdapter = new Presentaciòn.Reportes.DS_ReportesTableAdapters.Ups_Data_Dash_Emp_userTableAdapter();
-            this.txt_dash_emp_user = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.upsDataDashEmpuserBindingSource)).BeginInit();
+            this.dS_Reportes = new Presentaciòn.Reportes.DS_Reportes();
+            this.uspEncabezadoordenesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usp_Encabezado_ordenesTableAdapter = new Presentaciòn.Reportes.DS_ReportesTableAdapters.Usp_Encabezado_ordenesTableAdapter();
+            this.txt_p_encabezado_ordenes = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dS_Reportes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uspEncabezadoordenesBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // upsDataDashEmpuserBindingSource
-            // 
-            this.upsDataDashEmpuserBindingSource.DataMember = "Ups_Data_Dash_Emp_user";
-            this.upsDataDashEmpuserBindingSource.DataSource = this.dS_Reportes;
-            // 
-            // dS_Reportes
-            // 
-            this.dS_Reportes.DataSetName = "DS_Reportes";
-            this.dS_Reportes.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DS_Reporte_Dash_Emp_Use";
-            reportDataSource1.Value = this.upsDataDashEmpuserBindingSource;
+            this.reportViewer1.DocumentMapWidth = 63;
+            reportDataSource1.Name = "dS_Encabezado_ordenes";
+            reportDataSource1.Value = this.uspEncabezadoordenesBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Presentaciòn.Reportes.Report_Data_dash_Emp_user.rdlc";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Presentaciòn.Reportes.Report_frm_encabezado_ordenes.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
             this.reportViewer1.Size = new System.Drawing.Size(1032, 450);
             this.reportViewer1.TabIndex = 0;
             // 
-            // ups_Data_Dash_Emp_userTableAdapter
+            // dS_Reportes
             // 
-            this.ups_Data_Dash_Emp_userTableAdapter.ClearBeforeFill = true;
+            this.dS_Reportes.DataSetName = "DS_Reportes";
+            this.dS_Reportes.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // txt_dash_emp_user
+            // uspEncabezadoordenesBindingSource
             // 
-            this.txt_dash_emp_user.Location = new System.Drawing.Point(43, 29);
-            this.txt_dash_emp_user.Name = "txt_dash_emp_user";
-            this.txt_dash_emp_user.Size = new System.Drawing.Size(152, 20);
-            this.txt_dash_emp_user.TabIndex = 1;
-            this.txt_dash_emp_user.Visible = false;
+            this.uspEncabezadoordenesBindingSource.DataMember = "Usp_Encabezado_ordenes";
+            this.uspEncabezadoordenesBindingSource.DataSource = this.dS_Reportes;
             // 
-            // frm_data_dash_emp_user
+            // usp_Encabezado_ordenesTableAdapter
+            // 
+            this.usp_Encabezado_ordenesTableAdapter.ClearBeforeFill = true;
+            // 
+            // txt_p_encabezado_ordenes
+            // 
+            this.txt_p_encabezado_ordenes.Location = new System.Drawing.Point(139, 67);
+            this.txt_p_encabezado_ordenes.Name = "txt_p_encabezado_ordenes";
+            this.txt_p_encabezado_ordenes.Size = new System.Drawing.Size(159, 20);
+            this.txt_p_encabezado_ordenes.TabIndex = 4;
+            this.txt_p_encabezado_ordenes.Visible = false;
+            // 
+            // frm_Report_Encabezado_Ordenes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
-            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1032, 450);
-            this.Controls.Add(this.txt_dash_emp_user);
+            this.Controls.Add(this.txt_p_encabezado_ordenes);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "frm_data_dash_emp_user";
+            this.Name = "frm_Report_Encabezado_Ordenes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Reporte Analisis Empleados Con Usuarios";
-            this.Load += new System.EventHandler(this.frm_data_dash_emp_user_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.upsDataDashEmpuserBindingSource)).EndInit();
+            this.Text = "frm_Report_Encabezado_Ordenes";
+            this.Load += new System.EventHandler(this.frm_Report_Encabezado_Ordenes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dS_Reportes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uspEncabezadoordenesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -97,9 +96,9 @@
         #endregion
 
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
-        private System.Windows.Forms.BindingSource upsDataDashEmpuserBindingSource;
+        private System.Windows.Forms.BindingSource uspEncabezadoordenesBindingSource;
         private DS_Reportes dS_Reportes;
-        private DS_ReportesTableAdapters.Ups_Data_Dash_Emp_userTableAdapter ups_Data_Dash_Emp_userTableAdapter;
-        public System.Windows.Forms.TextBox txt_dash_emp_user;
+        private DS_ReportesTableAdapters.Usp_Encabezado_ordenesTableAdapter usp_Encabezado_ordenesTableAdapter;
+        public System.Windows.Forms.TextBox txt_p_encabezado_ordenes;
     }
 }

@@ -177,11 +177,29 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS_Reportes.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\Form_Report_detalles_ordenes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Form_Report_detalles_ordenes.Designer.cs">
+      <DependentUpon>Form_Report_detalles_ordenes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\frm_data_dash_emp_user.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\frm_data_dash_emp_user.Designer.cs">
       <DependentUpon>frm_data_dash_emp_user.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frm_Report_Encabezado_Ordenes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frm_Report_Encabezado_Ordenes.Designer.cs">
+      <DependentUpon>frm_Report_Encabezado_Ordenes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frm_Report_mesas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\frm_Report_mesas.Designer.cs">
+      <DependentUpon>frm_Report_mesas.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\frm_Reporte_Clientes.cs">
       <SubType>Form</SubType>
@@ -271,8 +289,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Reportes\Form_Report_detalles_ordenes.resx">
+      <DependentUpon>Form_Report_detalles_ordenes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frm_data_dash_emp_user.resx">
       <DependentUpon>frm_data_dash_emp_user.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frm_Report_Encabezado_Ordenes.resx">
+      <DependentUpon>frm_Report_Encabezado_Ordenes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frm_Report_mesas.resx">
+      <DependentUpon>frm_Report_mesas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frm_Reporte_Clientes.resx">
       <DependentUpon>frm_Reporte_Clientes.cs</DependentUpon>
@@ -292,6 +319,9 @@
     <EmbeddedResource Include="Reportes\frm_Reporte_Usuarios.resx">
       <DependentUpon>frm_Reporte_Usuarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Report_frm_detalles_ordenes.rdlc" />
+    <EmbeddedResource Include="Reportes\Report_frm_encabezado_ordenes.rdlc" />
+    <EmbeddedResource Include="Reportes\Report_frm_mesas.rdlc" />
     <EmbeddedResource Include="Reportes\Report_Inventarios_Menu.rdlc" />
     <EmbeddedResource Include="Reportes\Report_Pago_Planilla.rdlc" />
     <EmbeddedResource Include="Reportes\Report_Usuarios.rdlc" />
