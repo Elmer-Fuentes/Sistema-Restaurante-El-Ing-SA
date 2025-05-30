@@ -34,6 +34,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dtp_buscarporfechaentrada = new System.Windows.Forms.DateTimePicker();
             this.dgv_buscarclientes = new System.Windows.Forms.DataGridView();
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.btnEditar = new FontAwesome.Sharp.IconButton();
@@ -60,7 +61,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dtp_buscarporfechaentrada = new System.Windows.Forms.DateTimePicker();
             this.panel2.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_buscarclientes)).BeginInit();
@@ -134,6 +134,13 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Buscar Producto";
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
+            // 
+            // dtp_buscarporfechaentrada
+            // 
+            this.dtp_buscarporfechaentrada.Location = new System.Drawing.Point(426, 104);
+            this.dtp_buscarporfechaentrada.Name = "dtp_buscarporfechaentrada";
+            this.dtp_buscarporfechaentrada.Size = new System.Drawing.Size(200, 20);
+            this.dtp_buscarporfechaentrada.TabIndex = 71;
             // 
             // dgv_buscarclientes
             // 
@@ -349,6 +356,7 @@
             this.nud_Cantidad.Name = "nud_Cantidad";
             this.nud_Cantidad.Size = new System.Drawing.Size(39, 20);
             this.nud_Cantidad.TabIndex = 31;
+            this.nud_Cantidad.ValueChanged += new System.EventHandler(this.nud_Cantidad_ValueChanged);
             // 
             // cbox_categorias
             // 
@@ -357,6 +365,7 @@
             this.cbox_categorias.Name = "cbox_categorias";
             this.cbox_categorias.Size = new System.Drawing.Size(165, 21);
             this.cbox_categorias.TabIndex = 30;
+            this.cbox_categorias.SelectedIndexChanged += new System.EventHandler(this.cbox_categorias_SelectedIndexChanged);
             // 
             // cbox_codigomenu
             // 
@@ -365,6 +374,7 @@
             this.cbox_codigomenu.Name = "cbox_codigomenu";
             this.cbox_codigomenu.Size = new System.Drawing.Size(165, 21);
             this.cbox_codigomenu.TabIndex = 29;
+            this.cbox_codigomenu.SelectedIndexChanged += new System.EventHandler(this.cbox_codigomenu_SelectedIndexChanged);
             // 
             // dtm_fechavencimiento
             // 
@@ -453,13 +463,6 @@
             this.label2.Size = new System.Drawing.Size(122, 17);
             this.label2.TabIndex = 1;
             this.label2.Text = "Codigo Inventario:";
-            // 
-            // dtp_buscarporfechaentrada
-            // 
-            this.dtp_buscarporfechaentrada.Location = new System.Drawing.Point(426, 104);
-            this.dtp_buscarporfechaentrada.Name = "dtp_buscarporfechaentrada";
-            this.dtp_buscarporfechaentrada.Size = new System.Drawing.Size(200, 20);
-            this.dtp_buscarporfechaentrada.TabIndex = 71;
             // 
             // frm_inventario
             // 

@@ -101,36 +101,34 @@ namespace Presentaciòn
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             MtdBorrarcampos();
+            MtddevolvercolorBlanco();
         }
 
         #region cambiar color a rojo si se intenta agregar con campos en blanco
 
         private void Mtdverificarentrada()
         {
-            if (string.IsNullOrWhiteSpace(nud_Cantidad.Text))
+            if (string.IsNullOrWhiteSpace(nud_Cantidad.Text) || nud_Cantidad.Value == 0)
             {
                 nud_Cantidad.BackColor = Color.LightCoral;
             }
-            else if (!string.IsNullOrWhiteSpace(nud_Cantidad.Text))
-            {
-                nud_Cantidad.BackColor = Color.White;
-            }
+
             if (string.IsNullOrWhiteSpace(cbox_categorias.Text))
             {
                 cbox_categorias.BackColor = Color.LightCoral;
             }
-            else if (!string.IsNullOrWhiteSpace(cbox_categorias.Text))
-            {
-                cbox_categorias.BackColor = Color.White;
-            }
+
             if (string.IsNullOrWhiteSpace(cbox_codigomenu.Text))
             {
                 cbox_codigomenu.BackColor = Color.LightCoral;
             }
-            else if (!string.IsNullOrWhiteSpace(cbox_codigomenu.Text))
-            {
-                cbox_codigomenu.BackColor = Color.White;
-            }
+        }
+
+        private void MtddevolvercolorBlanco()
+        {
+            nud_Cantidad.BackColor = Color.White;
+            cbox_categorias.BackColor = Color.White;
+            cbox_codigomenu.BackColor = Color.White;
         }
 
         #endregion cambiar color a rojo si se intenta agregar con campos en blanco
@@ -178,6 +176,8 @@ namespace Presentaciòn
                                 Mtdverificarentrada();
                                 MtdMostrardatos();
                                 MessageBox.Show("Se a registrado en el inventario exitosamente", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                MtdBorrarcampos();
+                                MtddevolvercolorBlanco();
                             }
                         }
                         else
@@ -186,6 +186,8 @@ namespace Presentaciòn
                             Mtdverificarentrada();
                             MtdMostrardatos();
                             MessageBox.Show("Se a registrado en el inventario exitosamente", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MtdBorrarcampos();
+                            MtddevolvercolorBlanco();
                         }
                     }
                     catch (Exception ex)
@@ -196,7 +198,7 @@ namespace Presentaciòn
                 else if (f > fecha.MtdFecha())
                 {
                     MessageBox.Show("La fecha de entrada no puede ser mayor a la fecha actual", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    MtdBorrarcampos();
+                    dtm_fechaentrada.Value = fecha.MtdFecha();
                 }
             }
             else
@@ -217,72 +219,81 @@ namespace Presentaciòn
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            int codigo_inventario = int.Parse(txt_codigoInventario.Text);
-            int codigo_menu;
-            string categoria;
-            int cantidad;
-            //se le da formato de fecha corta
-            string fechaentrada = dtm_fechaentrada.Value.ToString("d");
-            string fechavencimiento = dtm_fechavencimiento.Value.ToString("d");
-            int dias_vigencia;
-            string usuario_sistema;
-            string Fecha = fecha.MtdFecha().ToString("d");
-            if (!string.IsNullOrWhiteSpace(cbox_codigomenu.Text) && !string.IsNullOrWhiteSpace(cbox_categorias.Text) && !string.IsNullOrWhiteSpace(nud_Cantidad.Text))
+            if (!string.IsNullOrWhiteSpace(txt_codigoInventario.Text))
             {
-                categoria = cbox_categorias.Text;
-                //para obtener solo el numero
-                codigo_menu = int.Parse(cbox_codigomenu.Text.Split('-')[0].Trim());
-                cantidad = int.Parse(nud_Cantidad.Text);
-                DateTime fecha_entrada = DateTime.Parse(fechaentrada);
-                DateTime fecha_vencimiento = DateTime.Parse(fechavencimiento);
-                dias_vigencia = cl_inventario.MtdDiasVigencia(fecha_entrada, fecha_vencimiento);
-                usuario_sistema = Mis_Variables.UsuarioLogueado.ToString();
-                DateTime fecha_sistema = DateTime.Parse(Fecha);
-                if (fecha_entrada <= fecha_sistema)
+                int codigo_inventario = int.Parse(txt_codigoInventario.Text);
+                int codigo_menu;
+                string categoria;
+                int cantidad;
+                //se le da formato de fecha corta
+                string fechaentrada = dtm_fechaentrada.Value.ToString("d");
+                string fechavencimiento = dtm_fechavencimiento.Value.ToString("d");
+                int dias_vigencia;
+                string usuario_sistema;
+                string Fecha = fecha.MtdFecha().ToString("d");
+                if (!string.IsNullOrWhiteSpace(cbox_codigomenu.Text) && !string.IsNullOrWhiteSpace(cbox_categorias.Text) && !string.IsNullOrWhiteSpace(nud_Cantidad.Text))
                 {
-                    try
+                    categoria = cbox_categorias.Text;
+                    //para obtener solo el numero
+                    codigo_menu = int.Parse(cbox_codigomenu.Text.Split('-')[0].Trim());
+                    cantidad = int.Parse(nud_Cantidad.Text);
+                    DateTime fecha_entrada = DateTime.Parse(fechaentrada);
+                    DateTime fecha_vencimiento = DateTime.Parse(fechavencimiento);
+                    dias_vigencia = cl_inventario.MtdDiasVigencia(fecha_entrada, fecha_vencimiento);
+                    usuario_sistema = Mis_Variables.UsuarioLogueado.ToString();
+                    DateTime fecha_sistema = DateTime.Parse(Fecha);
+                    if (fecha_entrada <= fecha_sistema)
                     {
-                        DialogResult r;
-                        if (dias_vigencia <= 0)
+                        try
                         {
-                            r = MessageBox.Show("El producto esta por vencer, esta seguro de ingresarlo?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                            if (r == DialogResult.No)
+                            DialogResult r;
+                            if (dias_vigencia <= 0)
                             {
-                                MtdBorrarcampos();
+                                r = MessageBox.Show("El producto esta por vencer, esta seguro de ingresarlo?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                if (r == DialogResult.No)
+                                {
+                                    MtdBorrarcampos();
+                                }
+                                else if (r == DialogResult.Yes)
+                                {
+                                    Mtdverificarentrada();
+                                    cd_inventario.Mtdeditar(codigo_inventario, codigo_menu, categoria, cantidad, fecha_entrada, fecha_vencimiento, dias_vigencia, usuario_sistema, fecha_sistema);
+                                    MtdMostrardatos();
+                                    MessageBox.Show("Se a modificado el inventario exitosamente", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    MtdBorrarcampos();
+                                    MtddevolvercolorBlanco();
+                                }
                             }
-                            else if (r == DialogResult.Yes)
+                            else
                             {
                                 Mtdverificarentrada();
                                 cd_inventario.Mtdeditar(codigo_inventario, codigo_menu, categoria, cantidad, fecha_entrada, fecha_vencimiento, dias_vigencia, usuario_sistema, fecha_sistema);
                                 MtdMostrardatos();
                                 MessageBox.Show("Se a modificado el inventario exitosamente", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 MtdBorrarcampos();
+                                MtddevolvercolorBlanco();
                             }
                         }
-                        else
+                        catch (Exception ex)
                         {
-                            Mtdverificarentrada();
-                            cd_inventario.Mtdeditar(codigo_inventario, codigo_menu, categoria, cantidad, fecha_entrada, fecha_vencimiento, dias_vigencia, usuario_sistema, fecha_sistema);
-                            MtdMostrardatos();
-                            MessageBox.Show("Se a modificado el inventario exitosamente", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            MtdBorrarcampos();
+                            MessageBox.Show("A ocurrido un error" + ex, "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
-                    catch (Exception ex)
+                    else
                     {
-                        MessageBox.Show("A ocurrido un error" + ex, "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("La fecha de entrada no puede ser mayor a la fecha actual", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        dtm_fechaentrada.Value = fecha.MtdFecha();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("La fecha de entrada no puede ser mayor a la fecha actual", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    dtm_fechaentrada.Focus();
+                    Mtdverificarentrada();
+                    MessageBox.Show("Debe de ingresar datos en los campos marcados de rojo", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                Mtdverificarentrada();
-                MessageBox.Show("Debe de ingresar datos en los campos marcados de rojo", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debe seleccionar una fila", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -293,21 +304,29 @@ namespace Presentaciòn
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            int codigo = int.Parse(txt_codigoInventario.Text);
-            try
+            if (!string.IsNullOrWhiteSpace(txt_codigoInventario.Text))
             {
-                DialogResult r = MessageBox.Show($"Seguro que desea eliminar el registro con codigo: {codigo} de la base de datos", "Sistema Restaurante", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (r == DialogResult.Yes)
+                int codigo = int.Parse(txt_codigoInventario.Text);
+                try
                 {
-                    cd_inventario.MtdEliminar(codigo);
-                    MtdBorrarcampos();
-                    MtdMostrardatos();
-                    MessageBox.Show("Se a eliminado de la base de datos satisfactoriamente", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DialogResult r = MessageBox.Show($"Seguro que desea eliminar el registro con codigo: {codigo} de la base de datos", "Sistema Restaurante", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (r == DialogResult.Yes)
+                    {
+                        cd_inventario.MtdEliminar(codigo);
+                        MtdBorrarcampos();
+                        MtdBorrarcampos();
+                        MtddevolvercolorBlanco();
+                        MessageBox.Show("Se a eliminado de la base de datos satisfactoriamente", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error" + ex, "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Error" + ex, "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Debe seleccionar una fila", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -352,6 +371,42 @@ namespace Presentaciòn
             dtm_fechaentrada.Text = dgv_buscarclientes.SelectedCells[4].Value.ToString();
             dtm_fechavencimiento.Text = dgv_buscarclientes.SelectedCells[5].Value.ToString();
             tabControl1.SelectedIndex = 0;
+        }
+
+        private void cbox_codigomenu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(cbox_codigomenu.Text))
+            {
+                cbox_codigomenu.BackColor = Color.LightCoral;
+            }
+            else if (!string.IsNullOrWhiteSpace(cbox_codigomenu.Text))
+            {
+                cbox_codigomenu.BackColor = Color.White;
+            }
+        }
+
+        private void cbox_categorias_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(cbox_categorias.Text))
+            {
+                cbox_categorias.BackColor = Color.LightCoral;
+            }
+            else if (!string.IsNullOrWhiteSpace(cbox_categorias.Text))
+            {
+                cbox_categorias.BackColor = Color.White;
+            }
+        }
+
+        private void nud_Cantidad_ValueChanged(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(nud_Cantidad.Text) || nud_Cantidad.Value == 0)
+            {
+                nud_Cantidad.BackColor = Color.LightCoral;
+            }
+            else if (!string.IsNullOrWhiteSpace(nud_Cantidad.Text) || nud_Cantidad.Value != 0)
+            {
+                nud_Cantidad.BackColor = Color.White;
+            }
         }
     }
 }
