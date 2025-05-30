@@ -35,9 +35,9 @@
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.lblFecha = new System.Windows.Forms.Label();
             this.dgvDatosPlanilla = new System.Windows.Forms.DataGridView();
-            this.label8 = new System.Windows.Forms.Label();
             this.btnSalir = new FontAwesome.Sharp.IconButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.cbox_categoria = new System.Windows.Forms.ComboBox();
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.btnEditar = new FontAwesome.Sharp.IconButton();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
@@ -61,7 +61,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.dgv_buscarclientes = new System.Windows.Forms.DataGridView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.cbox_categoria = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -92,7 +91,6 @@
             this.tabPage1.Controls.Add(this.btnEliminar);
             this.tabPage1.Controls.Add(this.lblFecha);
             this.tabPage1.Controls.Add(this.dgvDatosPlanilla);
-            this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Controls.Add(this.btnSalir);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -168,17 +166,6 @@
             this.dgvDatosPlanilla.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatosPlanilla_CellClick);
             this.dgvDatosPlanilla.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDatosPlanilla_CellContentClick);
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(763, 70);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(93, 17);
-            this.label8.TabIndex = 49;
-            this.label8.Text = "Fecha actual:";
-            // 
             // btnSalir
             // 
             this.btnSalir.IconChar = FontAwesome.Sharp.IconChar.PowerOff;
@@ -220,6 +207,20 @@
             this.groupBox1.Size = new System.Drawing.Size(1087, 135);
             this.groupBox1.TabIndex = 53;
             this.groupBox1.TabStop = false;
+            // 
+            // cbox_categoria
+            // 
+            this.cbox_categoria.FormattingEnabled = true;
+            this.cbox_categoria.Items.AddRange(new object[] {
+            "Nuevo",
+            "Ocasional",
+            "Frecuente",
+            "Exclusivo"});
+            this.cbox_categoria.Location = new System.Drawing.Point(686, 50);
+            this.cbox_categoria.Name = "cbox_categoria";
+            this.cbox_categoria.Size = new System.Drawing.Size(164, 21);
+            this.cbox_categoria.TabIndex = 27;
+            this.cbox_categoria.SelectedIndexChanged += new System.EventHandler(this.cbox_categoria_SelectedIndexChanged);
             // 
             // btnCancelar
             // 
@@ -312,7 +313,6 @@
             this.txt_codigoCliente.Name = "txt_codigoCliente";
             this.txt_codigoCliente.Size = new System.Drawing.Size(165, 20);
             this.txt_codigoCliente.TabIndex = 14;
-            this.txt_codigoCliente.TextChanged += new System.EventHandler(this.txt_codigoCliente_TextChanged);
             // 
             // label7
             // 
@@ -480,19 +480,6 @@
             this.dgv_buscarclientes.TabIndex = 55;
             this.dgv_buscarclientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_buscarclientes_CellClick);
             // 
-            // cbox_categoria
-            // 
-            this.cbox_categoria.FormattingEnabled = true;
-            this.cbox_categoria.Items.AddRange(new object[] {
-            "Nuevo",
-            "Ocasional",
-            "Frecuente",
-            "Exclusivo"});
-            this.cbox_categoria.Location = new System.Drawing.Point(686, 50);
-            this.cbox_categoria.Name = "cbox_categoria";
-            this.cbox_categoria.Size = new System.Drawing.Size(164, 21);
-            this.cbox_categoria.TabIndex = 27;
-            // 
             // frm_clientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -529,7 +516,6 @@
         private System.Windows.Forms.TabPage tabPage2;
         private FontAwesome.Sharp.IconButton btnEliminar;
         private System.Windows.Forms.Label lblFecha;
-        private System.Windows.Forms.Label label8;
         private FontAwesome.Sharp.IconButton btnSalir;
         private System.Windows.Forms.GroupBox groupBox1;
         private FontAwesome.Sharp.IconButton btnCancelar;

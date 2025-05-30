@@ -33,8 +33,7 @@ namespace Presentaciòn
             mensaje.SetToolTip(btnSalir, "Salir");
             mensaje.SetToolTip(btnEliminar, "Eliminar");
             mensaje.SetToolTip(btn_buscar, "Buscar");
-            mensaje.SetToolTip(lst_historial, "Historial de busqueda...");
-            mensaje.SetToolTip(dgv_buscarclientes, "Selecciona uno para editar...");
+            mensaje.SetToolTip(lblFecha, "Fecha de el Sistema");
             lblFecha.Text = cl_clin.MtdFecha().ToString("d");
             tabPage1.Text = "Agregar Cliente";
             tabPage2.Text = "Buscar Cliente";
@@ -93,27 +92,27 @@ namespace Presentaciòn
             string estado = txt_estado.Text;
             string usuario_sistema = Mis_Variables.UsuarioLogueado;
             DateTime fecha_sistemanombre = DateTime.Parse(fecha);
-            if (cbox_categoria.Text == "" || txt_nombre.Text == "" || txt_nit.Text == "" || txt_telefono.Text == "" || txt_estado.Text == "")
+            if (!string.IsNullOrWhiteSpace(txt_codigoCliente.Text) && !string.IsNullOrWhiteSpace(txt_nombre.Text) && !string.IsNullOrWhiteSpace(txt_nit.Text) && !string.IsNullOrWhiteSpace(txt_telefono.Text) && !string.IsNullOrWhiteSpace(cbox_categoria.Text) && !string.IsNullOrWhiteSpace(txt_estado.Text))
 
-            {
-                MessageBox.Show("Debes de ingresar datos en todos los campos", "Sistema Hotel", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                Mtdvalidarentrada();
-            }
-            else
             {
                 try
                 {
                     cd_clin.MtdEditardatos(codigo, nombre, nit, telefono, categoria, estado, usuario_sistema, fecha_sistemanombre);
                     MessageBox.Show("Datos agregados correctamente a la base de datos", "Proceso realizado correctamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Mtdmostrardatos();
-                    MtdBorrardatos();
                     Mtdvalidarentrada();
-                    MtddevolvercoloresO();
+                    MtdBorrardatos();
+                    MtddevolvercolorBlanco();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error" + ex, "A ocurrido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+            else
+            {
+                Mtdvalidarentrada();
+                MessageBox.Show("Debes de ingresar datos en todos los campos", "Sistema Hotel", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
         }
 
@@ -128,102 +127,68 @@ namespace Presentaciòn
             string usuario_sistema = Mis_Variables.UsuarioLogueado;
             DateTime fecha_sistemanombre = DateTime.Parse(fecha);
 
-            if (cbox_categoria.Text == "" || txt_nombre.Text == "" || txt_nit.Text == "" || txt_telefono.Text == "" || txt_estado.Text == "")
+            if (!string.IsNullOrWhiteSpace(txt_nombre.Text) && !string.IsNullOrWhiteSpace(txt_nit.Text) && !string.IsNullOrWhiteSpace(txt_telefono.Text) && !string.IsNullOrWhiteSpace(cbox_categoria.Text) && !string.IsNullOrWhiteSpace(txt_estado.Text))
 
-            {
-                Mtdvalidarentrada();
-                MessageBox.Show("Faltan datos en los campos marcados en rojo", "Sistema Hotel", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-            }
-            else
             {
                 try
                 {
                     cd_clin.MtdAgregardatos(nombre, nit, telefono, categoria, estado, usuario_sistema, fecha_sistemanombre);
                     MessageBox.Show("Datos agregados correctamente a la base de datos", "Proceso realizado correctamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Mtdmostrardatos();
-                    MtdBorrardatos();
                     Mtdvalidarentrada();
-                    MtddevolvercoloresO();
+                    MtdBorrardatos();
+                    MtddevolvercolorBlanco();
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error" + ex, "A ocurrido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            else
+            {
+                Mtdvalidarentrada();
+                MessageBox.Show("Debe de ingresar datos en los campos marcados en rojo", "Sistema Hotel", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
         }
 
         #region metodoValidar
 
-        public void Mtdvalidarentrada()
+        private void Mtdvalidarentrada()
         {
-            if (cbox_categoria.Text == "")
-            {
-                cbox_categoria.BackColor = Color.LightCoral;
-            }
-            else if (cbox_categoria.Text != "")
-            {
-                cbox_categoria.BackColor = Color.White;
-            }
-            if (txt_nombre.Text == "")
+            if (string.IsNullOrWhiteSpace(txt_nombre.Text))
             {
                 txt_nombre.BackColor = Color.LightCoral;
             }
-            else if (txt_nombre.Text != "")
-            {
-                txt_nombre.BackColor = Color.White;
-            }
-            if (txt_nit.Text == "")
+
+            if (string.IsNullOrWhiteSpace(txt_nit.Text))
             {
                 txt_nit.BackColor = Color.LightCoral;
             }
-            else if (txt_nit.Text != "")
-            {
-                txt_nit.BackColor = Color.White;
-            }
-            if (txt_telefono.Text == "")
+
+            if (string.IsNullOrWhiteSpace(txt_telefono.Text))
             {
                 txt_telefono.BackColor = Color.LightCoral;
             }
-            else if (txt_telefono.Text != "")
+
+            if (string.IsNullOrWhiteSpace(cbox_categoria.Text))
             {
-                txt_telefono.BackColor = Color.White;
-            }
-            if (txt_estado.Text == "")
-            {
-                txt_estado.BackColor = Color.LightCoral;
-            }
-            else if (txt_estado.Text != "")
-            {
-                txt_estado.BackColor = Color.White;
-            }
-            if (txt_nombre.Text == "" && txt_nit.Text == "" && txt_telefono.Text == "" && cbox_categoria.Text == "" && txt_estado.Text == "")
-            {
-                txt_nombre.BackColor = Color.LightCoral;
-                txt_nit.BackColor = Color.LightCoral;
-                txt_telefono.BackColor = Color.LightCoral;
                 cbox_categoria.BackColor = Color.LightCoral;
-                txt_estado.BackColor = Color.LightCoral;
             }
-            else if (txt_nombre.Text != "" && txt_nit.Text != "" && txt_telefono.Text != "" && cbox_categoria.Text != "" && txt_estado.Text != "")
+
+            if (string.IsNullOrWhiteSpace(txt_estado.Text))
             {
-                txt_nombre.BackColor = Color.White;
-                txt_nit.BackColor = Color.White;
-                txt_telefono.BackColor = Color.White;
-                cbox_categoria.BackColor = Color.White;
-                txt_estado.BackColor = Color.White;
+                txt_estado.BackColor = Color.LightCoral;
             }
         }
 
-        #endregion metodoValidar
-
-        public void MtddevolvercoloresO()
+        private void MtddevolvercolorBlanco()
         {
             txt_nombre.BackColor = Color.White;
             txt_nit.BackColor = Color.White;
             txt_telefono.BackColor = Color.White;
-            cbox_categoria.BackColor = Color.White;
-            txt_estado.BackColor = Color.White;
         }
+
+        #endregion metodoValidar
 
         private void dgvDatosPlanilla_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -245,6 +210,7 @@ namespace Presentaciòn
         private void btnCancelar_Click_1(object sender, EventArgs e)
         {
             MtdBorrardatos();
+            MtddevolvercolorBlanco();
         }
 
         private void dgvDatosPlanilla_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -264,6 +230,7 @@ namespace Presentaciòn
                     MessageBox.Show("Datos eliminado satisfactoriamente de la base de datos", "Proceso realizado correctamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Mtdmostrardatos();
                     MtdBorrardatos();
+                    MtddevolvercolorBlanco();
                 }
             }
             catch (Exception)
@@ -274,14 +241,38 @@ namespace Presentaciòn
 
         private void txt_nombre_TextChanged(object sender, EventArgs e)
         {
+            if (!string.IsNullOrWhiteSpace(txt_nombre.Text))
+            {
+                txt_nombre.BackColor = Color.White;
+            }
+            else if (string.IsNullOrWhiteSpace(txt_nombre.Text))
+            {
+                txt_nombre.BackColor = Color.LightCoral;
+            }
         }
 
         private void txt_nit_TextChanged(object sender, EventArgs e)
         {
+            if (!string.IsNullOrWhiteSpace(txt_nit.Text))
+            {
+                txt_nit.BackColor = Color.White;
+            }
+            else if (string.IsNullOrWhiteSpace(txt_nit.Text))
+            {
+                txt_nit.BackColor = Color.LightCoral;
+            }
         }
 
         private void txt_telefono_TextChanged(object sender, EventArgs e)
         {
+            if (!string.IsNullOrWhiteSpace(txt_telefono.Text))
+            {
+                txt_telefono.BackColor = Color.White;
+            }
+            else if (string.IsNullOrWhiteSpace(txt_telefono.Text))
+            {
+                txt_telefono.BackColor = Color.LightCoral;
+            }
         }
 
         private void txt_categoria_TextChanged(object sender, EventArgs e)
@@ -290,6 +281,14 @@ namespace Presentaciòn
 
         private void txt_estado_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (!string.IsNullOrWhiteSpace(txt_estado.Text))
+            {
+                txt_estado.BackColor = Color.White;
+            }
+            else if (string.IsNullOrWhiteSpace(txt_estado.Text))
+            {
+                txt_estado.BackColor = Color.LightCoral;
+            }
         }
 
         private void txt_codigoCliente_TextChanged(object sender, EventArgs e)
@@ -423,6 +422,18 @@ namespace Presentaciòn
         private void txt_buscarclientes_TextChanged_1(object sender, EventArgs e)
         {
             lst_historial.Visible = true;
+        }
+
+        private void cbox_categoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(cbox_categoria.Text))
+            {
+                cbox_categoria.BackColor = Color.White;
+            }
+            else if (string.IsNullOrWhiteSpace(cbox_categoria.Text))
+            {
+                cbox_categoria.BackColor = Color.LightCoral;
+            }
         }
     }
 }

@@ -109,7 +109,7 @@ namespace Presentaciòn
         {
             if (string.IsNullOrWhiteSpace(nud_Cantidad.Text))
             {
-                nud_Cantidad.BackColor = Color.Red;
+                nud_Cantidad.BackColor = Color.LightCoral;
             }
             else if (!string.IsNullOrWhiteSpace(nud_Cantidad.Text))
             {
@@ -117,7 +117,7 @@ namespace Presentaciòn
             }
             if (string.IsNullOrWhiteSpace(cbox_categorias.Text))
             {
-                cbox_categorias.BackColor = Color.Red;
+                cbox_categorias.BackColor = Color.LightCoral;
             }
             else if (!string.IsNullOrWhiteSpace(cbox_categorias.Text))
             {
@@ -125,7 +125,7 @@ namespace Presentaciòn
             }
             if (string.IsNullOrWhiteSpace(cbox_codigomenu.Text))
             {
-                cbox_codigomenu.BackColor = Color.Red;
+                cbox_codigomenu.BackColor = Color.LightCoral;
             }
             else if (!string.IsNullOrWhiteSpace(cbox_codigomenu.Text))
             {

@@ -51,6 +51,8 @@
             this.dgv_Mesas = new System.Windows.Forms.DataGridView();
             this.btnSalir = new FontAwesome.Sharp.IconButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.nud_numeromesa = new System.Windows.Forms.NumericUpDown();
+            this.nud_cantidadsillas = new System.Windows.Forms.NumericUpDown();
             this.cbox_tipomesa = new System.Windows.Forms.ComboBox();
             this.txt_codigoMesa = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -61,8 +63,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.usP_BusClienteTableAdapter1 = new Presentaciòn.Reportes.DS_ReportesTableAdapters.USP_BusClienteTableAdapter();
             this.iconMenuItem1 = new FontAwesome.Sharp.IconMenuItem();
-            this.nud_cantidadsillas = new System.Windows.Forms.NumericUpDown();
-            this.nud_numeromesa = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_buscarMesas)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -71,8 +71,8 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Mesas)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_cantidadsillas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_numeromesa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_cantidadsillas)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -133,6 +133,7 @@
             this.txt_estado.Name = "txt_estado";
             this.txt_estado.Size = new System.Drawing.Size(164, 21);
             this.txt_estado.TabIndex = 23;
+            this.txt_estado.SelectedIndexChanged += new System.EventHandler(this.txt_estado_SelectedIndexChanged_1);
             // 
             // dgv_buscarMesas
             // 
@@ -155,6 +156,7 @@
             this.txt_Ubicacion.Name = "txt_Ubicacion";
             this.txt_Ubicacion.Size = new System.Drawing.Size(165, 20);
             this.txt_Ubicacion.TabIndex = 17;
+            this.txt_Ubicacion.TextChanged += new System.EventHandler(this.txt_Ubicacion_TextChanged_1);
             // 
             // tabPage2
             // 
@@ -391,6 +393,22 @@
             this.groupBox1.TabIndex = 53;
             this.groupBox1.TabStop = false;
             // 
+            // nud_numeromesa
+            // 
+            this.nud_numeromesa.Location = new System.Drawing.Point(240, 53);
+            this.nud_numeromesa.Name = "nud_numeromesa";
+            this.nud_numeromesa.Size = new System.Drawing.Size(65, 20);
+            this.nud_numeromesa.TabIndex = 29;
+            this.nud_numeromesa.ValueChanged += new System.EventHandler(this.nud_numeromesa_ValueChanged_1);
+            // 
+            // nud_cantidadsillas
+            // 
+            this.nud_cantidadsillas.Location = new System.Drawing.Point(240, 86);
+            this.nud_cantidadsillas.Name = "nud_cantidadsillas";
+            this.nud_cantidadsillas.Size = new System.Drawing.Size(65, 20);
+            this.nud_cantidadsillas.TabIndex = 28;
+            this.nud_cantidadsillas.ValueChanged += new System.EventHandler(this.nud_cantidadsillas_ValueChanged_1);
+            // 
             // cbox_tipomesa
             // 
             this.cbox_tipomesa.FormattingEnabled = true;
@@ -403,6 +421,7 @@
             this.cbox_tipomesa.Name = "cbox_tipomesa";
             this.cbox_tipomesa.Size = new System.Drawing.Size(164, 21);
             this.cbox_tipomesa.TabIndex = 27;
+            this.cbox_tipomesa.SelectedIndexChanged += new System.EventHandler(this.cbox_tipomesa_SelectedIndexChanged_1);
             // 
             // txt_codigoMesa
             // 
@@ -491,20 +510,6 @@
             this.iconMenuItem1.Size = new System.Drawing.Size(32, 19);
             this.iconMenuItem1.Text = "iconMenuItem1";
             // 
-            // nud_cantidadsillas
-            // 
-            this.nud_cantidadsillas.Location = new System.Drawing.Point(240, 86);
-            this.nud_cantidadsillas.Name = "nud_cantidadsillas";
-            this.nud_cantidadsillas.Size = new System.Drawing.Size(65, 20);
-            this.nud_cantidadsillas.TabIndex = 28;
-            // 
-            // nud_numeromesa
-            // 
-            this.nud_numeromesa.Location = new System.Drawing.Point(240, 53);
-            this.nud_numeromesa.Name = "nud_numeromesa";
-            this.nud_numeromesa.Size = new System.Drawing.Size(65, 20);
-            this.nud_numeromesa.TabIndex = 29;
-            // 
             // frm_mesas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -530,8 +535,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Mesas)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_cantidadsillas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_numeromesa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_cantidadsillas)).EndInit();
             this.ResumeLayout(false);
 
         }

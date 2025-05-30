@@ -77,7 +77,7 @@ namespace Presentaciòn
             string estado;
             string usuario_sistema;
             DateTime FechaSistema;
-            if (nud_numeromesa.Text != "" && nud_cantidadsillas.Text != "") // si los texbox tienen datos las variables tomaran los datos ingresados
+            if (nud_numeromesa.Text != "" && nud_numeromesa.Value != 0 && nud_cantidadsillas.Text != "" && nud_cantidadsillas.Value != 0) // si los texbox tienen datos las variables tomaran los datos ingresados
             {
                 fecha = cl_fechas.MtdFecha().ToString("d"); // para que se guarde con formato de fecha corta
                 numero_mesa = int.Parse(nud_numeromesa.Text);
@@ -107,11 +107,10 @@ namespace Presentaciòn
                 try
                 {
                     cd_Mesas.MtdAgregardatos(numero_mesa, cantidad_sillas, ubicacion, tipo_mesa, estado, usuario_sistema, FechaSistema);
-                    MtdRevisarcamposllenados();
                     MtdMostrardatos();
-                    MtdLimpiarcampos();
                     MessageBox.Show("Se a registrado correctamente en la base de datos", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    nud_numeromesa.Focus();
+                    MtdLimpiarcampos();
+                    MtddevolvercolorBlanco();
                 }
                 catch (Exception ex)
                 {
@@ -129,46 +128,39 @@ namespace Presentaciòn
 
         private void MtdRevisarcamposllenados()
         {
-            if (nud_numeromesa.Text == "" || nud_numeromesa.Text.Contains(" "))
+            if (string.IsNullOrWhiteSpace(nud_numeromesa.Text) || nud_numeromesa.Value == 0)
             {
                 nud_numeromesa.BackColor = Color.Coral;
             }
-            else if (nud_numeromesa.Text != "" || !nud_numeromesa.Text.Contains(" "))
-            {
-                nud_numeromesa.BackColor = Color.White;
-            }
-            if (nud_cantidadsillas.Text == "" || nud_cantidadsillas.Text.Contains(" "))
+
+            if (string.IsNullOrWhiteSpace(nud_cantidadsillas.Text) || nud_cantidadsillas.Value == 0)
             {
                 nud_cantidadsillas.BackColor = Color.Coral;
             }
-            else if (nud_cantidadsillas.Text != "" || !nud_cantidadsillas.Text.Contains(" "))
-            {
-                nud_cantidadsillas.BackColor = Color.White;
-            }
-            if (txt_Ubicacion.Text == "" || txt_Ubicacion.Text.Trim().Length == 0)
+
+            if (string.IsNullOrWhiteSpace(txt_Ubicacion.Text))
             {
                 txt_Ubicacion.BackColor = Color.Coral;
             }
-            else if (txt_Ubicacion.Text != "" || txt_Ubicacion.Text.Trim().Length != 0)
-            {
-                txt_Ubicacion.BackColor = Color.White;
-            }
-            if (cbox_tipomesa.Text == "" || cbox_tipomesa.Text.Contains(" "))
+
+            if (string.IsNullOrWhiteSpace(cbox_tipomesa.Text))
             {
                 cbox_tipomesa.BackColor = Color.Coral;
             }
-            else if (cbox_tipomesa.Text != "" || !cbox_tipomesa.Text.Contains(" "))
-            {
-                cbox_tipomesa.BackColor = Color.White;
-            }
-            if (txt_estado.Text == "" || txt_estado.Text.Contains(" "))
+
+            if (string.IsNullOrWhiteSpace(txt_estado.Text))
             {
                 txt_estado.BackColor = Color.Coral;
             }
-            else if (txt_estado.Text != "" || !txt_estado.Text.Contains(" "))
-            {
-                txt_estado.BackColor = Color.White;
-            }
+        }
+
+        private void MtddevolvercolorBlanco()
+        {
+            nud_numeromesa.BackColor = Color.White;
+            nud_cantidadsillas.BackColor = Color.White;
+            txt_Ubicacion.BackColor = Color.White;
+            cbox_tipomesa.BackColor = Color.White;
+            txt_estado.BackColor = Color.White;
         }
 
         #endregion cambiar a color rojo los campos que no tengan datos al dar click en el boton agregar
@@ -184,7 +176,7 @@ namespace Presentaciòn
             string estado;
             string usuario_sistema;
             DateTime FechaSistema;
-            if (nud_numeromesa.Text != "" && nud_cantidadsillas.Text != "") // si los texbox tienen datos las variables tomaran los datos ingresados
+            if (nud_numeromesa.Text != "" && nud_numeromesa.Value != 0 && nud_cantidadsillas.Text != "" && nud_cantidadsillas.Value != 0) // si los texbox tienen datos las variables tomaran los datos ingresados
             {
                 codigo = int.Parse(txt_codigoMesa.Text);
                 fecha = cl_fechas.MtdFecha().ToString("d"); // para que se guarde con formato de fecha corta
@@ -215,9 +207,10 @@ namespace Presentaciòn
                 try
                 {
                     cd_Mesas.MtdEditar(codigo, numero_mesa, cantidad_sillas, ubicacion, tipo_mesa, estado, usuario_sistema, FechaSistema);
-                    MtdRevisarcamposllenados();
                     MtdMostrardatos();
                     MessageBox.Show("Se a registrado correctamente en la base de datos", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MtdLimpiarcampos();
+                    MtddevolvercolorBlanco();
                 }
                 catch (Exception ex)
                 {
@@ -234,6 +227,7 @@ namespace Presentaciòn
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             MtdLimpiarcampos();
+            MtddevolvercolorBlanco();
         }
 
         private void MtdLimpiarcampos()
@@ -258,7 +252,7 @@ namespace Presentaciòn
                     MtdMostrardatos();
                     MtdLimpiarcampos();
                     MessageBox.Show("Se elimino correctamente de la base de datos", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    nud_numeromesa.Focus();
+                    MtddevolvercolorBlanco();
                 }
             }
             catch (Exception ex)
@@ -313,6 +307,86 @@ namespace Presentaciòn
         {
             DataTable dt = cd_Mesas.MtdRetornardatos();
             dgv_buscarMesas.DataSource = dt;
+        }
+
+        private void nud_numeromesa_ValueChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txt_Ubicacion_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void nud_cantidadsillas_ValueChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void cbox_tipomesa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void txt_estado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void nud_numeromesa_ValueChanged_1(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(nud_numeromesa.Text) || nud_numeromesa.Value == 0)
+            {
+                nud_numeromesa.BackColor = Color.LightCoral;
+            }
+            else if (!string.IsNullOrWhiteSpace(nud_numeromesa.Text) || nud_numeromesa.Value != 0)
+            {
+                nud_numeromesa.BackColor = Color.White;
+            }
+        }
+
+        private void nud_cantidadsillas_ValueChanged_1(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(nud_cantidadsillas.Text) && nud_cantidadsillas.Value == 0)
+            {
+                nud_cantidadsillas.BackColor = Color.LightCoral;
+            }
+            else if (!string.IsNullOrWhiteSpace(nud_cantidadsillas.Text) && nud_cantidadsillas.Value != 0)
+            {
+                nud_cantidadsillas.BackColor = Color.White;
+            }
+        }
+
+        private void txt_Ubicacion_TextChanged_1(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txt_Ubicacion.Text))
+            {
+                txt_Ubicacion.BackColor = Color.LightCoral;
+            }
+            else if (!string.IsNullOrWhiteSpace(txt_Ubicacion.Text))
+            {
+                txt_Ubicacion.BackColor = Color.White;
+            }
+        }
+
+        private void cbox_tipomesa_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(cbox_tipomesa.Text))
+            {
+                cbox_tipomesa.BackColor = Color.LightCoral;
+            }
+            else if (!string.IsNullOrWhiteSpace(cbox_tipomesa.Text))
+            {
+                cbox_tipomesa.BackColor = Color.White;
+            }
+        }
+
+        private void txt_estado_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txt_estado.Text))
+            {
+                txt_estado.BackColor = Color.LightCoral;
+            }
+            else if (!string.IsNullOrWhiteSpace(txt_estado.Text))
+            {
+                txt_estado.BackColor = Color.White;
+            }
         }
     }
 }
