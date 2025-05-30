@@ -17,8 +17,7 @@ namespace C_Logica
 		{
 			decimal salario = 0;
 
-			string[] partes = codigo_orden_enc .Split(',');
-			if (partes.Length > 0 && decimal.TryParse(partes[0].Trim(), out decimal codigoNumerico))
+			if (decimal.TryParse(codigo_orden_enc.Trim(), out decimal codigoNumerico))
 			{
 				using (SqlConnection conn = GetConnection())
 				{
@@ -37,14 +36,14 @@ namespace C_Logica
 			}
 			else
 			{
-				MessageBox.Show("El código de Orden Enc  no tiene el formato Correcto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+				MessageBox.Show("El código de Orden Enc no tiene el formato correcto.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 			}
 
 			return salario;
 		}
-
 	}
-
 }
+
+
 #endregion
 
