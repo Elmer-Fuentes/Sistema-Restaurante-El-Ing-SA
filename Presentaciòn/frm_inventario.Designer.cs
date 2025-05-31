@@ -34,6 +34,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label11 = new System.Windows.Forms.Label();
+            this.dtp_fechafin = new System.Windows.Forms.DateTimePicker();
             this.dtp_buscarporfechaentrada = new System.Windows.Forms.DateTimePicker();
             this.dgv_buscarclientes = new System.Windows.Forms.DataGridView();
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
@@ -61,8 +63,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dtp_fechafin = new System.Windows.Forms.DateTimePicker();
-            this.label11 = new System.Windows.Forms.Label();
+            this.pb_foto = new System.Windows.Forms.PictureBox();
+            this.lbl_realizabusqueda = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_buscarclientes)).BeginInit();
@@ -72,6 +74,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDatosPlanilla)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Cantidad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_foto)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_buscar
@@ -123,6 +126,8 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tabPage2.Controls.Add(this.lbl_realizabusqueda);
+            this.tabPage2.Controls.Add(this.pb_foto);
             this.tabPage2.Controls.Add(this.label11);
             this.tabPage2.Controls.Add(this.dtp_fechafin);
             this.tabPage2.Controls.Add(this.dtp_buscarporfechaentrada);
@@ -139,6 +144,25 @@
             this.tabPage2.Text = "Buscar Producto";
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(646, 107);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(45, 17);
+            this.label11.TabIndex = 73;
+            this.label11.Text = "Hasta";
+            // 
+            // dtp_fechafin
+            // 
+            this.dtp_fechafin.Location = new System.Drawing.Point(717, 107);
+            this.dtp_fechafin.Name = "dtp_fechafin";
+            this.dtp_fechafin.Size = new System.Drawing.Size(200, 20);
+            this.dtp_fechafin.TabIndex = 72;
+            this.dtp_fechafin.ValueChanged += new System.EventHandler(this.dtp_fechafin_ValueChanged);
+            // 
             // dtp_buscarporfechaentrada
             // 
             this.dtp_buscarporfechaentrada.Location = new System.Drawing.Point(420, 104);
@@ -152,15 +176,16 @@
             this.dgv_buscarclientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_buscarclientes.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgv_buscarclientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_buscarclientes.Location = new System.Drawing.Point(4, 236);
+            this.dgv_buscarclientes.Location = new System.Drawing.Point(55, 235);
             this.dgv_buscarclientes.Margin = new System.Windows.Forms.Padding(2);
             this.dgv_buscarclientes.Name = "dgv_buscarclientes";
             this.dgv_buscarclientes.ReadOnly = true;
             this.dgv_buscarclientes.RowHeadersWidth = 51;
             this.dgv_buscarclientes.RowTemplate.Height = 24;
             this.dgv_buscarclientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_buscarclientes.Size = new System.Drawing.Size(1118, 228);
+            this.dgv_buscarclientes.Size = new System.Drawing.Size(1118, 262);
             this.dgv_buscarclientes.TabIndex = 55;
+            this.dgv_buscarclientes.Visible = false;
             this.dgv_buscarclientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_buscarclientes_CellClick);
             // 
             // btnCancelar
@@ -469,24 +494,27 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Codigo Inventario:";
             // 
-            // dtp_fechafin
+            // pb_foto
             // 
-            this.dtp_fechafin.Location = new System.Drawing.Point(717, 107);
-            this.dtp_fechafin.Name = "dtp_fechafin";
-            this.dtp_fechafin.Size = new System.Drawing.Size(200, 20);
-            this.dtp_fechafin.TabIndex = 72;
-            this.dtp_fechafin.ValueChanged += new System.EventHandler(this.dtp_fechafin_ValueChanged);
+            this.pb_foto.Cursor = System.Windows.Forms.Cursors.No;
+            this.pb_foto.Image = global::Presentaciòn.Properties.Resources.restaurantes;
+            this.pb_foto.Location = new System.Drawing.Point(374, 235);
+            this.pb_foto.Name = "pb_foto";
+            this.pb_foto.Size = new System.Drawing.Size(431, 257);
+            this.pb_foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_foto.TabIndex = 74;
+            this.pb_foto.TabStop = false;
             // 
-            // label11
+            // lbl_realizabusqueda
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(646, 107);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(45, 17);
-            this.label11.TabIndex = 73;
-            this.label11.Text = "Hasta";
+            this.lbl_realizabusqueda.AutoSize = true;
+            this.lbl_realizabusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_realizabusqueda.Location = new System.Drawing.Point(524, 215);
+            this.lbl_realizabusqueda.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_realizabusqueda.Name = "lbl_realizabusqueda";
+            this.lbl_realizabusqueda.Size = new System.Drawing.Size(167, 17);
+            this.lbl_realizabusqueda.TabIndex = 75;
+            this.lbl_realizabusqueda.Text = "Realizar una busqueda...";
             // 
             // frm_inventario
             // 
@@ -513,6 +541,7 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Cantidad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_foto)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -554,5 +583,7 @@
         private System.Windows.Forms.DateTimePicker dtp_buscarporfechaentrada;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DateTimePicker dtp_fechafin;
+        private System.Windows.Forms.PictureBox pb_foto;
+        private System.Windows.Forms.Label lbl_realizabusqueda;
     }
 }

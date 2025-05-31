@@ -347,10 +347,16 @@ namespace Presentaciòn
             if (dt.Rows.Count > 0)
             {
                 r = true;
+                dgv_buscarclientes.Visible = true;
+                pb_foto.Visible = false;
+                lbl_realizabusqueda.Visible = false;
             }
             else
             {
                 r = false;
+                dgv_buscarclientes.Visible = false;
+                pb_foto.Visible = true;
+                lbl_realizabusqueda.Visible = true;
             }
             return r;
         }
