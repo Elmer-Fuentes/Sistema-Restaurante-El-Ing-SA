@@ -334,8 +334,8 @@ namespace Presentaciòn
             nud_numeromesa.Text = dgv_buscarMesas.SelectedCells[1].Value.ToString();
             nud_cantidadsillas.Text = dgv_buscarMesas.SelectedCells[2].Value.ToString();
             txt_Ubicacion.Text = dgv_buscarMesas.SelectedCells[3].Value.ToString();
-            txt_estado.Text = dgv_buscarMesas.SelectedCells[4].Value.ToString();
-            cbox_tipomesa.Text = dgv_buscarMesas.SelectedCells[5].Value.ToString();
+            txt_estado.Text = dgv_buscarMesas.SelectedCells[5].Value.ToString();
+            cbox_tipomesa.Text = dgv_buscarMesas.SelectedCells[4].Value.ToString();
             tabControl1.SelectedIndex = 0;
         }
 
