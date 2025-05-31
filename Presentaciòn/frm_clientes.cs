@@ -310,6 +310,9 @@ namespace Presentaciòn
         {
             if (txt_buscarclientes.Text != "" && !txt_buscarclientes.Text.Contains(" ") && MtdVerificarRetornodedatos() == true)
             {
+                pb_foto.Visible = false;
+                lbl_realizarbusqueda.Visible = false;
+                dgv_buscarclientes.Visible = true;
                 lst_historial.Items.Add(txt_buscarclientes.Text);
                 txt_buscarclientes.BackColor = Color.White;
                 try
@@ -325,6 +328,9 @@ namespace Presentaciòn
             }
             else if (txt_buscarclientes.Text == "" || txt_buscarclientes.Text.Contains(" "))
             {
+                dgv_buscarclientes.Visible = false;
+                lbl_realizarbusqueda.Visible = true;
+                pb_foto.Visible = true;
                 txt_buscarclientes.BackColor = Color.Coral;
                 MessageBox.Show("No se puede hacer una busqueda en blanco", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txt_buscarclientes.Text = "";
@@ -332,6 +338,9 @@ namespace Presentaciòn
             }
             else
             {
+                dgv_buscarclientes.Visible = false;
+                pb_foto.Visible = true;
+                lbl_realizarbusqueda.Visible = true;
                 MessageBox.Show("No se a encontrado ningun registro con ese nombre", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 lst_historial.Items.Add(txt_buscarclientes.Text);
                 txt_buscarclientes.Text = "";
@@ -367,7 +376,6 @@ namespace Presentaciòn
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Mtdmostrarbusquedaclientes("%");
         }
 
         private void iconButton1_Click_1(object sender, EventArgs e)

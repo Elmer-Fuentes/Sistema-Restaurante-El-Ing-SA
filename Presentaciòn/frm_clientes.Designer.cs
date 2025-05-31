@@ -61,6 +61,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.dgv_buscarclientes = new System.Windows.Forms.DataGridView();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.pb_foto = new System.Windows.Forms.PictureBox();
+            this.lbl_realizarbusqueda = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -69,6 +71,7 @@
             this.tabPage2.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_buscarclientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_foto)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -383,6 +386,8 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tabPage2.Controls.Add(this.lbl_realizarbusqueda);
+            this.tabPage2.Controls.Add(this.pb_foto);
             this.tabPage2.Controls.Add(this.panel2);
             this.tabPage2.Controls.Add(this.btn_buscar);
             this.tabPage2.Controls.Add(this.txt_buscarclientes);
@@ -476,9 +481,31 @@
             this.dgv_buscarclientes.RowHeadersWidth = 51;
             this.dgv_buscarclientes.RowTemplate.Height = 24;
             this.dgv_buscarclientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_buscarclientes.Size = new System.Drawing.Size(971, 228);
+            this.dgv_buscarclientes.Size = new System.Drawing.Size(1030, 228);
             this.dgv_buscarclientes.TabIndex = 55;
+            this.dgv_buscarclientes.Visible = false;
             this.dgv_buscarclientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_buscarclientes_CellClick);
+            // 
+            // pb_foto
+            // 
+            this.pb_foto.Image = global::Presentaciòn.Properties.Resources.restaurantes;
+            this.pb_foto.Location = new System.Drawing.Point(466, 236);
+            this.pb_foto.Name = "pb_foto";
+            this.pb_foto.Size = new System.Drawing.Size(383, 228);
+            this.pb_foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_foto.TabIndex = 71;
+            this.pb_foto.TabStop = false;
+            // 
+            // lbl_realizarbusqueda
+            // 
+            this.lbl_realizarbusqueda.AutoSize = true;
+            this.lbl_realizarbusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_realizarbusqueda.Location = new System.Drawing.Point(586, 216);
+            this.lbl_realizarbusqueda.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_realizarbusqueda.Name = "lbl_realizarbusqueda";
+            this.lbl_realizarbusqueda.Size = new System.Drawing.Size(167, 17);
+            this.lbl_realizarbusqueda.TabIndex = 72;
+            this.lbl_realizarbusqueda.Text = "Realizar una busqueda...";
             // 
             // frm_clientes
             // 
@@ -505,6 +532,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_buscarclientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_foto)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -544,5 +572,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cbox_categoria;
+        private System.Windows.Forms.Label lbl_realizarbusqueda;
+        private System.Windows.Forms.PictureBox pb_foto;
     }
 }
