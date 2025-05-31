@@ -176,34 +176,58 @@ go
 --end
 
 
-select table_name from information_schema.Tables
+--create proc Usp_detalles_ordenes (
+--@detalle_ordenes varchar(100) 
+--)
+--as
+--	begin 
+
+--		select 
+--		de.Codigo_Orden_Det,
+--		de.Codigo_Orden_Enc,
+--		Concat('Codigo Cliente: ',en.codigo_cliente,' - Codigo Mesa: ',en.codigo_mesa, ' - Codigo_Empleado: ',en.Codigo_Empleado ) as 'Detalle_Ordenes',
+--		de.Codigo_Menu,
+--		+'Platillo: '+ m.nombre+ ' -- Ingredientes: '+m.ingredientes as 'Descripcion_Menu',
+--		de.Cantidad,
+--		de.Precio_Unitario,
+--		de.Precio_Total,
+--		de.Usuario_Sistema,
+--		de.Fecha_Sistema
+--		from tbl_detalles_ordenes de 
+--		left join tbl_encabezado_ordenes en on de.codigo_orden_enc = en. codigo_orden_enc
+--		left join tbl_menus m on de.codigo_menu = m.codigo_menu
+--	end
 
 
-select * from tbl_empleados
-select * from tbl_detalles_ordenes
+
+--Create proc Usp_pago_ordenes
+--(
+--@informacion_cliente varchar(50)
+--)
+--as
+--begin 
+--select 
+--p.Codigo_Pago,
+--p.Codigo_Orden_Enc,
+--Concat('Codigo: ',e.codigo_cliente,' - Nombre',c.nombre) as Informacion_Cliente,
+--Concat('Codigo: ',e.codigo_mesa,' - Total Sillas: ',m.cantidad_sillas,' - Tipo De Mesa: ' ,m.tipo_mesa) as Descripcion_Mesa,
+--Cast(e.codigo_empleado as varchar) + ' - '+ em.nombre as Empleado,
+--p.Monto_Orden,
+--p.Propina,
+--p.Impuesto,
+--p.Descuento,
+--p.Total_Pago,
+--p.Metodo_Pago,
+--p.Estado,
+--p.Fecha_Pago,
+--p.Usuario_Sistema,
+--p.Fecha_Sistema
+--from tbl_pago_ordenes p
+--join tbl_encabezado_ordenes e on p.codigo_orden_enc = e.codigo_orden_enc
+--join tbl_clientes c on  e.codigo_cliente = c.codigo_cliente
+--join tbl_mesas m on e.codigo_mesa = m.codigo_mesa
+--join tbl_empleados em on e.codigo_empleado = em.codigo_empleado
+--end
 
 
-create proc Usp_detalles_ordenes (
-@detalle_ordenes varchar(100) 
-)
-as
-	begin 
 
-		select 
-		de.Codigo_Orden_Det,
-		de.Codigo_Orden_Enc,
-		Concat('Codigo Cliente: ',en.codigo_cliente,' - Codigo Mesa: ',en.codigo_mesa, ' - Codigo_Empleado: ',en.Codigo_Empleado ) as 'Detalle_Ordenes',
-		de.Codigo_Menu,
-		+'Platillo: '+ m.nombre+ ' -- Ingredientes: '+m.ingredientes as 'Descripcion_Menu',
-		de.Cantidad,
-		de.Precio_Unitario,
-		de.Precio_Total,
-		de.Usuario_Sistema,
-		de.Fecha_Sistema
-		from tbl_detalles_ordenes de 
-		left join tbl_encabezado_ordenes en on de.codigo_orden_enc = en. codigo_orden_enc
-		left join tbl_menus m on de.codigo_menu = m.codigo_menu
-	end
-
-
-	execute Usp_detalles_ordenes ''

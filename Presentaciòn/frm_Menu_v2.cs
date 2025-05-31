@@ -249,9 +249,6 @@ namespace Presentaciòn
             openChildForm(new frm_pago_ordens());
         }
 
-
-        #endregion;
-
         private void mesasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             openChildForm(new frm_Report_mesas());
@@ -266,5 +263,14 @@ namespace Presentaciòn
         {
             openChildForm(new Form_Report_detalles_ordenes());
         }
+
+        private void pagoOrdenesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Form_Report_Pago_Ordenes());
+        }
+
+        #endregion;
+
+
     }
 }

@@ -183,6 +183,12 @@
     <Compile Include="Reportes\Form_Report_detalles_ordenes.Designer.cs">
       <DependentUpon>Form_Report_detalles_ordenes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\Form_Report_Pago_Ordenes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Form_Report_Pago_Ordenes.Designer.cs">
+      <DependentUpon>Form_Report_Pago_Ordenes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\frm_data_dash_emp_user.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -292,6 +298,9 @@
     <EmbeddedResource Include="Reportes\Form_Report_detalles_ordenes.resx">
       <DependentUpon>Form_Report_detalles_ordenes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Form_Report_Pago_Ordenes.resx">
+      <DependentUpon>Form_Report_Pago_Ordenes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\frm_data_dash_emp_user.resx">
       <DependentUpon>frm_data_dash_emp_user.cs</DependentUpon>
     </EmbeddedResource>
@@ -322,6 +331,7 @@
     <EmbeddedResource Include="Reportes\Report_frm_detalles_ordenes.rdlc" />
     <EmbeddedResource Include="Reportes\Report_frm_encabezado_ordenes.rdlc" />
     <EmbeddedResource Include="Reportes\Report_frm_mesas.rdlc" />
+    <EmbeddedResource Include="Reportes\Report_frm_pago_ordenes.rdlc" />
     <EmbeddedResource Include="Reportes\Report_Inventarios_Menu.rdlc" />
     <EmbeddedResource Include="Reportes\Report_Pago_Planilla.rdlc" />
     <EmbeddedResource Include="Reportes\Report_Usuarios.rdlc" />
