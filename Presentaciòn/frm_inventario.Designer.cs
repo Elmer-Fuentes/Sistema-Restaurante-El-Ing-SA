@@ -61,6 +61,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.dtp_fechafin = new System.Windows.Forms.DateTimePicker();
+            this.label11 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_buscarclientes)).BeginInit();
@@ -78,7 +80,7 @@
             this.btn_buscar.IconColor = System.Drawing.Color.Black;
             this.btn_buscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_buscar.IconSize = 25;
-            this.btn_buscar.Location = new System.Drawing.Point(649, 134);
+            this.btn_buscar.Location = new System.Drawing.Point(930, 133);
             this.btn_buscar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_buscar.Name = "btn_buscar";
             this.btn_buscar.Size = new System.Drawing.Size(55, 31);
@@ -91,12 +93,12 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(251, 107);
+            this.label10.Location = new System.Drawing.Point(371, 104);
             this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(120, 17);
+            this.label10.Size = new System.Drawing.Size(29, 17);
             this.label10.TabIndex = 58;
-            this.label10.Text = "Fecha de entrada";
+            this.label10.Text = "Del";
             // 
             // label9
             // 
@@ -121,6 +123,8 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.tabPage2.Controls.Add(this.label11);
+            this.tabPage2.Controls.Add(this.dtp_fechafin);
             this.tabPage2.Controls.Add(this.dtp_buscarporfechaentrada);
             this.tabPage2.Controls.Add(this.panel2);
             this.tabPage2.Controls.Add(this.btn_buscar);
@@ -137,10 +141,11 @@
             // 
             // dtp_buscarporfechaentrada
             // 
-            this.dtp_buscarporfechaentrada.Location = new System.Drawing.Point(426, 104);
+            this.dtp_buscarporfechaentrada.Location = new System.Drawing.Point(420, 104);
             this.dtp_buscarporfechaentrada.Name = "dtp_buscarporfechaentrada";
             this.dtp_buscarporfechaentrada.Size = new System.Drawing.Size(200, 20);
             this.dtp_buscarporfechaentrada.TabIndex = 71;
+            this.dtp_buscarporfechaentrada.ValueChanged += new System.EventHandler(this.dtp_buscarporfechaentrada_ValueChanged);
             // 
             // dgv_buscarclientes
             // 
@@ -464,6 +469,25 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Codigo Inventario:";
             // 
+            // dtp_fechafin
+            // 
+            this.dtp_fechafin.Location = new System.Drawing.Point(717, 107);
+            this.dtp_fechafin.Name = "dtp_fechafin";
+            this.dtp_fechafin.Size = new System.Drawing.Size(200, 20);
+            this.dtp_fechafin.TabIndex = 72;
+            this.dtp_fechafin.ValueChanged += new System.EventHandler(this.dtp_fechafin_ValueChanged);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(646, 107);
+            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(45, 17);
+            this.label11.TabIndex = 73;
+            this.label11.Text = "Hasta";
+            // 
             // frm_inventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -528,5 +552,7 @@
         private System.Windows.Forms.ComboBox cbox_categorias;
         private System.Windows.Forms.NumericUpDown nud_Cantidad;
         private System.Windows.Forms.DateTimePicker dtp_buscarporfechaentrada;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DateTimePicker dtp_fechafin;
     }
 }

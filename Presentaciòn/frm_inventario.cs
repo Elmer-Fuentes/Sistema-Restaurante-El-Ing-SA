@@ -339,8 +339,10 @@ namespace Presentaciòn
             bool r;
             DataTable dt = new DataTable();
             string f = dtp_buscarporfechaentrada.Value.ToString("d");
+            string f2 = dtp_fechafin.Value.ToString("d");
             DateTime fecha = DateTime.Parse(f);
-            dt = cd_inventario.MtdBuscarporFentrada(fecha);
+            DateTime fechafin = DateTime.Parse(f2);
+            dt = cd_inventario.MtdBuscarporFentrada(fecha, fechafin);
             dgv_buscarclientes.DataSource = dt;
             if (dt.Rows.Count > 0)
             {
@@ -406,6 +408,28 @@ namespace Presentaciòn
             else if (!string.IsNullOrWhiteSpace(nud_Cantidad.Text) || nud_Cantidad.Value != 0)
             {
                 nud_Cantidad.BackColor = Color.White;
+            }
+        }
+
+        private void dtp_fechafin_ValueChanged(object sender, EventArgs e)
+        {
+            if (dtp_buscarporfechaentrada.Value > dtp_fechafin.Value)
+            {
+                MessageBox.Show("La fecha inicial no puede ser mayor a la fecha final", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                string f = fecha.MtdFecha().ToString("d"); //para darle formato de fecha corta, y que la hora no afecte
+                dtp_fechafin.Value = DateTime.Parse(f);
+                dtp_buscarporfechaentrada.Value = DateTime.Parse(f);
+            }
+        }
+
+        private void dtp_buscarporfechaentrada_ValueChanged(object sender, EventArgs e)
+        {
+            if (dtp_buscarporfechaentrada.Value > dtp_fechafin.Value)
+            {
+                MessageBox.Show("La fecha inicial no puede ser mayor a la fecha final", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                string f = fecha.MtdFecha().ToString("d"); //para darle formato de fecha corta, y que la hora no afecte
+                dtp_buscarporfechaentrada.Value = DateTime.Parse(f);
+                dtp_fechafin.Value = DateTime.Parse(f);
             }
         }
     }

@@ -155,16 +155,17 @@ namespace Datos
             }
         }
 
-        public DataTable MtdBuscarporFentrada(DateTime fecha_entrada)
+        public DataTable MtdBuscarporFentrada(DateTime fechainicio, DateTime fechafin)
         {
             DataTable dt = new DataTable();
-            string query = "select codigo_inventario as 'Codigo Inventario',\r\ncodigo_menu as 'Codigo Menu',\r\ncategoria as 'Categoria',\r\ncantidad as 'Cantidad',\r\nfecha_entrada as 'Fecha Entrada', \r\nfecha_vencimiento as 'Fecha Vencimiento',\r\ndias_vigencia as 'Dias de Vigencia',\r\nusuario_sistema as 'Usuario Sistema',\r\nfecha_sistema as 'Fecha del Sistema'\r\nfrom tbl_inventarios where fecha_entrada = @fecha_entrada";
+            string query = "select codigo_inventario as 'Codigo Inventario',\r\ncodigo_menu as 'Codigo Menu',\r\ncategoria as 'Categoria',\r\ncantidad as 'Cantidad',\r\nfecha_entrada as 'Fecha Entrada', \r\nfecha_vencimiento as 'Fecha Vencimiento',\r\ndias_vigencia as 'Dias de Vigencia',\r\nusuario_sistema as 'Usuario Sistema',\r\nfecha_sistema as 'Fecha del Sistema'\r\nfrom tbl_inventarios where fecha_entrada between  @fechainicio and @fechafin";
             using (SqlConnection connection = GetConnection())
             {
                 connection.Open();
                 using (SqlCommand buscar = new SqlCommand(query, connection))
                 {
-                    buscar.Parameters.AddWithValue("@fecha_entrada", fecha_entrada);
+                    buscar.Parameters.AddWithValue("@fechainicio", fechainicio);
+                    buscar.Parameters.AddWithValue("@fechafin", fechafin);
                     using (SqlDataAdapter adapter = new SqlDataAdapter(buscar))
                     {
                         adapter.Fill(dt);

@@ -83,36 +83,43 @@ namespace Presentaciòn
 
         private void btnEditar_Click_1(object sender, EventArgs e)
         {
-            int codigo = int.Parse(txt_codigoCliente.Text);
-            string fecha = cl_clin.MtdFecha().ToString("d");
-            string nombre = txt_nombre.Text;
-            string nit = txt_nit.Text;
-            string telefono = txt_telefono.Text;
-            string categoria = cbox_categoria.Text;
-            string estado = txt_estado.Text;
-            string usuario_sistema = Mis_Variables.UsuarioLogueado;
-            DateTime fecha_sistemanombre = DateTime.Parse(fecha);
-            if (!string.IsNullOrWhiteSpace(txt_codigoCliente.Text) && !string.IsNullOrWhiteSpace(txt_nombre.Text) && !string.IsNullOrWhiteSpace(txt_nit.Text) && !string.IsNullOrWhiteSpace(txt_telefono.Text) && !string.IsNullOrWhiteSpace(cbox_categoria.Text) && !string.IsNullOrWhiteSpace(txt_estado.Text))
-
+            if (string.IsNullOrWhiteSpace(txt_codigoCliente.Text))
             {
-                try
-                {
-                    cd_clin.MtdEditardatos(codigo, nombre, nit, telefono, categoria, estado, usuario_sistema, fecha_sistemanombre);
-                    MessageBox.Show("Datos agregados correctamente a la base de datos", "Proceso realizado correctamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Mtdmostrardatos();
-                    Mtdvalidarentrada();
-                    MtdBorrardatos();
-                    MtddevolvercolorBlanco();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error" + ex, "A ocurrido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                MessageBox.Show("Debes de seleccionar una fila", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
             else
             {
-                Mtdvalidarentrada();
-                MessageBox.Show("Debes de ingresar datos en todos los campos", "Sistema Hotel", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                int codigo = int.Parse(txt_codigoCliente.Text);
+                string fecha = cl_clin.MtdFecha().ToString("d");
+                string nombre = txt_nombre.Text;
+                string nit = txt_nit.Text;
+                string telefono = txt_telefono.Text;
+                string categoria = cbox_categoria.Text;
+                string estado = txt_estado.Text;
+                string usuario_sistema = Mis_Variables.UsuarioLogueado;
+                DateTime fecha_sistemanombre = DateTime.Parse(fecha);
+                if (!string.IsNullOrWhiteSpace(txt_codigoCliente.Text) && !string.IsNullOrWhiteSpace(txt_nombre.Text) && !string.IsNullOrWhiteSpace(txt_nit.Text) && !string.IsNullOrWhiteSpace(txt_telefono.Text) && !string.IsNullOrWhiteSpace(cbox_categoria.Text) && !string.IsNullOrWhiteSpace(txt_estado.Text))
+
+                {
+                    try
+                    {
+                        cd_clin.MtdEditardatos(codigo, nombre, nit, telefono, categoria, estado, usuario_sistema, fecha_sistemanombre);
+                        MessageBox.Show("Datos agregados correctamente a la base de datos", "Proceso realizado correctamente", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Mtdmostrardatos();
+                        Mtdvalidarentrada();
+                        MtdBorrardatos();
+                        MtddevolvercolorBlanco();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Error" + ex, "A ocurrido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                else
+                {
+                    Mtdvalidarentrada();
+                    MessageBox.Show("Debes de ingresar datos en todos los campos", "Sistema Hotel", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                }
             }
         }
 
