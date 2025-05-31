@@ -324,6 +324,7 @@
             // 
             // iconMenuItem_CambioUsuario
             // 
+            this.iconMenuItem_CambioUsuario.BackColor = System.Drawing.Color.Orange;
             this.iconMenuItem_CambioUsuario.IconChar = FontAwesome.Sharp.IconChar.Sync;
             this.iconMenuItem_CambioUsuario.IconColor = System.Drawing.Color.Black;
             this.iconMenuItem_CambioUsuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -334,6 +335,7 @@
             // 
             // iconMenuItemSalirSistema
             // 
+            this.iconMenuItemSalirSistema.BackColor = System.Drawing.Color.Orange;
             this.iconMenuItemSalirSistema.IconChar = FontAwesome.Sharp.IconChar.SignInAlt;
             this.iconMenuItemSalirSistema.IconColor = System.Drawing.Color.Black;
             this.iconMenuItemSalirSistema.IconFont = FontAwesome.Sharp.IconFont.Auto;
