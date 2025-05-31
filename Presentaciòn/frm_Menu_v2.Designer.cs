@@ -164,7 +164,7 @@
             this.sub_empleados.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.sub_empleados.ImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.sub_empleados.Name = "sub_empleados";
-            this.sub_empleados.Size = new System.Drawing.Size(192, 30);
+            this.sub_empleados.Size = new System.Drawing.Size(184, 22);
             this.sub_empleados.Text = "Empleados";
             // 
             // iconMenuItem1
@@ -174,7 +174,7 @@
             this.iconMenuItem1.IconColor = System.Drawing.Color.Black;
             this.iconMenuItem1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconMenuItem1.Name = "iconMenuItem1";
-            this.iconMenuItem1.Size = new System.Drawing.Size(207, 30);
+            this.iconMenuItem1.Size = new System.Drawing.Size(199, 22);
             this.iconMenuItem1.Text = "Empleados Sin Usuarios";
             this.iconMenuItem1.Click += new System.EventHandler(this.iconMenuItem1_Click);
             // 
@@ -185,7 +185,7 @@
             this.iconMenuItem2.IconColor = System.Drawing.Color.Black;
             this.iconMenuItem2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconMenuItem2.Name = "iconMenuItem2";
-            this.iconMenuItem2.Size = new System.Drawing.Size(207, 30);
+            this.iconMenuItem2.Size = new System.Drawing.Size(199, 22);
             this.iconMenuItem2.Text = "Empleados";
             this.iconMenuItem2.Click += new System.EventHandler(this.iconMenuItem2_Click);
             // 
@@ -196,7 +196,7 @@
             this.Data_Dash_Usuarios.IconColor = System.Drawing.Color.Black;
             this.Data_Dash_Usuarios.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.Data_Dash_Usuarios.Name = "Data_Dash_Usuarios";
-            this.Data_Dash_Usuarios.Size = new System.Drawing.Size(207, 30);
+            this.Data_Dash_Usuarios.Size = new System.Drawing.Size(199, 22);
             this.Data_Dash_Usuarios.Text = "Data_Dash_Usuarios";
             this.Data_Dash_Usuarios.Click += new System.EventHandler(this.Data_Dash_Usuarios_Click);
             // 
@@ -207,7 +207,7 @@
             this.sub_cliente.IconColor = System.Drawing.Color.Black;
             this.sub_cliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.sub_cliente.Name = "sub_cliente";
-            this.sub_cliente.Size = new System.Drawing.Size(192, 30);
+            this.sub_cliente.Size = new System.Drawing.Size(184, 22);
             this.sub_cliente.Text = "Clientes";
             this.sub_cliente.Click += new System.EventHandler(this.sub_cliente_Click);
             // 
@@ -218,7 +218,7 @@
             this.sub_usuario.IconColor = System.Drawing.Color.Black;
             this.sub_usuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.sub_usuario.Name = "sub_usuario";
-            this.sub_usuario.Size = new System.Drawing.Size(192, 30);
+            this.sub_usuario.Size = new System.Drawing.Size(184, 22);
             this.sub_usuario.Text = "Usuarios";
             this.sub_usuario.Click += new System.EventHandler(this.sub_usuario_Click);
             // 
@@ -229,7 +229,7 @@
             this.sub_pago_planilla.IconColor = System.Drawing.Color.Black;
             this.sub_pago_planilla.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.sub_pago_planilla.Name = "sub_pago_planilla";
-            this.sub_pago_planilla.Size = new System.Drawing.Size(192, 30);
+            this.sub_pago_planilla.Size = new System.Drawing.Size(184, 22);
             this.sub_pago_planilla.Text = "Pago Planilla";
             this.sub_pago_planilla.Click += new System.EventHandler(this.sub_pago_planilla_Click);
             // 
@@ -240,7 +240,7 @@
             this.sub_inventarios.IconColor = System.Drawing.Color.Black;
             this.sub_inventarios.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.sub_inventarios.Name = "sub_inventarios";
-            this.sub_inventarios.Size = new System.Drawing.Size(192, 30);
+            this.sub_inventarios.Size = new System.Drawing.Size(184, 22);
             this.sub_inventarios.Text = "Inventarios";
             this.sub_inventarios.Click += new System.EventHandler(this.sub_inventarios_Click);
             // 
@@ -251,7 +251,7 @@
             this.sub_mesas.IconColor = System.Drawing.Color.Black;
             this.sub_mesas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.sub_mesas.Name = "sub_mesas";
-            this.sub_mesas.Size = new System.Drawing.Size(192, 30);
+            this.sub_mesas.Size = new System.Drawing.Size(184, 22);
             this.sub_mesas.Text = "Mesas";
             this.sub_mesas.Click += new System.EventHandler(this.sub_mesas_Click);
             // 
@@ -262,7 +262,7 @@
             this.sub_enc_ordenes.IconColor = System.Drawing.Color.Black;
             this.sub_enc_ordenes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.sub_enc_ordenes.Name = "sub_enc_ordenes";
-            this.sub_enc_ordenes.Size = new System.Drawing.Size(192, 30);
+            this.sub_enc_ordenes.Size = new System.Drawing.Size(184, 22);
             this.sub_enc_ordenes.Text = "Encabezado Ordenes";
             this.sub_enc_ordenes.Click += new System.EventHandler(this.sub_enc_ordenes_Click);
             // 
@@ -273,7 +273,7 @@
             this.sub_det_ordenes.IconColor = System.Drawing.Color.Black;
             this.sub_det_ordenes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.sub_det_ordenes.Name = "sub_det_ordenes";
-            this.sub_det_ordenes.Size = new System.Drawing.Size(192, 30);
+            this.sub_det_ordenes.Size = new System.Drawing.Size(184, 22);
             this.sub_det_ordenes.Text = "Detalle Ordenes";
             this.sub_det_ordenes.Click += new System.EventHandler(this.sub_det_ordenes_Click);
             // 
@@ -284,7 +284,7 @@
             this.sub_pago_ordenes.IconColor = System.Drawing.Color.Black;
             this.sub_pago_ordenes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.sub_pago_ordenes.Name = "sub_pago_ordenes";
-            this.sub_pago_ordenes.Size = new System.Drawing.Size(192, 30);
+            this.sub_pago_ordenes.Size = new System.Drawing.Size(184, 22);
             this.sub_pago_ordenes.Text = "Pago Ordenes";
             this.sub_pago_ordenes.Click += new System.EventHandler(this.sub_pago_ordenes_Click);
             // 
@@ -302,12 +302,12 @@
             // dashboardEmpleadosUsuariosToolStripMenuIte
             // 
             this.dashboardEmpleadosUsuariosToolStripMenuIte.BackColor = System.Drawing.Color.Orange;
-            this.dashboardEmpleadosUsuariosToolStripMenuIte.IconChar = FontAwesome.Sharp.IconChar.PersonBreastfeeding;
+            this.dashboardEmpleadosUsuariosToolStripMenuIte.IconChar = FontAwesome.Sharp.IconChar.PieChart;
             this.dashboardEmpleadosUsuariosToolStripMenuIte.IconColor = System.Drawing.Color.Black;
             this.dashboardEmpleadosUsuariosToolStripMenuIte.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.dashboardEmpleadosUsuariosToolStripMenuIte.Name = "dashboardEmpleadosUsuariosToolStripMenuIte";
-            this.dashboardEmpleadosUsuariosToolStripMenuIte.Size = new System.Drawing.Size(250, 30);
-            this.dashboardEmpleadosUsuariosToolStripMenuIte.Text = "Dashboard Empleados-Usuarios";
+            this.dashboardEmpleadosUsuariosToolStripMenuIte.Size = new System.Drawing.Size(188, 30);
+            this.dashboardEmpleadosUsuariosToolStripMenuIte.Text = "Dashboard";
             this.dashboardEmpleadosUsuariosToolStripMenuIte.Click += new System.EventHandler(this.dashboardEmpleadosUsuariosToolStripMenuIte_Click);
             // 
             // iconMenuItem_Salir
@@ -329,7 +329,7 @@
             this.iconMenuItem_CambioUsuario.IconColor = System.Drawing.Color.Black;
             this.iconMenuItem_CambioUsuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconMenuItem_CambioUsuario.Name = "iconMenuItem_CambioUsuario";
-            this.iconMenuItem_CambioUsuario.Size = new System.Drawing.Size(188, 30);
+            this.iconMenuItem_CambioUsuario.Size = new System.Drawing.Size(162, 22);
             this.iconMenuItem_CambioUsuario.Text = "Cambiar Usuario";
             this.iconMenuItem_CambioUsuario.Click += new System.EventHandler(this.iconMenuItem_CambioUsuario_Click);
             // 
@@ -340,7 +340,7 @@
             this.iconMenuItemSalirSistema.IconColor = System.Drawing.Color.Black;
             this.iconMenuItemSalirSistema.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconMenuItemSalirSistema.Name = "iconMenuItemSalirSistema";
-            this.iconMenuItemSalirSistema.Size = new System.Drawing.Size(188, 30);
+            this.iconMenuItemSalirSistema.Size = new System.Drawing.Size(162, 22);
             this.iconMenuItemSalirSistema.Text = "Salir Del Sistema";
             this.iconMenuItemSalirSistema.Click += new System.EventHandler(this.iconMenuItemSalirSistema_Click);
             // 

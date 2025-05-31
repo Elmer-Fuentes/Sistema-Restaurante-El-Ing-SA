@@ -16,7 +16,7 @@ namespace Presentaciòn
         {
             InitializeComponent();
         }
-        string powerbi = "<iframe title=\"Rep_Empleados_Usuarios\" width=\"600\" height=\"373.5\" src=\"https://app.powerbi.com/view?r=eyJrIjoiZGY1NDNlNzEtODljOC00ZmNmLTlmYWMtOGI3NDJmNTgzMTAyIiwidCI6IjVmNTNiNGNlLTYzZDQtNGVlOC04OGQyLTIyZjBiMmQ0YjI3YSIsImMiOjR9\" frameborder=\"0\" allowFullScreen=\"true\"></iframe>";
+        string powerbi = "<iframe title=\"Rep_Empleados_Usuarios\" width=\"600\" height=\"373.5\" src=\"https://app.powerbi.com/view?r=eyJrIjoiNmJjYTc1NDQtYTMyZi00Y2ZlLWI3ZTctYzEyYzM2MTZjNzA0IiwidCI6IjVmNTNiNGNlLTYzZDQtNGVlOC04OGQyLTIyZjBiMmQ0YjI3YSIsImMiOjR9&pageName=7b5089140e00a0d3045b\" frameborder=\"0\" allowFullScreen=\"true\"></iframe>";
 
 
         private async void Dashboard_Empleados_Usuarios_Load(object sender, EventArgs e)
