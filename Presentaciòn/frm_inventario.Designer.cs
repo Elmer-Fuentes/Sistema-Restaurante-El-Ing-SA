@@ -141,7 +141,7 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(2);
             this.tabPage2.Size = new System.Drawing.Size(1124, 497);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Buscar Producto";
+            this.tabPage2.Text = "Buscar Inventario";
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // label11

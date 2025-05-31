@@ -83,13 +83,13 @@ namespace Datos
         public DataTable MtdBuscador(string tipo_mesa)
         {
             DataTable datos = new DataTable();
-            string query = "select codigo_mesa as 'Codigo Mesa',numero_mesa as 'Numero de Mesa',cantidad_sillas as 'Cantidad de Sillas',ubicacion as 'Ubicacion', tipo_mesa as 'Tipo de Mesa',estado as 'Estado',usuario_sistema as 'Usuario de el Sistema',FechaSistema as 'Fecha' from tbl_mesas where lower(tipo_mesa) like '%' +@tipo_mesa +'%'";
+            string query = "select codigo_mesa as 'Codigo Mesa',numero_mesa as 'Numero de Mesa',cantidad_sillas as 'Cantidad de Sillas',ubicacion as 'Ubicacion', tipo_mesa as 'Tipo de Mesa',estado as 'Estado',usuario_sistema as 'Usuario de el Sistema',FechaSistema as 'Fecha' from tbl_mesas where tipo_mesa  = @tipo_mesa";
             using (SqlConnection connection = GetConnection())
             {
                 connection.Open();
                 using (SqlCommand buscar = new SqlCommand(query, connection))
                 {
-                    buscar.Parameters.AddWithValue("@tipo_mesa", "%" + tipo_mesa + "%");
+                    buscar.Parameters.AddWithValue("@tipo_mesa", tipo_mesa);
                     using (SqlDataAdapter adapter = new SqlDataAdapter(buscar))
                     {
                         adapter.Fill(datos);

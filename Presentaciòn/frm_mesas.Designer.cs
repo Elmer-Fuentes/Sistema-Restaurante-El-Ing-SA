@@ -38,9 +38,8 @@
             this.cbox_buscarMesas = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lbl_realizarbusqueda = new System.Windows.Forms.Label();
             this.btn_buscar = new FontAwesome.Sharp.IconButton();
-            this.lst_historial = new System.Windows.Forms.ListBox();
             this.label10 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -63,6 +62,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.usP_BusClienteTableAdapter1 = new Presentaciòn.Reportes.DS_ReportesTableAdapters.USP_BusClienteTableAdapter();
             this.iconMenuItem1 = new FontAwesome.Sharp.IconMenuItem();
+            this.pb_foto = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_buscarMesas)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -73,6 +73,7 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_numeromesa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_cantidadsillas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_foto)).BeginInit();
             this.SuspendLayout();
             // 
             // btnCancelar
@@ -146,8 +147,9 @@
             this.dgv_buscarMesas.RowHeadersWidth = 51;
             this.dgv_buscarMesas.RowTemplate.Height = 24;
             this.dgv_buscarMesas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_buscarMesas.Size = new System.Drawing.Size(971, 228);
+            this.dgv_buscarMesas.Size = new System.Drawing.Size(1030, 254);
             this.dgv_buscarMesas.TabIndex = 55;
+            this.dgv_buscarMesas.Visible = false;
             this.dgv_buscarMesas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_buscarMesas_CellClick);
             // 
             // txt_Ubicacion
@@ -160,11 +162,11 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.pb_foto);
             this.tabPage2.Controls.Add(this.cbox_buscarMesas);
             this.tabPage2.Controls.Add(this.panel2);
-            this.tabPage2.Controls.Add(this.label11);
+            this.tabPage2.Controls.Add(this.lbl_realizarbusqueda);
             this.tabPage2.Controls.Add(this.btn_buscar);
-            this.tabPage2.Controls.Add(this.lst_historial);
             this.tabPage2.Controls.Add(this.label10);
             this.tabPage2.Controls.Add(this.dgv_buscarMesas);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -211,16 +213,16 @@
             this.label9.TabIndex = 58;
             this.label9.Text = "Buscar Mesas ";
             // 
-            // label11
+            // lbl_realizarbusqueda
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(368, 133);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(109, 13);
-            this.label11.TabIndex = 63;
-            this.label11.Text = "Historial de busqueda";
+            this.lbl_realizarbusqueda.AutoSize = true;
+            this.lbl_realizarbusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_realizarbusqueda.Location = new System.Drawing.Point(533, 209);
+            this.lbl_realizarbusqueda.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbl_realizarbusqueda.Name = "lbl_realizarbusqueda";
+            this.lbl_realizarbusqueda.Size = new System.Drawing.Size(125, 13);
+            this.lbl_realizarbusqueda.TabIndex = 63;
+            this.lbl_realizarbusqueda.Text = "Realizar una busqueda...";
             // 
             // btn_buscar
             // 
@@ -236,16 +238,6 @@
             this.btn_buscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_buscar.UseVisualStyleBackColor = true;
             this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
-            // 
-            // lst_historial
-            // 
-            this.lst_historial.FormattingEnabled = true;
-            this.lst_historial.Location = new System.Drawing.Point(329, 154);
-            this.lst_historial.Margin = new System.Windows.Forms.Padding(2);
-            this.lst_historial.Name = "lst_historial";
-            this.lst_historial.Size = new System.Drawing.Size(213, 69);
-            this.lst_historial.TabIndex = 59;
-            this.lst_historial.SelectedIndexChanged += new System.EventHandler(this.lst_historial_SelectedIndexChanged);
             // 
             // label10
             // 
@@ -508,6 +500,16 @@
             this.iconMenuItem1.Size = new System.Drawing.Size(32, 19);
             this.iconMenuItem1.Text = "iconMenuItem1";
             // 
+            // pb_foto
+            // 
+            this.pb_foto.Image = global::Presentaciòn.Properties.Resources.restaurantes;
+            this.pb_foto.Location = new System.Drawing.Point(412, 236);
+            this.pb_foto.Name = "pb_foto";
+            this.pb_foto.Size = new System.Drawing.Size(363, 253);
+            this.pb_foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_foto.TabIndex = 72;
+            this.pb_foto.TabStop = false;
+            // 
             // frm_mesas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -535,6 +537,7 @@
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nud_numeromesa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_cantidadsillas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_foto)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -550,9 +553,8 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lbl_realizarbusqueda;
         private FontAwesome.Sharp.IconButton btn_buscar;
-        private System.Windows.Forms.ListBox lst_historial;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
@@ -576,5 +578,6 @@
         private FontAwesome.Sharp.IconMenuItem iconMenuItem1;
         private System.Windows.Forms.NumericUpDown nud_cantidadsillas;
         private System.Windows.Forms.NumericUpDown nud_numeromesa;
+        private System.Windows.Forms.PictureBox pb_foto;
     }
 }

@@ -283,12 +283,13 @@ namespace Presentaciòn
         private void btn_buscar_Click(object sender, EventArgs e)
         {
             string busqueda = cbox_buscarMesas.Text;
-            if (!string.IsNullOrWhiteSpace(cbox_buscarMesas.Text))
+
+            bool r = MtdMostrarbusqueda(busqueda);
+            if (r != true)
             {
-                lst_historial.Items.Add(cbox_buscarMesas.Text);
-                MtdMostrarbusqueda(busqueda);
-                cbox_buscarMesas.Text = "";
+                MessageBox.Show("No se a encontrado ninguna coinsidencia en la base de datos", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Stop);
             }
+            cbox_buscarMesas.Text = "";
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
@@ -296,15 +297,29 @@ namespace Presentaciòn
             MtdMostrarbusqueda("");
         }
 
-        private void MtdMostrarbusqueda(string busqueda)
+        private bool MtdMostrarbusqueda(string busqueda)
         {
             DataTable dt = cd_Mesas.MtdBuscador(busqueda);
-            dgv_buscarMesas.DataSource = dt;
+
+            if (dt.Rows.Count > 0)
+            {
+                dgv_buscarMesas.Visible = true;
+                dgv_buscarMesas.DataSource = dt;
+                lbl_realizarbusqueda.Visible = false;
+                pb_foto.Visible = false;
+                return true;
+            }
+            else
+            {
+                dgv_buscarMesas.Visible = false;
+                lbl_realizarbusqueda.Visible = true;
+                pb_foto.Visible = true;
+                return false;
+            }
         }
 
         private void lst_historial_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cbox_buscarMesas.Text = lst_historial.SelectedItem.ToString();
         }
 
         private void dgv_buscarMesas_CellClick(object sender, DataGridViewCellEventArgs e)
