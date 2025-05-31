@@ -53,7 +53,17 @@ namespace Presentaciòn
         #region = "Seleccion de celdas en data dgv retornar a txt,cbc, label,etc";
         private void dgvUsuarios_Click(object sender, EventArgs e)
         {
-            txt_codigo_empleado.Text = dgvUsuarios.SelectedCells[1].Value.ToString();
+			var FilaSeleccionada = dgvUsuarios.SelectedRows[0];
+
+
+			if (FilaSeleccionada.Index == dgvUsuarios.Rows.Count - 1)
+			{
+				MessageBox.Show("Seleccione una fila con datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			else
+
+
+			txt_codigo_empleado.Text = dgvUsuarios.SelectedCells[1].Value.ToString();
             txt_nombre_empleado.Text = dgvUsuarios.SelectedCells[2].Value.ToString();
             txt_asignar_nombre_usuario.Text = dgvUsuarios.SelectedCells[3].Value.ToString();
             txt_contrasena.Text = dgvUsuarios.SelectedCells[4].Value.ToString();
@@ -78,7 +88,20 @@ namespace Presentaciòn
         #region = "Boton agregar";
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-                int codigo_empleado = int.Parse(txt_codigo_empleado.Text);
+
+
+			if (string.IsNullOrEmpty(txt_codigo_empleado.Text) || string.IsNullOrEmpty(txt_nombre_empleado.Text) || string.IsNullOrEmpty(txt_asignar_nombre_usuario.Text) || string.IsNullOrEmpty(txt_contrasena.Text)|| string.IsNullOrEmpty(cbx_rol.Text) || string.IsNullOrEmpty(cbx_estado.Text))
+			{
+				MessageBox.Show("Complete todos los datos antes de guardar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				return;
+			}
+			else
+
+				try
+				{
+
+
+				int codigo_empleado = int.Parse(txt_codigo_empleado.Text);
                 string nombre_empleado = txt_nombre_empleado.Text;
                 string nombre_usuario = txt_asignar_nombre_usuario.Text;
                 string contrasena = txt_contrasena.Text;
@@ -86,8 +109,7 @@ namespace Presentaciòn
                 string estado = cbx_estado.Text;
                 string usuario_sistema = Mis_Variables.UsuarioLogueado;
                 DateTime fecha_sistemanombre = cl_fecha.MtdFecha();
-                try
-                {
+                
                     cd_usuarios.MtdInsUsuarios(codigo_empleado, nombre_empleado, nombre_usuario, contrasena, rol, estado, usuario_sistema, fecha_sistemanombre);
                     MessageBox.Show("Usuario creado correctamente", "Estado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Mtdmostrardatos();

@@ -81,26 +81,38 @@ namespace Presentaciòn
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            //int codigo_menu = int.Parse(txt_codigo_menu.Text);
-            string nombre = txt_nombre_menu.Text;
+
+
+			if (string.IsNullOrEmpty(txt_nombre_menu.Text) || string.IsNullOrEmpty(txt_ingredientes.Text) || string.IsNullOrEmpty(cbx_categoria.Text) || string.IsNullOrEmpty(txt_precio.Text) || string.IsNullOrEmpty(cbx_estado.Text))
+			{
+				MessageBox.Show("Complete todos los datos antes de guardar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				return;
+			}
+			else
+
+				try
+				{
+
+					//int codigo_menu = int.Parse(txt_codigo_menu.Text);
+			string nombre = txt_nombre_menu.Text;
             string ingredientes = txt_ingredientes.Text;
             string categoria = cbx_categoria.Text;
             double precio = double.Parse(txt_precio.Text);
             string estado = cbx_estado.Text;
             string usuario_sistema = Mis_Variables.UsuarioLogueado;
             DateTime fecha_sistemanombre = cl_fecha.MtdFecha();
-            try
-            {
-                cd_menu.MtdInsMenu(/*codigo_menu, */nombre, ingredientes, categoria, precio, estado, usuario_sistema, fecha_sistemanombre);
-                MessageBox.Show("Usuario creado correctamente", "Estado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Mtdmostrardatos();
-                Limpiardatos();
+            
+            cd_menu.MtdInsMenu(/*codigo_menu, */nombre, ingredientes, categoria, precio, estado, usuario_sistema, fecha_sistemanombre);
+            MessageBox.Show("Usuario creado correctamente", "Estado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Mtdmostrardatos();
+            Limpiardatos();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error" + ex, "A ocurrido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+				}
+		}
+
 
         #endregion = "Botono agregar menu"
 
@@ -135,7 +147,18 @@ namespace Presentaciòn
 
         private void dgvMenus_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txt_codigo_menu.Text = dgvMenus.SelectedCells[0].Value.ToString();
+			var FilaSeleccionada = dgvMenus.SelectedRows[0];
+
+
+			if (FilaSeleccionada.Index == dgvMenus.Rows.Count - 1)
+			{
+				MessageBox.Show("Seleccione una fila con datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			else
+
+
+
+				txt_codigo_menu.Text = dgvMenus.SelectedCells[0].Value.ToString();
             txt_nombre_menu.Text = dgvMenus.SelectedCells[1].Value.ToString();
             txt_ingredientes.Text = dgvMenus.SelectedCells[2].Value.ToString();
             cbx_categoria.Text = dgvMenus.SelectedCells[3].Value.ToString();

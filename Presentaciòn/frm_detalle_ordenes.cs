@@ -136,18 +136,32 @@ namespace Presentaciòn
 
         #region = "Devolver valores de dvg a txt, label,ect";
         private void dgvdetalleOrdenes_CellClick(object sender, DataGridViewCellEventArgs e)
+
+
         {
-            txt_codgo_orden_detalle.Text = dgvdetalleOrdenes.SelectedCells[0].Value.ToString();
+
+			var FilaSeleccionada = dgvdetalleOrdenes.SelectedRows[0];
+
+
+			if (FilaSeleccionada.Index == dgvdetalleOrdenes.Rows.Count - 1)
+			{
+				MessageBox.Show("Seleccione una fila con datos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+			else
+			{
+				txt_codgo_orden_detalle.Text = dgvdetalleOrdenes.SelectedCells[0].Value.ToString();
             cbx_Orden_encabezados.Text = dgvdetalleOrdenes.SelectedCells[1].Value.ToString();
             cbx_codigo_menu.Text = dgvdetalleOrdenes.SelectedCells[2].Value.ToString();
             txt_cantidad.Text = dgvdetalleOrdenes.SelectedCells[3].Value.ToString();
             cbx_precioMenu_unitario.Text = dgvdetalleOrdenes.SelectedCells[4].Value.ToString();
             txt_precio_total.Text = dgvdetalleOrdenes.SelectedCells[5].Value.ToString();
         }
-        #endregion
+		}
 
-        #region = "Metodo Fechas";
-        private void Fechas()
+		#endregion
+
+		#region = "Metodo Fechas";
+		private void Fechas()
         {
             DateTime fecha = cl_fechas.MtdFecha();
             lblFecha.Text = fecha.ToString("dd/MM/yyyy");
@@ -179,16 +193,25 @@ namespace Presentaciòn
         #region = "Btn Guardar";
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(cbx_Orden_encabezados.Text) || string.IsNullOrEmpty(cbx_codigo_menu.Text) || string.IsNullOrEmpty(txt_cantidad.Text) || string.IsNullOrEmpty(cbx_precioMenu_unitario.Text) || string.IsNullOrEmpty(txt_precio_total.Text)) 
+			{
+				MessageBox.Show("Complete todos los datos antes de guardar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+				return;
+			}
+			else
+			{
+				try
+				{
 
-            int codigo_Orden_encabezado = int.Parse(cbx_Orden_encabezados.Text);
+
+			int codigo_Orden_encabezado = int.Parse(cbx_Orden_encabezados.Text);
             int codigo_Menu = Convert.ToInt32(cbx_codigo_menu.SelectedValue);
             int cantidad = int.Parse(txt_cantidad.Text);
             double precio_unitario = double.Parse(cbx_precioMenu_unitario.Text);
             double precio_total = double.Parse(txt_precio_total.Text);
             string usuario_sistema = Mis_Variables.UsuarioLogueado;
             DateTime fecha_sistemanombre = cl_fechas.MtdFecha();
-            try
-            {
+            
                 obj.MtdIns_detall_ordenes(codigo_Orden_encabezado, codigo_Menu, cantidad, precio_unitario, precio_total, usuario_sistema, fecha_sistemanombre);
                 MessageBox.Show("Usuario creado correctamente", "Estado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 mostrar_detalle_ordenes_dgv();
@@ -198,13 +221,14 @@ namespace Presentaciòn
             {
                 MessageBox.Show("Error" + ex, "A ocurrido un error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
+			}
+		}
 
 
-        #endregion
+		#endregion
 
-        #region = "btn cancelar";
-        private void btnCancelar_Click(object sender, EventArgs e)
+		#region = "btn cancelar";
+		private void btnCancelar_Click(object sender, EventArgs e)
         {
             Limpiardatos();
         }
