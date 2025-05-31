@@ -249,7 +249,7 @@ namespace Presentaciòn
                             DialogResult r;
                             if (dias_vigencia <= 0)
                             {
-                                r = MessageBox.Show("El producto esta por vencer, esta seguro de ingresarlo?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                                r = MessageBox.Show("El producto ya esta vencido, esta seguro de ingresar el cambio?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                                 if (r == DialogResult.No)
                                 {
                                     MtdBorrarcampos();
@@ -313,7 +313,7 @@ namespace Presentaciòn
                     if (r == DialogResult.Yes)
                     {
                         cd_inventario.MtdEliminar(codigo);
-                        MtdBorrarcampos();
+                        MtdMostrardatos();
                         MtdBorrarcampos();
                         MtddevolvercolorBlanco();
                         MessageBox.Show("Se a eliminado de la base de datos satisfactoriamente", "Sistema Restaurante", MessageBoxButtons.OK, MessageBoxIcon.Information);
