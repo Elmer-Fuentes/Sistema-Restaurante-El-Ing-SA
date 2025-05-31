@@ -130,6 +130,7 @@
             this.iconMenuItem_nosotros.Size = new System.Drawing.Size(118, 28);
             this.iconMenuItem_nosotros.Text = "      Sobre Nosotros";
             this.iconMenuItem_nosotros.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
+            this.iconMenuItem_nosotros.Click += new System.EventHandler(this.iconMenuItem_nosotros_Click);
             // 
             // ico_menItem_Reportes
             // 

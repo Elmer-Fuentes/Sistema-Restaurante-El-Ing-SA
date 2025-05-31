@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Security.Policy;
@@ -277,6 +278,11 @@ namespace Presentaciòn
             openChildForm(new Dashboard_Empleados_Usuarios());
         }
 
-
+        private void iconMenuItem_nosotros_Click(object sender, EventArgs e)
+        {
+          //  |llama a un proceso del SO    | define como iniciar proceso| especifica la Url|                                                                    indicaque se va autilizar powershell del SO para abrir el url en nav predeterminado
+            System.Diagnostics.Process.Start( new ProcessStartInfo { FileName = "https://drive.google.com/uc?export=download&id=1jdsVtEYSW7hh8gOQI0W0esB0OXs5Uf6v", UseShellExecute = true });
+                 
+        }
     }
 }
