@@ -269,8 +269,12 @@ namespace Presentaciòn
             openChildForm(new Form_Report_Pago_Ordenes());
         }
 
+
         #endregion;
 
+        private void lbl_usuario_logo_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
