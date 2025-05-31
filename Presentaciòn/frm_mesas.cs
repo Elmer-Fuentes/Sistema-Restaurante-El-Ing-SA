@@ -26,7 +26,7 @@ namespace Presentaciòn
         private void frm_mesas_Load(object sender, EventArgs e)
         {
             Style();
-
+            lblFecha.Text = cl_fechas.MtdFecha().ToString("d");
             MtdMostrardatos();
             tabPage1.Text = "Mesas";
             tabPage2.Text = "Buscar Mesas";
@@ -46,6 +46,12 @@ namespace Presentaciòn
         {
             this.ControlBox = false;
             this.FormBorderStyle = FormBorderStyle.None;
+            btn_buscar.FlatStyle = FlatStyle.Flat;
+            btn_buscar.FlatAppearance.BorderSize = 0;
+            btnCancelar.FlatStyle = FlatStyle.Flat;
+            btnCancelar.FlatAppearance.BorderSize = 0;
+            btnSalir.FlatStyle = FlatStyle.Flat;
+            btnSalir.FlatAppearance.BorderSize = 0;
         }
 
         private void dgv_Mesas_CellClick(object sender, DataGridViewCellEventArgs e)

@@ -230,10 +230,10 @@
             this.btn_buscar.IconColor = System.Drawing.Color.Black;
             this.btn_buscar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btn_buscar.IconSize = 25;
-            this.btn_buscar.Location = new System.Drawing.Point(607, 115);
+            this.btn_buscar.Location = new System.Drawing.Point(567, 103);
             this.btn_buscar.Margin = new System.Windows.Forms.Padding(2);
             this.btn_buscar.Name = "btn_buscar";
-            this.btn_buscar.Size = new System.Drawing.Size(55, 31);
+            this.btn_buscar.Size = new System.Drawing.Size(43, 36);
             this.btn_buscar.TabIndex = 62;
             this.btn_buscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_buscar.UseVisualStyleBackColor = true;
