@@ -41,9 +41,9 @@ namespace Presentaciòn
 		#region MtdConsultarPagoPlanillas
 		public void MtdConsultarPagoPlanillas()
 		{
-			cd_pago_planillas CD_Pago_planillas = new cd_pago_planillas();
+			
 
-			DataTable dtpagoplanillas = CD_Pago_planillas.MtdConsultarPagoPlanillas();
+			DataTable dtpagoplanillas = datosPlanillas.MtdConsultarPagoPlanillas();
 			dgvPagoPlanillas.DataSource = dtpagoplanillas;
 		}
 		#endregion
