@@ -30,25 +30,25 @@
         {
             this.components = new System.ComponentModel.Container();
             this.menuStrip = new System.Windows.Forms.MenuStrip();
-            this.operacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirDelSistemaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.empleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.empleadosSinUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataDashboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.empleadosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuariosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.pagoPlanillaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.inventariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mesasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.encabezadoOrdenesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.detallesOrdenesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pagoOrdenesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.DataAnalitycsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.dashboardEmpleadosUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirDelSistemaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.cerrarSeciónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.salirDelSistemaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.iconMenuItem_nosotros = new FontAwesome.Sharp.IconMenuItem();
+            this.ico_menItem_Reportes = new FontAwesome.Sharp.IconMenuItem();
+            this.sub_empleados = new FontAwesome.Sharp.IconMenuItem();
+            this.iconMenuItem1 = new FontAwesome.Sharp.IconMenuItem();
+            this.iconMenuItem2 = new FontAwesome.Sharp.IconMenuItem();
+            this.Data_Dash_Usuarios = new FontAwesome.Sharp.IconMenuItem();
+            this.sub_cliente = new FontAwesome.Sharp.IconMenuItem();
+            this.sub_usuario = new FontAwesome.Sharp.IconMenuItem();
+            this.sub_pago_planilla = new FontAwesome.Sharp.IconMenuItem();
+            this.sub_inventarios = new FontAwesome.Sharp.IconMenuItem();
+            this.sub_mesas = new FontAwesome.Sharp.IconMenuItem();
+            this.sub_enc_ordenes = new FontAwesome.Sharp.IconMenuItem();
+            this.sub_det_ordenes = new FontAwesome.Sharp.IconMenuItem();
+            this.sub_pago_ordenes = new FontAwesome.Sharp.IconMenuItem();
+            this.Menu_data_Analitycs = new FontAwesome.Sharp.IconMenuItem();
+            this.dashboardEmpleadosUsuariosToolStripMenuIte = new FontAwesome.Sharp.IconMenuItem();
+            this.iconMenuItem_Salir = new FontAwesome.Sharp.IconMenuItem();
+            this.iconMenuItem_CambioUsuario = new FontAwesome.Sharp.IconMenuItem();
+            this.iconMenuItemSalirSistema = new FontAwesome.Sharp.IconMenuItem();
             this.pnl_Menu = new System.Windows.Forms.Panel();
             this.pnl_operaciones = new System.Windows.Forms.Panel();
             this.btn_pago_Orden = new FontAwesome.Sharp.IconButton();
@@ -67,10 +67,12 @@
             this.btn_usuarios = new FontAwesome.Sharp.IconButton();
             this.btn_administracion = new FontAwesome.Sharp.IconButton();
             this.pnl_login_data = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.lbl_rol_usuario = new System.Windows.Forms.Label();
             this.lbl_usuario_logo = new System.Windows.Forms.Label();
+            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
             this.btn_ocultar_Menu = new FontAwesome.Sharp.IconButton();
@@ -87,183 +89,258 @@
             this.pnl_titulo = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.pnl_body = new System.Windows.Forms.Panel();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.menuStrip.SuspendLayout();
             this.pnl_Menu.SuspendLayout();
             this.pnl_operaciones.SuspendLayout();
             this.pnl_catalogos.SuspendLayout();
             this.pnl_administracion.SuspendLayout();
             this.pnl_login_data.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.pnl_titulo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip
             // 
+            this.menuStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.menuStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.operacionesToolStripMenuItem,
-            this.salirDelSistemaToolStripMenuItem1,
-            this.DataAnalitycsToolStripMenuItem,
-            this.salirDelSistemaToolStripMenuItem2});
+            this.iconMenuItem_nosotros,
+            this.ico_menItem_Reportes,
+            this.Menu_data_Analitycs,
+            this.iconMenuItem_Salir});
             this.menuStrip.Location = new System.Drawing.Point(0, 0);
             this.menuStrip.Name = "menuStrip";
             this.menuStrip.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.menuStrip.Size = new System.Drawing.Size(1370, 24);
+            this.menuStrip.Size = new System.Drawing.Size(1370, 30);
             this.menuStrip.TabIndex = 4;
             this.menuStrip.Text = "MenuStrip";
             // 
-            // operacionesToolStripMenuItem
+            // iconMenuItem_nosotros
             // 
-            this.operacionesToolStripMenuItem.Name = "operacionesToolStripMenuItem";
-            this.operacionesToolStripMenuItem.Size = new System.Drawing.Size(100, 22);
-            this.operacionesToolStripMenuItem.Text = "Sobre Nosotros";
+            this.iconMenuItem_nosotros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.iconMenuItem_nosotros.IconChar = FontAwesome.Sharp.IconChar.PeopleGroup;
+            this.iconMenuItem_nosotros.IconColor = System.Drawing.Color.Black;
+            this.iconMenuItem_nosotros.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconMenuItem_nosotros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconMenuItem_nosotros.Name = "iconMenuItem_nosotros";
+            this.iconMenuItem_nosotros.Size = new System.Drawing.Size(118, 28);
+            this.iconMenuItem_nosotros.Text = "      Sobre Nosotros";
+            this.iconMenuItem_nosotros.TextImageRelation = System.Windows.Forms.TextImageRelation.Overlay;
             // 
-            // salirDelSistemaToolStripMenuItem1
+            // ico_menItem_Reportes
             // 
-            this.salirDelSistemaToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.empleadosToolStripMenuItem,
-            this.clientesToolStripMenuItem,
-            this.usuariosToolStripMenuItem1,
-            this.pagoPlanillaToolStripMenuItem,
-            this.inventariosToolStripMenuItem,
-            this.mesasToolStripMenuItem,
-            this.encabezadoOrdenesToolStripMenuItem,
-            this.detallesOrdenesToolStripMenuItem,
-            this.pagoOrdenesToolStripMenuItem});
-            this.salirDelSistemaToolStripMenuItem1.Name = "salirDelSistemaToolStripMenuItem1";
-            this.salirDelSistemaToolStripMenuItem1.Size = new System.Drawing.Size(65, 22);
-            this.salirDelSistemaToolStripMenuItem1.Text = "Reportes";
+            this.ico_menItem_Reportes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.ico_menItem_Reportes.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.sub_empleados,
+            this.sub_cliente,
+            this.sub_usuario,
+            this.sub_pago_planilla,
+            this.sub_inventarios,
+            this.sub_mesas,
+            this.sub_enc_ordenes,
+            this.sub_det_ordenes,
+            this.sub_pago_ordenes});
+            this.ico_menItem_Reportes.IconChar = FontAwesome.Sharp.IconChar.Clipboard;
+            this.ico_menItem_Reportes.IconColor = System.Drawing.Color.Black;
+            this.ico_menItem_Reportes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ico_menItem_Reportes.ImageTransparentColor = System.Drawing.Color.Yellow;
+            this.ico_menItem_Reportes.Name = "ico_menItem_Reportes";
+            this.ico_menItem_Reportes.Size = new System.Drawing.Size(89, 28);
+            this.ico_menItem_Reportes.Text = "Reportes";
             // 
-            // empleadosToolStripMenuItem
+            // sub_empleados
             // 
-            this.empleadosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.empleadosSinUsuarioToolStripMenuItem,
-            this.dataDashboardToolStripMenuItem,
-            this.empleadosToolStripMenuItem1});
-            this.empleadosToolStripMenuItem.Name = "empleadosToolStripMenuItem";
-            this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.empleadosToolStripMenuItem.Text = "Empleados";
+            this.sub_empleados.BackColor = System.Drawing.Color.Orange;
+            this.sub_empleados.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.iconMenuItem1,
+            this.iconMenuItem2,
+            this.Data_Dash_Usuarios});
+            this.sub_empleados.IconChar = FontAwesome.Sharp.IconChar.ClipboardUser;
+            this.sub_empleados.IconColor = System.Drawing.Color.Black;
+            this.sub_empleados.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.sub_empleados.ImageTransparentColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.sub_empleados.Name = "sub_empleados";
+            this.sub_empleados.Size = new System.Drawing.Size(192, 30);
+            this.sub_empleados.Text = "Empleados";
             // 
-            // empleadosSinUsuarioToolStripMenuItem
+            // iconMenuItem1
             // 
-            this.empleadosSinUsuarioToolStripMenuItem.Name = "empleadosSinUsuarioToolStripMenuItem";
-            this.empleadosSinUsuarioToolStripMenuItem.Size = new System.Drawing.Size(262, 22);
-            this.empleadosSinUsuarioToolStripMenuItem.Text = "Empleados Sin Usuario";
-            this.empleadosSinUsuarioToolStripMenuItem.Click += new System.EventHandler(this.empleadosSinUsuarioToolStripMenuItem_Click);
+            this.iconMenuItem1.BackColor = System.Drawing.Color.Orange;
+            this.iconMenuItem1.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
+            this.iconMenuItem1.IconColor = System.Drawing.Color.Black;
+            this.iconMenuItem1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconMenuItem1.Name = "iconMenuItem1";
+            this.iconMenuItem1.Size = new System.Drawing.Size(207, 30);
+            this.iconMenuItem1.Text = "Empleados Sin Usuarios";
+            this.iconMenuItem1.Click += new System.EventHandler(this.iconMenuItem1_Click);
             // 
-            // dataDashboardToolStripMenuItem
+            // iconMenuItem2
             // 
-            this.dataDashboardToolStripMenuItem.Name = "dataDashboardToolStripMenuItem";
-            this.dataDashboardToolStripMenuItem.Size = new System.Drawing.Size(262, 22);
-            this.dataDashboardToolStripMenuItem.Text = "Data Dashboard Empleado Usuarios";
-            this.dataDashboardToolStripMenuItem.Click += new System.EventHandler(this.dataDashboardToolStripMenuItem_Click);
+            this.iconMenuItem2.BackColor = System.Drawing.Color.Orange;
+            this.iconMenuItem2.IconChar = FontAwesome.Sharp.IconChar.IdBadge;
+            this.iconMenuItem2.IconColor = System.Drawing.Color.Black;
+            this.iconMenuItem2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconMenuItem2.Name = "iconMenuItem2";
+            this.iconMenuItem2.Size = new System.Drawing.Size(207, 30);
+            this.iconMenuItem2.Text = "Empleados";
+            this.iconMenuItem2.Click += new System.EventHandler(this.iconMenuItem2_Click);
             // 
-            // empleadosToolStripMenuItem1
+            // Data_Dash_Usuarios
             // 
-            this.empleadosToolStripMenuItem1.Name = "empleadosToolStripMenuItem1";
-            this.empleadosToolStripMenuItem1.Size = new System.Drawing.Size(262, 22);
-            this.empleadosToolStripMenuItem1.Text = "Empleados";
-            this.empleadosToolStripMenuItem1.Click += new System.EventHandler(this.empleadosToolStripMenuItem1_Click);
+            this.Data_Dash_Usuarios.BackColor = System.Drawing.Color.Orange;
+            this.Data_Dash_Usuarios.IconChar = FontAwesome.Sharp.IconChar.PeopleArrowsLeftRight;
+            this.Data_Dash_Usuarios.IconColor = System.Drawing.Color.Black;
+            this.Data_Dash_Usuarios.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Data_Dash_Usuarios.Name = "Data_Dash_Usuarios";
+            this.Data_Dash_Usuarios.Size = new System.Drawing.Size(207, 30);
+            this.Data_Dash_Usuarios.Text = "Data_Dash_Usuarios";
+            this.Data_Dash_Usuarios.Click += new System.EventHandler(this.Data_Dash_Usuarios_Click);
             // 
-            // clientesToolStripMenuItem
+            // sub_cliente
             // 
-            this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            this.clientesToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.clientesToolStripMenuItem.Text = "Clientes";
-            this.clientesToolStripMenuItem.Click += new System.EventHandler(this.clientesToolStripMenuItem_Click);
+            this.sub_cliente.BackColor = System.Drawing.Color.Orange;
+            this.sub_cliente.IconChar = FontAwesome.Sharp.IconChar.PersonRays;
+            this.sub_cliente.IconColor = System.Drawing.Color.Black;
+            this.sub_cliente.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.sub_cliente.Name = "sub_cliente";
+            this.sub_cliente.Size = new System.Drawing.Size(192, 30);
+            this.sub_cliente.Text = "Clientes";
+            this.sub_cliente.Click += new System.EventHandler(this.sub_cliente_Click);
             // 
-            // usuariosToolStripMenuItem1
+            // sub_usuario
             // 
-            this.usuariosToolStripMenuItem1.Name = "usuariosToolStripMenuItem1";
-            this.usuariosToolStripMenuItem1.Size = new System.Drawing.Size(184, 22);
-            this.usuariosToolStripMenuItem1.Text = "Usuarios";
-            this.usuariosToolStripMenuItem1.Click += new System.EventHandler(this.usuariosToolStripMenuItem1_Click);
+            this.sub_usuario.BackColor = System.Drawing.Color.Orange;
+            this.sub_usuario.IconChar = FontAwesome.Sharp.IconChar.UserShield;
+            this.sub_usuario.IconColor = System.Drawing.Color.Black;
+            this.sub_usuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.sub_usuario.Name = "sub_usuario";
+            this.sub_usuario.Size = new System.Drawing.Size(192, 30);
+            this.sub_usuario.Text = "Usuarios";
+            this.sub_usuario.Click += new System.EventHandler(this.sub_usuario_Click);
             // 
-            // pagoPlanillaToolStripMenuItem
+            // sub_pago_planilla
             // 
-            this.pagoPlanillaToolStripMenuItem.Name = "pagoPlanillaToolStripMenuItem";
-            this.pagoPlanillaToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.pagoPlanillaToolStripMenuItem.Text = "Pago Planilla";
-            this.pagoPlanillaToolStripMenuItem.Click += new System.EventHandler(this.pagoPlanillaToolStripMenuItem_Click);
+            this.sub_pago_planilla.BackColor = System.Drawing.Color.Orange;
+            this.sub_pago_planilla.IconChar = FontAwesome.Sharp.IconChar.SackDollar;
+            this.sub_pago_planilla.IconColor = System.Drawing.Color.Black;
+            this.sub_pago_planilla.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.sub_pago_planilla.Name = "sub_pago_planilla";
+            this.sub_pago_planilla.Size = new System.Drawing.Size(192, 30);
+            this.sub_pago_planilla.Text = "Pago Planilla";
+            this.sub_pago_planilla.Click += new System.EventHandler(this.sub_pago_planilla_Click);
             // 
-            // inventariosToolStripMenuItem
+            // sub_inventarios
             // 
-            this.inventariosToolStripMenuItem.Name = "inventariosToolStripMenuItem";
-            this.inventariosToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.inventariosToolStripMenuItem.Text = "Inventarios";
-            this.inventariosToolStripMenuItem.Click += new System.EventHandler(this.inventariosToolStripMenuItem_Click);
+            this.sub_inventarios.BackColor = System.Drawing.Color.Orange;
+            this.sub_inventarios.IconChar = FontAwesome.Sharp.IconChar.Paste;
+            this.sub_inventarios.IconColor = System.Drawing.Color.Black;
+            this.sub_inventarios.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.sub_inventarios.Name = "sub_inventarios";
+            this.sub_inventarios.Size = new System.Drawing.Size(192, 30);
+            this.sub_inventarios.Text = "Inventarios";
+            this.sub_inventarios.Click += new System.EventHandler(this.sub_inventarios_Click);
             // 
-            // mesasToolStripMenuItem
+            // sub_mesas
             // 
-            this.mesasToolStripMenuItem.Name = "mesasToolStripMenuItem";
-            this.mesasToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.mesasToolStripMenuItem.Text = "Mesas";
-            this.mesasToolStripMenuItem.Click += new System.EventHandler(this.mesasToolStripMenuItem_Click);
+            this.sub_mesas.BackColor = System.Drawing.Color.Orange;
+            this.sub_mesas.IconChar = FontAwesome.Sharp.IconChar.Utensils;
+            this.sub_mesas.IconColor = System.Drawing.Color.Black;
+            this.sub_mesas.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.sub_mesas.Name = "sub_mesas";
+            this.sub_mesas.Size = new System.Drawing.Size(192, 30);
+            this.sub_mesas.Text = "Mesas";
+            this.sub_mesas.Click += new System.EventHandler(this.sub_mesas_Click);
             // 
-            // encabezadoOrdenesToolStripMenuItem
+            // sub_enc_ordenes
             // 
-            this.encabezadoOrdenesToolStripMenuItem.Name = "encabezadoOrdenesToolStripMenuItem";
-            this.encabezadoOrdenesToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.encabezadoOrdenesToolStripMenuItem.Text = "Encabezado Ordenes";
-            this.encabezadoOrdenesToolStripMenuItem.Click += new System.EventHandler(this.encabezadoOrdenesToolStripMenuItem_Click);
+            this.sub_enc_ordenes.BackColor = System.Drawing.Color.Orange;
+            this.sub_enc_ordenes.IconChar = FontAwesome.Sharp.IconChar.Pencil;
+            this.sub_enc_ordenes.IconColor = System.Drawing.Color.Black;
+            this.sub_enc_ordenes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.sub_enc_ordenes.Name = "sub_enc_ordenes";
+            this.sub_enc_ordenes.Size = new System.Drawing.Size(192, 30);
+            this.sub_enc_ordenes.Text = "Encabezado Ordenes";
+            this.sub_enc_ordenes.Click += new System.EventHandler(this.sub_enc_ordenes_Click);
             // 
-            // detallesOrdenesToolStripMenuItem
+            // sub_det_ordenes
             // 
-            this.detallesOrdenesToolStripMenuItem.Name = "detallesOrdenesToolStripMenuItem";
-            this.detallesOrdenesToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.detallesOrdenesToolStripMenuItem.Text = "Detalles Ordenes";
-            this.detallesOrdenesToolStripMenuItem.Click += new System.EventHandler(this.detallesOrdenesToolStripMenuItem_Click);
+            this.sub_det_ordenes.BackColor = System.Drawing.Color.Orange;
+            this.sub_det_ordenes.IconChar = FontAwesome.Sharp.IconChar.Newspaper;
+            this.sub_det_ordenes.IconColor = System.Drawing.Color.Black;
+            this.sub_det_ordenes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.sub_det_ordenes.Name = "sub_det_ordenes";
+            this.sub_det_ordenes.Size = new System.Drawing.Size(192, 30);
+            this.sub_det_ordenes.Text = "Detalle Ordenes";
+            this.sub_det_ordenes.Click += new System.EventHandler(this.sub_det_ordenes_Click);
             // 
-            // pagoOrdenesToolStripMenuItem
+            // sub_pago_ordenes
             // 
-            this.pagoOrdenesToolStripMenuItem.Name = "pagoOrdenesToolStripMenuItem";
-            this.pagoOrdenesToolStripMenuItem.Size = new System.Drawing.Size(184, 22);
-            this.pagoOrdenesToolStripMenuItem.Text = "Pago Ordenes";
-            this.pagoOrdenesToolStripMenuItem.Click += new System.EventHandler(this.pagoOrdenesToolStripMenuItem_Click);
+            this.sub_pago_ordenes.BackColor = System.Drawing.Color.Orange;
+            this.sub_pago_ordenes.IconChar = FontAwesome.Sharp.IconChar.MoneyBillWave;
+            this.sub_pago_ordenes.IconColor = System.Drawing.Color.Black;
+            this.sub_pago_ordenes.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.sub_pago_ordenes.Name = "sub_pago_ordenes";
+            this.sub_pago_ordenes.Size = new System.Drawing.Size(192, 30);
+            this.sub_pago_ordenes.Text = "Pago Ordenes";
+            this.sub_pago_ordenes.Click += new System.EventHandler(this.sub_pago_ordenes_Click);
             // 
-            // DataAnalitycsToolStripMenuItem
+            // Menu_data_Analitycs
             // 
-            this.DataAnalitycsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.dashboardEmpleadosUsuariosToolStripMenuItem});
-            this.DataAnalitycsToolStripMenuItem.Name = "DataAnalitycsToolStripMenuItem";
-            this.DataAnalitycsToolStripMenuItem.Size = new System.Drawing.Size(94, 22);
-            this.DataAnalitycsToolStripMenuItem.Text = "Data Analitycs";
+            this.Menu_data_Analitycs.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dashboardEmpleadosUsuariosToolStripMenuIte});
+            this.Menu_data_Analitycs.IconChar = FontAwesome.Sharp.IconChar.SquarePollVertical;
+            this.Menu_data_Analitycs.IconColor = System.Drawing.Color.Black;
+            this.Menu_data_Analitycs.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.Menu_data_Analitycs.Name = "Menu_data_Analitycs";
+            this.Menu_data_Analitycs.Size = new System.Drawing.Size(118, 28);
+            this.Menu_data_Analitycs.Text = "Data Analitycs";
             // 
-            // dashboardEmpleadosUsuariosToolStripMenuItem
+            // dashboardEmpleadosUsuariosToolStripMenuIte
             // 
-            this.dashboardEmpleadosUsuariosToolStripMenuItem.Name = "dashboardEmpleadosUsuariosToolStripMenuItem";
-            this.dashboardEmpleadosUsuariosToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
-            this.dashboardEmpleadosUsuariosToolStripMenuItem.Text = "Dashboard Empleados-Usuarios";
-            this.dashboardEmpleadosUsuariosToolStripMenuItem.Click += new System.EventHandler(this.dashboardEmpleadosUsuariosToolStripMenuItem_Click);
+            this.dashboardEmpleadosUsuariosToolStripMenuIte.BackColor = System.Drawing.Color.Orange;
+            this.dashboardEmpleadosUsuariosToolStripMenuIte.IconChar = FontAwesome.Sharp.IconChar.PersonBreastfeeding;
+            this.dashboardEmpleadosUsuariosToolStripMenuIte.IconColor = System.Drawing.Color.Black;
+            this.dashboardEmpleadosUsuariosToolStripMenuIte.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.dashboardEmpleadosUsuariosToolStripMenuIte.Name = "dashboardEmpleadosUsuariosToolStripMenuIte";
+            this.dashboardEmpleadosUsuariosToolStripMenuIte.Size = new System.Drawing.Size(250, 30);
+            this.dashboardEmpleadosUsuariosToolStripMenuIte.Text = "Dashboard Empleados-Usuarios";
+            this.dashboardEmpleadosUsuariosToolStripMenuIte.Click += new System.EventHandler(this.dashboardEmpleadosUsuariosToolStripMenuIte_Click);
             // 
-            // salirDelSistemaToolStripMenuItem2
+            // iconMenuItem_Salir
             // 
-            this.salirDelSistemaToolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cerrarSeciónToolStripMenuItem,
-            this.salirDelSistemaToolStripMenuItem});
-            this.salirDelSistemaToolStripMenuItem2.Name = "salirDelSistemaToolStripMenuItem2";
-            this.salirDelSistemaToolStripMenuItem2.Size = new System.Drawing.Size(41, 22);
-            this.salirDelSistemaToolStripMenuItem2.Text = "Salir";
+            this.iconMenuItem_Salir.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.iconMenuItem_CambioUsuario,
+            this.iconMenuItemSalirSistema});
+            this.iconMenuItem_Salir.IconChar = FontAwesome.Sharp.IconChar.PowerOff;
+            this.iconMenuItem_Salir.IconColor = System.Drawing.Color.Black;
+            this.iconMenuItem_Salir.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconMenuItem_Salir.Name = "iconMenuItem_Salir";
+            this.iconMenuItem_Salir.Size = new System.Drawing.Size(65, 28);
+            this.iconMenuItem_Salir.Text = "Salir";
             // 
-            // cerrarSeciónToolStripMenuItem
+            // iconMenuItem_CambioUsuario
             // 
-            this.cerrarSeciónToolStripMenuItem.Name = "cerrarSeciónToolStripMenuItem";
-            this.cerrarSeciónToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
-            this.cerrarSeciónToolStripMenuItem.Text = "Cambiar de Usuario";
-            this.cerrarSeciónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSeciónToolStripMenuItem_Click);
+            this.iconMenuItem_CambioUsuario.IconChar = FontAwesome.Sharp.IconChar.Sync;
+            this.iconMenuItem_CambioUsuario.IconColor = System.Drawing.Color.Black;
+            this.iconMenuItem_CambioUsuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconMenuItem_CambioUsuario.Name = "iconMenuItem_CambioUsuario";
+            this.iconMenuItem_CambioUsuario.Size = new System.Drawing.Size(188, 30);
+            this.iconMenuItem_CambioUsuario.Text = "Cambiar Usuario";
+            this.iconMenuItem_CambioUsuario.Click += new System.EventHandler(this.iconMenuItem_CambioUsuario_Click);
             // 
-            // salirDelSistemaToolStripMenuItem
+            // iconMenuItemSalirSistema
             // 
-            this.salirDelSistemaToolStripMenuItem.Name = "salirDelSistemaToolStripMenuItem";
-            this.salirDelSistemaToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
-            this.salirDelSistemaToolStripMenuItem.Text = "Salir Del Sistema";
-            this.salirDelSistemaToolStripMenuItem.Click += new System.EventHandler(this.salirDelSistemaToolStripMenuItem_Click);
+            this.iconMenuItemSalirSistema.IconChar = FontAwesome.Sharp.IconChar.SignInAlt;
+            this.iconMenuItemSalirSistema.IconColor = System.Drawing.Color.Black;
+            this.iconMenuItemSalirSistema.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconMenuItemSalirSistema.Name = "iconMenuItemSalirSistema";
+            this.iconMenuItemSalirSistema.Size = new System.Drawing.Size(188, 30);
+            this.iconMenuItemSalirSistema.Text = "Salir Del Sistema";
+            this.iconMenuItemSalirSistema.Click += new System.EventHandler(this.iconMenuItemSalirSistema_Click);
             // 
             // pnl_Menu
             // 
@@ -277,9 +354,9 @@
             this.pnl_Menu.Controls.Add(this.btn_administracion);
             this.pnl_Menu.Controls.Add(this.pnl_login_data);
             this.pnl_Menu.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnl_Menu.Location = new System.Drawing.Point(0, 24);
+            this.pnl_Menu.Location = new System.Drawing.Point(0, 30);
             this.pnl_Menu.Name = "pnl_Menu";
-            this.pnl_Menu.Size = new System.Drawing.Size(206, 692);
+            this.pnl_Menu.Size = new System.Drawing.Size(206, 686);
             this.pnl_Menu.TabIndex = 26;
             // 
             // pnl_operaciones
@@ -594,27 +671,6 @@
             this.pnl_login_data.Size = new System.Drawing.Size(206, 235);
             this.pnl_login_data.TabIndex = 13;
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.pictureBox1.Image = global::Presentaciòn.Properties.Resources.restaurantes;
-            this.pictureBox1.Location = new System.Drawing.Point(24, 10);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(141, 93);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(28, 115);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 16);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Bienvenido:";
-            // 
             // lbl_rol_usuario
             // 
             this.lbl_rol_usuario.AutoSize = true;
@@ -636,6 +692,55 @@
             this.lbl_usuario_logo.Text = "Usuario";
             this.lbl_usuario_logo.Click += new System.EventHandler(this.lbl_usuario_logo_Click);
             // 
+            // iconPictureBox2
+            // 
+            this.iconPictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.iconPictureBox2.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Usb;
+            this.iconPictureBox2.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox2.IconSize = 23;
+            this.iconPictureBox2.Location = new System.Drawing.Point(20, 170);
+            this.iconPictureBox2.Name = "iconPictureBox2";
+            this.iconPictureBox2.Size = new System.Drawing.Size(37, 23);
+            this.iconPictureBox2.TabIndex = 10;
+            this.iconPictureBox2.TabStop = false;
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.UserCircle;
+            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.IconSize = 30;
+            this.iconPictureBox1.Location = new System.Drawing.Point(20, 134);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(37, 30);
+            this.iconPictureBox1.TabIndex = 9;
+            this.iconPictureBox1.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.pictureBox1.Image = global::Presentaciòn.Properties.Resources.restaurantes;
+            this.pictureBox1.Location = new System.Drawing.Point(24, 10);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(141, 93);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 8;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(28, 115);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(89, 16);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Bienvenido:";
+            // 
             // timer1
             // 
             this.timer1.Enabled = true;
@@ -645,9 +750,9 @@
             // 
             this.panel3.Controls.Add(this.btn_ocultar_Menu);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(206, 24);
+            this.panel3.Location = new System.Drawing.Point(206, 30);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(20, 692);
+            this.panel3.Size = new System.Drawing.Size(20, 686);
             this.panel3.TabIndex = 50;
             // 
             // btn_ocultar_Menu
@@ -665,7 +770,7 @@
             this.btn_ocultar_Menu.Location = new System.Drawing.Point(0, 0);
             this.btn_ocultar_Menu.Margin = new System.Windows.Forms.Padding(0);
             this.btn_ocultar_Menu.Name = "btn_ocultar_Menu";
-            this.btn_ocultar_Menu.Size = new System.Drawing.Size(20, 692);
+            this.btn_ocultar_Menu.Size = new System.Drawing.Size(20, 686);
             this.btn_ocultar_Menu.TabIndex = 30;
             this.btn_ocultar_Menu.UseVisualStyleBackColor = false;
             this.btn_ocultar_Menu.Click += new System.EventHandler(this.btn_ocultar_Menu_Click);
@@ -804,7 +909,7 @@
             this.pnl_titulo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.pnl_titulo.Controls.Add(this.label2);
             this.pnl_titulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnl_titulo.Location = new System.Drawing.Point(226, 24);
+            this.pnl_titulo.Location = new System.Drawing.Point(226, 30);
             this.pnl_titulo.Name = "pnl_titulo";
             this.pnl_titulo.Size = new System.Drawing.Size(1144, 52);
             this.pnl_titulo.TabIndex = 56;
@@ -824,39 +929,12 @@
             // 
             this.pnl_body.AutoSize = true;
             this.pnl_body.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.pnl_body.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pnl_body.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_body.Location = new System.Drawing.Point(226, 76);
+            this.pnl_body.Location = new System.Drawing.Point(226, 82);
             this.pnl_body.Name = "pnl_body";
-            this.pnl_body.Size = new System.Drawing.Size(1144, 535);
+            this.pnl_body.Size = new System.Drawing.Size(1144, 529);
             this.pnl_body.TabIndex = 57;
-            // 
-            // iconPictureBox1
-            // 
-            this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.UserCircle;
-            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 30;
-            this.iconPictureBox1.Location = new System.Drawing.Point(20, 134);
-            this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(37, 30);
-            this.iconPictureBox1.TabIndex = 9;
-            this.iconPictureBox1.TabStop = false;
-            // 
-            // iconPictureBox2
-            // 
-            this.iconPictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.iconPictureBox2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Usb;
-            this.iconPictureBox2.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox2.IconSize = 23;
-            this.iconPictureBox2.Location = new System.Drawing.Point(20, 170);
-            this.iconPictureBox2.Name = "iconPictureBox2";
-            this.iconPictureBox2.Size = new System.Drawing.Size(37, 23);
-            this.iconPictureBox2.TabIndex = 10;
-            this.iconPictureBox2.TabStop = false;
             // 
             // frm_Menu_v2
             // 
@@ -885,14 +963,14 @@
             this.pnl_administracion.ResumeLayout(false);
             this.pnl_login_data.ResumeLayout(false);
             this.pnl_login_data.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.pnl_titulo.ResumeLayout(false);
             this.pnl_titulo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -901,18 +979,6 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip;
-        private System.Windows.Forms.ToolStripMenuItem salirDelSistemaToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem empleadosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem empleadosSinUsuarioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dataDashboardToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem empleadosToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem pagoPlanillaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem DataAnalitycsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem dashboardEmpleadosUsuariosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem salirDelSistemaToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem operacionesToolStripMenuItem;
         private System.Windows.Forms.Panel pnl_Menu;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Panel pnl_administracion;
@@ -937,7 +1003,6 @@
         private FontAwesome.Sharp.IconButton btn_catalogos;
         private FontAwesome.Sharp.IconButton btn_ocultar_Menu;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.ToolStripMenuItem inventariosToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lbl_fecha_so_v2;
         private System.Windows.Forms.Label lbl_hora_so_v2;
@@ -952,13 +1017,26 @@
         private System.Windows.Forms.Panel pnl_titulo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel pnl_body;
-        private System.Windows.Forms.ToolStripMenuItem cerrarSeciónToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem salirDelSistemaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mesasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem encabezadoOrdenesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem detallesOrdenesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pagoOrdenesToolStripMenuItem;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
+        private FontAwesome.Sharp.IconMenuItem iconMenuItem_nosotros;
+        private FontAwesome.Sharp.IconMenuItem ico_menItem_Reportes;
+        private FontAwesome.Sharp.IconMenuItem sub_empleados;
+        private FontAwesome.Sharp.IconMenuItem sub_cliente;
+        private FontAwesome.Sharp.IconMenuItem sub_usuario;
+        private FontAwesome.Sharp.IconMenuItem sub_pago_planilla;
+        private FontAwesome.Sharp.IconMenuItem sub_inventarios;
+        private FontAwesome.Sharp.IconMenuItem sub_mesas;
+        private FontAwesome.Sharp.IconMenuItem sub_enc_ordenes;
+        private FontAwesome.Sharp.IconMenuItem sub_pago_ordenes;
+        private FontAwesome.Sharp.IconMenuItem sub_det_ordenes;
+        private FontAwesome.Sharp.IconMenuItem iconMenuItem1;
+        private FontAwesome.Sharp.IconMenuItem iconMenuItem2;
+        private FontAwesome.Sharp.IconMenuItem Data_Dash_Usuarios;
+        private FontAwesome.Sharp.IconMenuItem Menu_data_Analitycs;
+        private FontAwesome.Sharp.IconMenuItem dashboardEmpleadosUsuariosToolStripMenuIte;
+        private FontAwesome.Sharp.IconMenuItem iconMenuItem_Salir;
+        private FontAwesome.Sharp.IconMenuItem iconMenuItem_CambioUsuario;
+        private FontAwesome.Sharp.IconMenuItem iconMenuItemSalirSistema;
     }
 }

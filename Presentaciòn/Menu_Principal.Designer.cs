@@ -67,8 +67,9 @@
             this.usuariosToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.pagoPlanillaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirDelSistemaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.mENUV2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.iconMenuItem1 = new FontAwesome.Sharp.IconMenuItem();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -257,6 +258,7 @@
             // formulariosToolStripMenuItem
             // 
             this.formulariosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.iconMenuItem1,
             this.Usuarios_FormToolStripMenuItem,
             this.usuariosToolStripMenuItem,
             this.mesasToolStripMenuItem});
@@ -267,21 +269,21 @@
             // Usuarios_FormToolStripMenuItem
             // 
             this.Usuarios_FormToolStripMenuItem.Name = "Usuarios_FormToolStripMenuItem";
-            this.Usuarios_FormToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.Usuarios_FormToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
             this.Usuarios_FormToolStripMenuItem.Text = "Usuarios";
             this.Usuarios_FormToolStripMenuItem.Click += new System.EventHandler(this.Usuarios_FormToolStripMenuItem_Click);
             // 
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
             this.usuariosToolStripMenuItem.Text = "Empleados";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // mesasToolStripMenuItem
             // 
             this.mesasToolStripMenuItem.Name = "mesasToolStripMenuItem";
-            this.mesasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mesasToolStripMenuItem.Size = new System.Drawing.Size(188, 30);
             this.mesasToolStripMenuItem.Text = "Planillas";
             this.mesasToolStripMenuItem.Click += new System.EventHandler(this.mesasToolStripMenuItem_Click);
             // 
@@ -422,17 +424,26 @@
             this.salirDelSistemaToolStripMenuItem2.Text = "Salir Del Sistema";
             this.salirDelSistemaToolStripMenuItem2.Click += new System.EventHandler(this.salirDelSistemaToolStripMenuItem2_Click);
             // 
-            // timer1
-            // 
-            this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
             // mENUV2ToolStripMenuItem
             // 
             this.mENUV2ToolStripMenuItem.Name = "mENUV2ToolStripMenuItem";
             this.mENUV2ToolStripMenuItem.Size = new System.Drawing.Size(69, 22);
             this.mENUV2ToolStripMenuItem.Text = "MENU V2";
             this.mENUV2ToolStripMenuItem.Click += new System.EventHandler(this.mENUV2ToolStripMenuItem_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // iconMenuItem1
+            // 
+            this.iconMenuItem1.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconMenuItem1.IconColor = System.Drawing.Color.Black;
+            this.iconMenuItem1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconMenuItem1.Name = "iconMenuItem1";
+            this.iconMenuItem1.Size = new System.Drawing.Size(188, 30);
+            this.iconMenuItem1.Text = "iconMenuItem1";
             // 
             // Menu_Principal
             // 
@@ -502,5 +513,6 @@
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem pagoPlanillaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mENUV2ToolStripMenuItem;
+        private FontAwesome.Sharp.IconMenuItem iconMenuItem1;
     }
 }

@@ -119,14 +119,14 @@ namespace Presentaciòn
         #endregion;
 
         #region = "bnt_salir MDI";
-        private void salirDelSistemaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void iconMenuItemSalirSistema_Click(object sender, EventArgs e)
         {
             System.Windows.Forms.Application.Exit();
         }
         #endregion
 
         #region = "Cambiar Inicio seción";
-        private void cerrarSeciónToolStripMenuItem_Click(object sender, EventArgs e)
+        private void iconMenuItem_CambioUsuario_Click(object sender, EventArgs e)
         {
             this.Hide();
             frm_login login = new frm_login();
@@ -198,46 +198,6 @@ namespace Presentaciòn
             openChildForm(new frm_encabezado_ordenes());
         }
 
-        private void inventariosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            openChildForm(new frm_Reporte_Inventario_menu());
-        }
-
-        private void empleadosSinUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            openChildForm(new frm_Reporte_Inventario_menu());
-        }
-
-        private void dataDashboardToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            openChildForm(new frm_data_dash_emp_user());
-        }
-
-        private void empleadosToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            openChildForm(new frm_Reporte_Empleado());
-        }
-
-        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            openChildForm(new frm_Reporte_Clientes());
-        }
-
-        private void usuariosToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            openChildForm(new frm_Reporte_Usuarios());
-        }
-
-        private void pagoPlanillaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            openChildForm(new frm_Reporte_Pago_Planilla());
-        }
-
-
-        private void dashboardEmpleadosUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            openChildForm(new Dashboard_Empleados_Usuarios());
-        }
 
         private void btn_det_ordenen_Click(object sender, EventArgs e)
         {
@@ -249,26 +209,6 @@ namespace Presentaciòn
             openChildForm(new frm_pago_ordens());
         }
 
-        private void mesasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            openChildForm(new frm_Report_mesas());
-        }
-
-        private void encabezadoOrdenesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            openChildForm(new frm_Report_Encabezado_Ordenes());
-        }
-
-        private void detallesOrdenesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            openChildForm(new Form_Report_detalles_ordenes());
-        }
-
-        private void pagoOrdenesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            openChildForm(new Form_Report_Pago_Ordenes());
-        }
-
 
         #endregion;
 
@@ -276,5 +216,67 @@ namespace Presentaciòn
         {
 
         }
+
+        private void iconMenuItem1_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frm_Reporte_Inventario_menu());
+        }
+
+        private void iconMenuItem2_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frm_Reporte_Empleado());
+        }
+
+        private void Data_Dash_Usuarios_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frm_data_dash_emp_user());
+        }
+
+        private void sub_cliente_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frm_Reporte_Clientes());
+        }
+
+        private void sub_usuario_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frm_Reporte_Usuarios());
+        }
+
+        private void sub_pago_planilla_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frm_Reporte_Pago_Planilla());
+        }
+
+        private void sub_inventarios_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frm_Reporte_Inventario_menu());
+        }
+
+        private void sub_mesas_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frm_Report_mesas());
+        }
+
+        private void sub_enc_ordenes_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frm_Report_Encabezado_Ordenes());
+        }
+
+        private void sub_det_ordenes_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Form_Report_detalles_ordenes());
+        }
+
+        private void sub_pago_ordenes_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Form_Report_Pago_Ordenes());
+        }
+
+        private void dashboardEmpleadosUsuariosToolStripMenuIte_Click(object sender, EventArgs e)
+        {
+            openChildForm(new Dashboard_Empleados_Usuarios());
+        }
+
+
     }
 }
