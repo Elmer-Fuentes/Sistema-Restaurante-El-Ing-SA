@@ -202,6 +202,12 @@
           <AssociatedConnUserName>Administrador</AssociatedConnUserName>
           <FullPath>Create tables.sql</FullPath>
         </FileNode>
+        <FileNode Name="Create Vista para Mod.Datos.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:sources.database.windows.net:False:Administrador</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>sources.database.windows.net</AssociatedConnSrvName>
+          <AssociatedConnUserName>Administrador</AssociatedConnUserName>
+          <FullPath>Create Vista para Mod.Datos.sql</FullPath>
+        </FileNode>
         <FileNode Name="dlt_inventario.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:sources.database.windows.net:False:Administrador</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>sources.database.windows.net</AssociatedConnSrvName>
@@ -249,12 +255,6 @@
           <AssociatedConnSrvName>FUENTES-ELMER</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>Select_empleados.sql</FullPath>
-        </FileNode>
-        <FileNode Name="SQLQuery6.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:sources.database.windows.net:False:Administrador</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>sources.database.windows.net</AssociatedConnSrvName>
-          <AssociatedConnUserName>Administrador</AssociatedConnUserName>
-          <FullPath>SQLQuery6.sql</FullPath>
         </FileNode>
         <FileNode Name="SQLQuery7.sql">
           <AssociatedConnectionMoniker />
