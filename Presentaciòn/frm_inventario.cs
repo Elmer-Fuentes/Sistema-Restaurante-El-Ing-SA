@@ -23,6 +23,7 @@ namespace Presentaciòn
 
         public frm_inventario()
         {
+            lblFecha.Text = fecha.MtdFecha().ToString();
             InitializeComponent();
             style();
             MtdMostrardatos();
@@ -33,6 +34,7 @@ namespace Presentaciòn
             mensaje.SetToolTip(btnEliminar, "Eliminar");
             mensaje.SetToolTip(btnSalir, "Cerrar Ventana");
             mensaje.SetToolTip(btn_buscar, "Buscar");
+            mensaje.SetToolTip(lblFecha, "Fecha de el sistema");
         }
 
         private void style()
