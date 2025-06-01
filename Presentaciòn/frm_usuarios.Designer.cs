@@ -55,7 +55,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.btn_Reporte = new FontAwesome.Sharp.IconButton();
             this.btn_cancelarBus_Usuario = new FontAwesome.Sharp.IconButton();
             this.btn_Bus_emple_sin_name = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -406,7 +405,6 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.tabPage2.Controls.Add(this.btn_Reporte);
             this.tabPage2.Controls.Add(this.btn_cancelarBus_Usuario);
             this.tabPage2.Controls.Add(this.btn_Bus_emple_sin_name);
             this.tabPage2.Controls.Add(this.panel1);
@@ -420,22 +418,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Buscar";
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
-            // 
-            // btn_Reporte
-            // 
-            this.btn_Reporte.IconChar = FontAwesome.Sharp.IconChar.Remove;
-            this.btn_Reporte.IconColor = System.Drawing.Color.Black;
-            this.btn_Reporte.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btn_Reporte.IconSize = 25;
-            this.btn_Reporte.Location = new System.Drawing.Point(842, 456);
-            this.btn_Reporte.Margin = new System.Windows.Forms.Padding(2);
-            this.btn_Reporte.Name = "btn_Reporte";
-            this.btn_Reporte.Size = new System.Drawing.Size(129, 31);
-            this.btn_Reporte.TabIndex = 71;
-            this.btn_Reporte.Text = "Reporte";
-            this.btn_Reporte.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_Reporte.UseVisualStyleBackColor = true;
-            this.btn_Reporte.Click += new System.EventHandler(this.btn_Reporte_Click);
             // 
             // btn_cancelarBus_Usuario
             // 
@@ -586,6 +568,5 @@
         private System.Windows.Forms.Label label8;
         private FontAwesome.Sharp.IconButton btn_Bus_emple_sin_name;
         private FontAwesome.Sharp.IconButton btn_cancelarBus_Usuario;
-        private FontAwesome.Sharp.IconButton btn_Reporte;
     }
 }
