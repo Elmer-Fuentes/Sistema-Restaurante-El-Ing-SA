@@ -23,7 +23,6 @@ namespace Presentaciòn
 
         public frm_inventario()
         {
-            lblFecha.Text = fecha.MtdFecha().ToString();
             InitializeComponent();
             style();
             MtdMostrardatos();
@@ -35,6 +34,7 @@ namespace Presentaciòn
             mensaje.SetToolTip(btnSalir, "Cerrar Ventana");
             mensaje.SetToolTip(btn_buscar, "Buscar");
             mensaje.SetToolTip(lblFecha, "Fecha de el sistema");
+            lblFecha.Text = fecha.MtdFecha().ToString("d");
         }
 
         private void style()
@@ -87,6 +87,7 @@ namespace Presentaciòn
             cbox_codigomenu.Text = "";
             dtm_fechaentrada.Text = DateTime.Today.ToString("d");
             dtm_fechavencimiento.Text = DateTime.Today.ToString("d");
+            nud_Cantidad.Value = 0;
         }
 
         private void Mtdmostrarcategoria()
